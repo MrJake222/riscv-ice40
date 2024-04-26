@@ -1,0 +1,184 @@
+module crv32 (
+	input wire CLK_12M,
+	input wire RESET,
+	output wire PICO_RX,
+	input wire PICO_TX,
+	
+	output led_blue,
+	output led_green,
+	output led_red,
+    
+    output wire [7:0] A
+);
+
+wire pll_lock;
+wire clk;
+clk12toX clkm (
+    .clk_12M(CLK_12M),
+    .lock(pll_lock),
+    .clk_1M(clk)
+);
+
+reg n_reset = 1'b0;
+always @ (posedge clk)
+if (pll_lock)
+    n_reset <= 1'b1 & RESET; // manual reset accepted
+
+// memory works on negedge
+wire mem_clk = ~clk;
+
+wire cpu_run;
+wire cpu_n_reset;
+wire [2:0] dbg_rx_byte;
+wire dbg_rx_instr_finish;
+
+wire [31:0] dbg_adr;
+wire [31:0] dbg_do;
+wire [31:0] dbg_di;
+wire dbg_rw;
+wire [3:0] dbg_wren = {4{~dbg_rw}};
+wire dbg_mem_op;
+
+dbgu32 #(
+    .CLK_FREQ(1000000),
+    .UART_FREQ(115200)
+) dbgu0 (
+	.clk(clk),
+	.n_reset(n_reset),
+	
+	.rx(PICO_TX),
+	.tx(PICO_RX),
+	
+	.cpu_run(cpu_run),
+	.cpu_n_reset(cpu_n_reset),
+	
+	.adr_ptr(dbg_adr),
+	.data_bus_out(dbg_do),
+	.data_bus_in(dbg_di),
+	.RW(dbg_rw),
+	.mem_op(dbg_mem_op),
+	
+	.dbg_rx_byte(dbg_rx_byte),
+	.dbg_rx_instr_finish(dbg_rx_instr_finish)
+);
+
+wire cpu_clk = cpu_run ? clk : 1'b0;
+wire [31:0] cpu_adr;
+wire [31:0] cpu_do;
+wire [31:0] cpu_di;
+wire [ 3:0] cpu_wren;
+wire        cpu_mem_op;
+
+wire mem_instr; // ignore
+wire cpu_mem_rdy = 1'b1;
+
+picorv32 #(
+         .STACKADDR(32'h10000), // behind end of ram, must be 16-byte aligned
+    .PROGADDR_RESET(32'h20000),
+    .BARREL_SHIFTER(0),
+    .COMPRESSED_ISA(0),
+    .ENABLE_COUNTERS(0),
+    .ENABLE_MUL(0),
+    .ENABLE_DIV(0),
+    .ENABLE_FAST_MUL(0),
+    .ENABLE_IRQ(0),
+    .ENABLE_IRQ_QREGS(0)
+) cpu (
+    .clk         (cpu_clk    ),
+    .resetn      (cpu_n_reset),
+    .mem_valid   (cpu_mem_op ), // mem op 
+    .mem_instr   (mem_instr  ), // sync (ignore)
+    .mem_ready   (cpu_mem_rdy), // mem read finished
+    .mem_addr    (cpu_adr    ),
+    .mem_wdata   (cpu_do     ),
+    .mem_wstrb   (cpu_wren   ), // write strobe (can write individual bytes)
+    .mem_rdata   (cpu_di     )
+);
+
+// bus
+wire [31:0] adr      =  dbg_mem_op ? dbg_adr    :  cpu_adr;
+wire [31:0] mem_di   =  dbg_mem_op ? dbg_do     :  cpu_do;
+wire [ 3:0] mem_wren =  dbg_mem_op ? dbg_wren   :  cpu_wren;
+wire        mem_op   =               dbg_mem_op | (cpu_mem_op & cpu_run);
+
+
+// memory
+// ram 00000 - 0FFFF (16K)
+wire ram_sel = mem_op & (adr[17:16] == 2'b00);
+wire [31:0] ram_do;
+ram16Kx32 ram (
+    .clk(mem_clk),
+    .cs(ram_sel),
+    .wren(mem_wren),
+    .adr(adr[15:2]),
+    .di(mem_di),
+    .do(ram_do)
+);
+
+// mmio 10000 - 1FFFF (16K)
+wire mmio_sel = mem_op & (adr[17:16] == 2'b01);
+wire [7:0] pwm_do [2:0];
+pwm pwm0 (
+    .sys_clk(mem_clk),
+    .cs(mmio_sel & adr[3:2] == 2'h0),
+    .wren(|mem_wren),
+    .di(mem_di[7:0]),
+    .do(pwm_do[0]),
+    .out_clk(clk),
+    .out(led_red)
+);
+pwm pwm1 (
+    .sys_clk(mem_clk),
+    .cs(mmio_sel & adr[3:2] == 2'h1),
+    .wren(|mem_wren),
+    .di(mem_di[7:0]),
+    .do(pwm_do[1]),
+    .out_clk(clk),
+    .out(led_green)
+);
+pwm pwm2 (
+    .sys_clk(mem_clk),
+    .cs(mmio_sel & adr[3:2] == 2'h2),
+    .wren(|mem_wren),
+    .di(mem_di[7:0]),
+    .do(pwm_do[2]),
+    .out_clk(clk),
+    .out(led_blue)
+);
+wire [31:0] mmio_do = pwm_do[0] | pwm_do[1] | pwm_do[2];
+
+// rom 20000 - 2FFFF (16K)
+wire rom_sel = mem_op & (adr[17:16] == 2'b10);
+wire [31:0] rom_do;
+ram16Kx32 rom (
+    .clk(mem_clk),
+    .cs(rom_sel),
+    .wren(mem_wren),
+    .adr(adr[15:2]),
+    .di(mem_di),
+    .do(rom_do)
+);
+
+
+// bus again
+// OR bus possible with RAM sleep function
+wire [31:0] mem_do = ram_do | rom_do | mmio_do;
+assign dbg_di = mem_do;
+assign cpu_di = mem_do;
+
+
+// debug
+//assign A[0] = PICO_RX;
+//assign A[1] = PICO_TX;
+//assign A[2] = clk;
+//assign A[4:3] = adr[3:2];
+//assign A[5] = cpu_clk;
+//assign A[6] = cpu_n_reset;
+//assign A[7] = cpu_mem_op;
+//assign A[3] = dbg_rx_byte[0];
+//assign A[4] = dbg_rx_byte[1];
+//assign A[5] = dbg_rx_byte[2];
+//assign A[6] = ram_do[0] | ram_do[16] | rom_do[0] | rom_do[16];
+//assign A[7] = dbg_di2[0] | dbg_di2[16];
+
+endmodule

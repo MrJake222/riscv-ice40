@@ -1,0 +1,30 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Wed Apr 24 17:59:50 2024
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/picorv32/tb_mem.vcd"
+[dumpfile_mtime] "Wed Apr 24 17:58:44 2024"
+[dumpfile_size] 2525
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/picorv32/gtkw/tb_mem.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-21.535410 7500000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] crv32_mem.
+[treeopen] crv32_mem.rom.
+[sst_width] 209
+[signals_width] 126
+[sst_expanded] 1
+[sst_vpaned_height] 154
+@28
+crv32_mem.rom.clk
+@22
+crv32_mem.adr[31:0]
+crv32_mem.mem_di[31:0]
+@28
+crv32_mem.rom.cs
+@22
+crv32_mem.rom.do[31:0]
+crv32_mem.rom.wren[3:0]
+[pattern_trace] 1
+[pattern_trace] 0

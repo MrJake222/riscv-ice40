@@ -1,0 +1,15 @@
+# C code
+*.o
+*.elf
+*.hex
+
+# Verilog
+*.vcd
+*.hw.json
+*.asc
+*.bin
+
+# common
+*.pdf
+*.geany
+

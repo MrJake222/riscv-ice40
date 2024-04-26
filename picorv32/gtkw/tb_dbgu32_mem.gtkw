@@ -1,0 +1,66 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Thu Apr 25 08:26:27 2024
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/picorv32/tb_dbgu32_mem.vcd"
+[dumpfile_mtime] "Thu Apr 25 08:25:47 2024"
+[dumpfile_size] 49614
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/picorv32/gtkw/tb_dbgu32_mem.gtkw"
+[timestart] 0
+[size] 1808 775
+[pos] -1 -1
+*-27.863195 340000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 209
+[signals_width] 134
+[sst_expanded] 1
+[sst_vpaned_height] 216
+@28
+dbgu32_mem.clk
+dbgu32_mem.cpu_n_reset
+dbgu32_mem.rx
+dbgu32_mem.tx
+@c00023
+dbgu32_mem.dbg_adr[31:0]
+@29
+(0)dbgu32_mem.dbg_adr[31:0]
+(1)dbgu32_mem.dbg_adr[31:0]
+(2)dbgu32_mem.dbg_adr[31:0]
+(3)dbgu32_mem.dbg_adr[31:0]
+(4)dbgu32_mem.dbg_adr[31:0]
+(5)dbgu32_mem.dbg_adr[31:0]
+(6)dbgu32_mem.dbg_adr[31:0]
+(7)dbgu32_mem.dbg_adr[31:0]
+(8)dbgu32_mem.dbg_adr[31:0]
+(9)dbgu32_mem.dbg_adr[31:0]
+(10)dbgu32_mem.dbg_adr[31:0]
+(11)dbgu32_mem.dbg_adr[31:0]
+(12)dbgu32_mem.dbg_adr[31:0]
+(13)dbgu32_mem.dbg_adr[31:0]
+(14)dbgu32_mem.dbg_adr[31:0]
+(15)dbgu32_mem.dbg_adr[31:0]
+(16)dbgu32_mem.dbg_adr[31:0]
+(17)dbgu32_mem.dbg_adr[31:0]
+(18)dbgu32_mem.dbg_adr[31:0]
+(19)dbgu32_mem.dbg_adr[31:0]
+(20)dbgu32_mem.dbg_adr[31:0]
+(21)dbgu32_mem.dbg_adr[31:0]
+(22)dbgu32_mem.dbg_adr[31:0]
+(23)dbgu32_mem.dbg_adr[31:0]
+(24)dbgu32_mem.dbg_adr[31:0]
+(25)dbgu32_mem.dbg_adr[31:0]
+(26)dbgu32_mem.dbg_adr[31:0]
+(27)dbgu32_mem.dbg_adr[31:0]
+(28)dbgu32_mem.dbg_adr[31:0]
+(29)dbgu32_mem.dbg_adr[31:0]
+(30)dbgu32_mem.dbg_adr[31:0]
+(31)dbgu32_mem.dbg_adr[31:0]
+@1401201
+-group_end
+@22
+dbgu32_mem.dbg_do[31:0]
+@28
+dbgu32_mem.dbg_mem_op
+@22
+dbgu32_mem.dbg_wren[3:0]
+[pattern_trace] 1
+[pattern_trace] 0
