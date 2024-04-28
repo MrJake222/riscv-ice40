@@ -29,10 +29,23 @@ begin
 	send_byte(8'hAA);
 	
 	send_byte(8'h04);
-	send_byte(8'hDD);
-	send_byte(8'hCC);
-	send_byte(8'hBB);
+	send_byte(8'h80);
 	send_byte(8'hAA);
+	send_byte(8'h80);
+	send_byte(8'hAA);
+	
+	// set addr pointer
+	#300000
+	send_byte(8'h01);
+	send_byte(8'h00);
+	send_byte(8'h00);
+	send_byte(8'h02);
+	send_byte(8'h00);
+	
+	// read from memory
+	send_byte(8'h05);
+	#400000
+	send_byte(8'h05);
 end
 
 crv32 soc (
@@ -45,7 +58,7 @@ initial
 begin
 	$dumpfile(`VCD_OUTPUT);
 	$dumpvars(3, crv32_mem);
-	#(100000 * (2 + 12*2))
+	#(100000 * 40)
 	$finish;
 end
 

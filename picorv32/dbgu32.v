@@ -20,6 +20,7 @@ module dbgu32 #(
     input wire [31:0] data_bus_in,
     output reg RW,
     output wire mem_op,
+    input wire mem_rdy,
     
     
     output wire [2:0] dbg_rx_byte,
@@ -223,24 +224,26 @@ begin
 
 
 /* memory access */
-    if (mem_op)
+    if (mem_rdy)
+    begin
         adr_ptr <= adr_ptr + 4;
 
-    if (mem_write)
-    begin
-        mem_write <= 0;
-        ack();
-    end
-    
-    if (mem_read)
-    begin
-        mem_read <= 0;
-        tx_data[0] <= data_bus_in[ 7: 0];
-        tx_data[1] <= data_bus_in[15: 8];
-        tx_data[2] <= data_bus_in[23:16];
-        tx_data[3] <= data_bus_in[31:24];
-        transmit_request <= 1;
-    end
+		if (mem_write)
+		begin
+			mem_write <= 0;
+			ack();
+		end
+		
+		if (mem_read)
+		begin
+			mem_read <= 0;
+			tx_data[0] <= data_bus_in[ 7: 0];
+			tx_data[1] <= data_bus_in[15: 8];
+			tx_data[2] <= data_bus_in[23:16];
+			tx_data[3] <= data_bus_in[31:24];
+			transmit_request <= 1;
+		end
+	end
     
 /* cpu run/reset control */
     // disable reset if active

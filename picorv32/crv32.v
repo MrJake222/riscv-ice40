@@ -24,9 +24,6 @@ always @ (posedge clk)
 if (pll_lock)
     n_reset <= 1'b1 & RESET; // manual reset accepted
 
-// memory works on negedge
-wire mem_clk = ~clk;
-
 wire cpu_run;
 wire cpu_n_reset;
 wire [2:0] dbg_rx_byte;
@@ -38,6 +35,7 @@ wire [31:0] dbg_di;
 wire dbg_rw;
 wire [3:0] dbg_wren = {4{~dbg_rw}};
 wire dbg_mem_op;
+wire dbg_mem_rdy;
 
 dbgu32 #(
     .CLK_FREQ(1000000),
@@ -57,6 +55,7 @@ dbgu32 #(
 	.data_bus_in(dbg_di),
 	.RW(dbg_rw),
 	.mem_op(dbg_mem_op),
+	.mem_rdy(dbg_mem_rdy),
 	
 	.dbg_rx_byte(dbg_rx_byte),
 	.dbg_rx_instr_finish(dbg_rx_instr_finish)
@@ -70,7 +69,7 @@ wire [ 3:0] cpu_wren;
 wire        cpu_mem_op;
 
 wire mem_instr; // ignore
-wire cpu_mem_rdy = 1'b1;
+wire cpu_mem_rdy;
 
 picorv32 #(
          .STACKADDR(32'h10000), // behind end of ram, must be 16-byte aligned
@@ -87,13 +86,15 @@ picorv32 #(
     .clk         (cpu_clk    ),
     .resetn      (cpu_n_reset),
     .mem_valid   (cpu_mem_op ), // mem op 
-    .mem_instr   (mem_instr  ), // sync (ignore)
-    .mem_ready   (cpu_mem_rdy), // mem read finished
+    .mem_instr   (mem_instr  ), // mem opcode fetch
+    .mem_ready   (cpu_mem_rdy), // mem op finished
     .mem_addr    (cpu_adr    ),
     .mem_wdata   (cpu_do     ),
     .mem_wstrb   (cpu_wren   ), // write strobe (can write individual bytes)
     .mem_rdata   (cpu_di     )
 );
+
+
 
 // bus
 wire [31:0] adr      =  dbg_mem_op ? dbg_adr    :  cpu_adr;
@@ -107,7 +108,7 @@ wire        mem_op   =               dbg_mem_op | (cpu_mem_op & cpu_run);
 wire ram_sel = mem_op & (adr[17:16] == 2'b00);
 wire [31:0] ram_do;
 ram16Kx32 ram (
-    .clk(mem_clk),
+    .clk(clk),
     .cs(ram_sel),
     .wren(mem_wren),
     .adr(adr[15:2]),
@@ -119,30 +120,27 @@ ram16Kx32 ram (
 wire mmio_sel = mem_op & (adr[17:16] == 2'b01);
 wire [7:0] pwm_do [2:0];
 pwm pwm0 (
-    .sys_clk(mem_clk),
+    .sys_clk(clk),
     .cs(mmio_sel & adr[3:2] == 2'h0),
     .wren(|mem_wren),
     .di(mem_di[7:0]),
     .do(pwm_do[0]),
-    .out_clk(clk),
     .out(led_red)
 );
 pwm pwm1 (
-    .sys_clk(mem_clk),
+    .sys_clk(clk),
     .cs(mmio_sel & adr[3:2] == 2'h1),
     .wren(|mem_wren),
     .di(mem_di[7:0]),
     .do(pwm_do[1]),
-    .out_clk(clk),
     .out(led_green)
 );
 pwm pwm2 (
-    .sys_clk(mem_clk),
+    .sys_clk(clk),
     .cs(mmio_sel & adr[3:2] == 2'h2),
     .wren(|mem_wren),
     .di(mem_di[7:0]),
     .do(pwm_do[2]),
-    .out_clk(clk),
     .out(led_blue)
 );
 wire [31:0] mmio_do = pwm_do[0] | pwm_do[1] | pwm_do[2];
@@ -151,7 +149,7 @@ wire [31:0] mmio_do = pwm_do[0] | pwm_do[1] | pwm_do[2];
 wire rom_sel = mem_op & (adr[17:16] == 2'b10);
 wire [31:0] rom_do;
 ram16Kx32 rom (
-    .clk(mem_clk),
+    .clk(clk),
     .cs(rom_sel),
     .wren(mem_wren),
     .adr(adr[15:2]),
@@ -165,6 +163,23 @@ ram16Kx32 rom (
 wire [31:0] mem_do = ram_do | rom_do | mmio_do;
 assign dbg_di = mem_do;
 assign cpu_di = mem_do;
+
+
+// memory delays
+// r/w delay by one clock cycle
+// simplified, writing could be done in 1 cycle but it limits Fmax
+
+reg mem_rdy = 0;
+always @(posedge clk)
+	if (mem_rdy)
+		// one pulse
+		mem_rdy <= 0;
+	else
+		// only read
+		mem_rdy <= mem_op;
+
+assign dbg_mem_rdy = mem_rdy;
+assign cpu_mem_rdy = mem_rdy;
 
 
 // debug

@@ -5,23 +5,27 @@ module pwm #(
     input  wire cs,
     input  wire wren,
     input  wire [WIDTH-1:0] di,
-    output wire [WIDTH-1:0] do,
+    output reg  [WIDTH-1:0] do,
     
-    input wire out_clk,
-    output wire out
+    output reg  out
 );
 
 reg [WIDTH-1:0] cnt;
 reg [WIDTH-1:0] cmp;
 
 always @ (posedge sys_clk)
-    if (cs && wren)
-        cmp <= di;
+begin
+    if (cs)
+    begin
+        if (wren) 
+			cmp <= di;
+        do <= cmp;
+    end else
+		do <= 0;
 
-always @ (posedge out_clk)
+	// TODO implement clock divider here (eventually)
     cnt <= cnt + 1'b1;
-
-assign out = cnt < cmp ? 1'b1 : 1'b0;
-assign do = cs ? cmp : {WIDTH{1'b0}};
+	out <= cnt < cmp ? 1'b1 : 1'b0;
+end
 
 endmodule
