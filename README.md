@@ -11,6 +11,16 @@ Linker makes sure `_start` function (`j main` instruction) comes first at the st
 ## PicoRV32
 This survey uses [Yosys PicoRV32](https://github.com/YosysHQ/picorv32) implementation.
 
+### Make targets
+- `all` -- synthesize, place & route, pack to bin, display utilisation,
+- `sim` -- simulate all testbenches,
+- `verify` -- run Icarus Verilog to verify syntax ([recommended](https://github.com/YosysHQ/yosys/discussions/4347) instead of yosys),
+- `util` -- print resource consumption (done with `all`),
+- `cells` -- print per module cell usage,
+- `clean`
+- `prgflash` -- use `dfu-util` to upload code to nonvolatile flash storage ([pico-ice](https://github.com/tinyvision-ai-inc/pico-ice) board),
+- `prgcram` -- program configuration RAM (same as above, only volatile).
+
 ### Verilog code
 - `clk.v` -- hosts PLL, generates 1MHz clock for system,
 - `crv32.v` -- main SoC file,
