@@ -3,12 +3,14 @@ TLD = crv32
 VERILOG = $(TLD).v
 VERILOG += clk.v ram32.v dbgu32.v uart.v pwm.v
 VERILOG += picorv32-impl/picorv32.v
+VERILOG += uartblk.v
 # testbenches
 TB += tb_dbgu32_mem.v
 TB += tb_crv32_dbgu32_mem.v
 TB += tb_mem.v
 TB += tb_crv32_core.v
 TB += tb_crv32_core_stack.v
+TB += tb_uartblk.v
 # testbenches dependencies
 TBDEP += tb_dep.v
 TBDEP += tb_dep_core.v

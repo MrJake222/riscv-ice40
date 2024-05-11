@@ -1,0 +1,47 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Sat May 11 17:22:27 2024
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/picorv32/tb_uartblk.vcd"
+[dumpfile_mtime] "Sat May 11 16:34:37 2024"
+[dumpfile_size] 31679
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/picorv32/gtkw/tb_uartblk.gtkw"
+[timestart] 66370000
+[size] 1920 996
+[pos] -1 -1
+*-22.752430 88500000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_uartblk.
+[treeopen] tb_uartblk.soc.
+[sst_width] 209
+[signals_width] 166
+[sst_expanded] 1
+[sst_vpaned_height] 401
+@28
+tb_uartblk.soc.clk
+@22
+[color] 6
+tb_uartblk.soc.adr[31:0]
+[color] 6
+tb_uartblk.soc.mem_di[31:0]
+[color] 6
+tb_uartblk.soc.mem_do[31:0]
+@28
+[color] 6
+tb_uartblk.soc.mem_op
+tb_uartblk.soc.uart0.cs
+@22
+[color] 2
+tb_uartblk.soc.uart0.uart_tx_data[7:0]
+@28
+[color] 2
+tb_uartblk.soc.uart0.uart_tx_write
+[color] 2
+tb_uartblk.soc.uart0.tx
+[color] 2
+tb_uartblk.soc.uart0.uart_tx_finished
+[color] 2
+tb_uartblk.soc.uart0.tx_buf_empty
+tb_uartblk.soc.uart0.rx
+tb_uartblk.soc.uart0.rx_has_data
+[pattern_trace] 1
+[pattern_trace] 0

@@ -43,7 +43,7 @@ reg uart_tx_write;
 wire uart_tx_finished;
 reg [7:0] uart_tx_data;
 
-UART #(CLK_FREQ, UART_FREQ) uart0 (
+UART #(CLK_FREQ, UART_FREQ) uarthw (
     .clk(clk),
     .n_reset(n_reset),
     .rx(rx),

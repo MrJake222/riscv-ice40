@@ -1,0 +1,74 @@
+module uartblk #(
+    parameter CLK_FREQ = 12000000,
+    parameter UART_FREQ = 115200
+) (
+	input wire rx,
+	output wire tx,
+	
+    input  wire clk,
+    input  wire n_reset,
+    input  wire cs,
+    input  wire data_reg,
+    input  wire wren,
+    input  wire [7:0] di,
+    output reg  [7:0] do
+);
+
+wire uart_rx_ready;
+wire [7:0] uart_rx_data;
+
+reg uart_tx_write;
+wire uart_tx_finished;
+reg [7:0] uart_tx_data;
+
+UART #(CLK_FREQ, UART_FREQ) uarthw (
+    .clk(clk),
+    .n_reset(n_reset),
+    .rx(rx),
+    .tx(tx),
+    
+    .rx_ready(uart_rx_ready),
+    .rx_data(uart_rx_data),
+    
+    .tx_write(uart_tx_write),
+    .tx_finished(uart_tx_finished),
+    .tx_data(uart_tx_data)
+);
+
+reg tx_buf_empty = 1'b1;
+reg rx_has_data  = 1'b0;
+
+always @ (posedge clk)
+begin
+	if (uart_tx_finished)
+		tx_buf_empty <= 1;
+	if (uart_rx_ready)
+		rx_has_data <= 1;
+
+	if (cs)
+	begin
+		if (wren)
+		begin
+			uart_tx_data <= di[7:0];
+			uart_tx_write <= 1;
+			tx_buf_empty <= 0;
+		end
+		else if (data_reg)
+		begin
+			do[7:0] <= uart_rx_data;
+			rx_has_data <= 0;
+		end
+		else
+			do[7:0] <= {6'h00, tx_buf_empty, rx_has_data};
+			// [0] -- rx has data  (1 = can read)
+			// [1] -- tx buf empty (1 = can write)
+	end
+	else
+		// OR bus
+		do <= 0;
+	
+	if (uart_tx_write)
+		uart_tx_write <= 0;
+end
+
+endmodule

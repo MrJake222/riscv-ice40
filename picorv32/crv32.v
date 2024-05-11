@@ -1,8 +1,10 @@
 module crv32 (
 	input wire CLK_12M,
 	input wire RESET,
-	output wire PICO_RX,
-	input wire PICO_TX,
+	output wire PICO_UART0_RX,
+	input  wire PICO_UART0_TX,
+	output wire PICO_UART1_RX,
+	input  wire PICO_UART1_TX,
 	
 	output led_blue,
 	output led_green,
@@ -44,8 +46,8 @@ dbgu32 #(
 	.clk(clk),
 	.n_reset(n_reset),
 	
-	.rx(PICO_TX),
-	.tx(PICO_RX),
+	.rx(PICO_UART0_TX),
+	.tx(PICO_UART0_RX),
 	
 	.cpu_run(cpu_run),
 	.cpu_n_reset(cpu_n_reset),
@@ -119,9 +121,10 @@ ram16Kx32 ram (
 // mmio 10000 - 1FFFF (16K)
 wire mmio_sel = mem_op & (adr[17:16] == 2'b01);
 wire [7:0] pwm_do [2:0];
+wire [7:0] uart_do [0:0];
 pwm pwm0 (
     .sys_clk(clk),
-    .cs(mmio_sel & adr[3:2] == 2'h0),
+    .cs(mmio_sel & adr[4:2] == 3'b000),
     .wren(|mem_wren),
     .di(mem_di[7:0]),
     .do(pwm_do[0]),
@@ -129,7 +132,7 @@ pwm pwm0 (
 );
 pwm pwm1 (
     .sys_clk(clk),
-    .cs(mmio_sel & adr[3:2] == 2'h1),
+    .cs(mmio_sel & adr[4:2] == 3'b001),
     .wren(|mem_wren),
     .di(mem_di[7:0]),
     .do(pwm_do[1]),
@@ -137,13 +140,28 @@ pwm pwm1 (
 );
 pwm pwm2 (
     .sys_clk(clk),
-    .cs(mmio_sel & adr[3:2] == 2'h2),
+    .cs(mmio_sel & adr[4:2] == 3'b010),
     .wren(|mem_wren),
     .di(mem_di[7:0]),
     .do(pwm_do[2]),
     .out(led_blue)
 );
-wire [31:0] mmio_do = pwm_do[0] | pwm_do[1] | pwm_do[2];
+uartblk #(
+    .CLK_FREQ(1000000),
+    .UART_FREQ(115200)
+) uart0 (
+	.rx(PICO_UART1_TX),
+	.tx(PICO_UART1_RX),
+
+	.clk(clk),
+	.n_reset(n_reset),
+	.cs(mmio_sel & adr[4:3] == 2'b10),
+	.data_reg(adr[2] == 1'b0),
+	.wren(|mem_wren),
+	.di(mem_di[7:0]),
+	.do(uart_do[0])
+);
+wire [31:0] mmio_do = pwm_do[0] | pwm_do[1] | pwm_do[2] | uart_do[0];
 
 // rom 20000 - 2FFFF (16K)
 wire rom_sel = mem_op & (adr[17:16] == 2'b10);
@@ -183,8 +201,10 @@ assign cpu_mem_rdy = mem_rdy;
 
 
 // debug
-//assign A[0] = PICO_RX;
-//assign A[1] = PICO_TX;
+//assign A[0] = PICO_UART0_RX;
+//assign A[1] = PICO_UART0_TX;
+//assign A[2] = PICO_UART1_RX;
+//assign A[3] = PICO_UART1_TX;
 //assign A[2] = clk;
 //assign A[4:3] = adr[3:2];
 //assign A[5] = cpu_clk;

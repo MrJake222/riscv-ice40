@@ -12,8 +12,8 @@ begin
 	
 	// disable cpu clk
 	// (also test without disabling)
-	send_byte(8'h22);
-	send_byte(8'h00);
+	//send_byte(8'h22);
+	//send_byte(8'h00);
 	
 	// set addr pointer
 	send_byte(8'h01);
@@ -51,8 +51,8 @@ end
 
 crv32 soc (
 	.RESET(n_reset),
-	.PICO_RX(rx),
-	.PICO_TX(tx)
+	.PICO_UART0_RX(rx),
+	.PICO_UART0_TX(tx)
 );
 
 initial

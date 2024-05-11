@@ -1,9 +1,7 @@
 #define RED		0
 #define GREEN	4
 #define BLUE	8
-
 #define LED_BASE 	0x10000
-
 #define LED_SET(id, val) (*(volatile unsigned int*)(LED_BASE + id)) = val;
 
 void led_set_gamma(int id, int i) {
@@ -11,6 +9,8 @@ void led_set_gamma(int id, int i) {
 }
 
 void delay_ms(int x) {
+	// 125 = 1MHz * 1ms / (2*4)
+	// main loop is 2 instruction each 4 cycles
 	int i = 125 * x;
 	while(i--) asm("");
 }
