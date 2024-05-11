@@ -14,12 +14,14 @@ module crv32 (
 );
 
 wire pll_lock;
-wire clk;
+wire clk_1M;
 clk12toX clkm (
     .clk_12M(CLK_12M),
     .lock(pll_lock),
-    .clk_1M(clk)
+    .clk_1M(clk_1M)
 );
+
+wire clk = clk_1M;
 
 reg n_reset = 1'b0;
 always @ (posedge clk)
@@ -122,6 +124,7 @@ ram16Kx32 ram (
 wire mmio_sel = mem_op & (adr[17:16] == 2'b01);
 wire [7:0] pwm_do [2:0];
 wire [7:0] uart_do [0:0];
+wire [31:0] timer_do [0:0];
 pwm pwm0 (
     .sys_clk(clk),
     .cs(mmio_sel & adr[4:2] == 3'b000),
@@ -161,7 +164,13 @@ uartblk #(
 	.di(mem_di[7:0]),
 	.do(uart_do[0])
 );
-wire [31:0] mmio_do = pwm_do[0] | pwm_do[1] | pwm_do[2] | uart_do[0];
+timer timer0 (
+	.clk_1M(clk_1M),
+	.clk_sys(clk),
+	.cs(mmio_sel & adr[4:2] == 3'b110),
+	.do(timer_do[0])
+);
+wire [31:0] mmio_do = pwm_do[0] | pwm_do[1] | pwm_do[2] | uart_do[0] | timer_do[0];
 
 // rom 20000 - 2FFFF (16K)
 wire rom_sel = mem_op & (adr[17:16] == 2'b10);
@@ -201,10 +210,10 @@ assign cpu_mem_rdy = mem_rdy;
 
 
 // debug
-//assign A[0] = PICO_UART0_RX;
-//assign A[1] = PICO_UART0_TX;
-//assign A[2] = PICO_UART1_RX;
-//assign A[3] = PICO_UART1_TX;
+assign A[0] = PICO_UART0_RX;
+assign A[1] = PICO_UART0_TX;
+assign A[2] = PICO_UART1_RX;
+assign A[3] = PICO_UART1_TX;
 //assign A[2] = clk;
 //assign A[4:3] = adr[3:2];
 //assign A[5] = cpu_clk;

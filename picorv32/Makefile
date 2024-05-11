@@ -3,7 +3,7 @@ TLD = crv32
 VERILOG = $(TLD).v
 VERILOG += clk.v ram32.v dbgu32.v uart.v pwm.v
 VERILOG += picorv32-impl/picorv32.v
-VERILOG += uartblk.v
+VERILOG += uartblk.v timer.v
 # testbenches
 TB += tb_dbgu32_mem.v
 TB += tb_crv32_dbgu32_mem.v

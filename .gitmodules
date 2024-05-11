@@ -1,3 +1,6 @@
 [submodule "picorv32/picorv32-impl"]
 	path = picorv32/picorv32-impl
 	url = https://github.com/YosysHQ/picorv32.git
+[submodule "c/printf"]
+	path = c/printf
+	url = https://github.com/mpaland/printf.git

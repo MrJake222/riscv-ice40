@@ -1,16 +1,25 @@
-all: led.hex uart.hex
+all: led.hex uart.hex time.hex delay.hex
 
-%.hex: %.c
-	riscv32-unknown-elf-gcc -c -O1 $< -o $<.o
+CFLAGS = -O1
 
-	riscv32-unknown-elf-ld	\
-		-T linker.ld	\
-		$<.o			\
-		-o $<.elf	\
-		/opt/riscv32i/lib/gcc/riscv32-unknown-elf/13.2.0/libgcc.a
+# override which binaries need printf
+time.elf: time.o printf.o
 
-	riscv32-unknown-elf-objcopy -O ihex $<.elf $@
-	riscv32-unknown-elf-objdump -S $<.elf
+%.hex: %.elf
+	riscv32-unknown-elf-objcopy -O ihex $< $@
+	#riscv32-unknown-elf-objdump -S $<
+
+%.elf: %.o
+	riscv32-unknown-elf-ld -T linker.ld -o $@ $^	\
+		-L/opt/riscv32i/lib/gcc/riscv32-unknown-elf/13.2.0 -lgcc
+
+%.o: %.c
+	riscv32-unknown-elf-gcc -c $(CFLAGS) $< -o $@
+
+printf.o: printf/printf.c
+	riscv32-unknown-elf-gcc -c $(CFLAGS) $< -o $@	\
+		-D PRINTF_DISABLE_SUPPORT_FLOAT				\
+		-D PRINTF_DISABLE_SUPPORT_LONG_LONG
 
 clean:
 	rm -f *.o *.elf *.hex
