@@ -224,7 +224,7 @@ begin
 
 
 /* memory access */
-    if (mem_rdy)
+    if (mem_op & mem_rdy)
     begin
         adr_ptr <= adr_ptr + 4;
 

@@ -11,6 +11,7 @@ begin
 	#1735
 	
 	// disable cpu clk
+	// (also test without disabling)
 	send_byte(8'h22);
 	send_byte(8'h00);
 	
