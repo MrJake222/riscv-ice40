@@ -105,6 +105,7 @@ wire [31:0] adr      =  dbg_mem_op ? dbg_adr    :  cpu_adr;
 wire [31:0] mem_di   =  dbg_mem_op ? dbg_do     :  cpu_do;
 wire [ 3:0] mem_wren =  dbg_mem_op ? dbg_wren   :  cpu_wren;
 wire        mem_op   =               dbg_mem_op | (cpu_mem_op & cpu_run);
+// wire [ 3:0] mem_ro_wren =  dbg_mem_op ? dbg_wren   :  4'b0;
 
 
 // memory
@@ -178,6 +179,7 @@ wire [31:0] rom_do;
 ram16Kx32 rom (
     .clk(clk),
     .cs(rom_sel),
+	 // todo: doesn't work when set to mem_ro_wren
     .wren(mem_wren),
     .adr(adr[15:2]),
     .di(mem_di),

@@ -1,10 +1,10 @@
-// TODO init sections to 0
-extern int heap_memory_used;
+extern unsigned int _bss_start, _bss_end;
 
 __attribute__ ((section(".boot")))
 __attribute__ ((naked))
 void _start(void) {
-	heap_memory_used = 0;
+	// clear bss
+	for (unsigned int* bss=&_bss_start; bss<&_bss_end; *bss++ = 0);
 	asm("j main");
 }
 
@@ -36,7 +36,10 @@ long end_time;
 #include <stdint.h>
 
 int main() {
-	const int runs = 760;
+	for (unsigned int* bss=&_bss_start; bss<&_bss_end; bss+=0x100)
+		printf("bss %p: %d\n", bss, *bss);
+	
+	const int runs = 612 * 5;
 	
 	dhrystone(runs);
 	
@@ -56,7 +59,7 @@ int main() {
 	printf("cpi:  %llu.%03llu\n", cpmi/1000, cpmi%1000);
 	
 	const uint32_t dhpms = ((uint64_t) runs) * 1e9 / time_us;
-	printf("dhrystones per second: %u.%03u\n", dhpms/1000, dhpms%1000);
+	printf("dhrystones per second: %u\n", dhpms/1000);
 	
 	const uint32_t dmmips = dhpms / 1757;
 	printf("dmips: %d.%03d\n", dmmips/1000, dmmips%1000);

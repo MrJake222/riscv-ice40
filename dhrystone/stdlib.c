@@ -21,15 +21,6 @@ char *malloc(int size)
 	return p;
 }
 
-void *memcpy(void *aa, const void *bb, long n)
-{
-	// printf("**MEMCPY**\n");
-	char *a = aa;
-	const char *b = bb;
-	while (n--) *(a++) = *(b++);
-	return aa;
-}
-
 char *strcpy(char* dst, const char* src)
 {
 	char *r = dst;

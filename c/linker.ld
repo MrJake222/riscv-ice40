@@ -9,4 +9,11 @@ SECTIONS {
 		*(.boot)
 		*(.text)
 	} > rom
+	
+	.bss : {
+		_bss_start = ABSOLUTE(.);
+		*(.bss)
+		*(.sbss)
+		_bss_end = ABSOLUTE(.);
+	} > ram
 }

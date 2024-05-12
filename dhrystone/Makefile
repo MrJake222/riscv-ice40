@@ -1,6 +1,6 @@
 all: dhrystone.hex
 
-CFLAGS = -O3 -D printf=printf_
+CFLAGS = -O3 -D printf=printf_ -ffreestanding -nostdlib
 
 %.hex: %.elf
 	riscv32-unknown-elf-objcopy -O ihex $< $@

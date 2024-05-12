@@ -1,9 +1,12 @@
-all: led.hex uart.hex time.hex delay.hex
+all: led.hex uart.hex time.hex delay.hex ram.hex
 
 CFLAGS = -O1
 
 # override which binaries need printf
 time.elf: time.o printf.o
+
+# don't remove elf
+.PRECIOUS: %.elf
 
 %.hex: %.elf
 	riscv32-unknown-elf-objcopy -O ihex $< $@
