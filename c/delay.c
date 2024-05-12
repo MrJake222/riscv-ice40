@@ -6,7 +6,7 @@
 
 void delay_ms(int x) {
 	// tuned manually
-	int i = 91 * x;
+	int i = 91 * x * 24;
 	while(i--) asm("");
 }
 
@@ -18,6 +18,7 @@ void uart_send(char data) {
 int main(void) {
 	
 	// send chars repeatedly
+	//for (int i=0; i<100; i++) {
 	while(1) {
 		uart_send('x');
 		delay_ms(100);

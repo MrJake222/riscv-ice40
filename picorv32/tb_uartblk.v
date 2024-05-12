@@ -22,7 +22,7 @@ begin
 	force soc.dbg_wren = 4'h0;
 	force soc.dbg_adr = 32'h10014;
 	
-	#100000;
+	#200000;
 	
 	// read received data
 	force soc.dbg_mem_op = 1'b1;
@@ -51,8 +51,8 @@ crv32 soc (
 initial
 begin
 	$dumpfile(`VCD_OUTPUT);
-	$dumpvars(3, tb_uartblk);
-	#(120000)
+	$dumpvars(4, tb_uartblk);
+	#(240000)
 	$finish;
 end
 

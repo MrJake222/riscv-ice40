@@ -13,23 +13,25 @@ module crv32 (
     output wire [7:0] A
 );
 
-wire pll_lock;
-wire clk_1M;
+localparam F_CLK = 24_000_000;
+localparam  BAUD =  1_000_000;//  115_200;
+
+wire clk;
+wire boot_n_reset;
 clk12toX clkm (
-    .clk_12M(CLK_12M),
-    .lock(pll_lock),
-    .clk_1M(clk_1M)
+    .clk_in_12M(CLK_12M),
+    .clk_24M(clk),
+    .n_reset(boot_n_reset)
 );
 
-wire clk = clk_1M;
-
-reg n_reset = 1'b0;
+reg n_reset;
 always @ (posedge clk)
-if (pll_lock)
-    n_reset <= 1'b1 & RESET; // manual reset accepted
+    n_reset <= boot_n_reset & RESET; // manual reset accepted
 
 wire cpu_run;
 wire cpu_n_reset;
+wire dbg_rx_enable;
+wire dbg_tx_enable;
 wire [2:0] dbg_rx_byte;
 wire dbg_rx_instr_finish;
 
@@ -42,8 +44,8 @@ wire dbg_mem_op;
 wire dbg_mem_rdy;
 
 dbgu32 #(
-    .CLK_FREQ(1000000),
-    .UART_FREQ(115200)
+    .CLK_FREQ(F_CLK),
+    .UART_FREQ(BAUD)
 ) dbgu0 (
 	.clk(clk),
 	.n_reset(n_reset),
@@ -61,6 +63,8 @@ dbgu32 #(
 	.mem_op(dbg_mem_op),
 	.mem_rdy(dbg_mem_rdy),
 	
+	.dbg_rx_enable(dbg_rx_enable),
+	.dbg_tx_enable(dbg_tx_enable),
 	.dbg_rx_byte(dbg_rx_byte),
 	.dbg_rx_instr_finish(dbg_rx_instr_finish)
 );
@@ -78,14 +82,18 @@ wire cpu_mem_rdy;
 picorv32 #(
          .STACKADDR(32'h10000), // behind end of ram, must be 16-byte aligned
     .PROGADDR_RESET(32'h20000),
-    .BARREL_SHIFTER(0),
-    .COMPRESSED_ISA(0),
     .ENABLE_COUNTERS(1),
+
+	// minimal params
+	.BARREL_SHIFTER(0),
     .ENABLE_MUL(0),
-    .ENABLE_DIV(0),
-    .ENABLE_FAST_MUL(0),
-    .ENABLE_IRQ(0),
-    .ENABLE_IRQ_QREGS(0)
+    .ENABLE_DIV(0)
+
+	// dhrystone benchmark params matching with upstream
+	// (except FAST_MUL, it doesn't fit on iCE40)
+    /*.BARREL_SHIFTER(1),
+    .ENABLE_MUL(1),
+    .ENABLE_DIV(1)*/
 ) cpu (
     .clk         (cpu_clk    ),
     .resetn      (cpu_n_reset),
@@ -150,9 +158,11 @@ pwm pwm2 (
     .do(pwm_do[2]),
     .out(led_blue)
 );
+wire uart0_rx_enable;
+wire uart0_tx_enable;
 uartblk #(
-    .CLK_FREQ(1000000),
-    .UART_FREQ(115200)
+    .CLK_FREQ(F_CLK),
+    .UART_FREQ(BAUD)
 ) uart0 (
 	.rx(PICO_UART1_TX),
 	.tx(PICO_UART1_RX),
@@ -163,11 +173,15 @@ uartblk #(
 	.data_reg(adr[2] == 1'b0),
 	.wren(|mem_wren),
 	.di(mem_di[7:0]),
-	.do(uart_do[0])
+	.do(uart_do[0]),
+	
+	.dbg_rx_enable(uart0_rx_enable),
+	.dbg_tx_enable(uart0_tx_enable)
 );
-timer timer0 (
-	.clk_1M(clk_1M),
-	.clk_sys(clk),
+timer #(
+	.CLK_DIV(F_CLK / 1_000_000)
+) timer0 (
+	.clk(clk),
 	.cs(mmio_sel & adr[4:2] == 3'b110),
 	.do(timer_do[0])
 );
@@ -216,15 +230,7 @@ assign A[0] = PICO_UART0_RX;
 assign A[1] = PICO_UART0_TX;
 assign A[2] = PICO_UART1_RX;
 assign A[3] = PICO_UART1_TX;
-//assign A[2] = clk;
-//assign A[4:3] = adr[3:2];
-//assign A[5] = cpu_clk;
-//assign A[6] = cpu_n_reset;
-//assign A[7] = cpu_mem_op;
-//assign A[3] = dbg_rx_byte[0];
-//assign A[4] = dbg_rx_byte[1];
-//assign A[5] = dbg_rx_byte[2];
-//assign A[6] = ram_do[0] | ram_do[16] | rom_do[0] | rom_do[16];
-//assign A[7] = dbg_di2[0] | dbg_di2[16];
+assign A[4] = uart0_tx_enable;
+assign A[5] = n_reset;
 
 endmodule

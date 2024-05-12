@@ -11,7 +11,14 @@ module uartblk #(
     input  wire data_reg,
     input  wire wren,
     input  wire [7:0] di,
-    output reg  [7:0] do
+    output reg  [7:0] do,
+    
+    
+    output wire dbg_rx_enable,
+    output wire dbg_tx_enable,
+    
+    output wire dbg_tx_buf_empty,
+    output wire dbg_rx_has_data
 );
 
 wire uart_rx_ready;
@@ -32,7 +39,10 @@ UART #(CLK_FREQ, UART_FREQ) uarthw (
     
     .tx_write(uart_tx_write),
     .tx_finished(uart_tx_finished),
-    .tx_data(uart_tx_data)
+    .tx_data(uart_tx_data),
+    
+    .dbg_rx_enable(dbg_rx_enable),
+    .dbg_tx_enable(dbg_tx_enable)
 );
 
 reg tx_buf_empty = 1'b1;
@@ -70,5 +80,8 @@ begin
 	if (uart_tx_write)
 		uart_tx_write <= 0;
 end
+
+assign dbg_tx_buf_empty = tx_buf_empty;
+assign dbg_rx_has_data  = rx_has_data;
 
 endmodule

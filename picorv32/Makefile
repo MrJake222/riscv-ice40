@@ -36,7 +36,7 @@ SYNTH_OPTS	= -q
 # ---
 # -q is quiet
 PNR_EXEC	= nextpnr-ice40
-PNR_OPTS	= --up5k --package sg48
+PNR_OPTS	= --up5k --package sg48 --freq 24
 # ---
 PACK_EXEC	= icepack
 PACK_OPTS	= 

@@ -11,7 +11,7 @@ module pwm #(
 );
 
 reg [WIDTH-1:0] cnt;
-reg [WIDTH-1:0] cmp;
+reg [WIDTH-1:0] cmp = {WIDTH{1'b1}};
 
 always @ (posedge sys_clk)
 begin

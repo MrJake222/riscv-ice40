@@ -1,5 +1,6 @@
 # C code
 *.o
+*.d
 *.elf
 *.hex
 

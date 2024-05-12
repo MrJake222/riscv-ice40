@@ -23,6 +23,8 @@ module dbgu32 #(
     input wire mem_rdy,
     
     
+    output wire dbg_rx_enable,
+    output wire dbg_tx_enable,
     output wire [2:0] dbg_rx_byte,
     output wire dbg_rx_instr_finish
 );
@@ -54,7 +56,10 @@ UART #(CLK_FREQ, UART_FREQ) uarthw (
     
     .tx_write(uart_tx_write),
     .tx_finished(uart_tx_finished),
-    .tx_data(uart_tx_data)
+    .tx_data(uart_tx_data),
+    
+    .dbg_rx_enable(dbg_rx_enable),
+    .dbg_tx_enable(dbg_tx_enable)
 );
 
 reg [2:0] rx_byte;       // 0-4; no of byte received

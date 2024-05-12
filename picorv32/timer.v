@@ -1,20 +1,27 @@
-module timer (
-    input  wire clk_1M,
-    
-    input  wire clk_sys,
+module timer #(
+	parameter CLK_DIV = 12
+) (
+    input  wire clk,
     input  wire cs,
     output reg  [31:0] do
 );
 
+localparam DIV_WIDTH = $clog2(CLK_DIV);
+
+reg [DIV_WIDTH:0] div = 0;
 reg [31:0] timeval = 0;
 
-always @ (posedge clk_1M)
+always @ (posedge clk)
 begin
-	timeval <= timeval + 1;
-end
+	if (div == CLK_DIV-1)
+	begin
+		div <= 0;
+		timeval <= timeval + 1;
+	end
+	else
+		div <= div + 1;
 
-always @ (posedge clk_sys)
-begin
+
 	if (cs)
 		do <= timeval;
 	else

@@ -1,17 +1,18 @@
 [*]
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
-[*] Sat May 11 17:22:27 2024
+[*] Sun May 12 21:15:21 2024
 [*]
 [dumpfile] "/home/norbert/Projects/pico-ice/risc-v/picorv32/tb_uartblk.vcd"
-[dumpfile_mtime] "Sat May 11 16:34:37 2024"
-[dumpfile_size] 31679
+[dumpfile_mtime] "Sun May 12 21:14:49 2024"
+[dumpfile_size] 55935
 [savefile] "/home/norbert/Projects/pico-ice/risc-v/picorv32/gtkw/tb_uartblk.gtkw"
-[timestart] 66370000
+[timestart] 0
 [size] 1920 996
 [pos] -1 -1
-*-22.752430 88500000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-25.152430 139100000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] tb_uartblk.
 [treeopen] tb_uartblk.soc.
+[treeopen] tb_uartblk.soc.uart0.
 [sst_width] 209
 [signals_width] 166
 [sst_expanded] 1

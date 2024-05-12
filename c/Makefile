@@ -3,7 +3,7 @@ all: led.hex uart.hex time.hex delay.hex ram.hex
 CFLAGS = -O1
 
 # override which binaries need printf
-time.elf: time.o printf.o
+# time.elf: time.o printf.o
 
 # don't remove elf
 .PRECIOUS: %.elf
@@ -15,6 +15,7 @@ time.elf: time.o printf.o
 %.elf: %.o
 	riscv32-unknown-elf-ld -T linker.ld -o $@ $^	\
 		-L/opt/riscv32i/lib/gcc/riscv32-unknown-elf/13.2.0 -lgcc
+	@chmod -x $@
 
 %.o: %.c
 	riscv32-unknown-elf-gcc -c $(CFLAGS) $< -o $@

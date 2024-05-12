@@ -7,23 +7,19 @@
 #define TIMER_BASE 	0x10018
 #define TIME (*(volatile unsigned int*)(TIMER_BASE))
 
-
-#include "printf/printf.h"
-void _putchar(char data) {
+void uart_send(char data) {
 	while (!UART_TX_EMPTY);
 	UART_DATA = data;
 }
 
-void delay_ms(int x) {
-	// tuned manually
-	int i = 91 * x;
-	while(i--) asm("");
-}
-
 int main(void) {
+	int t0 = 0;
+	
 	while(1) {
-		printf("%d\n", TIME);
-		delay_ms(500);
+		while (TIME - t0 < 100000);
+		t0 = TIME;
+		
+		uart_send('x');
 	}
 }
 

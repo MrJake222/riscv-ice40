@@ -19,6 +19,9 @@ void _start(void) {
 
 #include "printf/printf.h"
 void _putchar(char data) {
+	if (data == '\n')
+		_putchar('\r');
+	
 	while (!UART_TX_EMPTY);
 	UART_DATA = data;
 }
@@ -35,11 +38,21 @@ long end_time;
 
 #include <stdint.h>
 
+int round(int nom, int denom) {
+	int res_x10 = nom / (denom / 10);
+	int res = res_x10 / 10;
+	
+	if (res_x10 % 10 >= 5)
+		return res + 1;
+	
+	return res;
+}
+
 int main() {
 	for (unsigned int* bss=&_bss_start; bss<&_bss_end; bss+=0x100)
 		printf("bss %p: %d\n", bss, *bss);
 	
-	const int runs = 612 * 5;
+	const int runs = 14500 * 5;
 	
 	dhrystone(runs);
 	
@@ -56,13 +69,17 @@ int main() {
 	// "m" in variable name means mili (10^-3)
 	
 	const uint64_t cpmi = ((uint64_t) cycles) * 1000 / instrs;
-	printf("cpi:  %llu.%03llu\n", cpmi/1000, cpmi%1000);
+	printf("cpi: %llu.%03llu\n", cpmi/1000, cpmi%1000);
 	
 	const uint32_t dhpms = ((uint64_t) runs) * 1e9 / time_us;
 	printf("dhrystones per second: %u\n", dhpms/1000);
 	
 	const uint32_t dmmips = dhpms / 1757;
 	printf("dmips: %d.%03d\n", dmmips/1000, dmmips%1000);
+	
+	const int f_clk_mhz = round(cycles, time_us);
+	const int dmmips_per_mhz = dmmips / f_clk_mhz;
+	printf("dmips / MHz: %d.%03d  (%d MHz)\n", dmmips_per_mhz/1000, dmmips_per_mhz%1000, f_clk_mhz);
 }
 
 long cycle() {

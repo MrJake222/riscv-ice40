@@ -18,9 +18,9 @@ module UART #(
     input wire [7:0] tx_data,
     
     
-    
-    output reg dbg_rx_sample,
-    output wire dbg_rx_enable
+	output reg dbg_rx_sample,
+	output wire dbg_rx_enable,
+    output wire dbg_tx_enable
 );
 
 // round to nearest
@@ -39,10 +39,6 @@ end*/
 reg [CNT_WIDTH-1:0] rx_cnt;
 reg rx_enable;
 reg [3:0] rx_bit;
-
-// debug
-// dbg_rx_sample declared as output register
-assign dbg_rx_enable = rx_enable;
 
 always @ (posedge clk)
 begin
@@ -171,5 +167,8 @@ begin
             tx_finished <= 0;
     end
 end
+
+assign dbg_rx_enable = rx_enable;
+assign dbg_tx_enable = tx_enable;
 
 endmodule
