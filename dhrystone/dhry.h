@@ -345,22 +345,13 @@
  ***************************************************************************
  */
 
+// start benchmark 
+void dhrystone(int runs);
+// you need to define this in your code
+extern void dhrystone_timer_start();
+extern void dhrystone_timer_end();
+
 /* Compiler and system dependent definitions: */
-
-#ifndef TIME
-#define TIMES
-#endif
-                /* Use times(2) time function unless    */
-                /* explicitly defined otherwise         */
-
-#ifdef TIMES
-#include <sys/types.h>
-#include <sys/times.h>
-                /* for "times" */
-#endif
-
-#define Mic_secs_Per_Second     1000000.0
-                /* Berkeley UNIX C returns process times in seconds/HZ */
 
 #ifdef  NOSTRUCTASSIGN
 #define structassign(d, s)      memcpy(&(d), &(s), sizeof(d))
@@ -382,14 +373,6 @@
         /* for boolean and enumeration types in Ada, Pascal */
 
 /* General definitions: */
-
-#ifdef USE_MYSTDLIB
-extern char *strcpy(char *dest, const char *src);
-extern int strcmp(const char *s1, const char *s2);
-#else
-#include <stdio.h>
-                /* for strcpy, strcmp */
-#endif
 
 #define Null 0
                 /* Value of a Null pointer */
