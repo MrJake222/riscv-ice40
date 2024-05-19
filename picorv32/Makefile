@@ -2,7 +2,7 @@ TLD = crv32
 # input files
 VERILOG = $(TLD).v
 VERILOG += clk.v ram32.v dbgu32.v uart.v pwm.v
-VERILOG += picorv32-impl/picorv32.v
+VERILOG += picorv32.v
 VERILOG += uartblk.v timer.v
 # testbenches
 TB += tb_dbgu32_mem.v
@@ -47,7 +47,9 @@ PRG_EXEC	= dfu-util
 PRG_OPTS	= -d 1209:b1c0
 PRG_CRAM	= -a "iCE40 DFU (CRAM)"
 PRG_FLASH	= -a "iCE40 DFU (Flash)"
-
+# ---
+PY_UTIL     = ../util.py
+PY_CELLS    = ../cells.py
 
 # verify icarus verilog options
 IV_VERILOG = /usr/share/yosys/ice40/cells_sim.v
@@ -98,12 +100,12 @@ verify: $(VERILOG)
 	
 util: $(ASC)
 	@echo -e "\n utilization:"
-	@./util.py $(UTIL)
+	@$(PY_UTIL) $(UTIL)
 	@echo
 	
 cells: $(JSON)
 	@echo -e "\n cell usage:"
-	@./cells.py $(JSON) $(TLD)
+	@$(PY_CELLS) $(JSON) $(TLD)
 	@echo
 	
 clean:

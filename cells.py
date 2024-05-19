@@ -5,8 +5,21 @@ MAXLUT = 5280
 import sys, json
 from collections import defaultdict
 
-J = json.load(open(sys.argv[1]))
-mods = J["modules"][sys.argv[2]]["cells"]
+if len(sys.argv) == 3:
+	filename = sys.argv[1]
+	tld = sys.argv[2]
+	
+elif len(sys.argv) == 2:
+	filename = sys.argv[1]
+	tld = filename.split(".")[0]
+	
+else:
+	print(f"Usage: {sys.argv[0]} <tld.hw.json> [tld name]")
+	exit(1)
+
+J = json.load(open(filename))
+#print(J["modules"].keys())
+mods = J["modules"][tld]["cells"]
 
 cnt = defaultdict(lambda: 0)
 cnt2 = defaultdict(lambda: 0)
@@ -39,4 +52,5 @@ print_sorted(cnt2)
 
 print()
 print()
-print(f"total={sum(cnt.values())}")
+total = sum(cnt.values())
+print(f"total {total} ({total / MAXLUT * 100:.0f}%)")
