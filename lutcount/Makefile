@@ -1,6 +1,7 @@
 V_CONF += picorv32_default.cells picorv32_muldiv.cells picorv32_muldivfast.cells
+V_CONF += vexriscv_default.cells
 
-V_IMPL = picorv32.v
+V_IMPL = picorv32.v VexRiscv.v
 
 all: $(V_CONF)
 

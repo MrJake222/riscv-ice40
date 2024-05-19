@@ -1,3 +1,5 @@
- picorv32_default: total 1984 (38%)
+picorv32_default: total 1984 (38%)
 picorv32_muldiv: total 3422 (65%)
 picorv32_muldivfast: total 6486 (123%)
+
+vexriscv_default: total 1325 (25%) small and productive

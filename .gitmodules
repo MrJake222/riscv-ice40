@@ -4,3 +4,6 @@
 [submodule "c/printf"]
 	path = c/printf
 	url = https://github.com/mpaland/printf.git
+[submodule "vexriscv-impl"]
+	path = vexriscv-impl
+	url = https://github.com/SpinalHDL/VexRiscv.git
