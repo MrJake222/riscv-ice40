@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+MAXLUT = 5280
+
 import sys, json
 from collections import defaultdict
 
@@ -13,27 +15,28 @@ for x in mods:
     if "LUT" in x:
         # split and strip direct LUT name
         idx = x.index("_SB_")
-        modname = x[:idx]
-        cnt[modname] += 1
+        signame = x[:idx]
+        cnt[signame] += 1
         
-        modname = x.split(".")[:-1]
-        modname = ".".join(modname)
+        modname = signame.split(".")[0]
         cnt2[modname] += 1
 
 def print_sorted(D):
     keys = list(D.keys())
     keys.sort(key=lambda x: D[x])
+    keylen = max(map(len, keys))
     for k in keys:
-        print(f"{k:25} {D[k]:6}")
+        p = f"({D[k] / MAXLUT * 100:.0f}%)"
+        print(f"\t {k:{keylen}}   {D[k]:4}  {p:>5}")
 
 print()
-print("1")
+print("signal LUT usage")
 print_sorted(cnt)
 
 print()
-print("2")
+print("second-level modules LUT usage")
 print_sorted(cnt2)
 
-print()    
-print("total")    
-print(sum(cnt.values()))
+print()
+print()
+print(f"total={sum(cnt.values())}")

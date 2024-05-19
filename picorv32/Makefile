@@ -96,12 +96,12 @@ $(UF2): $(BIN)
 verify: $(VERILOG)
 	iverilog -o /dev/null $(IV_OPTS) $(IV_VERILOG) $(VERILOG)
 	
-util:
+util: $(ASC)
 	@echo -e "\n utilization:"
 	@./util.py $(UTIL)
 	@echo
 	
-cells:
+cells: $(JSON)
 	@echo -e "\n cell usage:"
 	@./cells.py $(JSON) $(TLD)
 	@echo
