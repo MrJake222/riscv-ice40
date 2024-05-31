@@ -1,4 +1,4 @@
-module picorv32_muldivfast (
+module picorv32_tb (
 	input wire clk,
 	input wire reset,
 	

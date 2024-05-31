@@ -1,4 +1,4 @@
-module picorv32_default (
+module picorv32_tb (
 	input wire clk,
 	input wire reset,
 	

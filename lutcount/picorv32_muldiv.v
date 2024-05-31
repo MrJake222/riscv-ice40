@@ -1,4 +1,4 @@
-module picorv32_muldiv (
+module picorv32_tb (
 	input wire clk,
 	input wire reset,
 	
