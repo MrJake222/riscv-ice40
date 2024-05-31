@@ -8,9 +8,11 @@ module vexriscv_default (
 	input  wire          iBus_rsp_valid,
 	input  wire          iBus_rsp_payload_error,
 	input  wire [31:0]   iBus_rsp_payload_inst,
+	
 	input  wire          timerInterrupt,
 	input  wire          externalInterrupt,
 	input  wire          softwareInterrupt,
+	
 	output wire          dBus_cmd_valid,
 	input  wire          dBus_cmd_ready,
 	output wire          dBus_cmd_payload_wr,

@@ -17,7 +17,7 @@ CELLS_EXEC  = ../cells.py
 # synthesize
 .PRECIOUS: %.hw.json
 %.hw.json: %.v
-	@$(SYNTH_EXEC) -p "$(SYNTH_SCR) -top $(basename $<) -json $@" $(SYNTH_OPTS) $< $(V_IMPL)
+	$(SYNTH_EXEC) -p "$(SYNTH_SCR) -top $(basename $<) -json $@" $(SYNTH_OPTS) $< $(V_IMPL)
 
 %.cells: %.hw.json
 	@echo -n "$(basename $@): "
