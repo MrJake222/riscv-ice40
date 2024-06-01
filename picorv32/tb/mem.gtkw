@@ -2,10 +2,10 @@
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
 [*] Wed Apr 24 17:59:50 2024
 [*]
-[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/picorv32/tb_mem.vcd"
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/picorv32/tb/mem.vcd"
 [dumpfile_mtime] "Wed Apr 24 17:58:44 2024"
 [dumpfile_size] 2525
-[savefile] "/home/norbert/Projects/pico-ice/risc-v/picorv32/gtkw/tb_mem.gtkw"
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/picorv32/tb/mem.gtkw"
 [timestart] 0
 [size] 1000 600
 [pos] -1 -1

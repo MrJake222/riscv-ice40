@@ -2,8 +2,8 @@
 
 module crv32_core ();
 
-`include "tb_dep.v"
-`include "tb_dep_core.v"
+`include "dep.v"
+`include "dep_core.v"
 
 initial
 begin

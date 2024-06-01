@@ -4,17 +4,6 @@ VERILOG = $(TLD).v
 VERILOG += clk.v ram32.v dbgu32.v uart.v pwm.v
 VERILOG += picorv32.v
 VERILOG += uartblk.v timer.v
-# testbenches
-TB += tb_dbgu32_mem.v
-TB += tb_crv32_dbgu32_mem.v
-TB += tb_mem.v
-TB += tb_crv32_core.v
-TB += tb_crv32_core_stack.v
-TB += tb_uartblk.v
-# testbenches dependencies
-TBDEP += tb_dep.v
-TBDEP += tb_dep_core.v
-TBDEP += tb_dep_uart.v
 # pin definitions
 PCF   = $(TLD).pcf
 
@@ -56,22 +45,11 @@ IV_VERILOG = /usr/share/yosys/ice40/cells_sim.v
 IV_OPTS    = -D VCD_OUTPUT= -D NO_ICE40_DEFAULT_ASSIGNMENTS
 
 
-# simulation
-IVSIM_VERILOG = /usr/share/yosys/ice40/cells_sim.v
-IVSIM_OPTS    = -D NO_ICE40_DEFAULT_ASSIGNMENTS
-
-
 # first -> default
 all: verify bin util
 
 bin: $(BIN)
 uf2: $(UF2)
-
-# simulate all testbenches
-# replaces .v in testbenches with .vcd extension
-VCDS = $(patsubst %.v,%.vcd,$(TB)) 
-sim: $(VCDS)
-
 
 # synthesize
 $(JSON): $(VERILOG)
@@ -89,12 +67,6 @@ $(BIN): $(ASC)
 $(UF2): $(BIN)
 	$(BIN2UF2) -o $@ $<
 
-# simulate testbench
-%.vcd: %.v $(VERILOG) $(TBDEP)
-	iverilog -o sim.out -D VCD_OUTPUT="\"$@\"" $(IVSIM_OPTS) $(IVSIM_VERILOG) $(VERILOG) $<
-	vvp sim.out
-	rm sim.out
-
 verify: $(VERILOG)
 	iverilog -o /dev/null $(IV_OPTS) $(IV_VERILOG) $(VERILOG)
 	
@@ -109,7 +81,7 @@ cells: $(JSON)
 	@echo
 	
 clean:
-	rm -f $(JSON) $(ASC) $(BIN) $(UF2) $(UTIL) $(VCDS)
+	rm -f $(JSON) $(ASC) $(BIN) $(UF2) $(UTIL)
 	
 prgflash: $(BIN)
 	$(PRG_EXEC) $(PRG_OPTS) $(PRG_FLASH) -D $<

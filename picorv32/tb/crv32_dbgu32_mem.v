@@ -2,9 +2,9 @@
 
 module crv32_mem ();
 
-`include "tb_dep.v"
-`include "tb_dep_core.v"
-`include "tb_dep_uart.v"
+`include "dep.v"
+`include "dep_core.v"
+`include "dep_uart.v"
 
 initial
 begin
