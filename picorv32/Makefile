@@ -1,9 +1,11 @@
 TLD = crv32
 # input files
 VERILOG = $(TLD).v
-VERILOG += clk.v ram32.v dbgu32.v uart.v pwm.v
 VERILOG += picorv32.v
-VERILOG += uartblk.v timer.v
+# extra files
+EXTRA += clk.v ram32.v dbgu32.v uart.v
+EXTRA += pwm.v uartblk.v timer.v
+VERILOG += $(patsubst %,../extra/%,$(EXTRA))
 # pin definitions
 PCF   = $(TLD).pcf
 
