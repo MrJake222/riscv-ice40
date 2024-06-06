@@ -3,13 +3,19 @@ module timer #(
 ) (
     input  wire clk,
     input  wire cs,
-    output reg  [31:0] do
+    output wire  [31:0] do
 );
 
 localparam DIV_WIDTH = $clog2(CLK_DIV);
 
+reg oe;
+always @(posedge clk)
+    oe <= cs;
+
 reg [DIV_WIDTH:0] div = 0;
 reg [31:0] timeval = 0;
+
+assign do = oe ? timeval : 32'h0; // OR bus
 
 always @ (posedge clk)
 begin
@@ -20,13 +26,6 @@ begin
 	end
 	else
 		div <= div + 1;
-
-
-	if (cs)
-		do <= timeval;
-	else
-		// OR bus
-		do <= 0;
 end
 
 endmodule

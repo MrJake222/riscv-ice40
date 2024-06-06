@@ -6,6 +6,9 @@ module clk12toX (
     output wire clk_24M,
     output wire clk_12M,
     output wire clk_6M,
+    output wire clk_3M,
+    output wire clk_1M5,
+    output wire clk_0M75,
     output reg  n_reset
 );
 
@@ -27,14 +30,17 @@ SB_PLL40_PAD #(
 );
 
 
-reg [3:0] clk_reg;
+reg [6:0] clk_reg;
 always @ (posedge clk_96M)
     clk_reg <= clk_reg + 1'b1;
     
+assign clk_0M75= clk_reg[6]; // 2^7 = 128
+assign clk_1M5 = clk_reg[5]; // 2^6 = 64
+assign clk_3M  = clk_reg[4]; // 2^5 = 32
 assign clk_6M  = clk_reg[3]; // 2^4 = 16
 assign clk_12M = clk_reg[2]; // 2^3 =  8
-assign clk_24M = clk_reg[1]; // 2^2 = 4
-assign clk_48M = clk_reg[0]; // 2^1 = 2
+assign clk_24M = clk_reg[1]; // 2^2 =  4
+assign clk_48M = clk_reg[0]; // 2^1 =  2
 
 
 // reset

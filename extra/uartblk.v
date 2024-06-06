@@ -11,7 +11,7 @@ module uartblk #(
     input  wire data_reg,
     input  wire wren,
     input  wire [7:0] di,
-    output reg  [7:0] do,
+    output wire [7:0] do,
     
     
     output wire dbg_rx_enable,
@@ -21,12 +21,19 @@ module uartblk #(
     output wire dbg_rx_has_data
 );
 
+reg oe;
+always @(posedge clk)
+    oe <= cs;
+
 wire uart_rx_ready;
 wire [7:0] uart_rx_data;
 
 reg uart_tx_write;
 wire uart_tx_finished;
 reg [7:0] uart_tx_data;
+
+reg [31:0] do_int;
+assign do = oe ? do_int : 32'h0; // OR bus
 
 UART #(CLK_FREQ, UART_FREQ) uarthw (
     .clk(clk),
@@ -65,18 +72,15 @@ begin
 		end
 		else if (data_reg)
 		begin
-			do[7:0] <= uart_rx_data;
+			do_int <= {24'h0, uart_rx_data};
 			rx_has_data <= 0;
 		end
 		else
-			do[7:0] <= {6'h00, tx_buf_empty, rx_has_data};
+			do_int <= {30'h00, tx_buf_empty, rx_has_data};
 			// [0] -- rx has data  (1 = can read)
 			// [1] -- tx buf empty (1 = can write)
 	end
-	else
-		// OR bus
-		do <= 0;
-	
+
 	if (uart_tx_write)
 		uart_tx_write <= 0;
 end

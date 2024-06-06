@@ -135,7 +135,7 @@ wire [7:0] pwm_do [2:0];
 wire [7:0] uart_do [0:0];
 wire [31:0] timer_do [0:0];
 pwm pwm0 (
-    .sys_clk(clk),
+    .clk(clk),
     .cs(mmio_sel & adr[4:2] == 3'b000),
     .wren(|mem_wren),
     .di(mem_di[7:0]),
@@ -143,7 +143,7 @@ pwm pwm0 (
     .out(led_red)
 );
 pwm pwm1 (
-    .sys_clk(clk),
+    .clk(clk),
     .cs(mmio_sel & adr[4:2] == 3'b001),
     .wren(|mem_wren),
     .di(mem_di[7:0]),
@@ -151,7 +151,7 @@ pwm pwm1 (
     .out(led_green)
 );
 pwm pwm2 (
-    .sys_clk(clk),
+    .clk(clk),
     .cs(mmio_sel & adr[4:2] == 3'b010),
     .wren(|mem_wren),
     .di(mem_di[7:0]),

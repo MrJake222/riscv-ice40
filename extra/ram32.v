@@ -7,10 +7,16 @@ module ram16Kx32 (
     output wire [31:0] do
 );
 
-wire [15:0] ram_do;
+reg oe;
+always @(posedge clk)
+    oe <= cs;
+
+wire [31:0] do_int;
+assign do = oe ? do_int : 32'h0;
+
 SB_SPRAM256KA spram_hi (
      .DATAIN(di[31:16]),
-    .DATAOUT(do[31:16]),
+    .DATAOUT(do_int[31:16]),
     .ADDRESS(adr),
     .MASKWREN({wren[3], wren[3], wren[2], wren[2]}),
     
@@ -18,14 +24,14 @@ SB_SPRAM256KA spram_hi (
     .CHIPSELECT(cs),
     .WREN(|wren),
 
-       .SLEEP(~cs), // pulls outputs low (OR bus)
+       .SLEEP(1'b0),
      .STANDBY(1'b0),
     .POWEROFF(1'b1) // shit's inverted
 );
 
 SB_SPRAM256KA spram_lo (
      .DATAIN(di[15:0]),
-    .DATAOUT(do[15:0]),
+    .DATAOUT(do_int[15:0]),
     .ADDRESS(adr),
     .MASKWREN({wren[1], wren[1], wren[0], wren[0]}),
     
@@ -33,7 +39,7 @@ SB_SPRAM256KA spram_lo (
     .CHIPSELECT(cs),
     .WREN(|wren),
 
-       .SLEEP(~cs), // pulls outputs low (OR bus)
+       .SLEEP(1'b0),
      .STANDBY(1'b0),
     .POWEROFF(1'b1) // shit's inverted
 );
