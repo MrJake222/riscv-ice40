@@ -6,4 +6,5 @@
 	url = https://github.com/mpaland/printf.git
 [submodule "vexriscv-impl"]
 	path = vexriscv-impl
-	url = https://github.com/SpinalHDL/VexRiscv.git
+	url = https://github.com/MrJake222/VexRiscv.git
+	branch = develop

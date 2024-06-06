@@ -15,6 +15,8 @@ function build {
     fi
 }
 
+build GenSmallest                   VexRiscv_sm.v
 build GenSmallAndProductive         VexRiscv_smprod.v
+build GenSmallAndProductiveMy       VexRiscv_smprod_my.v
 build GenSmallAndProductiveICache   VexRiscv_smprod_icache.v
 build GenFullNoMmuNoCache           VexRiscv_full_nommu_nocache.v

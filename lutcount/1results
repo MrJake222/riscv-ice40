@@ -1,5 +1,10 @@
-picorv32_default: total 1984 (38%)
-picorv32_muldiv: total 3422 (65%)
-picorv32_muldivfast: total 6486 (123%)
-
-vexriscv_default: total 1325 (25%) small and productive
+                   picorv32_default:  total 1984 (38%)
+                    picorv32_muldiv:  total 3422 (65%)
+                picorv32_muldivfast:  total 6486 (123%)
+                        VexRiscv_sm:  total 1060 (20%)
+                    VexRiscv_smprod:  total 1322 (25%)
+                 VexRiscv_smprod_my:  total 1881 (36%)
+             VexRiscv_smprod_icache:  total 1464 (28%)
+        VexRiscv_full_nommu_nocache:  total 5848 (111%)
+            femtorv32_quark_bicycle:  total 1175 (22%)
+                 femtorv32_electron:  total 5102 (97%)
