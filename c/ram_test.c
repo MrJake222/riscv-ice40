@@ -9,23 +9,25 @@ void uart_send(char data) {
 	UART_DATA = data;
 }
 
-//char temp[256];
-char arr[256];
-
 int main(void) {
-	/*for (int i=0; i<256; i++)
-		temp[i] = 2*i;
-	uart_send(temp[5]);
-	uart_send(temp[6]);*/
-
-	for (int i=0; i<64; i++) {
-		//uart_send(i);
-		arr[i] = 4*i;
-		uart_send(i);
-	}
-	uart_send(arr[5]);
-	uart_send(arr[6]);
-	
+    int fail = 0;
+    
+    for (int adr=0x00000; adr<0x10000; adr+=4) {
+        volatile unsigned int* acc = (volatile unsigned int*)adr;
+        *acc = 0xA5A50000 | adr;
+    }
+    
+    for (int adr=0x00000; adr<0x10000; adr+=4) {
+        volatile unsigned int* acc = (volatile unsigned int*)adr;
+        if (*acc != (0xA5A50000 | adr)) {
+            fail = 1;
+        }
+    }
+    
+    // 'a' no fail
+    // 'b' fail
+    uart_send(fail + 'a');
+    
 	while(1) asm("");
 }
 

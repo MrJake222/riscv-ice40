@@ -4,23 +4,20 @@
 #define UART_HAS_RX		(UART_STATUS & (1<<0))
 #define UART_TX_EMPTY	(UART_STATUS & (1<<1))
 
-#define TIMER_BASE 	0x10018
-#define TIME (*(volatile unsigned int*)(TIMER_BASE))
-
 void uart_send(char data) {
 	while (!UART_TX_EMPTY);
 	UART_DATA = data;
 }
 
 int main(void) {
-	int t0 = 0;
-	
-	while(1) {
-		while (TIME - t0 < 100000);
-		t0 = TIME;
-		
-		uart_send('x');
-	}
+    int i, c, mi, mc;
+    
+    asm volatile ("rdcycle %0" : "=r"(c));
+	asm volatile ("rdinstret %0" : "=r"(i));
+	asm volatile ("csrrs %0, minstret, x0" : "=r"(mi));
+	asm volatile ("csrrs %0, mcycle, x0" : "=r"(mc));
+    
+	while(1) asm("");
 }
 
 __attribute__ ((section(".boot")))

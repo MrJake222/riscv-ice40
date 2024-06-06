@@ -3,6 +3,7 @@ extern unsigned int _bss_start, _bss_end;
 __attribute__ ((section(".boot")))
 __attribute__ ((naked))
 void _start(void) {
+    asm("lui sp, 0x10");
 	// clear bss
 	for (unsigned int* bss=&_bss_start; bss<&_bss_end; *bss++ = 0);
 	asm("j main");

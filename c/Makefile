@@ -1,9 +1,11 @@
-all: led.hex uart.hex time.hex delay.hex ram.hex
+all: led.hex led_breathe.hex uart.hex uart_comm.hex time.hex delay.hex ram.hex ram_test.hex counters.hex print_test.hex
 
 CFLAGS = -O1
+#CFLAGS = -O1 -march=rv32i_zicsr
 
 # override which binaries need printf
 # time.elf: time.o printf.o
+print_test.elf: print_test.o printf.o
 
 # don't remove elf
 .PRECIOUS: %.elf

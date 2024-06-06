@@ -4,23 +4,36 @@
 #define UART_HAS_RX		(UART_STATUS & (1<<0))
 #define UART_TX_EMPTY	(UART_STATUS & (1<<1))
 
-#define TIMER_BASE 	0x10018
-#define TIME (*(volatile unsigned int*)(TIMER_BASE))
+void delay_ms(int x) {
+	// main loop is 2 instruction each 6 cycles
+	// 1MHz * 1ms / (2*6)
+	int i = 83 * x;
+	while(i--) asm("");
+}
 
 void uart_send(char data) {
 	while (!UART_TX_EMPTY);
 	UART_DATA = data;
 }
 
+void uart_send_string(const char* data) {
+	while (*data) uart_send(*data++);
+}
+
 int main(void) {
-	int t0 = 0;
-	
 	while(1) {
-		while (TIME - t0 < 100000);
-		t0 = TIME;
+		uart_send_string("Hello, world!\r\n");
+		delay_ms(1000);
 		
-		uart_send('x');
+		if (UART_HAS_RX) {
+			char rx = UART_DATA;
+			uart_send_string("You typed: '");
+			uart_send(rx);
+			uart_send_string("'\r\n");
+		}
 	}
+		
+    while(1) asm("");
 }
 
 __attribute__ ((section(".boot")))

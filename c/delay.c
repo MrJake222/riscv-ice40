@@ -28,5 +28,6 @@ int main(void) {
 __attribute__ ((section(".boot")))
 __attribute__ ((naked))
 void _start(void) {
+    asm("lui sp, 0x10");
 	asm("j main");
 }
