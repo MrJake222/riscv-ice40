@@ -1,0 +1,152 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Thu Jun  6 22:23:18 2024
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/vexriscv/tb/cvrisc_uart0.vcd"
+[dumpfile_mtime] "Thu Jun  6 22:22:18 2024"
+[dumpfile_size] 419461
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/vexriscv/tb/gtkw/cvrisc_uart0.gtkw"
+[timestart] 3000000
+[size] 1627 951
+[pos] -1 -1
+*-24.255705 18090000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] cvrisc_uart0.
+[treeopen] cvrisc_uart0.soc.
+[treeopen] cvrisc_uart0.soc.cpu.
+[treeopen] cvrisc_uart0.soc.ram.
+[treeopen] cvrisc_uart0.soc.uart0.
+[sst_width] 283
+[signals_width] 249
+[sst_expanded] 1
+[sst_vpaned_height] 310
+@28
+cvrisc_uart0.soc.cpu_reset
+cvrisc_uart0.soc.cpu_clk
+[color] 2
+cvrisc_uart0.soc.icmd_valid
+[color] 2
+cvrisc_uart0.soc.irsp_valid
+@22
+[color] 2
+cvrisc_uart0.soc.icmd_adr[31:0]
+cvrisc_uart0.soc.adr[31:0]
+@200
+-
+@22
++{instr_decode} cvrisc_uart0.soc.cpu.decode_INSTRUCTION[31:0]
+@c00022
++{instr_exec} cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+@28
+(0)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(1)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(2)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(3)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(4)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(5)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(6)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(7)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(8)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(9)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(10)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(11)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(12)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(13)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(14)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(15)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(16)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(17)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(18)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(19)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(20)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(21)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(22)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(23)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(24)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(25)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(26)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(27)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(28)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(29)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(30)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+(31)cvrisc_uart0.soc.cpu.execute_INSTRUCTION[31:0]
+@1401200
+-group_end
+@200
+-
+@28
+cvrisc_uart0.soc.dcmd_valid
+cvrisc_uart0.soc.drsp_valid
+@22
+cvrisc_uart0.soc.dcmd_adr[31:0]
+@200
+-
+-
+@c00022
+cvrisc_uart0.soc.adr[31:0]
+@28
+(0)cvrisc_uart0.soc.adr[31:0]
+(1)cvrisc_uart0.soc.adr[31:0]
+(2)cvrisc_uart0.soc.adr[31:0]
+(3)cvrisc_uart0.soc.adr[31:0]
+(4)cvrisc_uart0.soc.adr[31:0]
+(5)cvrisc_uart0.soc.adr[31:0]
+(6)cvrisc_uart0.soc.adr[31:0]
+(7)cvrisc_uart0.soc.adr[31:0]
+(8)cvrisc_uart0.soc.adr[31:0]
+(9)cvrisc_uart0.soc.adr[31:0]
+(10)cvrisc_uart0.soc.adr[31:0]
+(11)cvrisc_uart0.soc.adr[31:0]
+(12)cvrisc_uart0.soc.adr[31:0]
+(13)cvrisc_uart0.soc.adr[31:0]
+(14)cvrisc_uart0.soc.adr[31:0]
+(15)cvrisc_uart0.soc.adr[31:0]
+(16)cvrisc_uart0.soc.adr[31:0]
+(17)cvrisc_uart0.soc.adr[31:0]
+(18)cvrisc_uart0.soc.adr[31:0]
+(19)cvrisc_uart0.soc.adr[31:0]
+(20)cvrisc_uart0.soc.adr[31:0]
+(21)cvrisc_uart0.soc.adr[31:0]
+(22)cvrisc_uart0.soc.adr[31:0]
+(23)cvrisc_uart0.soc.adr[31:0]
+(24)cvrisc_uart0.soc.adr[31:0]
+(25)cvrisc_uart0.soc.adr[31:0]
+(26)cvrisc_uart0.soc.adr[31:0]
+(27)cvrisc_uart0.soc.adr[31:0]
+(28)cvrisc_uart0.soc.adr[31:0]
+(29)cvrisc_uart0.soc.adr[31:0]
+(30)cvrisc_uart0.soc.adr[31:0]
+(31)cvrisc_uart0.soc.adr[31:0]
+@1401200
+-group_end
+@22
+cvrisc_uart0.soc.mem_do[31:0]
+cvrisc_uart0.soc.ram_do[31:0]
+cvrisc_uart0.soc.mmio_do[31:0]
+cvrisc_uart0.soc.rom_do[31:0]
+@28
+cvrisc_uart0.soc.mem_op
+@c00022
+cvrisc_uart0.soc.mem_wren[3:0]
+@28
+(0)cvrisc_uart0.soc.mem_wren[3:0]
+(1)cvrisc_uart0.soc.mem_wren[3:0]
+(2)cvrisc_uart0.soc.mem_wren[3:0]
+(3)cvrisc_uart0.soc.mem_wren[3:0]
+@1401200
+-group_end
+@200
+-
+@22
+cvrisc_uart0.reg_x10[31:0]
+@200
+-
+-uart0
+@28
+cvrisc_uart0.soc.uart0.cs
+cvrisc_uart0.soc.uart0.tx_buf_empty
+@22
+cvrisc_uart0.soc.uart0.uarthw.tx_bit[3:0]
+@28
+cvrisc_uart0.soc.uart0.uarthw.tx
+[pattern_trace] 1
+[pattern_trace] 0
