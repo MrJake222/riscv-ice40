@@ -13,13 +13,7 @@ TB += cvrisc_bus_data_byte_access.v
 TB += cvrisc_counters.v
 TB += dbgu32_mem.v
 # testbenches dependencies
-DEP += clk.v
-DEP += core.v
-DEP += uart.v
-
-# paths
-#TB  := $(patsubst %,src/%,$(TB))
-DEP := $(patsubst %,dep/%,$(DEP))
+DEP = dep.v
 
 
 # simulation

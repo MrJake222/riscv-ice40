@@ -22,13 +22,13 @@ begin
 	force soc.n_reset = n_reset;
 end
 
-wire [31:0] stackptr = soc.cpu.cpuregs[ 2];
-wire [31:0] reg_x10  = soc.cpu.cpuregs[10];
-wire [31:0] reg_x11  = soc.cpu.cpuregs[11];
-wire [31:0] reg_x12  = soc.cpu.cpuregs[12];
-wire [31:0] reg_x13  = soc.cpu.cpuregs[13];
-wire [31:0] reg_x14  = soc.cpu.cpuregs[14];
-wire [31:0] reg_x15  = soc.cpu.cpuregs[15];
+wire [31:0] stackptr = soc.cpu.RegFilePlugin_regFile[ 2];
+wire [31:0] reg_x10  = soc.cpu.RegFilePlugin_regFile[10];
+wire [31:0] reg_x11  = soc.cpu.RegFilePlugin_regFile[11];
+wire [31:0] reg_x12  = soc.cpu.RegFilePlugin_regFile[12];
+wire [31:0] reg_x13  = soc.cpu.RegFilePlugin_regFile[13];
+wire [31:0] reg_x14  = soc.cpu.RegFilePlugin_regFile[14];
+wire [31:0] reg_x15  = soc.cpu.RegFilePlugin_regFile[15];
 
 
 // ------------------------------------ UART ------------------------------------  //
@@ -42,8 +42,8 @@ end
 
 localparam SIM_F_CLK = 1_000_000;
 // update from soc
-localparam SOC_F_CLK = 24_000_000;
-localparam SOC_BAUD  =  1_000_000;
+localparam SOC_F_CLK = 3_000_000;
+localparam SOC_BAUD  = 1_000_000;
 // assuming soc clk > sim clk
 // sim time unit: 1e9 ns
 localparam bit_time = 1_000_000_000 / SOC_BAUD * (SOC_F_CLK / SIM_F_CLK);

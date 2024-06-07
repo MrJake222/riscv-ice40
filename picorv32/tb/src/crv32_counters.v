@@ -1,6 +1,6 @@
 `timescale 1 ns / 1 ns
 
-module cvrisc_counters ();
+module crv32_counters ();
 
 `include "dep.v"
 
@@ -11,7 +11,7 @@ begin
 	force soc.dbg_wren = 4'hF;
 	
     // Test cycle and instruction counters
-    // EXPECTED: x12 reads 3 (instructions) and E (cycles)
+    // EXPECTED: x12 reads 4 (instructions) and 15 (cycles)
     force soc.dbg_adr = 32'h20000; force soc.dbg_do = 32'h00000033; #1000; // nop
     force soc.dbg_adr = 32'h20004; force soc.dbg_do = 32'h00000033; #1000; // nop
     force soc.dbg_adr = 32'h20008; force soc.dbg_do = 32'h00000033; #1000; // nop
@@ -26,7 +26,7 @@ begin
 	release soc.dbg_do;
 end
 
-cvrisc soc (
+crv32 soc (
 	.RESET(n_reset),
 	.PICO_UART0_RX(rx),
 	.PICO_UART0_TX(tx)
@@ -35,7 +35,7 @@ cvrisc soc (
 initial
 begin
 	$dumpfile(`VCD_OUTPUT);
-	$dumpvars(4, cvrisc_counters);
+	$dumpvars(4, crv32_counters);
 	#(40000)
 	$finish;
 end

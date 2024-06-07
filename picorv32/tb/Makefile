@@ -4,16 +4,16 @@ include ../Makefile
 .DEFAULT_GOAL := sim
 
 # testbenches
+TB += crv32_bus_data_read.v
+TB += crv32_bus_data_write.v
+TB += crv32_bus_instr.v
+TB += crv32_uart0.v
+TB += crv32_stack.v
+TB += crv32_bus_data_byte_access.v
+TB += crv32_counters.v
 TB += dbgu32_mem.v
-TB += crv32_dbgu32_mem.v
-TB += mem.v
-TB += crv32_core.v
-TB += crv32_core_stack.v
-TB += uartblk.v
 # testbenches dependencies
-TBDEP += dep.v
-TBDEP += dep_core.v
-TBDEP += dep_uart.v
+DEP = dep.v
 
 
 # simulation
@@ -32,7 +32,7 @@ clean:
 	rm -f $(VCDS)
 
 # simulate testbench
-%.vcd: %.v $(IVSIM_VERILOG) $(TBDEP)
+%.vcd: src/%.v $(DEP) $(IVSIM_VERILOG)
 	iverilog -o sim.out -D VCD_OUTPUT="\"$@\"" $(IVSIM_OPTS) $(IVSIM_VERILOG) $<
 	vvp sim.out
 	rm sim.out

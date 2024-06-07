@@ -1,6 +1,6 @@
 `timescale 1 ns / 1 ns
 
-module cvrisc_bus_data_byte_access ();
+module crv32_bus_data_byte_access ();
 
 `include "dep.v"
 
@@ -30,7 +30,7 @@ begin
 	release soc.dbg_do;
 end
 
-cvrisc soc (
+crv32 soc (
 	.RESET(n_reset),
 	.PICO_UART0_RX(rx),
 	.PICO_UART0_TX(tx)
@@ -39,8 +39,8 @@ cvrisc soc (
 initial
 begin
 	$dumpfile(`VCD_OUTPUT);
-	$dumpvars(4, cvrisc_bus_data_byte_access);
-	#(40000)
+	$dumpvars(4, crv32_bus_data_byte_access);
+	#(60000)
 	$finish;
 end
 

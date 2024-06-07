@@ -1,0 +1,99 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Fri Jun  7 09:28:49 2024
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/picorv32/tb/crv32_uart0.vcd"
+[dumpfile_mtime] "Fri Jun  7 09:28:45 2024"
+[dumpfile_size] 314242
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/picorv32/tb/gtkw/crv32_uart0.gtkw"
+[timestart] 0
+[size] 1627 951
+[pos] -1 -1
+*-26.955704 18090000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] crv32_uart0.
+[treeopen] crv32_uart0.soc.
+[treeopen] crv32_uart0.soc.cpu.
+[treeopen] crv32_uart0.soc.ram.
+[treeopen] crv32_uart0.soc.uart0.
+[sst_width] 283
+[signals_width] 249
+[sst_expanded] 1
+[sst_vpaned_height] 310
+@28
+crv32_uart0.soc.cpu_clk
+@22
+[color] 2
+crv32_uart0.soc.adr[31:0]
+@200
+-
+-
+-
+@c00022
+crv32_uart0.soc.adr[31:0]
+@28
+(0)crv32_uart0.soc.adr[31:0]
+(1)crv32_uart0.soc.adr[31:0]
+(2)crv32_uart0.soc.adr[31:0]
+(3)crv32_uart0.soc.adr[31:0]
+(4)crv32_uart0.soc.adr[31:0]
+(5)crv32_uart0.soc.adr[31:0]
+(6)crv32_uart0.soc.adr[31:0]
+(7)crv32_uart0.soc.adr[31:0]
+(8)crv32_uart0.soc.adr[31:0]
+(9)crv32_uart0.soc.adr[31:0]
+(10)crv32_uart0.soc.adr[31:0]
+(11)crv32_uart0.soc.adr[31:0]
+(12)crv32_uart0.soc.adr[31:0]
+(13)crv32_uart0.soc.adr[31:0]
+(14)crv32_uart0.soc.adr[31:0]
+(15)crv32_uart0.soc.adr[31:0]
+(16)crv32_uart0.soc.adr[31:0]
+(17)crv32_uart0.soc.adr[31:0]
+(18)crv32_uart0.soc.adr[31:0]
+(19)crv32_uart0.soc.adr[31:0]
+(20)crv32_uart0.soc.adr[31:0]
+(21)crv32_uart0.soc.adr[31:0]
+(22)crv32_uart0.soc.adr[31:0]
+(23)crv32_uart0.soc.adr[31:0]
+(24)crv32_uart0.soc.adr[31:0]
+(25)crv32_uart0.soc.adr[31:0]
+(26)crv32_uart0.soc.adr[31:0]
+(27)crv32_uart0.soc.adr[31:0]
+(28)crv32_uart0.soc.adr[31:0]
+(29)crv32_uart0.soc.adr[31:0]
+(30)crv32_uart0.soc.adr[31:0]
+(31)crv32_uart0.soc.adr[31:0]
+@1401200
+-group_end
+@22
+crv32_uart0.soc.mem_do[31:0]
+crv32_uart0.soc.ram_do[31:0]
+crv32_uart0.soc.mmio_do[31:0]
+crv32_uart0.soc.rom_do[31:0]
+@28
+crv32_uart0.soc.mem_op
+@c00022
+crv32_uart0.soc.mem_wren[3:0]
+@28
+(0)crv32_uart0.soc.mem_wren[3:0]
+(1)crv32_uart0.soc.mem_wren[3:0]
+(2)crv32_uart0.soc.mem_wren[3:0]
+(3)crv32_uart0.soc.mem_wren[3:0]
+@1401200
+-group_end
+@200
+-
+@22
+crv32_uart0.reg_x10[31:0]
+@200
+-
+-uart0
+@28
+crv32_uart0.soc.uart0.cs
+crv32_uart0.soc.uart0.tx_buf_empty
+@22
+crv32_uart0.soc.uart0.uarthw.tx_bit[3:0]
+@29
+crv32_uart0.soc.uart0.uarthw.tx
+[pattern_trace] 1
+[pattern_trace] 0

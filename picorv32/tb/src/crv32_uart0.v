@@ -1,6 +1,6 @@
 `timescale 1 ns / 1 ns
 
-module cvrisc_uart0 ();
+module crv32_uart0 ();
 
 `include "dep.v"
 
@@ -38,7 +38,7 @@ begin
 	release soc.dbg_do;
 end
 
-cvrisc soc (
+crv32 soc (
 	.RESET(n_reset),
 	.PICO_UART0_RX(rx),
 	.PICO_UART0_TX(tx)
@@ -47,8 +47,8 @@ cvrisc soc (
 initial
 begin
 	$dumpfile(`VCD_OUTPUT);
-	$dumpvars(4, cvrisc_uart0);
-	#(110000)
+	$dumpvars(4, crv32_uart0);
+	#(650000)
 	$finish;
 end
 

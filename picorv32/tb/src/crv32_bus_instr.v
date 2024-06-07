@@ -1,9 +1,8 @@
-`timescale 1 ns / 10 ps
+`timescale 1 ns / 1 ns
 
-module crv32_core_stack ();
+module crv32_bus_instr ();
 
 `include "dep.v"
-`include "dep_core.v"
 
 initial
 begin
@@ -11,14 +10,19 @@ begin
 	force soc.dbg_mem_op = 1'b1;
 	force soc.dbg_wren = 4'hF;
 	
-	#500;
-
 	// program rom
+	
+	// jump to the same address
+	// EXPECTED: infinite loop over address 20000 with instruction 6F
 	force soc.dbg_adr = 32'h20000;
-	force soc.dbg_do = 32'hfe010113;	// addi		sp,sp,-32
+	force soc.dbg_do = 32'h0000006f;	// j 0
 	#1000;
-	force soc.dbg_adr = 32'h20004;
-	force soc.dbg_do = 32'h00012e23;	// sw		zero,28(sp)
+	// test data
+    force soc.dbg_adr = 32'h20004;
+	force soc.dbg_do = 32'h1;
+	#1000;
+	force soc.dbg_adr = 32'h20008;
+	force soc.dbg_do = 32'h2;
 	#1000;
 	
 	release soc.cpu_n_reset;
@@ -37,7 +41,7 @@ crv32 soc (
 initial
 begin
 	$dumpfile(`VCD_OUTPUT);
-	$dumpvars(3, crv32_core_stack);
+	$dumpvars(3, crv32_bus_instr);
 	#(20000)
 	$finish;
 end

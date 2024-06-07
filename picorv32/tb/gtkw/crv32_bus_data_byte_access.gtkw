@@ -1,0 +1,80 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Fri Jun  7 09:23:20 2024
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/picorv32/tb/crv32_bus_data_byte_access.vcd"
+[dumpfile_mtime] "Fri Jun  7 09:22:46 2024"
+[dumpfile_size] 47897
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/picorv32/tb/gtkw/crv32_bus_data_byte_access.gtkw"
+[timestart] 0
+[size] 1635 1203
+[pos] -1 -1
+*-24.000000 24990000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] crv32_bus_data_byte_access.
+[treeopen] crv32_bus_data_byte_access.soc.
+[treeopen] crv32_bus_data_byte_access.soc.cpu.
+[treeopen] crv32_bus_data_byte_access.soc.ram.
+[treeopen] crv32_bus_data_byte_access.soc.uart0.
+[sst_width] 283
+[signals_width] 205
+[sst_expanded] 1
+[sst_vpaned_height] 409
+@28
+crv32_bus_data_byte_access.soc.cpu_clk
+@22
+[color] 2
+crv32_bus_data_byte_access.soc.adr[31:0]
+@200
+-
+@c00022
+crv32_bus_data_byte_access.soc.adr[31:0]
+@28
+(0)crv32_bus_data_byte_access.soc.adr[31:0]
+(1)crv32_bus_data_byte_access.soc.adr[31:0]
+(2)crv32_bus_data_byte_access.soc.adr[31:0]
+(3)crv32_bus_data_byte_access.soc.adr[31:0]
+(4)crv32_bus_data_byte_access.soc.adr[31:0]
+(5)crv32_bus_data_byte_access.soc.adr[31:0]
+(6)crv32_bus_data_byte_access.soc.adr[31:0]
+(7)crv32_bus_data_byte_access.soc.adr[31:0]
+(8)crv32_bus_data_byte_access.soc.adr[31:0]
+(9)crv32_bus_data_byte_access.soc.adr[31:0]
+(10)crv32_bus_data_byte_access.soc.adr[31:0]
+(11)crv32_bus_data_byte_access.soc.adr[31:0]
+(12)crv32_bus_data_byte_access.soc.adr[31:0]
+(13)crv32_bus_data_byte_access.soc.adr[31:0]
+(14)crv32_bus_data_byte_access.soc.adr[31:0]
+(15)crv32_bus_data_byte_access.soc.adr[31:0]
+(16)crv32_bus_data_byte_access.soc.adr[31:0]
+(17)crv32_bus_data_byte_access.soc.adr[31:0]
+(18)crv32_bus_data_byte_access.soc.adr[31:0]
+(19)crv32_bus_data_byte_access.soc.adr[31:0]
+(20)crv32_bus_data_byte_access.soc.adr[31:0]
+(21)crv32_bus_data_byte_access.soc.adr[31:0]
+(22)crv32_bus_data_byte_access.soc.adr[31:0]
+(23)crv32_bus_data_byte_access.soc.adr[31:0]
+(24)crv32_bus_data_byte_access.soc.adr[31:0]
+(25)crv32_bus_data_byte_access.soc.adr[31:0]
+(26)crv32_bus_data_byte_access.soc.adr[31:0]
+(27)crv32_bus_data_byte_access.soc.adr[31:0]
+(28)crv32_bus_data_byte_access.soc.adr[31:0]
+(29)crv32_bus_data_byte_access.soc.adr[31:0]
+(30)crv32_bus_data_byte_access.soc.adr[31:0]
+(31)crv32_bus_data_byte_access.soc.adr[31:0]
+@1401200
+-group_end
+@22
+crv32_bus_data_byte_access.soc.mem_do[31:0]
+crv32_bus_data_byte_access.soc.ram_do[31:0]
+crv32_bus_data_byte_access.soc.mmio_do[31:0]
+crv32_bus_data_byte_access.soc.rom_do[31:0]
+@28
+crv32_bus_data_byte_access.soc.mem_op
+@22
+crv32_bus_data_byte_access.soc.mem_wren[3:0]
+@200
+-
+@22
+crv32_bus_data_byte_access.reg_x10[31:0]
+[pattern_trace] 1
+[pattern_trace] 0

@@ -2,8 +2,7 @@
 
 module cvrisc_bus_data_write ();
 
-`include "dep/clk.v"
-`include "dep/core.v"
+`include "dep.v"
 
 initial
 begin
