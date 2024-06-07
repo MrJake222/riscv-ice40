@@ -11,7 +11,7 @@ begin
 	force soc.dbg_wren = 4'hF;
 	    
 	// write uart and wait
-    // EXPECTED: x10 reads: [61, 0 (while uart transmits data), 2] <- 2 times
+    // EXPECTED: x10 reads repeatedly: 61, 0 (while uart transmits data), 2
 	force soc.dbg_adr = 32'h20000;
 	force soc.dbg_do = 32'h000107b7;	// lui     a5,0x10
 	#1000;
@@ -38,7 +38,10 @@ begin
 	release soc.dbg_do;
 end
 
-cvrisc soc (
+cvrisc #(
+	.F_CLK(SIM_FCLK),
+	.BAUD(SIM_BAUD)
+) soc (
 	.RESET(n_reset),
 	.PICO_UART0_RX(rx),
 	.PICO_UART0_TX(tx)
@@ -48,7 +51,7 @@ initial
 begin
 	$dumpfile(`VCD_OUTPUT);
 	$dumpvars(4, cvrisc_uart0);
-	#(110000)
+	#(100000)
 	$finish;
 end
 

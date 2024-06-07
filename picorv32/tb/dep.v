@@ -40,13 +40,10 @@ begin
 	tx <= 1;
 end
 
-localparam SIM_F_CLK = 1_000_000;
-// update from soc
-localparam SOC_F_CLK = 24_000_000;
-localparam SOC_BAUD  =  1_000_000;
-// assuming soc clk > sim clk
+localparam SIM_FCLK  =  1_000_000;
+localparam SIM_BAUD  =    500_000;
 // sim time unit: 1e9 ns
-localparam bit_time = 1_000_000_000 / SOC_BAUD * (SOC_F_CLK / SIM_F_CLK);
+localparam bit_time = 1_000_000_000 / SIM_BAUD;
 
 integer i;
 task send_byte(input [7:0] b);

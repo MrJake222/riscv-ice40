@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
-[*] Fri Jun  7 09:28:49 2024
+[*] Fri Jun  7 10:46:46 2024
 [*]
 [dumpfile] "/home/norbert/Projects/pico-ice/risc-v/picorv32/tb/crv32_uart0.vcd"
-[dumpfile_mtime] "Fri Jun  7 09:28:45 2024"
-[dumpfile_size] 314242
+[dumpfile_mtime] "Fri Jun  7 10:46:39 2024"
+[dumpfile_size] 69455
 [savefile] "/home/norbert/Projects/pico-ice/risc-v/picorv32/tb/gtkw/crv32_uart0.gtkw"
 [timestart] 0
 [size] 1627 951
 [pos] -1 -1
-*-26.955704 18090000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-24.555704 53800000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] crv32_uart0.
 [treeopen] crv32_uart0.soc.
 [treeopen] crv32_uart0.soc.cpu.

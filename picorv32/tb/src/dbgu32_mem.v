@@ -24,8 +24,8 @@ end
 
 initial
 begin
-    // EXPECTED: at 2.5ms     x11 changes value to AABBCCDD
-    //           at 3.8ms tx_data changes value to AABBCCDD
+    // EXPECTED: at 300us     x11 changes value to AABBCCDD
+    //           at 400us tx_data changes value to AABBCCDD
     
 	#3000  // rom program
     #30000 // wait a bit
@@ -61,7 +61,10 @@ begin
 	send_byte(8'h05);
 end
 
-crv32 soc (
+crv32 #(
+	.F_CLK(SIM_FCLK),
+	.BAUD(SIM_BAUD)
+) soc (
 	.RESET(n_reset),
 	.PICO_UART0_RX(rx),
 	.PICO_UART0_TX(tx)
@@ -73,7 +76,7 @@ begin
 	$dumpvars(4, dbgu32_mem);
     //for (i=0; i<4; i=i+1)
         //$dumpvars(0, soc.dbgu0.tx_data[i]);
-	#(4500000)
+	#(500000)
 	$finish;
 end
 

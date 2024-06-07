@@ -1,0 +1,23 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Fri Jun  7 14:07:05 2024
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/extra/tb/clk_16M.vcd"
+[dumpfile_mtime] "Fri Jun  7 14:06:39 2024"
+[dumpfile_size] 4671
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/extra/tb/gtkw/clk_16M.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-21.299999 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] clk_16M.
+[sst_width] 209
+[signals_width] 86
+[sst_expanded] 1
+[sst_vpaned_height] 154
+@29
+clk_16M.clkm.clk_96M
+@28
+clk_16M.clkm.clk_16M
+[pattern_trace] 1
+[pattern_trace] 0

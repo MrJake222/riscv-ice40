@@ -13,8 +13,9 @@ module crv32 (
     output wire [7:0] A
 );
 
-localparam F_CLK = 24_000_000;
-localparam  BAUD =  1_000_000;//  115_200;
+// can be set by simulation
+parameter F_CLK = 24_000_000;
+parameter BAUD  =  1_000_000;
 
 wire clk;
 wire boot_n_reset;

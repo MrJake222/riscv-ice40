@@ -13,27 +13,15 @@ module cvrisc (
     output wire [7:0] A
 );
 
-//localparam F_CLK = 12_000_000;
-//localparam  BAUD =  1_000_000;
-
-//localparam F_CLK = 750_000;
-//localparam  BAUD =   9_600;
-
-// this combination for some reason doesn't work
-//localparam F_CLK = 6_000_000;
-//localparam  BAUD = 1_000_000;
-
-localparam F_CLK = 3_000_000;
-localparam  BAUD = 1_000_000;
+// can be set by simulation
+parameter F_CLK = 16_000_000;
+parameter  BAUD =  1_000_000;
 
 wire clk;
 wire boot_n_reset;
 clk12toX clkm (
     .clk_in_12M(CLK_12M),
-    //.clk_0M75(clk),
-    .clk_3M(clk),
-    //.clk_6M(clk),
-    //.clk_24M(clk),
+    .clk_16M(clk),
     .n_reset(boot_n_reset)
 );
 
@@ -142,7 +130,6 @@ begin
     if (dcmd_valid)
     begin
         cpu_mem_op = 1;
-        //cpu_wren = {4{dcmd_wr}};
         cpu_wren = dcmd_wr ? dcmd_mask : 0;
         cpu_adr = dcmd_adr;
     end
@@ -164,7 +151,7 @@ begin
     end
 end
 
-always @(posedge clk)
+always @(posedge cpu_clk)
 begin
     if (irsp_valid)
         // one pulse
@@ -175,7 +162,7 @@ begin
 end
 
 //  TODO handle dbgu disruptions on data bus
-always @(posedge clk)
+always @(posedge cpu_clk)
 begin
     // priority, just respond
     // whenever there's a request
@@ -299,20 +286,9 @@ assign A[1] = icmd_valid;
 assign A[2] = irsp_valid;
 assign A[3] = dcmd_valid;
 assign A[4] = drsp_valid;
-/*assign A[5] = mmio_sel & adr[4:2] == 3'b000; //pwm0 sel
-assign A[6] = mmio_sel & adr[4:2] == 3'b001; //pwm0 sel
-assign A[7] = mmio_sel & adr[4:2] == 3'b010; //pwm0 sel*/
-
 assign A[5] = mmio_sel & adr[4:3] == 2'b10; // uart cs
 assign A[6] = uart0_tx_enable;
 assign A[7] = PICO_UART1_RX;
 
-//assign A[5] = mem_do == 32'h00072783;
-//assign A[6] = decode_INSTRUCTION == 32'h00072783;
-//assign A[7] = adr == 32'h20018; // sw
-//assign A[7:5] = adr[4:2];
-/*assign A[5] = mmio_sel & adr[4:3] == 2'b10;  //uart0 sel
-assign A[6] = PICO_UART1_RX;                 //uart0 tx
-assign A[7] = mmio_sel & adr[4:2] == 3'b000; //pwm0 sel*/
 
 endmodule

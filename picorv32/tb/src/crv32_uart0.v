@@ -38,7 +38,10 @@ begin
 	release soc.dbg_do;
 end
 
-crv32 soc (
+crv32 #(
+	.F_CLK(SIM_FCLK),
+	.BAUD(SIM_BAUD)
+) soc (
 	.RESET(n_reset),
 	.PICO_UART0_RX(rx),
 	.PICO_UART0_TX(tx)
@@ -48,7 +51,7 @@ initial
 begin
 	$dumpfile(`VCD_OUTPUT);
 	$dumpvars(4, crv32_uart0);
-	#(650000)
+	#(100000)
 	$finish;
 end
 

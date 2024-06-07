@@ -4,6 +4,7 @@ module clk12toX (
     output wire clk_96M,
     output wire clk_48M,
     output wire clk_24M,
+    output reg  clk_16M,
     output wire clk_12M,
     output wire clk_6M,
     output wire clk_3M,
@@ -42,6 +43,18 @@ assign clk_12M = clk_reg[2]; // 2^3 =  8
 assign clk_24M = clk_reg[1]; // 2^2 =  4
 assign clk_48M = clk_reg[0]; // 2^1 =  2
 
+
+reg [1:0] clk_reg_mod3;
+always @ (posedge clk_96M)
+begin
+	if (clk_reg_mod3 == 2)
+	begin
+		clk_reg_mod3 <= 0;
+		clk_16M <= ~clk_16M;
+	end
+	else
+		clk_reg_mod3 <= clk_reg_mod3 + 1;
+end
 
 // reset
 reg [7:0] cnt = 8'hFF;

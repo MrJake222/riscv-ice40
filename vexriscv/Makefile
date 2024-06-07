@@ -8,6 +8,7 @@ EXTRA += pwm.v uartblk.v timer.v
 VERILOG += $(patsubst %,../extra/%,$(EXTRA))
 # pin definitions
 PCF   = $(TLD).pcf
+FREQ  = 16
 
 
 # intermediate files
@@ -27,7 +28,7 @@ SYNTH_OPTS	= -q
 # ---
 # -q is quiet
 PNR_EXEC	= nextpnr-ice40
-PNR_OPTS	= --up5k --package sg48 --freq 12
+PNR_OPTS	= --up5k --package sg48 --freq $(FREQ)
 # ---
 PACK_EXEC	= icepack
 PACK_OPTS	= 
