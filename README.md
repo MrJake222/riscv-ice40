@@ -92,6 +92,9 @@ Adjust `[dumpfile]` and `[savefile]` directives.
 Unfortunately, a lot of distros don't provide prebuilt packages
 for this simplest 32-bit architecture. Note: requires ~10GB of space and
 *quite a bit* of time.
+Install prerequisites:
+`sudo apt install build-essential texi2html texinfo gawk bison flex libgmp-dev libmpfr-dev libmpfrc++-dev`.
+Do tell me when some packages are still missing from this list.
 ```
 git clone https://github.com/riscv/riscv-gnu-toolchain
 cd riscv-gnu-toolchain
@@ -102,13 +105,14 @@ sudo chown $USER /opt/riscv32i
 ../configure --with-arch=rv32i --prefix=/opt/riscv32i
 make -j4
 ```
+If case of any failures, rerun with single-core `make` and install missing packages.
 Add `/opt/riscv/bin/` to `$PATH`.
 Now try to deploy the test files:
 ```
 cd c
 make
 ```
-Now upload selected `.hex` files with `debug_uart/upload.sh` (see [here](https://github.com/MrJake222/debug_uart)):
+To upload selected `.hex` files with `debug_uart/upload.sh` (see [here](https://github.com/MrJake222/debug_uart)), use:
 `./upload.sh path/to/c/led.hex`.
 
 ### Linking
@@ -118,7 +122,7 @@ Linker makes sure `_start` function comes first at the start of ROM.
 All tests initialize stack and jump to `main`.
 
 ### Dumping testbench code
-Provided `dump.sh` file uses `objdump` and various shell utils to produce testbench code
+Provided `tbdump.sh` file uses `objdump` and various shell utils to produce testbench code
 which will force the program into ROM at tests' start.
 
 ### Dhrystone
