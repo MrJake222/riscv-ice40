@@ -1,6 +1,6 @@
 # RISC-V implementation survey
 
-TL;DR: See ***Synthesis toolchain*** and ***GCC Toolchain*** sections.
+TL;DR: See [Synthesis toolchain](#synthesis-toolchain) and [GCC Toolchain](#gcc-toolchain) sections.
 
 
 
