@@ -118,6 +118,22 @@ make
 ```
 To upload selected `.hex` files with `debug_uart/upload.sh` (see [here](https://github.com/MrJake222/debug_uart)), use:
 `./upload.sh path/to/c/led.hex`.
+Requires `python3-intelhex`.
+In case of `LIBUSB_ERROR_ACCESS` error, create `/etc/udev/rules.d/80-lattice.rules` with following contents:
+```
+SUBSYSTEM=="usb", \
+    ATTRS{idVendor}=="1209", \
+    ATTRS{idProduct}=="b1c0", \
+    MODE="660", \
+    GROUP="plugdev"
+```
+
+This will grant access to pico-ice device to `plugdev` group members.
+Consider adding yourself to this group and reloading udev rules:
+```sudo gpasswd -a $USER plugdev
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+```
 
 ### Linking
 Provided linker script `linker.ld` links the object files into ROM (`0x20000`) and arrays into RAM(`0x00000`).

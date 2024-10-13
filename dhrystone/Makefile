@@ -9,11 +9,15 @@ CFLAGS = -O3 -D printf=printf_ -ffreestanding -nostdlib
 
 dhrystone.elf: main.o dhry.o stdlib.o printf.o
 	riscv32-unknown-elf-ld -T linker.ld -o $@ $^	\
-		-L/opt/riscv32i/lib/gcc/riscv32-unknown-elf/13.2.0 -lgcc
+		-L/opt/riscv32i/lib/gcc/riscv32-unknown-elf/14.2.0 -lgcc
 
 printf.o: printf/printf.c
 	riscv32-unknown-elf-gcc -c $(CFLAGS) $< -o $@	\
 		-D PRINTF_DISABLE_SUPPORT_FLOAT				\
+
+dhry.o: dhry.c
+	riscv32-unknown-elf-gcc -c $(CFLAGS) $< -o $@	\
+		-Wno-implicit-function-declaration -Wno-implicit-int
 
 %.o: %.c
 	riscv32-unknown-elf-gcc -c $(CFLAGS) $< -o $@
