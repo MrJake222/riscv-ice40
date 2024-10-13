@@ -81,6 +81,8 @@ int main() {
 	const int f_clk_mhz = round(cycles, time_us);
 	const int dmmips_per_mhz = dmmips / f_clk_mhz;
 	printf("dmips / MHz: %d.%03d  (%d MHz)\n", dmmips_per_mhz/1000, dmmips_per_mhz%1000, f_clk_mhz);
+	
+	while(1);
 }
 
 long cycle() {
