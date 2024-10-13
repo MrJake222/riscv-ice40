@@ -80,13 +80,14 @@ Adjust `[dumpfile]` and `[savefile]` directives.
 - `led.c` -- test PWM,
 - `led_breathe.c` -- cycle through RGB leds,
 - `counters.c` -- tests performance counters required for Dhrystone benchmarking,
-- `uart.c` -- simple UART test, send "a" 10 times and stop,
-- `delay.c` -- send character each 100ms,
+- `uart.c` -- UART test, send "a" 10 times and stop,
 - `ram.c` -- test RAM mapping,
 - `ram_test.c` -- test whole RAM,
-- `time.c` -- hardware timer test,
+- `delay.c` -- busy-waiting, send character each 100ms,
+- `time.c` -- hardware timer test, send character each 100ms,
+- `collect.py` -- to be used with delay and time tests -- measures precision,
 - `uart_comm.c` -- send hello world, echo characters,
-- `print_test.c` -- test lightweight `printf`.
+- `print_test.c` -- test lightweight `printf`,
 
 ### GCC Toolchain
 Unfortunately, a lot of distros don't provide prebuilt packages
