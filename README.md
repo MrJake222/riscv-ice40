@@ -9,7 +9,8 @@ TL;DR: See [Synthesis toolchain](#synthesis-toolchain) and [GCC Toolchain](#gcc-
 ## RISC-V
 
 ### Synthesis toolchain
-For Debian: `sudo apt install iverilog yosys nextpnr-ice40 fpga-icestorm`.
+* Debian: `sudo apt install iverilog yosys nextpnr-ice40 fpga-icestorm dfu-util`.
+
 Now try to build & upload one of the cores:
 ```
 cd picorv32
@@ -94,8 +95,10 @@ Unfortunately, a lot of distros don't provide prebuilt packages
 for this simplest 32-bit architecture. Note: requires ~10GB of space and
 *quite a bit* of time.
 Install prerequisites:
-`sudo apt install build-essential texi2html texinfo gawk bison flex libgmp-dev libmpfr-dev libmpfrc++-dev`.
-Do tell me when some packages are still missing from this list.
+* Debian: `sudo apt install build-essential texi2html texinfo gawk bison flex libgmp-dev libmpfr-dev libmpfrc++-dev`.
+
+Tell me when some packages are still missing from this list.
+Now run this:
 ```
 git clone https://github.com/riscv/riscv-gnu-toolchain
 cd riscv-gnu-toolchain
