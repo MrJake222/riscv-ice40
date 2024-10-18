@@ -1,4 +1,4 @@
-all: led.hex led_breathe.hex uart.hex uart_comm.hex time.hex delay.hex ram.hex ram_test.hex counters.hex print_test.hex
+all: led.hex led_breathe.hex uart.hex uart_comm.hex time.hex delay.hex sections.hex ram_test.hex counters.hex print_test.hex
 
 #CFLAGS = -O1
 CFLAGS = -O1 -march=rv32i_zicsr

@@ -82,7 +82,7 @@ Adjust `[dumpfile]` and `[savefile]` directives.
 - `led_breathe.c` -- cycle through RGB leds,
 - `counters.c` -- tests performance counters required for Dhrystone benchmarking,
 - `uart.c` -- UART test, send "a" 10 times and stop,
-- `ram.c` -- test RAM mapping,
+- `sections.c` -- test linker mappings,
 - `ram_test.c` -- test whole RAM,
 - `delay.c` -- busy-waiting, send character each 100ms,
 - `time.c` -- hardware timer test, send character each 100ms,
