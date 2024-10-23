@@ -8,7 +8,7 @@ void delay_ms(int x) {
 	// tuned manually
 	// picorv32:  91 @ 24 MHz
 	// vexriscv: 167 @ 16 MHz
-	int i = 91 * x * 24;
+	int i = 167 * x * 16;
 	while(i--) asm("");
 }
 

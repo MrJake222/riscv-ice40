@@ -8,3 +8,7 @@
 	path = vexriscv-impl
 	url = https://github.com/MrJake222/VexRiscv.git
 	branch = develop
+[submodule "c/lwmem"]
+	path = c/lwmem
+	url = git@github.com:MaJerle/lwmem.git
+	branch = main
