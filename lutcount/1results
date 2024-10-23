@@ -6,6 +6,7 @@
                     VexRiscv_smprod:  total 1322 (25%)
                  VexRiscv_smprod_my:  total 1924 (36%)
           VexRiscv_smprod_my_muldiv:  total 2695 (51%)
+             VexRiscv_smprod_my_fpu:  total 7431 (141%)
              VexRiscv_smprod_icache:  total 1472 (28%)
         VexRiscv_full_nommu_nocache:  total 5838 (111%)
                VexRiscv_full_simple:  total 5828 (110%)
