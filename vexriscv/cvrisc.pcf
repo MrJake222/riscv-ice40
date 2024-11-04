@@ -3,12 +3,16 @@ set_io 	RESET		10
 
 # GP0  UART0Tx  ICE27
 # GP1  UART0Rx  ICE25
-set_io 	PICO_UART0_RX		25
+# GP2  UART0CTS ICE21
 set_io 	PICO_UART0_TX		27
+set_io 	PICO_UART0_RX		25
+set_io 	PICO_UART0_CTS		21
 # GP4  UART1Tx  ICE26
 # GP5  UART1Rx  ICE23
-set_io 	PICO_UART1_RX		23
+# GP6  UART1CTS ICE20
 set_io 	PICO_UART1_TX		26
+set_io 	PICO_UART1_RX		23
+set_io 	PICO_UART1_CTS		20
 
 set_io  led_green   39
 set_io  led_blue    40

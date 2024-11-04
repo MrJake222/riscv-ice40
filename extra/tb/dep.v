@@ -26,7 +26,7 @@ end
 
 localparam SIM_F_CLK = 1_000_000;
 // update from soc
-localparam SOC_F_CLK = 24_000_000;
+localparam SOC_F_CLK = 16_000_000;
 localparam SOC_BAUD  =  1_000_000;
 // assuming soc clk > sim clk
 // sim time unit: 1e9 ns

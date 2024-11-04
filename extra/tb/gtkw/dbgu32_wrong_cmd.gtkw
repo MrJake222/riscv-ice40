@@ -1,0 +1,31 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Fri Nov  1 21:49:04 2024
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/extra/tb/dbgu32_wrong_cmd.vcd"
+[dumpfile_mtime] "Fri Nov  1 21:46:44 2024"
+[dumpfile_size] 164614
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/extra/tb/gtkw/dbgu32_wrong_cmd.gtkw"
+[timestart] 0
+[size] 960 996
+[pos] -1 -1
+*-29.399996 612000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] dbgu32_wrong_cmd.
+[treeopen] dbgu32_wrong_cmd.dbgu0.
+[sst_width] 209
+[signals_width] 158
+[sst_expanded] 1
+[sst_vpaned_height] 288
+@28
+dbgu32_wrong_cmd.tx
+dbgu32_wrong_cmd.dbgu0.clk
+@22
+dbgu32_wrong_cmd.dbgu0.adr_ptr[31:0]
+@28
+dbgu32_wrong_cmd.dbgu0.transmit_request
+dbgu32_wrong_cmd.dbgu0.uart_tx_write
+dbgu32_wrong_cmd.dbgu0.busy
+@29
+dbgu32_wrong_cmd.cts
+[pattern_trace] 1
+[pattern_trace] 0

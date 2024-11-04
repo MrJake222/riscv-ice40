@@ -4,6 +4,7 @@ module uartblk #(
 ) (
 	input wire rx,
 	output wire tx,
+    output wire cts, // low = accept data
 	
     input  wire clk,
     input  wire n_reset,
@@ -84,6 +85,8 @@ begin
 	if (uart_tx_write)
 		uart_tx_write <= 0;
 end
+
+assign cts = rx_has_data; // has_data=1 -> ncts=1 -> BLOCK
 
 assign dbg_tx_buf_empty = tx_buf_empty;
 assign dbg_rx_has_data  = rx_has_data;

@@ -9,6 +9,7 @@ module dbgu32 #(
    // uart
     input wire rx,
     output wire tx,
+    output wire cts, // low = accept data
     
    // cpu
     output reg cpu_run,
@@ -36,7 +37,8 @@ localparam I_MEM_RD      = 8'h05;
 localparam I_CPU_RUN_CYC = 8'h20;
 localparam I_CPU_RESET   = 8'h21;
 localparam I_CPU_FREERUN = 8'h22;
-localparam OK = 8'h01;
+localparam ACK = 8'h01;
+localparam NAK = 8'h02;
 
 wire uart_rx_ready;
 wire [7:0] uart_rx_data;
@@ -78,8 +80,12 @@ assign mem_op = mem_write | mem_read;
 
 reg [7:0] cpu_cycles;   // for how long should cpu run
 
+// set when full command received
+// cleared by ack() or transmit finished
+reg busy;
+
 // receive instruction length
-// (not counting instruction byte)
+// (counting instruction byte)
 reg [2:0] RX_DATA_LEN;
 always @*
 begin
@@ -117,8 +123,17 @@ end
 
 task ack();
 begin
-    tx_data[0] <= OK;
+    tx_data[0] <= ACK;
     transmit_request <= 1;
+    busy <= 0;
+end
+endtask
+
+task nak();
+begin
+    tx_data[0] <= NAK;
+    transmit_request <= 1;
+    busy <= 0;
 end
 endtask
 
@@ -143,6 +158,8 @@ begin
         cpu_cycles <= 0;
         cpu_run <= 1;
         cpu_n_reset <= 0;
+        
+        busy <= 0;
     end
 
 /* instruction reception */
@@ -170,6 +187,7 @@ begin
         rx_byte <= 0;
         // end of instruction
         // start execution
+        busy <= 1;
         
         // instruction select
         case (rx_data[0])
@@ -199,18 +217,21 @@ begin
                 data_bus_out[23:16] <= rx_data[3];
                 data_bus_out[31:24] <= rx_data[4];
                 mem_write <= 1;
+                // will call ack() next cycle
             end
             
             I_MEM_RD:
             begin
                 RW <= 1;
                 mem_read <= 1;
+                // will set transmit_request next cycle
             end
             
             I_CPU_RUN_CYC:
             begin
                 cpu_cycles <= rx_data[1];
                 cpu_run <= 1;
+                // will call ack() after run
             end
             
             I_CPU_RESET:
@@ -224,6 +245,8 @@ begin
                 cpu_run <= rx_data[1];
                 ack();
             end
+            
+            default: nak();
         endcase
     end
 
@@ -277,6 +300,7 @@ begin
             // called after uart transmits the last byte
             instr_tx_finish <= 0;
             tx_byte <= 0;
+            busy <= 0;
         end        
         else
         begin
@@ -301,6 +325,8 @@ begin
     end
     
 end
+
+assign cts = busy;
 
 assign dbg_rx_byte = rx_byte;
 assign dbg_rx_instr_finish = instr_rx_finish;

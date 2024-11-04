@@ -1,14 +1,16 @@
 module cvrisc (
-	input wire CLK_12M,
-	input wire RESET,
+	input  wire CLK_12M,
+	input  wire RESET,
 	output wire PICO_UART0_RX,
 	input  wire PICO_UART0_TX,
+	output wire PICO_UART0_CTS,
 	output wire PICO_UART1_RX,
 	input  wire PICO_UART1_TX,
+	output wire PICO_UART1_CTS,
 	
-	output led_blue,
-	output led_green,
-	output led_red,
+	output wire led_blue,
+	output wire led_green,
+	output wire led_red,
     
     output wire [7:0] A
 );
@@ -28,6 +30,18 @@ clk12toX clkm (
 reg n_reset;
 always @ (posedge clk)
     n_reset <= boot_n_reset & RESET; // manual reset accepted
+
+localparam N = 23;
+reg [N:0] counter;
+reg heartbeat;
+always @(posedge clk)
+begin
+    counter <= counter + 1;
+    heartbeat <= counter[N:N-4] == 0 || counter[N:N-4] == 4;
+end
+assign led_red = ~(heartbeat & n_reset);
+assign led_green = 1;
+assign led_blue = 1;
 
 wire cpu_run;
 wire cpu_n_reset;
@@ -57,6 +71,7 @@ dbgu32 #(
 	
 	.rx(PICO_UART0_TX),
 	.tx(PICO_UART0_RX),
+	.cts(PICO_UART0_CTS),
 	
 	.cpu_run(cpu_run),
 	.cpu_n_reset(cpu_n_reset),
@@ -196,7 +211,7 @@ wire mmio_sel = mem_op & (adr[17:16] == 2'b01);
 wire [7:0] pwm_do [2:0];
 wire [7:0] uart_do [0:0];
 wire [31:0] timer_do [0:0];
-
+/*
 wire pwm0_sel = mmio_sel & (adr[4:2] == 3'b000);
 pwm pwm0 (
     .clk(clk),
@@ -224,7 +239,7 @@ pwm pwm2 (
     .do(pwm_do[2]),
     .out(led_blue)
 );
-
+*/
 wire uart0_rx_enable;
 wire uart0_tx_enable;
 // 100 data reg, 101 status reg
@@ -235,6 +250,7 @@ uartblk #(
 ) uart0 (
 	.rx(PICO_UART1_TX),
 	.tx(PICO_UART1_RX),
+	.cts(PICO_UART1_CTS),
 
 	.clk(clk),
 	.n_reset(n_reset),
@@ -257,7 +273,7 @@ timer #(
 	.do(timer_do[0])
 );
 
-wire [31:0] mmio_do = pwm_do[0] | pwm_do[1] | pwm_do[2] | uart_do[0] | timer_do[0];
+wire [31:0] mmio_do = /*pwm_do[0] | pwm_do[1] | pwm_do[2] |*/ uart_do[0] | timer_do[0];
 
 // rom 20000 - 2FFFF (16K)
 wire rom_sel = mem_op & (adr[17:16] == 2'b10);
@@ -280,14 +296,18 @@ assign cpu_di = mem_do;
 
 
 // debug
-assign A[0] = cpu_reset;
+/*assign A[0] = cpu_reset;
 assign A[1] = icmd_valid;
 assign A[2] = irsp_valid;
 assign A[3] = dcmd_valid;
 assign A[4] = drsp_valid;
 assign A[5] = mmio_sel & adr[4:3] == 2'b10; // uart cs
 assign A[6] = uart0_tx_enable;
-assign A[7] = PICO_UART1_RX;
+assign A[7] = PICO_UART1_RX;*/
+
+assign A[0] = PICO_UART0_TX;
+assign A[1] = PICO_UART0_RX;
+assign A[2] = PICO_UART0_CTS;
 
 
 endmodule
