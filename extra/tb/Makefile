@@ -1,6 +1,6 @@
 VERILOG += clk.v dbgu32.v pwm.v ram32.v timer.v uartblk.v uart.v
 # testbenches
-TB += clk_16M.v dbgu32_cts_wait.v dbgu32_wrong_cmd.v dbgu32_back2back.v
+TB += clk_16M.v dbgu32_cts_wait.v dbgu32_wrong_cmd.v dbgu32_back2back.v dbgu32_reset.v
 # testbenches dependencies
 DEP = dep.v
 

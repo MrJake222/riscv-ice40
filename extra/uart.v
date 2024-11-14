@@ -10,7 +10,7 @@ module UART #(
                          // for one clock period
     output reg [7:0] rx_data,
     
-    output reg tx,
+    output wire tx,
     input wire tx_write,    // user sets to 1 to start a transfer
                             // one pulse is sufficient
     output reg tx_finished, // module sets to 1 when transfer finished
@@ -22,6 +22,10 @@ module UART #(
 	output wire dbg_rx_enable,
     output wire dbg_tx_enable
 );
+
+// gate tx behind reset not to transmit accidental start bit
+reg tx_ = 1;
+assign tx = ~n_reset | tx_;
 
 // round to nearest
 localparam BIT_CLK = (CLK_FREQ - 1) / UART_FREQ + 1;
@@ -111,7 +115,7 @@ always @ (posedge clk)
 begin
     if (~n_reset)
     begin
-        tx <= 1; // idle
+        tx_ <= 1; // idle
         tx_enable <= 0;
         tx_finished <= 0;
         
@@ -128,7 +132,7 @@ begin
             begin
                 // tx start write
                 tx_enable <= 1;
-                tx <= 0; // start bit
+                tx_ <= 0; // start bit
             end
         end else
         begin
@@ -147,9 +151,9 @@ begin
                 end else
                 begin
                     if (tx_bit == 8)
-                        tx <= 1;                // stop bit
+                        tx_ <= 1;                // stop bit
                     else
-                        tx <= tx_data[tx_bit];  // transmit data
+                        tx_ <= tx_data[tx_bit];  // transmit data
                     
                     tx_bit <= tx_bit + 1;
                 end

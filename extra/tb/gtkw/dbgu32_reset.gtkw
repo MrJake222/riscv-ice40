@@ -1,0 +1,18 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Fri Nov  8 10:46:32 2024
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/extra/tb/dbgu32_reset.vcd"
+[dumpfile_mtime] "Fri Nov  8 10:46:20 2024"
+[dumpfile_size] 165167
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/extra/tb/gtkw/dbgu32_reset.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*0.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 209
+[signals_width] 78
+[sst_expanded] 1
+[sst_vpaned_height] 154
+[pattern_trace] 1
+[pattern_trace] 0

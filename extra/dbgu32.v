@@ -72,17 +72,13 @@ reg instr_rx_finish;
 reg [2:0] tx_byte;       // 1-4; no of byte sent
 reg [7:0] tx_data [3:0]; // 4-bytes of response
 reg instr_tx_finish;
-reg transmit_request;
+reg tx_req;
 
 reg mem_write;
 reg mem_read;
 assign mem_op = mem_write | mem_read;
 
 reg [7:0] cpu_cycles;   // for how long should cpu run
-
-// set when full command received
-// cleared by ack() or transmit finished
-reg busy;
 
 // receive instruction length
 // (counting instruction byte)
@@ -121,19 +117,33 @@ begin
     endcase
 end
 
-task ack();
+// set when full command received
+// cleared by tx_ack() or transmit finished
+reg busy;
+
+task tx_ack();
 begin
     tx_data[0] <= ACK;
-    transmit_request <= 1;
+    tx_req <= 1;
     busy <= 0;
 end
 endtask
 
-task nak();
+task tx_nak();
 begin
     tx_data[0] <= NAK;
-    transmit_request <= 1;
+    tx_req <= 1;
     busy <= 0;
+end
+endtask
+
+// to be called after uart_tx_finished or
+// by tx_req (latch data properly to tx_data[])
+task tx_next_byte();
+begin
+    uart_tx_data <= tx_data[tx_byte];
+	uart_tx_write <= 1;
+	tx_byte <= tx_byte + 1;
 end
 endtask
 
@@ -149,7 +159,7 @@ begin
         instr_rx_finish <= 0;
         
         tx_byte <= 0;
-        transmit_request <= 0;
+        tx_req <= 0;
         instr_tx_finish <= 0;
         
         mem_write <= 0;
@@ -161,6 +171,7 @@ begin
         
         busy <= 0;
     end
+    else begin
 
 /* instruction reception */
     if (uart_rx_ready)
@@ -177,7 +188,10 @@ begin
     begin
         instr_rx_decode <= 0;
         if (rx_byte == RX_DATA_LEN)
+        begin
             instr_rx_finish <= 1;
+            busy <= 1;
+        end
     end
     
 /* instruction decoding */
@@ -187,7 +201,6 @@ begin
         rx_byte <= 0;
         // end of instruction
         // start execution
-        busy <= 1;
         
         // instruction select
         case (rx_data[0])
@@ -197,7 +210,7 @@ begin
                 adr_ptr[15: 8] <= rx_data[2];
                 adr_ptr[23:16] <= rx_data[3];
                 adr_ptr[31:24] <= rx_data[4];
-                ack();
+                tx_ack();
             end
             
             I_ADR_PTR_GET:
@@ -206,7 +219,7 @@ begin
                 tx_data[1] <= adr_ptr[15: 8];
                 tx_data[2] <= adr_ptr[23:16];
                 tx_data[3] <= adr_ptr[31:24];
-                transmit_request <= 1;
+                tx_req <= 1;
             end
             
             I_MEM_WR:
@@ -217,36 +230,36 @@ begin
                 data_bus_out[23:16] <= rx_data[3];
                 data_bus_out[31:24] <= rx_data[4];
                 mem_write <= 1;
-                // will call ack() next cycle
+                // will call tx_ack() next cycle
             end
             
             I_MEM_RD:
             begin
                 RW <= 1;
                 mem_read <= 1;
-                // will set transmit_request next cycle
+                // will set tx_req next cycle
             end
             
             I_CPU_RUN_CYC:
             begin
                 cpu_cycles <= rx_data[1];
                 cpu_run <= 1;
-                // will call ack() after run
+                // will call tx_ack() after run
             end
             
             I_CPU_RESET:
             begin
                 cpu_n_reset <= 0;
-                ack();
+                tx_ack();
             end
             
             I_CPU_FREERUN:
             begin
                 cpu_run <= rx_data[1];
-                ack();
+                tx_ack();
             end
             
-            default: nak();
+            default: tx_nak();
         endcase
     end
 
@@ -259,7 +272,7 @@ begin
 		if (mem_write)
 		begin
 			mem_write <= 0;
-			ack();
+			tx_ack();
 		end
 		
 		if (mem_read)
@@ -269,7 +282,7 @@ begin
 			tx_data[1] <= data_bus_in[15: 8];
 			tx_data[2] <= data_bus_in[23:16];
 			tx_data[3] <= data_bus_in[31:24];
-			transmit_request <= 1;
+			tx_req <= 1;
 		end
 	end
     
@@ -284,33 +297,34 @@ begin
     if (cpu_cycles == 1)
     begin
         // last edge
-        ack();
+        tx_ack();
         cpu_run <= 0;
     end
 
 
 /* response transmission */
-    if (transmit_request | uart_tx_finished)
+    if (tx_req && ~instr_tx_finish)
     begin
-        // run on initial byte transmit request
-        // or when uart finishes byte transmission
-        
+		// "~instr_tx_finish" makes sure that
+		// we wait until last byte finishes transmitting
+		// (the busy got deasserted when it started)
+		tx_req <= 0;
+		tx_next_byte();
+    end
+    
+    if (uart_tx_finished)
+    begin
+        // run when uart finishes byte transmission
         if (instr_tx_finish)
         begin
-            // called after uart transmits the last byte
+            // uart transmitted the last byte
             instr_tx_finish <= 0;
             tx_byte <= 0;
-            busy <= 0;
         end        
         else
         begin
-            // not finish, transmit more
-            transmit_request <= 0;
-            
-            uart_tx_data <= tx_data[tx_byte];
-            uart_tx_write <= 1;
-            
-            tx_byte <= tx_byte + 1;
+            // not finished, transmit more
+            tx_next_byte();
         end
     end
     
@@ -319,11 +333,20 @@ begin
     begin
         uart_tx_write <= 0;
         
-        // wait one cycle for tx_byte increment
+        // happens one cycle after start of the transmission
+        // wait one cycle fpr proper tx_byte increment
         if (tx_byte == TX_DATA_LEN)
+        begin
             instr_tx_finish <= 1;
+            busy <= 0;
+            // right now the unit will start receiving the next
+            // byte from host, it'll latch rx byte a couple of cycles earlier
+            // than this byte finishes transmitting hence the "~instr_tx_finish"
+            // in response start if at 306th line
+        end
     end
     
+    end // else no reset
 end
 
 assign cts = busy;

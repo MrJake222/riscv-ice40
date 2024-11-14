@@ -1,31 +1,32 @@
 [*]
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
-[*] Fri Nov  1 21:49:04 2024
+[*] Mon Nov  4 17:06:39 2024
 [*]
 [dumpfile] "/home/norbert/Projects/pico-ice/risc-v/extra/tb/dbgu32_back2back.vcd"
-[dumpfile_mtime] "Fri Nov  1 21:46:44 2024"
-[dumpfile_size] 164614
+[dumpfile_mtime] "Mon Nov  4 17:06:12 2024"
+[dumpfile_size] 165171
 [savefile] "/home/norbert/Projects/pico-ice/risc-v/extra/tb/gtkw/dbgu32_back2back.gtkw"
 [timestart] 0
-[size] 960 996
+[size] 1407 996
 [pos] -1 -1
-*-29.399996 612000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-29.099995 517000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] dbgu32_back2back.
 [treeopen] dbgu32_back2back.dbgu0.
 [sst_width] 209
-[signals_width] 158
+[signals_width] 166
 [sst_expanded] 1
 [sst_vpaned_height] 288
 @28
 dbgu32_back2back.tx
-dbgu32_back2back.dbgu0.clk
-@22
-dbgu32_back2back.dbgu0.adr_ptr[31:0]
-@28
-dbgu32_back2back.dbgu0.transmit_request
-dbgu32_back2back.dbgu0.uart_tx_write
-dbgu32_back2back.dbgu0.busy
-@29
 dbgu32_back2back.cts
+dbgu32_back2back.rx
+dbgu32_back2back.dbgu0.instr_tx_finish
+dbgu32_back2back.dbgu0.uart_tx_finished
+dbgu32_back2back.dbgu0.uart_rx_ready
+dbgu32_back2back.dbgu0.instr_rx_finish
+dbgu32_back2back.dbgu0.instr_tx_finish
+dbgu32_back2back.dbgu0.uart_tx_write
+@29
+dbgu32_back2back.dbgu0.tx_req
 [pattern_trace] 1
 [pattern_trace] 0

@@ -1,19 +1,8 @@
 `timescale 1 ns / 1 ns
 
-module dbgu32_back2back ();
+module dbgu32_reset ();
 
 `include "dep.v"
-
-initial
-begin
-    dbgu0.adr_ptr = 32'h20000;
-	send_byte(8'h01);
-	send_byte(8'h00);
-	send_byte(8'h00);
-	send_byte(8'h02);
-	send_byte(8'h00);
-	send_byte(8'h05);
-end
 
 dbgu32 #(
     .CLK_FREQ(SOC_F_CLK),
@@ -32,7 +21,7 @@ dbgu32 #(
 initial
 begin
 	$dumpfile(`VCD_OUTPUT);
-	$dumpvars(4, dbgu32_back2back);
+	$dumpvars(4, dbgu32_reset);
 	#(5000000)
 	$finish;
 end

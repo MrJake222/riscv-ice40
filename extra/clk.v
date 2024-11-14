@@ -10,7 +10,7 @@ module clk12toX (
     output wire clk_3M,
     output wire clk_1M5,
     output wire clk_0M75,
-    output reg  n_reset
+    output wire n_reset
 );
 
 // 4*24 MHz = 96MHz
@@ -57,15 +57,18 @@ begin
 end
 
 // reset
+reg reset = 1;
 reg [7:0] cnt = 8'hFF;
 always @ (posedge clk_96M)
 begin
-	if (~n_reset)
+	if (reset)
 	begin
 		cnt <= cnt - 1;
 		if (cnt == 0)
-			n_reset <= 1;
+			reset <= 0;
 	end
 end
+
+assign n_reset = ~reset;
 
 endmodule

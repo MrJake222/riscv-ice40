@@ -12,7 +12,8 @@ module cvrisc (
 	output wire led_green,
 	output wire led_red,
     
-    output wire [7:0] A
+    output wire [7:0] A,
+    output wire [1:0] B
 );
 
 // can be set by simulation
@@ -308,6 +309,10 @@ assign A[7] = PICO_UART1_RX;*/
 assign A[0] = PICO_UART0_TX;
 assign A[1] = PICO_UART0_RX;
 assign A[2] = PICO_UART0_CTS;
+assign A[3] = n_reset;
+assign A[4] = clk;
+assign B[0] = n_reset;
+assign B[1] = clk;
 
 
 endmodule
