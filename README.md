@@ -2,6 +2,10 @@
 
 TL;DR: See [Synthesis toolchain](#synthesis-toolchain) and [GCC Toolchain](#gcc-toolchain) sections.
 
+You'd need my other software (or forks) to run this test suite:
+* [debug uart](https://github.com/MrJake222/debug_uart) for uploading RISC-V program,
+* [my pico-ice](https://github.com/MrJake222/pico-ice/tree/my-dev) board firmware,
+  specifically the `my-dev` branch for CTS line support and double UART,
 
 
 
