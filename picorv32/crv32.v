@@ -3,8 +3,10 @@ module crv32 (
 	input wire RESET,
 	output wire PICO_UART0_RX,
 	input  wire PICO_UART0_TX,
+	output wire PICO_UART0_CTS,
 	output wire PICO_UART1_RX,
 	input  wire PICO_UART1_TX,
+	output wire PICO_UART1_CTS,
 	
 	output led_blue,
 	output led_green,

@@ -9,6 +9,7 @@
 *.hw.json
 *.asc
 *.bin
+*.uf2
 
 # common
 *.pdf

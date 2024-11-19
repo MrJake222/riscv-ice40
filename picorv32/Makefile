@@ -49,7 +49,7 @@ IV_OPTS    = -D VCD_OUTPUT= -D NO_ICE40_DEFAULT_ASSIGNMENTS
 
 
 # first -> default
-all: verify bin util
+all: verify bin uf2 util
 
 bin: $(BIN)
 uf2: $(UF2)
