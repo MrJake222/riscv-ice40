@@ -53,6 +53,7 @@ dbgu32 #(
 	
 	.rx(PICO_UART0_TX),
 	.tx(PICO_UART0_RX),
+	.cts(PICO_UART0_CTS),
 	
 	.cpu_run(cpu_run),
 	.cpu_n_reset(cpu_n_reset),
@@ -167,6 +168,7 @@ uartblk #(
 ) uart0 (
 	.rx(PICO_UART1_TX),
 	.tx(PICO_UART1_RX),
+	.cts(PICO_UART1_CTS),
 
 	.clk(clk),
 	.n_reset(n_reset),
