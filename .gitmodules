@@ -1,14 +1,20 @@
 [submodule "picorv32/picorv32-impl"]
-	path = picorv32-impl
+	path = cores/picorv32
 	url = https://github.com/YosysHQ/picorv32.git
 [submodule "c/printf"]
 	path = c/printf
 	url = https://github.com/mpaland/printf.git
 [submodule "vexriscv-impl"]
-	path = vexriscv-impl
+	path = cores/vexriscv
 	url = https://github.com/MrJake222/VexRiscv.git
 	branch = develop
 [submodule "c/lwmem"]
 	path = c/lwmem
 	url = git@github.com:MaJerle/lwmem.git
 	branch = main
+[submodule "rocket-impl"]
+	path = cores/rocket
+	url = git@github.com:MrJake222/rocket-chip.git
+[submodule "cv32e40p-impl"]
+	path = cores/cv32e40p
+	url = git@github.com:openhwgroup/cv32e40p.git

@@ -1,0 +1,4 @@
+                   picorv32_default:   total  1988  (38%)
+                 VexRiscv_smprod_my:   total  1928  (37%)
+                        Rocket_tiny:   total  7334 (139%)
+                           cv32e40p:   total 13320 (252%)

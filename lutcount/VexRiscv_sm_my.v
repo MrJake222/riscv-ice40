@@ -1,1 +1,1 @@
-../vexriscv-build/VexRiscv_sm_my.v
+../cores/vexriscv-build/VexRiscv_sm_my.v

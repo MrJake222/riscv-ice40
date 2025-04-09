@@ -1,1 +1,1 @@
-../vexriscv-build/VexRiscv_smprod_my_fpu.v
+../cores/vexriscv-build/VexRiscv_smprod_my_fpu.v

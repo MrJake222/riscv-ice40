@@ -1,1 +1,1 @@
-../vexriscv-build/VexRiscv_smprod_icache.v
+../cores/vexriscv-build/VexRiscv_smprod_icache.v

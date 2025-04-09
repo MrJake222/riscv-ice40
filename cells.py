@@ -23,6 +23,8 @@ mods = J["modules"][tld]["cells"]
 
 cnt = defaultdict(lambda: 0)
 cnt2 = defaultdict(lambda: 0)
+# cnt3 = defaultdict(lambda: 0)
+# cnt4 = defaultdict(lambda: 0)
 
 for x in mods:
     if "LUT" in x:
@@ -31,26 +33,42 @@ for x in mods:
         signame = x[:idx]
         cnt[signame] += 1
         
-        modname = signame.split(".")[0]
-        cnt2[modname] += 1
+        modnames = signame.split(".")
+        cnt2[modnames[0]] += 1
+        # modname3 = ".".join(modnames[:2])
+        # cnt3[modname3] += 1
+        # modname4 = ".".join(modnames[:3])
+        # cnt4[modname4] += 1
+        # todo refactor
 
 def print_sorted(D):
     keys = list(D.keys())
     keys.sort(key=lambda x: D[x])
     keylen = max(map(len, keys))
     for k in keys:
-        p = f"({D[k] / MAXLUT * 100:.0f}%)"
-        print(f"\t {k:{keylen}}   {D[k]:4}  {p:>5}")
+        p = round(D[k] / MAXLUT * 100)
+        p = f"({p}%)"
+        print(f"\t {k:{keylen}}   {D[k]:5}  {p:>6}")
 
-print()
-print("signal LUT usage")
-print_sorted(cnt)
+# print()
+# print("signal LUT usage")
+# print_sorted(cnt)
 
-print()
-print("second-level modules LUT usage")
+# print()
+print(" second-level modules LUT usage")
 print_sorted(cnt2)
 
-print()
+# print()
+# print(" third-level modules LUT usage")
+# print_sorted(cnt3)
+
+# print()
+# print(" fourth-level modules LUT usage")
+# print_sorted(cnt4)
+
+# print()
 print()
 total = sum(cnt.values())
-print(f"total {total} ({total / MAXLUT * 100:.0f}%)")
+p = round(total / MAXLUT * 100)
+p = f"({p}%)"
+print(f" total {total:5} {p:>6}")

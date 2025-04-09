@@ -1,1 +1,1 @@
-../vexriscv-build/VexRiscv_full_nommu_nocache.v
+../cores/vexriscv-build/VexRiscv_full_nommu_nocache.v

@@ -16,14 +16,14 @@ module crv32 (
 );
 
 // can be set by simulation
-parameter F_CLK = 24_000_000;
+parameter F_CLK = 16_000_000;
 parameter BAUD  =  1_000_000;
 
 wire clk;
 wire boot_n_reset;
 clk12toX clkm (
     .clk_in_12M(CLK_12M),
-    .clk_24M(clk),
+    .clk_16M(clk),
     .n_reset(boot_n_reset)
 );
 
