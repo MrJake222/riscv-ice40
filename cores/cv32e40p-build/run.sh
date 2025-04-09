@@ -17,13 +17,8 @@ function build {
     if [[ ! -d ${target} ]]; then
         echo "Installing $target"
         rm -rf ${target} && mkdir ${target}
-        sv2v -v --top=${TOP} -w ${target} ${mods} ${incl} ${src}/${TOP}.sv ${pkgs} ${extra}
+        sv2v --top=${TOP} -w ${target} ${mods} ${incl} ${src}/${TOP}.sv ${pkgs} ${extra}
         if [[ $? != 0 ]]; then rm -rf ${target}; exit 1; fi
-        
-        # remove debugging calls
-        #sed -i 's/\$finish/\/\/$finish/g' ${target}/*.v
-        #sed -i 's/\$display/\/\/$display/g' ${target}/*.v
-        #sed -i 's/\$fwrite/\/\/$fwrite/g' ${target}/*.v
     else
         #echo -n "${target} exists, file present: "
         ls -1 ${target} | tr "\n" " " | sed "s/${TOP}.v //g"

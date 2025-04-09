@@ -40,9 +40,18 @@ C="../cores"
 picorv32_extra="$C/picorv32/picorv32.v"
 rocket_extra="Arbiter3_LLWB.v BreakpointUnit.v CSRFile.v IBuf.v MulDiv.v PlusArgTimeout.v rf_combMem.v RocketALU.v RVCExpander.v"
 cv_extra="cv32e40p_aligner.v cv32e40p_alu_div.v cv32e40p_alu.v cv32e40p_apu_disp.v cv32e40p_clock_gate.v cv32e40p_compressed_decoder.v cv32e40p_controller.v cv32e40p_core.v cv32e40p_cs_registers.v cv32e40p_decoder.v cv32e40p_ex_stage.v cv32e40p_ff_one.v cv32e40p_fifo.v cv32e40p_fp_wrapper.v cv32e40p_hwloop_regs.v cv32e40p_id_stage.v cv32e40p_if_stage.v cv32e40p_int_controller.v cv32e40p_load_store_unit.v cv32e40p_mult.v cv32e40p_obi_interface.v cv32e40p_popcnt.v cv32e40p_prefetch_buffer.v cv32e40p_prefetch_controller.v cv32e40p_register_file.v cv32e40p_sleep_unit.v fpnew_cast_multi_2E827_67072.v fpnew_classifier.v fpnew_divsqrt_multi_E225A_B8CF6.v fpnew_divsqrt_th_32_3DF01_FC8AC.v fpnew_fma_EA93F.v fpnew_fma_multi_B5D6B_2D261.v fpnew_noncomp_DE16F.v fpnew_opgroup_block_37AAD.v fpnew_opgroup_fmt_slice_07650.v fpnew_opgroup_multifmt_slice_23084.v fpnew_rounding.v fpnew_top_8A78A.v"
+ibex_extra="ibex_alu.v ibex_branch_predict.v ibex_compressed_decoder.v ibex_controller.v ibex_core.v ibex_counter.v ibex_cs_registers.v ibex_csr.v ibex_decoder.v ibex_dummy_instr.v ibex_ex_block.v ibex_fetch_fifo.v ibex_icache.v ibex_id_stage.v ibex_if_stage.v ibex_load_store_unit.v ibex_lockstep.v ibex_multdiv_fast.v ibex_multdiv_slow.v ibex_pmp.v ibex_prefetch_buffer.v ibex_register_file_ff.v ibex_register_file_fpga.v ibex_register_file_latch.v ibex_wb_stage.v prim_clock_gating.v prim_generic_buf.v prim_generic_flop.v"
 
-lutcount "picorv32_default"		"picorv32_tb"	"."									"picorv32_default.v"		${picorv32_extra}
-lutcount "VexRiscv_smprod_my"	"VexRiscv"		"$C/vexriscv-build"					"VexRiscv_smprod_my.v"
 #lutcount "Rocket_small"		"Rocket"		"$C/rocket-build/Rocket_small" 		"Rocket.v" 					${rocket_extra}
 lutcount "Rocket_tiny"			"Rocket"		"$C/rocket-build/Rocket_tiny" 		"Rocket.v" 					${rocket_extra}
 lutcount "cv32e40p"				"cv32e40p_top"	"$C/cv32e40p-build/cv32"			"cv32e40p_top.v" 			${cv_extra}
+lutcount "picorv32_default"		"picorv32_tb"	"."									"picorv32_default.v"		${picorv32_extra}
+lutcount "ibex"					"ibex_top"		"$C/ibex-build/ibex"				"ibex_top.v"				${ibex_extra}
+# darkriscv
+# kronos
+# hazard3
+# nox
+# pequeno
+# rvx
+# rsd (huge)
+lutcount "VexRiscv_smprod_my"	"VexRiscv"		"$C/vexriscv-build"					"VexRiscv_smprod_my.v"
