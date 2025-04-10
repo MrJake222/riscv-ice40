@@ -10,7 +10,7 @@ function build {
     
     if [[ ! -d ${target} ]]; then
 		cd ../rocket-impl
-		MILL=./mill make verilog CONFIG="freechips.rocketchip.system.$variant"
+		make verilog CONFIG="freechips.rocketchip.system.$variant"
 		cd -
 
         echo "Installing $variant in $target"

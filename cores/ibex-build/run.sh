@@ -15,7 +15,7 @@ function build {
     mods="-y $src" # -y $srcipg -y $srcuvm"
     incl="-I $srcip -I $srcdv"
     pkgs="$src/ibex_pkg.sv $srcip/prim_ram_1p_pkg.sv $srcip/prim_secded_pkg.sv $srcuvm/prim_pkg.sv"
-    extra="$srcipg/prim_generic_buf.sv $srcipg/prim_generic_flop.sv"
+    extra=""
     
     if [[ ! -d ${target} ]]; then
         echo "Installing $target"
@@ -33,10 +33,8 @@ function build {
         sed -i 's/prim_flop/prim_generic_flop/g' ${target}/*.v
     else
         #echo -n "${target} exists, file present: "
-        ls -1 ${target} | tr "\n" " " | sed "s/${TOP}.v //g"
+        ls -1 ${target} | tr "\n" " "
         echo ""
-        echo ""
-        echo "top: ${TOP}.v"
     fi
 }
 

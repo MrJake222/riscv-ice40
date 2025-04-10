@@ -23,8 +23,8 @@ mods = J["modules"][tld]["cells"]
 
 cnt = defaultdict(lambda: 0)
 cnt2 = defaultdict(lambda: 0)
-# cnt3 = defaultdict(lambda: 0)
-# cnt4 = defaultdict(lambda: 0)
+cnt3 = defaultdict(lambda: 0)
+cnt4 = defaultdict(lambda: 0)
 
 for x in mods:
     if "LUT" in x:
@@ -35,10 +35,10 @@ for x in mods:
         
         modnames = signame.split(".")
         cnt2[modnames[0]] += 1
-        # modname3 = ".".join(modnames[:2])
-        # cnt3[modname3] += 1
-        # modname4 = ".".join(modnames[:3])
-        # cnt4[modname4] += 1
+        modname3 = ".".join(modnames[:2])
+        cnt3[modname3] += 1
+        modname4 = ".".join(modnames[:3])
+        cnt4[modname4] += 1
         # todo refactor
 
 def print_sorted(D):

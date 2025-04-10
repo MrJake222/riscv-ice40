@@ -21,3 +21,12 @@
 [submodule "ibex"]
 	path = cores/ibex
 	url = git@github.com:lowRISC/ibex.git
+[submodule "cores/darkriscv"]
+	path = cores/darkriscv
+	url = git@github.com:darklife/darkriscv.git
+[submodule "cores/kronos"]
+	path = cores/kronos
+	url = git@github.com:SonalPinto/kronos.git
+[submodule "cores/Hazard3"]
+	path = cores/Hazard3
+	url = git@github.com:Wren6991/Hazard3.git
