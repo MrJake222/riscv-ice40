@@ -71,19 +71,18 @@ Folder structure:
 
 Core LUT4 usage:
 ```
-   femtorv_tach:   total   953  (18%)
-      darkriscv:   total  1552  (29%)
-  vex_smprod_my:   total  1928  (37%)
+    Rocket_tiny:   total  7334 (139%) TOO BIG
+       cv32e40p:   total 13320 (252%) TOO BIG
    picorv32_csr:   total  1988  (38%)
+       ibex_noM:   total  6357 (120%) TOO BIG
+      darkriscv:   total  1552  (29%)
+         kronos:   total  4696  (89%) TOO BIG
   hazard3_noMAC:   total  2559  (48%)
-
-        pequeno:   total  4662  (88%)
-         kronos:   total  4696  (89%)
-      rvx_noint:   total  5095  (96%)
-       ibex_noM:   total  6357 (120%)
-            nox:   total  6489 (123%)
-    Rocket_tiny:   total  7334 (139%)
-       cv32e40p:   total 13320 (252%)
+            nox:   total  6489 (123%) TOO BIG
+        pequeno:   total  4662  (88%) TOO BIG
+      rvx_noint:   total  5095  (96%) TOO BIG
+  vex_smprod_my:   total  1928  (37%)
+   femtorv_tach:   total   953  (18%)
 ```
 Cores that didn't fit: Rocket (even the tiny version), CV32E40P, IBEX (even with `RV32M=0`), Kronos, NoX, Pequeno, RVX (aka Steel).
 
