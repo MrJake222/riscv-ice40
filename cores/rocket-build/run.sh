@@ -3,13 +3,14 @@
 function build {
     variant=$1
     target=$2
-    src="../rocket/out/emulator/freechips.rocketchip.system.TestHarness/freechips.rocketchip.system.$variant/mfccompiler/compile.dest"
+    rocket="../rocket"
+    src="$rocket/out/emulator/freechips.rocketchip.system.TestHarness/freechips.rocketchip.system.$variant/mfccompiler/compile.dest"
     
     #src=../vexriscv-impl/src/main/scala/vexriscv/demo/$variant.scala
     #if [[ ! -f $file || $file -ot $src ]]; then
     
     if [[ ! -d ${target} ]]; then
-		cd ../rocket
+		cd $rocket
 		make verilog CONFIG="freechips.rocketchip.system.$variant"
 		cd -
 

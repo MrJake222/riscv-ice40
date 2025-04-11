@@ -3,15 +3,17 @@
 function build {
     variant=$1
     file=$2
-    src=../vexriscv-impl/src/main/scala/vexriscv/demo/$variant.scala
+    
+    vex="../vexriscv"
+    src="$vex/src/main/scala/vexriscv/demo/$variant.scala"
 
     if [[ ! -f $file || $file -ot $src ]]; then
-        cd ../vexriscv-impl
+        cd $vex
         sbt "runMain vexriscv.demo.$variant"
         cd -
 
         echo "Installing $variant in $file"
-        mv ../vexriscv-impl/VexRiscv.v $file
+        mv $vex/VexRiscv.v $file
         echo ""
     else
         echo $file up to date
