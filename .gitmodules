@@ -42,6 +42,10 @@
 	path = cores/rocket
 	url = git@github.com:MrJake222/rocket-chip.git
 	branch = mill-version
+[submodule "cores/rvx"]
+	path = cores/rvx
+	url = git@github.com:rafaelcalcada/rvx.git
+	branch = main
 [submodule "cores/vexriscv"]
 	path = cores/vexriscv
 	url = git@github.com:MrJake222/VexRiscv.git

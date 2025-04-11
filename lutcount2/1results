@@ -7,4 +7,5 @@
                       hazard3_noMAC:   total  2559  (48%)
                                 nox:   total  6489 (123%)
                             pequeno:   total  4662  (88%)
-                 VexRiscv_smprod_my:   total  1928  (37%)
+                          rvx_noint:   total  5095  (96%)
+                      vex_smprod_my:   total  1928  (37%)
