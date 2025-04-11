@@ -1,32 +1,48 @@
-[submodule "picorv32/picorv32-impl"]
-	path = cores/picorv32
-	url = https://github.com/YosysHQ/picorv32.git
-[submodule "c/printf"]
-	path = c/printf
-	url = https://github.com/mpaland/printf.git
-[submodule "vexriscv-impl"]
-	path = cores/vexriscv
-	url = https://github.com/MrJake222/VexRiscv.git
-	branch = develop
 [submodule "c/lwmem"]
 	path = c/lwmem
 	url = git@github.com:MaJerle/lwmem.git
 	branch = main
-[submodule "rocket-impl"]
-	path = cores/rocket
-	url = git@github.com:MrJake222/rocket-chip.git
-[submodule "cv32e40p-impl"]
+[submodule "c/printf"]
+	path = c/printf
+	url = git@github.com:mpaland/printf.git
+	branch = master
+[submodule "cores/cv32e40p"]
 	path = cores/cv32e40p
 	url = git@github.com:openhwgroup/cv32e40p.git
-[submodule "ibex"]
-	path = cores/ibex
-	url = git@github.com:lowRISC/ibex.git
+	branch = master
 [submodule "cores/darkriscv"]
 	path = cores/darkriscv
 	url = git@github.com:darklife/darkriscv.git
+	branch = master
+[submodule "cores/hazard3"]
+	path = cores/hazard3
+	url = git@github.com:Wren6991/Hazard3.git
+	branch = stable
+[submodule "cores/ibex"]
+	path = cores/ibex
+	url = git@github.com:lowRISC/ibex.git
+	branch = master
 [submodule "cores/kronos"]
 	path = cores/kronos
 	url = git@github.com:SonalPinto/kronos.git
-[submodule "cores/Hazard3"]
-	path = cores/Hazard3
-	url = git@github.com:Wren6991/Hazard3.git
+	branch = master
+[submodule "cores/nox"]
+	path = cores/nox
+	url = git@github.com:aignacio/nox.git
+	branch = master
+[submodule "cores/pequeno"]
+	path = cores/pequeno
+	url = git@github.com:MrJake222/pequeno_riscv.git
+	branch = fix-dyn-arr
+[submodule "cores/picorv32"]
+	path = cores/picorv32
+	url = git@github.com:YosysHQ/picorv32.git
+	branch = main
+[submodule "cores/rocket"]
+	path = cores/rocket
+	url = git@github.com:MrJake222/rocket-chip.git
+	branch = mill-version
+[submodule "cores/vexriscv"]
+	path = cores/vexriscv
+	url = git@github.com:MrJake222/VexRiscv.git
+	branch = develop

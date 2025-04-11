@@ -42,6 +42,8 @@ function lutcount {
 	all_older $json $wdir $files # returns $?=1 when at least one modified
 	if [[ ! -f $json || $? -eq 1 ]]; then
 		echo "calc $name"
+		# print work directory and echo yosys command
+		# cd $wdir && pwd && echo yosys -q -p "synth_ice40 -top $tld -json $json" $files && cd - > /dev/null
 		# run yosys in the working directory, output json to local output dir
 		cd $wdir && yosys -q -p "synth_ice40 -top $tld -json $json" $files && cd - > /dev/null
 		if [[ $? != 0 ]]; then exit 1; fi
@@ -69,17 +71,22 @@ ibex_src="ibex_alu.v ibex_branch_predict.v ibex_compressed_decoder.v ibex_contro
 darkriscv_src="darkriscv.v"
 kronos_src="kronos_agu.v kronos_alu.v kronos_branch.v kronos_core.v kronos_counter64.v kronos_csr.v kronos_EX.v kronos_hcu.v kronos_ID.v kronos_IF.v kronos_lsu.v kronos_RF.v"
 hazard_src="hazard3_decode.v hazard3_triggers.v hazard3_instr_decompress.v hazard3_csr.v hazard3_power_ctrl.v arith/hazard3_onehot_priority.v arith/hazard3_shift_barrel.v arith/hazard3_priority_encode.v arith/hazard3_onehot_encode.v arith/hazard3_onehot_priority_dynamic.v arith/hazard3_muldiv_seq.v arith/hazard3_alu.v arith/hazard3_mul_fast.v arith/hazard3_branchcmp.v hazard3_cpu_2port.v hazard3_regfile_1w2r.v hazard3_core.v hazard3_irq_ctrl.v hazard3_frontend.v hazard3_pmp.v hazard3_cpu_1port.v debug/dtm/hazard3_ecp5_jtag_dtm.v debug/dtm/hazard3_jtag_dtm.v debug/dtm/hazard3_jtag_dtm_core.v debug/cdc/hazard3_sync_1bit.v debug/cdc/hazard3_reset_sync.v debug/cdc/hazard3_apb_async_bridge.v debug/dm/hazard3_sbus_to_ahb.v debug/dm/hazard3_dm.v"
+nox_src="cb_to_axi.v csr.v decode.v execute.v fetch.v fifo_nox.v lsu.v nox.v register_file.v reset_sync.v wb.v"
+pequeno_src="alu.v decode_unit.v execution_unit.v exu_branch_unit.v fetch_unit.v loadstore_unit.v memory_access_unit.v opfwd_control.v pqr5_core_top.v regfile.v writeback_unit.v"
 
-#			name				tld				work dir							src...
-lutcount "Rocket_tiny"			"Rocket"		"$C/rocket-build/Rocket_tiny" 		${rocket_src}
-lutcount "cv32e40p"				"cv32e40p_top"	"$C/cv32e40p-build/cv32"			${cv_src}
-lutcount "picorv32_counters"	"picorv32_tb"	"$C/picorv32"						${rv32_src}			"$L/picorv32_counters.v"
-lutcount "ibex_noM"				"ibex_noM"		"$C/ibex-build/ibex"				${ibex_src}			"$L/ibex_noM.v"
-lutcount "darkriscv"			"darkriscv"		"$C/darkriscv-build/rv32i"			${darkriscv_src}
-lutcount "kronos"				"kronos_core"	"$C/kronos-build/kronos"			${kronos_src}
-lutcount "hazard3_noMAC"		"hazard3_noMAC"	"$C/Hazard3/hdl"					${hazard_src}		"$L/hazard3_noMAC.v"
-# nox
-# pequeno
+vex_src="VexRiscv_smprod_my.v"
+
+#			name					tld				work dir						src...
+lutcount	"Rocket_tiny"			"Rocket"		"$C/rocket-build/Rocket_tiny" 	${rocket_src}
+lutcount	"cv32e40p"				"cv32e40p_top"	"$C/cv32e40p-build/cv32"		${cv_src}
+lutcount	"picorv32_csr"			"picorv32_tb"	"$C/picorv32"					${rv32_src}			"$L/picorv32_counters.v"
+lutcount	"ibex_noM"				"ibex_noM"		"$C/ibex-build/ibex"			${ibex_src}			"$L/ibex_noM.v"
+lutcount	"darkriscv"				"darkriscv"		"$C/darkriscv-build/rv32i"		${darkriscv_src}
+lutcount	"kronos"				"kronos_core"	"$C/kronos-build/kronos"		${kronos_src}		# strangely big, issue posted on gh
+lutcount	"hazard3_noMAC"			"hazard3_noMAC"	"$C/hazard3/hdl"				${hazard_src}		"$L/hazard3_noMAC.v"
+lutcount	"nox"					"nox"			"$C/nox-build/nox"				${nox_src}
+lutcount	"pequeno"				"pqr5_core_top"	"$C/pequeno-build/pqr5"			${pequeno_src}
+# 
 # rvx
 # rsd (huge)
-lutcount "VexRiscv_smprod_my"	"VexRiscv"		"$C/vexriscv-build"					"VexRiscv_smprod_my.v"
+lutcount	"VexRiscv_smprod_my"	"VexRiscv"		"$C/vexriscv-build"				${vex_src}
