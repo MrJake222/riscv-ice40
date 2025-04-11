@@ -43,25 +43,6 @@ All RISC-V cores use the same Makefile template. Build Targets:
 - `prgflash` -- use `dfu-util` to upload code to nonvolatile flash storage ([pico-ice](https://github.com/tinyvision-ai-inc/pico-ice) board),
 - `prgcram` -- program configuration RAM (same as above, only volatile).
 
-### FemtoRV
-Currenly unused.
-
-### PicoRV32
-This survey uses [Yosys PicoRV32](https://github.com/YosysHQ/picorv32) implementation
-contained within `picorv32-impl` folder. `picorv32` contains files specific to this project.
-Variants are set up by changing options inside `crv32.v` at core instantiation.
-Default options only enable performance counters.
-
-### VexRiscV
-Additional directory `vexriscv-build` is used for builing the core from Scala.
-Other folders are the same as PicoRV32. Variants are provided as separate files.
-Changing them requires Makefile modification.
-- `VexRiscv_smprod_my.v` -- Small & productive with modifications
-- `VexRiscv_sm_my.v` -- Small with modifications
-- `VexRiscv_smprod_my_muldiv.v` -- Small & productive with modifications and simple muldiv unit.
-
-Modifications include `cmdForkPersistence` set to true and performance counters.
-
 ### Testbenches
 Tests can be found in core folders for ex. `picorv32/tb`.
 `dep.v` is a common file for all tests.
@@ -77,6 +58,59 @@ Adjust `[dumpfile]` and `[savefile]` directives.
 - `*_uart0.v` -- write uart and wait,
 - `dbgu32_mem.v` -- program memory cell by uart.
 
+
+
+## Cores used
+A bunch of cores were sampled for LUT4 usage. Below is a list of them.
+
+Folder structure:
+- `cores` -- main folder for rtl shenanigans,
+- `cores/[core name]` -- submoduled core implementation code,
+- `cores/*-build` -- Verilog code of cores that require building (Chisel/SpinalHDL) or conversion(`sv2v`),
+- `cores/*-soc` -- fully working SoCs.
+
+Core LUT4 usage:
+```
+   femtorv_tach:   total   953  (18%)
+      darkriscv:   total  1552  (29%)
+  vex_smprod_my:   total  1928  (37%)
+   picorv32_csr:   total  1988  (38%)
+  hazard3_noMAC:   total  2559  (48%)
+
+        pequeno:   total  4662  (88%)
+         kronos:   total  4696  (89%)
+      rvx_noint:   total  5095  (96%)
+       ibex_noM:   total  6357 (120%)
+            nox:   total  6489 (123%)
+    Rocket_tiny:   total  7334 (139%)
+       cv32e40p:   total 13320 (252%)
+```
+Cores that didn't fit: Rocket (even the tiny version), CV32E40P, IBEX (even with `RV32M=0`), Kronos, NoX, Pequeno, RVX (aka Steel).
+
+### PicoRV32
+This survey uses [Yosys PicoRV32](https://github.com/YosysHQ/picorv32) implementation
+contained within `picorv32` folder. `picorv32-soc` contains files specific to this project.
+Variants are set up by changing options inside `crv32.v` at core instantiation.
+Default options only enable performance counters.
+
+### VexRiscV
+Additional directory `vexriscv-build` is used for builing the core from Scala.
+Other folders are the same as PicoRV32. Variants are provided as separate files.
+Changing them requires Makefile modification.
+- `VexRiscv_smprod_my.v` -- Small & productive with modifications
+- `VexRiscv_sm_my.v` -- Small with modifications
+- `VexRiscv_smprod_my_muldiv.v` -- Small & productive with modifications and simple muldiv unit.
+
+Modifications include `cmdForkPersistence` set to true and performance counters.
+
+### DarkRISCV
+TODO
+
+### Hazard3
+TODO
+
+### FemtoRV
+TODO
 
 
 
