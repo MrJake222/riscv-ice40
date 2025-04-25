@@ -2,10 +2,10 @@
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
 [*] Thu Jun  6 19:50:45 2024
 [*]
-[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/vexriscv/tb/cvrisc_bus_instr.vcd"
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/vexriscv-soc/tb/cvrisc_bus_instr.vcd"
 [dumpfile_mtime] "Thu Jun  6 19:50:24 2024"
 [dumpfile_size] 103529
-[savefile] "/home/norbert/Projects/pico-ice/risc-v/vexriscv/tb/gtkw/cvrisc_bus_instr.gtkw"
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/vexriscv-soc/tb/gtkw/cvrisc_bus_instr.gtkw"
 [timestart] 0
 [size] 1593 976
 [pos] -1 -1

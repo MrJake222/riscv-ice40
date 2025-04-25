@@ -2,10 +2,10 @@
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
 [*] Fri Jun  7 09:24:26 2024
 [*]
-[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/picorv32/tb/crv32_counters.vcd"
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/picorv32-soc/tb/crv32_counters.vcd"
 [dumpfile_mtime] "Fri Jun  7 09:05:31 2024"
 [dumpfile_size] 37715
-[savefile] "/home/norbert/Projects/pico-ice/risc-v/picorv32/tb/gtkw/crv32_counters.gtkw"
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/picorv32-soc/tb/gtkw/crv32_counters.gtkw"
 [timestart] 0
 [size] 1635 864
 [pos] 651 421

@@ -7,7 +7,7 @@ EXTRA += clk.v ram32.v dbgu32.v uart.v
 EXTRA += pwm.v uartblk.v timer.v
 # pin definitions / freq
 PCF   = $(TLD).pcf
-FREQ  = 24
+FREQ  = 16
 
-
-include ../Makefile
+SELFDIR := $(dir $(lastword $(MAKEFILE_LIST)))
+include ${SELFDIR}/../Makefile

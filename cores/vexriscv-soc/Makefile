@@ -12,4 +12,5 @@ PCF   = $(TLD).pcf
 FREQ  = 16
 
 
-include ../Makefile
+SELFDIR := $(dir $(lastword $(MAKEFILE_LIST)))
+include ${SELFDIR}/../Makefile
