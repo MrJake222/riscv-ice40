@@ -12,8 +12,8 @@
 	branch = master
 [submodule "cores/darkriscv"]
 	path = cores/darkriscv
-	url = git@github.com:darklife/darkriscv.git
-	branch = master
+	url = git@github.com:MrJake222/darkriscv.git
+	branch = develop-my
 [submodule "cores/hazard3"]
 	path = cores/hazard3
 	url = git@github.com:Wren6991/Hazard3.git

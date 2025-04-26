@@ -15,6 +15,8 @@ module crv32 (
     output wire [7:0] A
 );
 
+localparam HB_PATTERN = 3'b100;
+
 // can be set by simulation
 parameter F_CLK = 16_000_000;
 parameter BAUD  =  1_000_000;
@@ -126,11 +128,12 @@ wire ram_sel = mem_op & (adr[17:16] == 2'b00);
 wire [31:0] ram_do;
 ram16Kx32 ram (
     .clk(clk),
-    .cs(ram_sel),
-    .wren(mem_wren),
-    .adr(adr[15:2]),
-    .di(mem_di),
-    .do(ram_do)
+    .p0_cs(ram_sel),
+    .p0_wren(mem_wren),
+    .p0_adr(adr[15:2]),
+    .p0_di(mem_di),
+    .p0_do(ram_do),
+    .p1_adr(14'h0)
 );
 
 // mmio 10000 - 1FFFF (16K)
@@ -138,13 +141,14 @@ wire mmio_sel = mem_op & (adr[17:16] == 2'b01);
 wire [7:0] pwm_do [2:0];
 wire [7:0] uart_do [0:0];
 wire [31:0] timer_do [0:0];
+wire [2:0] pwm_wave;
 pwm pwm0 (
     .clk(clk),
     .cs(mmio_sel & adr[4:2] == 3'b000),
     .wren(|mem_wren),
     .di(mem_di[7:0]),
     .do(pwm_do[0]),
-    .out(led_red)
+    .out(pwm_wave[0])
 );
 pwm pwm1 (
     .clk(clk),
@@ -152,7 +156,7 @@ pwm pwm1 (
     .wren(|mem_wren),
     .di(mem_di[7:0]),
     .do(pwm_do[1]),
-    .out(led_green)
+    .out(pwm_wave[1])
 );
 pwm pwm2 (
     .clk(clk),
@@ -160,7 +164,7 @@ pwm pwm2 (
     .wren(|mem_wren),
     .di(mem_di[7:0]),
     .do(pwm_do[2]),
-    .out(led_blue)
+    .out(pwm_wave[2])
 );
 wire uart0_rx_enable;
 wire uart0_tx_enable;
@@ -197,12 +201,13 @@ wire rom_sel = mem_op & (adr[17:16] == 2'b10);
 wire [31:0] rom_do;
 ram16Kx32 rom (
     .clk(clk),
-    .cs(rom_sel),
+    .p0_cs(rom_sel),
 	 // todo: doesn't work when set to mem_ro_wren
-    .wren(mem_wren),
-    .adr(adr[15:2]),
-    .di(mem_di),
-    .do(rom_do)
+    .p0_wren(mem_wren),
+    .p0_adr(adr[15:2]),
+    .p0_di(mem_di),
+    .p0_do(rom_do),
+    .p1_adr(14'h0)
 );
 
 
@@ -212,6 +217,15 @@ wire [31:0] mem_do = ram_do | rom_do | mmio_do;
 assign dbg_di = mem_do;
 assign cpu_di = mem_do;
 
+// pwm / heartbeat
+heartbeat hb (
+	.clk(cpu_clk),
+	.n_reset(cpu_n_reset),
+	.en_hb(1'b1),
+	.pattern(HB_PATTERN),
+	.pwm(pwm_wave),
+	.out({led_red, led_green, led_blue})
+);
 
 // memory delays
 // r/w delay by one clock cycle

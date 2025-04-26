@@ -1,6 +1,6 @@
 `timescale 1 ns / 1 ns
 
-module dbgu32_mem ();
+module t8_dbgu32_mem ();
 
 `include "dep.v"
 
@@ -14,6 +14,8 @@ begin
     force soc.dbg_adr = 32'h20000; force soc.dbg_do = 32'h00000537; #1000; // lui  a0,0x00
     force soc.dbg_adr = 32'h20004; force soc.dbg_do = 32'h02052583; #1000; // lw   a1,h20(a0)
     force soc.dbg_adr = 32'h20008; force soc.dbg_do = 32'hffdff06f; #1000; // j    -4 (lw)
+    force soc.dbg_adr = 32'h2000C; force soc.dbg_do = 32'h1; #1000; // dummy
+    force soc.dbg_adr = 32'h20010; force soc.dbg_do = 32'h2; #1000; // dummy
 
 	release soc.cpu_n_reset;
 	release soc.dbg_mem_op;
@@ -61,7 +63,7 @@ begin
 	send_byte(8'h05);
 end
 
-cvex #(
+cdark #(
 	.F_CLK(SIM_FCLK),
 	.BAUD(SIM_BAUD)
 ) soc (
@@ -73,7 +75,7 @@ cvex #(
 initial
 begin
 	$dumpfile(`VCD_OUTPUT);
-	$dumpvars(4, dbgu32_mem);
+	$dumpvars(4, t8_dbgu32_mem);
     //for (i=0; i<4; i=i+1)
         //$dumpvars(0, soc.dbgu0.tx_data[i]);
 	#(500000)

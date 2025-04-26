@@ -1,4 +1,4 @@
-module cvrisc (
+module cdark (
 	input  wire CLK_12M,
 	input  wire RESET,
 	output wire PICO_UART0_RX,
@@ -16,6 +16,8 @@ module cvrisc (
     output wire [1:0] B
 );
 
+localparam HB_PATTERN = 3'b110;
+
 // can be set by simulation
 parameter F_CLK = 16_000_000;
 parameter  BAUD =  1_000_000;
@@ -31,18 +33,6 @@ clk12toX clkm (
 reg n_reset;
 always @ (posedge clk)
     n_reset <= boot_n_reset & RESET; // manual reset accepted
-
-localparam N = 23;
-reg [N:0] counter;
-reg heartbeat;
-always @(posedge clk)
-begin
-    counter <= counter + 1;
-    heartbeat <= counter[N:N-4] == 0 || counter[N:N-4] == 4;
-end
-assign led_red = ~(heartbeat & n_reset);
-assign led_green = 1;
-assign led_blue = 1;
 
 wire cpu_run;
 wire cpu_n_reset;
@@ -92,98 +82,68 @@ dbgu32 #(
 
 wire cpu_clk = cpu_run ? clk : 1'b0;
 wire cpu_reset = ~cpu_n_reset;
-reg  [31:0] cpu_adr;
+wire [31:0] cpu_adr;
 wire [31:0] cpu_do;
 wire [31:0] cpu_di;
-reg  [ 3:0] cpu_wren;
-reg         cpu_mem_op;
+wire  [3:0] cpu_wren;
+wire        cpu_mem_op;
 
+wire [31:0] i_adr;
+wire [31:0] i_data;
+wire i_ready;
 
-wire        icmd_valid;             // cpu request valid
-wire [31:0] icmd_adr;
-reg         irsp_valid = 1'b0;      // peripheral response valid
-reg         irsp_error = 1'b0;
+wire d_rd; // data read
+wire d_wr; // data write
 
-wire        dcmd_valid;             // cpu request valid
-wire        dcmd_wr;
-wire [ 3:0] dcmd_mask;
-wire [31:0] dcmd_adr;
-wire [ 1:0] dcmd_size;
-reg         drsp_valid = 1'b0;      // peripheral response valid
-reg         drsp_error = 1'b0;
+wire hlt;
 
-VexRiscv cpu (
-    .clk                (cpu_clk),
-    .reset              (cpu_reset),
-    
-	.iBus_cmd_valid             (icmd_valid),
-	.iBus_cmd_ready             (irsp_valid), // ack when memory read complete
-	.iBus_cmd_payload_pc        (icmd_adr),
-	.iBus_rsp_valid             (irsp_valid),
-	.iBus_rsp_payload_error     (irsp_error),
-	.iBus_rsp_payload_inst      (cpu_di),
-    
-	.timerInterrupt     (1'b0),
-	.externalInterrupt  (1'b0),
-	.softwareInterrupt  (1'b0),
+wire  [2:0] DLEN;
+wire [31:0] DATAI;
+wire [31:0] DATAO;
+darkriscv cpu (
+    .CLK(cpu_clk),
+	.RES(cpu_reset),
+	.HLT(hlt),
 	
-    .dBus_cmd_valid             (dcmd_valid),
-	.dBus_cmd_ready             (drsp_valid), // ack when memory write complete
-	.dBus_cmd_payload_wr        (dcmd_wr),
-	.dBus_cmd_payload_mask      (dcmd_mask),
-	.dBus_cmd_payload_address   (dcmd_adr),
-	.dBus_cmd_payload_data      (cpu_do),
-	.dBus_cmd_payload_size      (dcmd_size),
-	.dBus_rsp_ready             (drsp_valid),
-	.dBus_rsp_error             (drsp_error),
-	.dBus_rsp_data              (cpu_di)
+	.IDATA(i_data),
+	.IADDR(i_adr),
+	
+	.DATAI(DATAI),
+	.DATAO(DATAO),
+	.DADDR(cpu_adr),
+	
+	.DLEN(DLEN),
+	.DRD(d_rd),
+	.DWR(d_wr),
+	
+	.BERR(1'b0)
+);
+darkdemux demux (
+	.DWR(d_wr),
+	.DLEN(DLEN),
+	.DATAI(DATAI),
+	.DATAO(DATAO),
+	.DADDR(cpu_adr),
+	.wren(cpu_wren),
+	.XATAO(cpu_do),
+	.XATAI(cpu_di)
 );
 
-// instruction/data -> main bus multiplexing
-always @*
-begin
-    // data bus request
-    if (dcmd_valid)
-    begin
-        cpu_mem_op = 1;
-        cpu_wren = dcmd_wr ? dcmd_mask : 0;
-        cpu_adr = dcmd_adr;
-    end
-
-    // instruction bus request (lower priority)
-    else if (icmd_valid)
-    begin
-        cpu_mem_op = 1;
-        cpu_wren = 0;
-        cpu_adr = icmd_adr;
-    end
-    
-    // no request
-    else
-    begin
-        cpu_mem_op = 0;
-        cpu_wren = 0;
-        cpu_adr = 0;
-    end
-end
-
+// data read valid
+reg d_rd_valid = 0;
 always @(posedge cpu_clk)
 begin
-    if (irsp_valid)
-        // one pulse
-        irsp_valid <= 0;
-    else
-        // dcmd has priority over icmd
-        irsp_valid <= icmd_valid && !dcmd_valid && !dbg_mem_op; // TODO check timings
+	// clear after one-cycle
+	if (d_rd_valid)
+		d_rd_valid <= 0;
+	// set on reading cycle
+	else if (d_rd)
+		d_rd_valid <= 1;
 end
-
-//  TODO handle dbgu disruptions on data bus
-always @(posedge cpu_clk)
-begin
-    // priority, just respond
-    // whenever there's a request
-    drsp_valid <= dcmd_valid;
-end
+// when reading, wait for data valid
+assign hlt = d_rd & ~d_rd_valid;
+// shorten read cycle for proper ROM switch back to ibus
+assign cpu_mem_op = (d_rd & ~d_rd_valid) | d_wr;
 
 
 // bus
@@ -200,11 +160,12 @@ wire ram_sel = mem_op & (adr[17:16] == 2'b00);
 wire [31:0] ram_do;
 ram16Kx32 ram (
     .clk(clk),
-    .cs(ram_sel),
-    .wren(mem_wren),
-    .adr(adr[15:2]),
-    .di(mem_di),
-    .do(ram_do)
+    .p0_cs(ram_sel),
+    .p0_wren(mem_wren),
+    .p0_adr(adr[15:2]),
+    .p0_di(mem_di),
+    .p0_do(ram_do),
+    .p1_adr(14'h0)
 );
 
 // mmio 10000 - 1FFFF (16K)
@@ -212,7 +173,8 @@ wire mmio_sel = mem_op & (adr[17:16] == 2'b01);
 wire [7:0] pwm_do [2:0];
 wire [7:0] uart_do [0:0];
 wire [31:0] timer_do [0:0];
-/*
+wire [2:0] pwm_wave;
+
 wire pwm0_sel = mmio_sel & (adr[4:2] == 3'b000);
 pwm pwm0 (
     .clk(clk),
@@ -220,7 +182,7 @@ pwm pwm0 (
     .wren(|mem_wren),
     .di(mem_di[7:0]),
     .do(pwm_do[0]),
-    .out(led_red)
+    .out(pwm_wave[0])
 );
 wire pwm1_sel = mmio_sel & (adr[4:2] == 3'b001);
 pwm pwm1 (
@@ -229,7 +191,7 @@ pwm pwm1 (
     .wren(|mem_wren),
     .di(mem_di[7:0]),
     .do(pwm_do[1]),
-    .out(led_green)
+    .out(pwm_wave[1])
 );
 wire pwm2_sel = mmio_sel & (adr[4:2] == 3'b010);
 pwm pwm2 (
@@ -238,9 +200,9 @@ pwm pwm2 (
     .wren(|mem_wren),
     .di(mem_di[7:0]),
     .do(pwm_do[2]),
-    .out(led_blue)
+    .out(pwm_wave[2])
 );
-*/
+
 wire uart0_rx_enable;
 wire uart0_tx_enable;
 // 100 data reg, 101 status reg
@@ -274,18 +236,22 @@ timer #(
 	.do(timer_do[0])
 );
 
-wire [31:0] mmio_do = /*pwm_do[0] | pwm_do[1] | pwm_do[2] |*/ uart_do[0] | timer_do[0];
+wire [31:0] mmio_do = pwm_do[0] | pwm_do[1] | pwm_do[2] | uart_do[0] | timer_do[0];
 
 // rom 20000 - 2FFFF (16K)
 wire rom_sel = mem_op & (adr[17:16] == 2'b10);
 wire [31:0] rom_do;
 ram16Kx32 rom (
     .clk(clk),
-    .cs(rom_sel),
-    .wren(mem_ro_wren),
-    .adr(adr[15:2]),
-    .di(mem_di),
-    .do(rom_do)
+    .p0_cs(rom_sel),
+    .p0_wren(mem_ro_wren),
+    .p0_adr(adr[15:2]),
+    .p0_di(mem_di),
+    .p0_do(rom_do),
+    
+    .p1_ready(i_ready),
+    .p1_adr(i_adr[15:2]),
+    .p1_do(i_data)
 );
 
 
@@ -295,6 +261,15 @@ wire [31:0] mem_do = ram_do | rom_do | mmio_do;
 assign dbg_di = mem_do;
 assign cpu_di = mem_do;
 
+// pwm / heartbeat
+heartbeat hb (
+	.clk(cpu_clk),
+	.n_reset(cpu_n_reset),
+	.en_hb(1'b1),
+	.pattern(HB_PATTERN),
+	.pwm(pwm_wave),
+	.out({led_red, led_green, led_blue})
+);
 
 // debug
 /*assign A[0] = cpu_reset;

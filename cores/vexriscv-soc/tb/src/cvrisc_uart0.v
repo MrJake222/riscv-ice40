@@ -1,6 +1,6 @@
 `timescale 1 ns / 1 ns
 
-module cvrisc_uart0 ();
+module cvex_uart0 ();
 
 `include "dep.v"
 
@@ -38,7 +38,7 @@ begin
 	release soc.dbg_do;
 end
 
-cvrisc #(
+cvex #(
 	.F_CLK(SIM_FCLK),
 	.BAUD(SIM_BAUD)
 ) soc (
@@ -50,7 +50,7 @@ cvrisc #(
 initial
 begin
 	$dumpfile(`VCD_OUTPUT);
-	$dumpvars(4, cvrisc_uart0);
+	$dumpvars(4, cvex_uart0);
 	#(100000)
 	$finish;
 end

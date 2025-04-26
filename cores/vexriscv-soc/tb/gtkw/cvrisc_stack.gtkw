@@ -2,137 +2,137 @@
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
 [*] Thu Jun  6 22:32:23 2024
 [*]
-[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/vexriscv-soc/tb/cvrisc_stack.vcd"
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/vexriscv-soc/tb/cvex_stack.vcd"
 [dumpfile_mtime] "Thu Jun  6 22:32:06 2024"
 [dumpfile_size] 190623
-[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/vexriscv-soc/tb/gtkw/cvrisc_stack.gtkw"
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/vexriscv-soc/tb/gtkw/cvex_stack.gtkw"
 [timestart] 0
 [size] 1635 1203
 [pos] -1 -1
 *-23.100000 19910000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
-[treeopen] cvrisc_stack.
-[treeopen] cvrisc_stack.soc.
-[treeopen] cvrisc_stack.soc.cpu.
-[treeopen] cvrisc_stack.soc.ram.
-[treeopen] cvrisc_stack.soc.uart0.
+[treeopen] cvex_stack.
+[treeopen] cvex_stack.soc.
+[treeopen] cvex_stack.soc.cpu.
+[treeopen] cvex_stack.soc.ram.
+[treeopen] cvex_stack.soc.uart0.
 [sst_width] 283
 [signals_width] 205
 [sst_expanded] 1
 [sst_vpaned_height] 409
 @28
-cvrisc_stack.soc.cpu_reset
-cvrisc_stack.soc.cpu_clk
+cvex_stack.soc.cpu_reset
+cvex_stack.soc.cpu_clk
 [color] 2
-cvrisc_stack.soc.icmd_valid
+cvex_stack.soc.icmd_valid
 [color] 2
-cvrisc_stack.soc.irsp_valid
+cvex_stack.soc.irsp_valid
 @22
 [color] 2
-cvrisc_stack.soc.icmd_adr[31:0]
-cvrisc_stack.soc.adr[31:0]
+cvex_stack.soc.icmd_adr[31:0]
+cvex_stack.soc.adr[31:0]
 @200
 -
 @22
-+{instr_decode} cvrisc_stack.soc.cpu.decode_INSTRUCTION[31:0]
++{instr_decode} cvex_stack.soc.cpu.decode_INSTRUCTION[31:0]
 @c00022
-+{instr_exec} cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
++{instr_exec} cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
 @28
-(0)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(1)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(2)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(3)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(4)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(5)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(6)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(7)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(8)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(9)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(10)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(11)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(12)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(13)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(14)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(15)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(16)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(17)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(18)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(19)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(20)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(21)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(22)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(23)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(24)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(25)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(26)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(27)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(28)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(29)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(30)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(31)cvrisc_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(0)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(1)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(2)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(3)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(4)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(5)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(6)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(7)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(8)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(9)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(10)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(11)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(12)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(13)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(14)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(15)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(16)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(17)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(18)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(19)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(20)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(21)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(22)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(23)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(24)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(25)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(26)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(27)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(28)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(29)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(30)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
+(31)cvex_stack.soc.cpu.execute_INSTRUCTION[31:0]
 @1401200
 -group_end
 @200
 -
 @28
-cvrisc_stack.soc.dcmd_valid
-cvrisc_stack.soc.drsp_valid
+cvex_stack.soc.dcmd_valid
+cvex_stack.soc.drsp_valid
 @22
-cvrisc_stack.soc.dcmd_adr[31:0]
+cvex_stack.soc.dcmd_adr[31:0]
 @200
 -
 -
 @c00022
-cvrisc_stack.soc.adr[31:0]
+cvex_stack.soc.adr[31:0]
 @28
-(0)cvrisc_stack.soc.adr[31:0]
-(1)cvrisc_stack.soc.adr[31:0]
-(2)cvrisc_stack.soc.adr[31:0]
-(3)cvrisc_stack.soc.adr[31:0]
-(4)cvrisc_stack.soc.adr[31:0]
-(5)cvrisc_stack.soc.adr[31:0]
-(6)cvrisc_stack.soc.adr[31:0]
-(7)cvrisc_stack.soc.adr[31:0]
-(8)cvrisc_stack.soc.adr[31:0]
-(9)cvrisc_stack.soc.adr[31:0]
-(10)cvrisc_stack.soc.adr[31:0]
-(11)cvrisc_stack.soc.adr[31:0]
-(12)cvrisc_stack.soc.adr[31:0]
-(13)cvrisc_stack.soc.adr[31:0]
-(14)cvrisc_stack.soc.adr[31:0]
-(15)cvrisc_stack.soc.adr[31:0]
-(16)cvrisc_stack.soc.adr[31:0]
-(17)cvrisc_stack.soc.adr[31:0]
-(18)cvrisc_stack.soc.adr[31:0]
-(19)cvrisc_stack.soc.adr[31:0]
-(20)cvrisc_stack.soc.adr[31:0]
-(21)cvrisc_stack.soc.adr[31:0]
-(22)cvrisc_stack.soc.adr[31:0]
-(23)cvrisc_stack.soc.adr[31:0]
-(24)cvrisc_stack.soc.adr[31:0]
-(25)cvrisc_stack.soc.adr[31:0]
-(26)cvrisc_stack.soc.adr[31:0]
-(27)cvrisc_stack.soc.adr[31:0]
-(28)cvrisc_stack.soc.adr[31:0]
-(29)cvrisc_stack.soc.adr[31:0]
-(30)cvrisc_stack.soc.adr[31:0]
-(31)cvrisc_stack.soc.adr[31:0]
+(0)cvex_stack.soc.adr[31:0]
+(1)cvex_stack.soc.adr[31:0]
+(2)cvex_stack.soc.adr[31:0]
+(3)cvex_stack.soc.adr[31:0]
+(4)cvex_stack.soc.adr[31:0]
+(5)cvex_stack.soc.adr[31:0]
+(6)cvex_stack.soc.adr[31:0]
+(7)cvex_stack.soc.adr[31:0]
+(8)cvex_stack.soc.adr[31:0]
+(9)cvex_stack.soc.adr[31:0]
+(10)cvex_stack.soc.adr[31:0]
+(11)cvex_stack.soc.adr[31:0]
+(12)cvex_stack.soc.adr[31:0]
+(13)cvex_stack.soc.adr[31:0]
+(14)cvex_stack.soc.adr[31:0]
+(15)cvex_stack.soc.adr[31:0]
+(16)cvex_stack.soc.adr[31:0]
+(17)cvex_stack.soc.adr[31:0]
+(18)cvex_stack.soc.adr[31:0]
+(19)cvex_stack.soc.adr[31:0]
+(20)cvex_stack.soc.adr[31:0]
+(21)cvex_stack.soc.adr[31:0]
+(22)cvex_stack.soc.adr[31:0]
+(23)cvex_stack.soc.adr[31:0]
+(24)cvex_stack.soc.adr[31:0]
+(25)cvex_stack.soc.adr[31:0]
+(26)cvex_stack.soc.adr[31:0]
+(27)cvex_stack.soc.adr[31:0]
+(28)cvex_stack.soc.adr[31:0]
+(29)cvex_stack.soc.adr[31:0]
+(30)cvex_stack.soc.adr[31:0]
+(31)cvex_stack.soc.adr[31:0]
 @1401200
 -group_end
 @22
-cvrisc_stack.soc.mem_do[31:0]
-cvrisc_stack.soc.ram_do[31:0]
-cvrisc_stack.soc.mmio_do[31:0]
-cvrisc_stack.soc.rom_do[31:0]
+cvex_stack.soc.mem_do[31:0]
+cvex_stack.soc.ram_do[31:0]
+cvex_stack.soc.mmio_do[31:0]
+cvex_stack.soc.rom_do[31:0]
 @28
-cvrisc_stack.soc.mem_op
+cvex_stack.soc.mem_op
 @22
-cvrisc_stack.soc.mem_wren[3:0]
+cvex_stack.soc.mem_wren[3:0]
 @200
 -
 @23
-cvrisc_stack.stackptr[31:0]
+cvex_stack.stackptr[31:0]
 @22
-cvrisc_stack.reg_x10[31:0]
-cvrisc_stack.reg_x11[31:0]
+cvex_stack.reg_x10[31:0]
+cvex_stack.reg_x11[31:0]
 [pattern_trace] 1
 [pattern_trace] 0

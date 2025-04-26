@@ -1,6 +1,6 @@
 `timescale 1 ns / 1 ns
 
-module cvex_bus_instr ();
+module t1_bus_instr ();
 
 `include "dep.v"
 
@@ -32,7 +32,7 @@ begin
 	release soc.dbg_do;
 end
 
-cvex #(
+cdark #(
 	.F_CLK(SIM_FCLK),
 	.BAUD(SIM_BAUD)
 ) soc (
@@ -44,7 +44,7 @@ cvex #(
 initial
 begin
 	$dumpfile(`VCD_OUTPUT);
-	$dumpvars(3, cvex_bus_instr);
+	$dumpvars(3, t1_bus_instr);
 	#(20000)
 	$finish;
 end

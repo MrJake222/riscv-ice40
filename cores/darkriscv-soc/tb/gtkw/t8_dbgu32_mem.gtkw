@@ -1,0 +1,67 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Fri Apr 25 15:01:34 2025
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/darkriscv-soc/tb/t8_dbgu32_mem.vcd"
+[dumpfile_mtime] "Fri Apr 25 14:59:41 2025"
+[dumpfile_size] 370818
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/darkriscv-soc/tb/gtkw/t8_dbgu32_mem.gtkw"
+[timestart] 0
+[size] 1603 976
+[pos] -203 -12
+*-26.655706 138400000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] t8_dbgu32_mem.
+[treeopen] t8_dbgu32_mem.soc.
+[treeopen] t8_dbgu32_mem.soc.cpu.
+[treeopen] t8_dbgu32_mem.soc.dbgu0.
+[treeopen] t8_dbgu32_mem.soc.ram.
+[treeopen] t8_dbgu32_mem.soc.uart0.
+[sst_width] 283
+[signals_width] 210
+[sst_expanded] 1
+[sst_vpaned_height] 319
+@28
+t8_dbgu32_mem.soc.cpu_reset
+t8_dbgu32_mem.soc.cpu_clk
+@200
+-
+-INSTR
+@22
+t8_dbgu32_mem.soc.i_adr[31:0]
+t8_dbgu32_mem.soc.i_data[31:0]
+t8_dbgu32_mem.soc.cpu.IDATAX[31:0]
+@200
+-
+-READ
+@28
+t8_dbgu32_mem.soc.d_rd
+t8_dbgu32_mem.soc.d_valid
+t8_dbgu32_mem.soc.hlt
+@22
+t8_dbgu32_mem.soc.cpu_adr[31:0]
+t8_dbgu32_mem.soc.cpu_di[31:0]
+@200
+-
+-WRITE
+@28
+t8_dbgu32_mem.soc.d_wr
+@22
+t8_dbgu32_mem.soc.cpu_adr[31:0]
+t8_dbgu32_mem.soc.cpu_do[31:0]
+t8_dbgu32_mem.soc.cpu_wren[3:0]
+@200
+-
+-REGS
+@22
+t8_dbgu32_mem.reg_x10[31:0]
+t8_dbgu32_mem.reg_x11[31:0]
+@200
+-
+-DBGU
+@28
+t8_dbgu32_mem.soc.dbgu0.rx
+t8_dbgu32_mem.soc.dbgu0.tx
+@23
+t8_dbgu32_mem.soc.dbgu0.uarthw.tx_data[7:0]
+[pattern_trace] 1
+[pattern_trace] 0

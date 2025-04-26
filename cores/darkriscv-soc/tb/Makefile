@@ -4,14 +4,16 @@ include ../Makefile
 .DEFAULT_GOAL := sim
 
 # testbenches
-TB += cvex_bus_data_read.v
-TB += cvex_bus_data_write.v
-TB += cvex_bus_instr.v
-TB += cvex_uart0.v
-TB += cvex_stack.v
-TB += cvex_bus_data_byte_access.v
-TB += cvex_counters.v
-TB += dbgu32_mem.v
+TB += t1_bus_instr.v
+TB += t2_bus_data_read.v
+TB += t2_bus_pgm_read.v
+TB += t3_bus_data_write.v
+TB += t4_bus_data_per_byte.v
+TB += t5_counters.v
+TB += t6_stack.v
+TB += t7_uart0.v
+TB += t8_dbgu32_mem.v
+TB += t9_uart_loop.v
 # testbenches dependencies
 DEP = dep.v
 

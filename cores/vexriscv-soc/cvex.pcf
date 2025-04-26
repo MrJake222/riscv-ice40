@@ -1,0 +1,31 @@
+set_io 	CLK_12M		35
+set_io 	RESET		10
+
+# GP0  UART0Tx  ICE27
+# GP1  UART0Rx  ICE25
+# GP2  UART0CTS ICE21
+set_io 	PICO_UART0_TX		27
+set_io 	PICO_UART0_RX		25
+set_io 	PICO_UART0_CTS		21
+# GP4  UART1Tx  ICE26
+# GP5  UART1Rx  ICE23
+# GP6  UART1CTS ICE20
+set_io 	PICO_UART1_TX		26
+set_io 	PICO_UART1_RX		23
+set_io 	PICO_UART1_CTS		20
+
+set_io  led_green   39
+set_io  led_blue    40
+set_io  led_red     41
+
+set_io  A[0]        42
+set_io  A[1]        43
+set_io  A[2]        36
+set_io  A[3]        38
+set_io  A[4]        32
+set_io  A[5]        34
+set_io  A[6]        28
+set_io  A[7]        31
+
+set_io  B[0]        18
+set_io  B[1]        19

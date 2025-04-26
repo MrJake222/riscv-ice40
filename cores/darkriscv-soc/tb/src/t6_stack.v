@@ -1,6 +1,6 @@
 `timescale 1 ns / 1 ns
 
-module cvex_stack ();
+module t6_stack ();
 
 `include "dep.v"
 
@@ -31,7 +31,7 @@ begin
 	release soc.dbg_do;
 end
 
-cvex #(
+cdark #(
 	.F_CLK(SIM_FCLK),
 	.BAUD(SIM_BAUD)
 ) soc (
@@ -43,7 +43,7 @@ cvex #(
 initial
 begin
 	$dumpfile(`VCD_OUTPUT);
-	$dumpvars(4, cvex_stack);
+	$dumpvars(4, t6_stack);
 	#(40000)
 	$finish;
 end

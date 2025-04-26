@@ -1,5 +1,10 @@
 # include this file in *-soc implementations
 
+# pin definitions
+PCF   = $(TLD).pcf
+# extra files
+EXTRA  = clk.v ram32.v dbgu32.v uart.v
+EXTRA += pwm.v uartblk.v timer.v heartbeat.v
 # add extra files with prefix
 RISCV = ../..
 VERILOG += $(patsubst %,$(RISCV)/extra/%,$(EXTRA))

@@ -14,6 +14,6 @@ dst=$2
 pattern=`basename $1 .gtkw`
 replace=`basename $2 .gtkw`
 
-cp $dst $dst.bak
+if [[ -f $dst ]]; then cp $dst $dst.bak; fi
 cp $src $dst
 sed -i "s/$pattern/$replace/g" $dst

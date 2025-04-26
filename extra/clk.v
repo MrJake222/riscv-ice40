@@ -43,7 +43,7 @@ assign clk_12M = clk_reg[2]; // 2^3 =  8
 assign clk_24M = clk_reg[1]; // 2^2 =  4
 assign clk_48M = clk_reg[0]; // 2^1 =  2
 
-
+// mod3
 reg [1:0] clk_reg_mod3;
 always @ (posedge clk_96M)
 begin
@@ -68,7 +68,6 @@ begin
 			reset <= 0;
 	end
 end
-
 assign n_reset = ~reset;
 
 endmodule

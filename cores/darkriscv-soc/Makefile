@@ -1,12 +1,11 @@
-TLD = cvex
+TLD = cdark
 # input files
 VERILOG = $(TLD).v
-VERILOG += VexRiscv_smprod_my.v
-# VERILOG += VexRiscv_sm_my.v
-# VERILOG += VexRiscv_smprod_my_muldiv.v
+VERILOG += darkriscv.v
+VERILOG += darkdemux.v
+#VERILOG += config.vh
 # frequency
 FREQ  = 16
-
 
 SELFDIR := $(dir $(lastword $(MAKEFILE_LIST)))
 include ${SELFDIR}/../Makefile

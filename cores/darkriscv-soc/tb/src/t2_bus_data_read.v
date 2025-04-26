@@ -1,6 +1,6 @@
 `timescale 1 ns / 1 ns
 
-module cvex_bus_data_read ();
+module t2_bus_data_read ();
 
 `include "dep.v"
 
@@ -11,7 +11,7 @@ begin
 	force soc.dbg_wren = 4'hF;
 	
     // Try to read all memory types
-    // EXPECTED: x10 reg reads AA, BB, CC data
+    // EXPECTED: x11 reg reads AA, BB (00 if pwm disabled), CC data
 
     // program data to each memory type
     force soc.dbg_adr = 32'h00000; force soc.dbg_do = 32'hAA; #1000; // RAM  at 00000
@@ -34,7 +34,7 @@ begin
 	release soc.dbg_do;
 end
 
-cvex #(
+cdark #(
 	.F_CLK(SIM_FCLK),
 	.BAUD(SIM_BAUD)
 ) soc (
@@ -46,7 +46,7 @@ cvex #(
 initial
 begin
 	$dumpfile(`VCD_OUTPUT);
-	$dumpvars(4, cvex_bus_data_read);
+	$dumpvars(4, t2_bus_data_read);
 	#(40000)
 	$finish;
 end

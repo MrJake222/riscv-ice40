@@ -1,6 +1,6 @@
 `timescale 1 ns / 1 ns
 
-module cvrisc_bus_data_byte_access ();
+module cvex_bus_data_byte_access ();
 
 `include "dep.v"
 
@@ -30,7 +30,7 @@ begin
 	release soc.dbg_do;
 end
 
-cvrisc #(
+cvex #(
 	.F_CLK(SIM_FCLK),
 	.BAUD(SIM_BAUD)
 ) soc (
@@ -42,7 +42,7 @@ cvrisc #(
 initial
 begin
 	$dumpfile(`VCD_OUTPUT);
-	$dumpvars(4, cvrisc_bus_data_byte_access);
+	$dumpvars(4, cvex_bus_data_byte_access);
 	#(40000)
 	$finish;
 end
