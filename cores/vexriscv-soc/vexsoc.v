@@ -80,101 +80,69 @@ dbgu32 #(
 	.dbg_rx_instr_finish(dbg_rx_instr_finish)
 );
 
+//wire cpu_clk = clk;
 wire cpu_clk = cpu_run ? clk : 1'b0;
 wire cpu_reset = ~cpu_n_reset;
-reg  [31:0] cpu_adr;
+wire [31:0] cpu_adr;
 wire [31:0] cpu_do;
 wire [31:0] cpu_di;
-reg  [ 3:0] cpu_wren;
-reg         cpu_mem_op;
+wire  [3:0] cpu_wren;
+wire        cpu_mem_op;
 
+wire [31:0] i_adr;
+wire [31:0] i_data;
+wire i_ready;
 
-wire        icmd_valid;             // cpu request valid
-wire [31:0] icmd_adr;
-reg         irsp_valid = 1'b0;      // peripheral response valid
-reg         irsp_error = 1'b0;
-
-wire        dcmd_valid;             // cpu request valid
+wire icmd_valid;
+wire icmd_ack;
+reg  irsp_valid = 1'b0;
+wire dcmd_valid;
+reg  drsp_valid = 1'b0;
 wire        dcmd_wr;
 wire [ 3:0] dcmd_mask;
-wire [31:0] dcmd_adr;
 wire [ 1:0] dcmd_size;
-reg         drsp_valid = 1'b0;      // peripheral response valid
-reg         drsp_error = 1'b0;
 
 VexRiscv cpu (
     .clk                (cpu_clk),
     .reset              (cpu_reset),
     
 	.iBus_cmd_valid             (icmd_valid),
-	.iBus_cmd_ready             (irsp_valid), // ack when memory read complete
-	.iBus_cmd_payload_pc        (icmd_adr),
+	.iBus_cmd_ready             (icmd_ack  ),
+	.iBus_cmd_payload_pc        (i_adr     ),
 	.iBus_rsp_valid             (irsp_valid),
-	.iBus_rsp_payload_error     (irsp_error),
-	.iBus_rsp_payload_inst      (cpu_di),
+	.iBus_rsp_payload_error     (1'b0      ),
+	.iBus_rsp_payload_inst      (i_data    ),
     
 	.timerInterrupt     (1'b0),
 	.externalInterrupt  (1'b0),
 	.softwareInterrupt  (1'b0),
 	
     .dBus_cmd_valid             (dcmd_valid),
-	.dBus_cmd_ready             (drsp_valid), // ack when memory write complete
-	.dBus_cmd_payload_wr        (dcmd_wr),
-	.dBus_cmd_payload_mask      (dcmd_mask),
-	.dBus_cmd_payload_address   (dcmd_adr),
-	.dBus_cmd_payload_data      (cpu_do),
-	.dBus_cmd_payload_size      (dcmd_size),
+	.dBus_cmd_ready             (dcmd_valid), // loop from cmd_valid
+	.dBus_cmd_payload_wr        (dcmd_wr   ),
+	.dBus_cmd_payload_mask      (dcmd_mask ),
+	.dBus_cmd_payload_address   (cpu_adr   ),
+	.dBus_cmd_payload_data      (cpu_do    ),
+	.dBus_cmd_payload_size      (dcmd_size ),
 	.dBus_rsp_ready             (drsp_valid),
-	.dBus_rsp_error             (drsp_error),
-	.dBus_rsp_data              (cpu_di)
+	.dBus_rsp_error             (1'b0      ),
+	.dBus_rsp_data              (cpu_di    )
 );
 
-// instruction/data -> main bus multiplexing
-always @*
-begin
-    // data bus request
-    if (dcmd_valid)
-    begin
-        cpu_mem_op = 1;
-        cpu_wren = dcmd_wr ? dcmd_mask : 0;
-        cpu_adr = dcmd_adr;
-    end
+assign cpu_wren = (dcmd_valid & dcmd_wr) ? dcmd_mask : 0;
+assign cpu_mem_op = dcmd_valid;
 
-    // instruction bus request (lower priority)
-    else if (icmd_valid)
-    begin
-        cpu_mem_op = 1;
-        cpu_wren = 0;
-        cpu_adr = icmd_adr;
-    end
-    
-    // no request
-    else
-    begin
-        cpu_mem_op = 0;
-        cpu_wren = 0;
-        cpu_adr = 0;
-    end
-end
+reg i_ready_reg = 0;
+wire i_ready_rising = icmd_valid & (i_ready_reg == 0) & (i_ready == 1);
 
 always @(posedge cpu_clk)
 begin
-    if (irsp_valid)
-        // one pulse
-        irsp_valid <= 0;
-    else
-        // dcmd has priority over icmd
-        irsp_valid <= icmd_valid && !dcmd_valid && !dbg_mem_op; // TODO check timings
+	i_ready_reg <= i_ready;
+	irsp_valid <= icmd_valid & i_ready | i_ready_rising;
+	drsp_valid <= dcmd_valid;
 end
 
-//  TODO handle dbgu disruptions on data bus
-always @(posedge cpu_clk)
-begin
-    // priority, just respond
-    // whenever there's a request
-    drsp_valid <= dcmd_valid;
-end
-
+assign icmd_ack = icmd_valid & i_ready;
 
 // bus
 wire [31:0] adr      =  dbg_mem_op ? dbg_adr    :  cpu_adr;
@@ -278,7 +246,10 @@ ram16Kx32 rom (
     .p0_adr(adr[15:2]),
     .p0_di(mem_di),
     .p0_do(rom_do),
-    .p1_adr(14'h0)
+    
+    .p1_ready(i_ready),
+    .p1_adr(i_adr[15:2]),
+    .p1_do(i_data)
 );
 
 
@@ -311,10 +282,13 @@ assign A[7] = PICO_UART1_RX;*/
 assign A[0] = PICO_UART0_TX;
 assign A[1] = PICO_UART0_RX;
 assign A[2] = PICO_UART0_CTS;
-assign A[3] = n_reset;
-assign A[4] = clk;
-assign B[0] = n_reset;
-assign B[1] = clk;
+assign A[3] = PICO_UART1_TX;
+assign A[4] = PICO_UART1_RX;
+assign A[5] = PICO_UART1_CTS;
+//assign A[3] = n_reset;
+//assign A[4] = clk;
+//assign B[0] = n_reset;
+//assign B[1] = clk;
 
 
 endmodule

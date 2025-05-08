@@ -1,134 +1,59 @@
 [*]
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
-[*] Thu Jun  6 22:14:56 2024
+[*] Thu May  8 18:16:15 2025
 [*]
 [dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/vexriscv-soc/tb/t7_bus_data_per_byte.vcd"
-[dumpfile_mtime] "Thu Jun  6 22:14:54 2024"
-[dumpfile_size] 185945
+[dumpfile_mtime] "Thu May  8 18:12:37 2025"
+[dumpfile_size] 194750
 [savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/vexriscv-soc/tb/gtkw/t7_bus_data_per_byte.gtkw"
-[timestart] 0
-[size] 1635 1203
+[timestart] 3480000
+[size] 1554 1015
 [pos] -1 -1
-*-23.100000 24990000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-22.155706 14210000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] t7_bus_data_per_byte.
 [treeopen] t7_bus_data_per_byte.soc.
-[treeopen] t7_bus_data_per_byte.soc.cpu.
-[treeopen] t7_bus_data_per_byte.soc.ram.
 [treeopen] t7_bus_data_per_byte.soc.uart0.
-[sst_width] 283
-[signals_width] 205
+[sst_width] 423
+[signals_width] 243
 [sst_expanded] 1
-[sst_vpaned_height] 409
+[sst_vpaned_height] 335
 @28
 t7_bus_data_per_byte.soc.cpu_reset
 t7_bus_data_per_byte.soc.cpu_clk
-[color] 2
-t7_bus_data_per_byte.soc.icmd_valid
-[color] 2
-t7_bus_data_per_byte.soc.irsp_valid
-@22
-[color] 2
-t7_bus_data_per_byte.soc.icmd_adr[31:0]
-t7_bus_data_per_byte.soc.adr[31:0]
 @200
 -
-@22
-+{instr_decode} t7_bus_data_per_byte.soc.cpu.decode_INSTRUCTION[31:0]
-@c00022
-+{instr_exec} t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
+-INSTR
 @28
-(0)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(1)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(2)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(3)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(4)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(5)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(6)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(7)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(8)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(9)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(10)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(11)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(12)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(13)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(14)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(15)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(16)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(17)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(18)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(19)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(20)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(21)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(22)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(23)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(24)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(25)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(26)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(27)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(28)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(29)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(30)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-(31)t7_bus_data_per_byte.soc.cpu.execute_INSTRUCTION[31:0]
-@1401200
--group_end
+t7_bus_data_per_byte.soc.icmd_valid
+t7_bus_data_per_byte.soc.irsp_valid
+t7_bus_data_per_byte.soc.i_ready
+t7_bus_data_per_byte.soc.i_ready_pulse
+@22
+t7_bus_data_per_byte.soc.i_adr[31:0]
+t7_bus_data_per_byte.soc.i_data[31:0]
 @200
 -
+-DATA
 @28
 t7_bus_data_per_byte.soc.dcmd_valid
+t7_bus_data_per_byte.soc.cpu_mem_op
 t7_bus_data_per_byte.soc.drsp_valid
 @22
 t7_bus_data_per_byte.soc.dcmd_adr[31:0]
 @200
 -
--
-@c00022
-t7_bus_data_per_byte.soc.adr[31:0]
-@28
-(0)t7_bus_data_per_byte.soc.adr[31:0]
-(1)t7_bus_data_per_byte.soc.adr[31:0]
-(2)t7_bus_data_per_byte.soc.adr[31:0]
-(3)t7_bus_data_per_byte.soc.adr[31:0]
-(4)t7_bus_data_per_byte.soc.adr[31:0]
-(5)t7_bus_data_per_byte.soc.adr[31:0]
-(6)t7_bus_data_per_byte.soc.adr[31:0]
-(7)t7_bus_data_per_byte.soc.adr[31:0]
-(8)t7_bus_data_per_byte.soc.adr[31:0]
-(9)t7_bus_data_per_byte.soc.adr[31:0]
-(10)t7_bus_data_per_byte.soc.adr[31:0]
-(11)t7_bus_data_per_byte.soc.adr[31:0]
-(12)t7_bus_data_per_byte.soc.adr[31:0]
-(13)t7_bus_data_per_byte.soc.adr[31:0]
-(14)t7_bus_data_per_byte.soc.adr[31:0]
-(15)t7_bus_data_per_byte.soc.adr[31:0]
-(16)t7_bus_data_per_byte.soc.adr[31:0]
-(17)t7_bus_data_per_byte.soc.adr[31:0]
-(18)t7_bus_data_per_byte.soc.adr[31:0]
-(19)t7_bus_data_per_byte.soc.adr[31:0]
-(20)t7_bus_data_per_byte.soc.adr[31:0]
-(21)t7_bus_data_per_byte.soc.adr[31:0]
-(22)t7_bus_data_per_byte.soc.adr[31:0]
-(23)t7_bus_data_per_byte.soc.adr[31:0]
-(24)t7_bus_data_per_byte.soc.adr[31:0]
-(25)t7_bus_data_per_byte.soc.adr[31:0]
-(26)t7_bus_data_per_byte.soc.adr[31:0]
-(27)t7_bus_data_per_byte.soc.adr[31:0]
-(28)t7_bus_data_per_byte.soc.adr[31:0]
-(29)t7_bus_data_per_byte.soc.adr[31:0]
-(30)t7_bus_data_per_byte.soc.adr[31:0]
-(31)t7_bus_data_per_byte.soc.adr[31:0]
-@1401200
--group_end
+-READ
 @22
-t7_bus_data_per_byte.soc.mem_do[31:0]
-t7_bus_data_per_byte.soc.ram_do[31:0]
-t7_bus_data_per_byte.soc.mmio_do[31:0]
-t7_bus_data_per_byte.soc.rom_do[31:0]
-@28
-t7_bus_data_per_byte.soc.mem_op
-@22
-t7_bus_data_per_byte.soc.mem_wren[3:0]
+t7_bus_data_per_byte.soc.cpu_di[31:0]
 @200
 -
+-WRITE
+@22
+t7_bus_data_per_byte.soc.cpu_do[31:0]
+t7_bus_data_per_byte.soc.cpu_wren[3:0]
+@200
+-
+-REGS
 @22
 t7_bus_data_per_byte.reg_x10[31:0]
 [pattern_trace] 1

@@ -75,7 +75,7 @@ int main() {
 	const uint64_t ipmc = ((uint64_t) instrs) * 1000 / cycles;
 	printf("ipc: %llu.%03llu\n", ipmc/1000, ipmc%1000);
 	
-	const uint32_t dhpms = ((uint64_t) runs) * 1e9 / time_us;
+	const uint32_t dhpms = ((uint64_t) runs) * ((uint64_t) 1e9) / time_us;
 	printf("dhrystones per second: %u\n", dhpms/1000);
 	
 	const uint32_t dmmips = dhpms / 1757;

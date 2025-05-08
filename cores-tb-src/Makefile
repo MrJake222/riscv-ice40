@@ -14,7 +14,7 @@ TB += t9_stack.v
 TB += t10_uart0_tx.v
 TB += t11_uart0_rx.v
 TB += t12_dbgu32_mem.v
-#TB += t20_custom.v
+TB += t20_custom.v
 # testbenches dependencies
 DEP = dep.v
 # time multiplier

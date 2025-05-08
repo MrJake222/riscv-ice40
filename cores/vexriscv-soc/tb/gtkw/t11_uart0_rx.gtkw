@@ -1,151 +1,63 @@
 [*]
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
-[*] Thu May  8 09:55:14 2025
+[*] Thu May  8 18:18:54 2025
 [*]
 [dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/vexriscv-soc/tb/t11_uart0_rx.vcd"
-[dumpfile_mtime] "Thu May  8 09:55:12 2025"
-[dumpfile_size] 673375
+[dumpfile_mtime] "Thu May  8 18:12:38 2025"
+[dumpfile_size] 726939
 [savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/vexriscv-soc/tb/gtkw/t11_uart0_rx.gtkw"
 [timestart] 0
-[size] 1627 951
+[size] 1554 1015
 [pos] -1 -1
-*-25.755705 228300000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-25.755707 14210000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] t11_uart0_rx.
 [treeopen] t11_uart0_rx.soc.
-[treeopen] t11_uart0_rx.soc.cpu.
-[treeopen] t11_uart0_rx.soc.ram.
 [treeopen] t11_uart0_rx.soc.uart0.
-[sst_width] 283
-[signals_width] 249
+[sst_width] 423
+[signals_width] 243
 [sst_expanded] 1
-[sst_vpaned_height] 310
+[sst_vpaned_height] 335
 @28
 t11_uart0_rx.soc.cpu_reset
 t11_uart0_rx.soc.cpu_clk
-[color] 2
-t11_uart0_rx.soc.icmd_valid
-[color] 2
-t11_uart0_rx.soc.irsp_valid
-@22
-[color] 2
-t11_uart0_rx.soc.icmd_adr[31:0]
-t11_uart0_rx.soc.adr[31:0]
 @200
 -
-@22
-+{instr_decode} t11_uart0_rx.soc.cpu.decode_INSTRUCTION[31:0]
-@c00022
-+{instr_exec} t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
+-INSTR
 @28
-(0)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(1)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(2)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(3)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(4)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(5)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(6)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(7)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(8)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(9)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(10)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(11)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(12)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(13)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(14)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(15)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(16)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(17)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(18)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(19)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(20)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(21)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(22)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(23)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(24)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(25)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(26)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(27)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(28)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(29)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(30)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-(31)t11_uart0_rx.soc.cpu.execute_INSTRUCTION[31:0]
-@1401200
--group_end
+t11_uart0_rx.soc.icmd_valid
+t11_uart0_rx.soc.irsp_valid
+t11_uart0_rx.soc.i_ready
+t11_uart0_rx.soc.i_ready_pulse
+@22
+t11_uart0_rx.soc.i_adr[31:0]
+t11_uart0_rx.soc.i_data[31:0]
 @200
 -
+-DATA
 @28
 t11_uart0_rx.soc.dcmd_valid
+t11_uart0_rx.soc.cpu_mem_op
 t11_uart0_rx.soc.drsp_valid
 @22
 t11_uart0_rx.soc.dcmd_adr[31:0]
 @200
 -
--
-@c00022
-t11_uart0_rx.soc.adr[31:0]
-@28
-(0)t11_uart0_rx.soc.adr[31:0]
-(1)t11_uart0_rx.soc.adr[31:0]
-(2)t11_uart0_rx.soc.adr[31:0]
-(3)t11_uart0_rx.soc.adr[31:0]
-(4)t11_uart0_rx.soc.adr[31:0]
-(5)t11_uart0_rx.soc.adr[31:0]
-(6)t11_uart0_rx.soc.adr[31:0]
-(7)t11_uart0_rx.soc.adr[31:0]
-(8)t11_uart0_rx.soc.adr[31:0]
-(9)t11_uart0_rx.soc.adr[31:0]
-(10)t11_uart0_rx.soc.adr[31:0]
-(11)t11_uart0_rx.soc.adr[31:0]
-(12)t11_uart0_rx.soc.adr[31:0]
-(13)t11_uart0_rx.soc.adr[31:0]
-(14)t11_uart0_rx.soc.adr[31:0]
-(15)t11_uart0_rx.soc.adr[31:0]
-(16)t11_uart0_rx.soc.adr[31:0]
-(17)t11_uart0_rx.soc.adr[31:0]
-(18)t11_uart0_rx.soc.adr[31:0]
-(19)t11_uart0_rx.soc.adr[31:0]
-(20)t11_uart0_rx.soc.adr[31:0]
-(21)t11_uart0_rx.soc.adr[31:0]
-(22)t11_uart0_rx.soc.adr[31:0]
-(23)t11_uart0_rx.soc.adr[31:0]
-(24)t11_uart0_rx.soc.adr[31:0]
-(25)t11_uart0_rx.soc.adr[31:0]
-(26)t11_uart0_rx.soc.adr[31:0]
-(27)t11_uart0_rx.soc.adr[31:0]
-(28)t11_uart0_rx.soc.adr[31:0]
-(29)t11_uart0_rx.soc.adr[31:0]
-(30)t11_uart0_rx.soc.adr[31:0]
-(31)t11_uart0_rx.soc.adr[31:0]
-@1401200
--group_end
+-READ
 @22
-t11_uart0_rx.soc.mem_do[31:0]
-t11_uart0_rx.soc.ram_do[31:0]
-t11_uart0_rx.soc.mmio_do[31:0]
-t11_uart0_rx.soc.rom_do[31:0]
-@28
-t11_uart0_rx.soc.mem_op
-@c00022
-t11_uart0_rx.soc.mem_wren[3:0]
-@28
-(0)t11_uart0_rx.soc.mem_wren[3:0]
-(1)t11_uart0_rx.soc.mem_wren[3:0]
-(2)t11_uart0_rx.soc.mem_wren[3:0]
-(3)t11_uart0_rx.soc.mem_wren[3:0]
-@1401200
--group_end
+t11_uart0_rx.soc.cpu_di[31:0]
 @200
 -
+-WRITE
 @22
-t11_uart0_rx.reg_x10[31:0]
+t11_uart0_rx.soc.cpu_do[31:0]
+t11_uart0_rx.soc.cpu_wren[3:0]
 @200
 -
--uart0
-@28
-t11_uart0_rx.soc.uart0.rx
+-REGS
 @29
-t11_uart0_rx.soc.uart0.cts
+t11_uart0_rx.soc.uart0.rx
 @28
-t11_uart0_rx.soc.uart0.uarthw.tx
+t11_uart0_rx.soc.uart0.cts
+t11_uart0_rx.soc.uart0.tx
 [pattern_trace] 1
 [pattern_trace] 0

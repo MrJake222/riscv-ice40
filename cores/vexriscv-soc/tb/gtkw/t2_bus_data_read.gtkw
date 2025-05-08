@@ -1,134 +1,74 @@
 [*]
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
-[*] Thu May  8 09:47:54 2025
+[*] Thu May  8 17:38:38 2025
 [*]
 [dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/vexriscv-soc/tb/t2_bus_data_read.vcd"
-[dumpfile_mtime] "Thu May  8 09:42:27 2025"
-[dumpfile_size] 183157
+[dumpfile_mtime] "Thu May  8 17:38:05 2025"
+[dumpfile_size] 257842
 [savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/vexriscv-soc/tb/gtkw/t2_bus_data_read.gtkw"
-[timestart] 0
-[size] 1713 790
-[pos] 553 196
-*-22.755705 26500000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[timestart] 8810000
+[size] 1389 976
+[pos] -1 -1
+*-21.855705 15880000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] t2_bus_data_read.
 [treeopen] t2_bus_data_read.soc.
 [treeopen] t2_bus_data_read.soc.cpu.
 [treeopen] t2_bus_data_read.soc.ram.
 [treeopen] t2_bus_data_read.soc.uart0.
 [sst_width] 283
-[signals_width] 249
+[signals_width] 208
 [sst_expanded] 1
-[sst_vpaned_height] 248
+[sst_vpaned_height] 319
 @28
 t2_bus_data_read.soc.cpu_reset
 t2_bus_data_read.soc.cpu_clk
-[color] 2
-t2_bus_data_read.soc.icmd_valid
-[color] 2
-t2_bus_data_read.soc.irsp_valid
-@22
-[color] 2
-t2_bus_data_read.soc.icmd_adr[31:0]
-t2_bus_data_read.soc.adr[31:0]
 @200
 -
-@22
-+{instr_decode} t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0]
-@c00022
-+{instr_exec} t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
+-INSTR
 @28
-(0)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(1)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(2)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(3)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(4)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(5)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(6)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(7)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(8)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(9)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(10)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(11)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(12)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(13)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(14)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(15)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(16)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(17)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(18)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(19)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(20)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(21)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(22)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(23)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(24)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(25)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(26)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(27)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(28)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(29)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(30)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
-(31)t2_bus_data_read.soc.cpu.execute_INSTRUCTION[31:0]
+t2_bus_data_read.soc.icmd_valid
+t2_bus_data_read.soc.irsp_valid
+@22
+t2_bus_data_read.soc.i_adr[31:0]
+t2_bus_data_read.soc.i_data[31:0]
+@200
+-
+@c00022
+#{Idec} (0)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (1)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (2)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (3)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (4)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (5)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (6)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (7)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (8)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (9)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (10)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (11)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (12)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (13)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (14)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (15)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (16)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (17)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (18)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (19)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (20)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (21)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (22)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (23)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (24)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (25)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (26)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (27)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (28)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (29)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (30)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0] (31)t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0]
+@22
+t2_bus_data_read.soc.cpu.decode_INSTRUCTION[31:0]
+@1401200
+-group_end
+@c00022
+#{Iex} (0)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (1)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (2)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (3)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (4)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (5)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (6)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (7)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (8)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (9)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (10)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (11)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (12)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (13)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (14)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (15)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (16)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (17)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (18)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (19)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (20)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (21)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (22)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (23)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (24)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (25)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (26)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (27)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (28)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (29)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (30)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0] (31)t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0]
+@22
+t2_bus_data_read.soc.cpu.execute_to_memory_INSTRUCTION[31:0]
 @1401200
 -group_end
 @200
 -
+-DATA
 @28
 t2_bus_data_read.soc.dcmd_valid
+t2_bus_data_read.soc.cpu_mem_op
+@29
 t2_bus_data_read.soc.drsp_valid
 @22
 t2_bus_data_read.soc.dcmd_adr[31:0]
 @200
 -
--
-@c00022
-t2_bus_data_read.soc.adr[31:0]
-@28
-(0)t2_bus_data_read.soc.adr[31:0]
-(1)t2_bus_data_read.soc.adr[31:0]
-(2)t2_bus_data_read.soc.adr[31:0]
-(3)t2_bus_data_read.soc.adr[31:0]
-(4)t2_bus_data_read.soc.adr[31:0]
-(5)t2_bus_data_read.soc.adr[31:0]
-(6)t2_bus_data_read.soc.adr[31:0]
-(7)t2_bus_data_read.soc.adr[31:0]
-(8)t2_bus_data_read.soc.adr[31:0]
-(9)t2_bus_data_read.soc.adr[31:0]
-(10)t2_bus_data_read.soc.adr[31:0]
-(11)t2_bus_data_read.soc.adr[31:0]
-(12)t2_bus_data_read.soc.adr[31:0]
-(13)t2_bus_data_read.soc.adr[31:0]
-(14)t2_bus_data_read.soc.adr[31:0]
-(15)t2_bus_data_read.soc.adr[31:0]
-(16)t2_bus_data_read.soc.adr[31:0]
-(17)t2_bus_data_read.soc.adr[31:0]
-(18)t2_bus_data_read.soc.adr[31:0]
-(19)t2_bus_data_read.soc.adr[31:0]
-(20)t2_bus_data_read.soc.adr[31:0]
-(21)t2_bus_data_read.soc.adr[31:0]
-(22)t2_bus_data_read.soc.adr[31:0]
-(23)t2_bus_data_read.soc.adr[31:0]
-(24)t2_bus_data_read.soc.adr[31:0]
-(25)t2_bus_data_read.soc.adr[31:0]
-(26)t2_bus_data_read.soc.adr[31:0]
-(27)t2_bus_data_read.soc.adr[31:0]
-(28)t2_bus_data_read.soc.adr[31:0]
-(29)t2_bus_data_read.soc.adr[31:0]
-(30)t2_bus_data_read.soc.adr[31:0]
-(31)t2_bus_data_read.soc.adr[31:0]
-@1401200
--group_end
+-READ
 @22
-t2_bus_data_read.soc.mem_do[31:0]
-t2_bus_data_read.soc.ram_do[31:0]
-t2_bus_data_read.soc.mmio_do[31:0]
-t2_bus_data_read.soc.rom_do[31:0]
-@28
-t2_bus_data_read.soc.mem_op
-@22
-t2_bus_data_read.soc.mem_wren[3:0]
+t2_bus_data_read.soc.cpu_di[31:0]
 @200
 -
+-WRITE
+@22
+t2_bus_data_read.soc.cpu_do[31:0]
+t2_bus_data_read.soc.cpu_wren[3:0]
+@200
+-
+-REGS
 @22
 t2_bus_data_read.reg_x10[31:0]
 t2_bus_data_read.reg_x11[31:0]

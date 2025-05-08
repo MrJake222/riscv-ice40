@@ -1,145 +1,64 @@
 [*]
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
-[*] Thu May  8 09:55:41 2025
+[*] Thu May  8 18:14:19 2025
 [*]
 [dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/vexriscv-soc/tb/t20_custom.vcd"
-[dumpfile_mtime] "Thu May  8 09:51:23 2025"
-[dumpfile_size] 1963416
+[dumpfile_mtime] "Thu May  8 18:12:37 2025"
+[dumpfile_size] 155437
 [savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/vexriscv-soc/tb/gtkw/t20_custom.gtkw"
-[timestart] 0
-[size] 1762 1193
+[timestart] 3480000
+[size] 1554 1015
 [pos] -1 -1
-*-27.255703 129700000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-22.155706 14210000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] t20_custom.
 [treeopen] t20_custom.soc.
-[treeopen] t20_custom.soc.cpu.
-[treeopen] t20_custom.soc.dbgu0.
-[treeopen] t20_custom.soc.ram.
 [treeopen] t20_custom.soc.uart0.
-[sst_width] 283
-[signals_width] 249
+[sst_width] 423
+[signals_width] 243
 [sst_expanded] 1
-[sst_vpaned_height] 401
+[sst_vpaned_height] 335
 @28
 t20_custom.soc.cpu_reset
 t20_custom.soc.cpu_clk
-[color] 2
-t20_custom.soc.icmd_valid
-[color] 2
-t20_custom.soc.irsp_valid
-@22
-[color] 2
-t20_custom.soc.icmd_adr[31:0]
-t20_custom.soc.adr[31:0]
 @200
 -
-@22
-+{instr_decode} t20_custom.soc.cpu.decode_INSTRUCTION[31:0]
-@c00022
-+{instr_exec} t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
+-INSTR
 @28
-(0)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(1)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(2)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(3)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(4)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(5)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(6)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(7)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(8)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(9)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(10)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(11)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(12)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(13)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(14)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(15)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(16)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(17)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(18)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(19)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(20)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(21)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(22)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(23)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(24)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(25)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(26)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(27)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(28)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(29)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(30)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-(31)t20_custom.soc.cpu.execute_INSTRUCTION[31:0]
-@1401200
--group_end
+t20_custom.soc.icmd_valid
+t20_custom.soc.irsp_valid
+t20_custom.soc.i_ready
+t20_custom.soc.i_ready_pulse
+@22
+t20_custom.soc.i_adr[31:0]
+t20_custom.soc.i_data[31:0]
 @200
 -
+-DATA
 @28
 t20_custom.soc.dcmd_valid
+t20_custom.soc.cpu_mem_op
 t20_custom.soc.drsp_valid
 @22
 t20_custom.soc.dcmd_adr[31:0]
 @200
 -
--
-@c00022
-t20_custom.soc.adr[31:0]
-@28
-(0)t20_custom.soc.adr[31:0]
-(1)t20_custom.soc.adr[31:0]
-(2)t20_custom.soc.adr[31:0]
-(3)t20_custom.soc.adr[31:0]
-(4)t20_custom.soc.adr[31:0]
-(5)t20_custom.soc.adr[31:0]
-(6)t20_custom.soc.adr[31:0]
-(7)t20_custom.soc.adr[31:0]
-(8)t20_custom.soc.adr[31:0]
-(9)t20_custom.soc.adr[31:0]
-(10)t20_custom.soc.adr[31:0]
-(11)t20_custom.soc.adr[31:0]
-(12)t20_custom.soc.adr[31:0]
-(13)t20_custom.soc.adr[31:0]
-(14)t20_custom.soc.adr[31:0]
-(15)t20_custom.soc.adr[31:0]
-(16)t20_custom.soc.adr[31:0]
-(17)t20_custom.soc.adr[31:0]
-(18)t20_custom.soc.adr[31:0]
-(19)t20_custom.soc.adr[31:0]
-(20)t20_custom.soc.adr[31:0]
-(21)t20_custom.soc.adr[31:0]
-(22)t20_custom.soc.adr[31:0]
-(23)t20_custom.soc.adr[31:0]
-(24)t20_custom.soc.adr[31:0]
-(25)t20_custom.soc.adr[31:0]
-(26)t20_custom.soc.adr[31:0]
-(27)t20_custom.soc.adr[31:0]
-(28)t20_custom.soc.adr[31:0]
-(29)t20_custom.soc.adr[31:0]
-(30)t20_custom.soc.adr[31:0]
-(31)t20_custom.soc.adr[31:0]
-@1401200
--group_end
+-READ
 @22
-t20_custom.soc.mem_do[31:0]
-t20_custom.soc.ram_do[31:0]
-t20_custom.soc.mmio_do[31:0]
-t20_custom.soc.rom_do[31:0]
-@28
-t20_custom.soc.mem_op
-@22
-t20_custom.soc.mem_wren[3:0]
-t20_custom.soc.mem_di[31:0]
+t20_custom.soc.cpu_di[31:0]
 @200
 -
+-WRITE
+@22
+t20_custom.soc.cpu_do[31:0]
+t20_custom.soc.cpu_wren[3:0]
+@200
+-
+-REGS
 @22
 t20_custom.reg_x10[31:0]
-t20_custom.reg_x11[31:0]
-@200
--
--dbgu
-@28
-t20_custom.soc.dbgu0.rx
-@22
-+{tx_data} t20_custom.dbgu0_tx_data[31:0]
+t20_custom.soc.pwm0.cmp[7:0]
+t20_custom.soc.pwm1.cmp[7:0]
+@23
+t20_custom.soc.pwm2.cmp[7:0]
 [pattern_trace] 1
 [pattern_trace] 0

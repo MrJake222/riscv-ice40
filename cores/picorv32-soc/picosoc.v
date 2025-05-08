@@ -93,7 +93,7 @@ wire mem_la_read;
 wire mem_la_write;
 wire [3:0] mem_la_wstrb;
 
-assign cpu_wren = {4{mem_la_write}} & mem_la_wstrb;
+assign cpu_wren = mem_la_write ? mem_la_wstrb : 4'h0;
 assign cpu_mem_op = mem_la_read | mem_la_write;
 
 reg cpu_mem_rdy;

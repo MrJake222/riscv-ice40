@@ -1,138 +1,63 @@
 [*]
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
-[*] Thu May  8 09:53:32 2025
+[*] Thu May  8 18:17:23 2025
 [*]
 [dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/vexriscv-soc/tb/t9_stack.vcd"
-[dumpfile_mtime] "Thu May  8 09:51:23 2025"
-[dumpfile_size] 190798
+[dumpfile_mtime] "Thu May  8 18:12:38 2025"
+[dumpfile_size] 200284
 [savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/vexriscv-soc/tb/gtkw/t9_stack.gtkw"
-[timestart] 0
-[size] 1635 1203
+[timestart] 3480000
+[size] 1554 1015
 [pos] -1 -1
-*-23.100000 19910000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-22.155706 16670000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] t9_stack.
 [treeopen] t9_stack.soc.
-[treeopen] t9_stack.soc.cpu.
-[treeopen] t9_stack.soc.ram.
 [treeopen] t9_stack.soc.uart0.
-[sst_width] 283
-[signals_width] 205
+[sst_width] 423
+[signals_width] 243
 [sst_expanded] 1
-[sst_vpaned_height] 409
+[sst_vpaned_height] 335
 @28
 t9_stack.soc.cpu_reset
 t9_stack.soc.cpu_clk
-[color] 2
-t9_stack.soc.icmd_valid
-[color] 2
-t9_stack.soc.irsp_valid
-@22
-[color] 2
-t9_stack.soc.icmd_adr[31:0]
-t9_stack.soc.adr[31:0]
 @200
 -
-@22
-+{instr_decode} t9_stack.soc.cpu.decode_INSTRUCTION[31:0]
-@c00022
-+{instr_exec} t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
+-INSTR
 @28
-(0)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(1)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(2)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(3)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(4)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(5)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(6)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(7)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(8)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(9)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(10)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(11)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(12)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(13)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(14)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(15)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(16)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(17)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(18)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(19)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(20)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(21)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(22)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(23)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(24)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(25)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(26)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(27)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(28)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(29)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(30)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-(31)t9_stack.soc.cpu.execute_INSTRUCTION[31:0]
-@1401200
--group_end
+t9_stack.soc.icmd_valid
+t9_stack.soc.irsp_valid
+t9_stack.soc.i_ready
+t9_stack.soc.i_ready_pulse
+@22
+t9_stack.soc.i_adr[31:0]
+t9_stack.soc.i_data[31:0]
 @200
 -
+-DATA
 @28
 t9_stack.soc.dcmd_valid
+t9_stack.soc.cpu_mem_op
 t9_stack.soc.drsp_valid
 @22
 t9_stack.soc.dcmd_adr[31:0]
 @200
 -
--
-@c00022
-t9_stack.soc.adr[31:0]
-@28
-(0)t9_stack.soc.adr[31:0]
-(1)t9_stack.soc.adr[31:0]
-(2)t9_stack.soc.adr[31:0]
-(3)t9_stack.soc.adr[31:0]
-(4)t9_stack.soc.adr[31:0]
-(5)t9_stack.soc.adr[31:0]
-(6)t9_stack.soc.adr[31:0]
-(7)t9_stack.soc.adr[31:0]
-(8)t9_stack.soc.adr[31:0]
-(9)t9_stack.soc.adr[31:0]
-(10)t9_stack.soc.adr[31:0]
-(11)t9_stack.soc.adr[31:0]
-(12)t9_stack.soc.adr[31:0]
-(13)t9_stack.soc.adr[31:0]
-(14)t9_stack.soc.adr[31:0]
-(15)t9_stack.soc.adr[31:0]
-(16)t9_stack.soc.adr[31:0]
-(17)t9_stack.soc.adr[31:0]
-(18)t9_stack.soc.adr[31:0]
-(19)t9_stack.soc.adr[31:0]
-(20)t9_stack.soc.adr[31:0]
-(21)t9_stack.soc.adr[31:0]
-(22)t9_stack.soc.adr[31:0]
-(23)t9_stack.soc.adr[31:0]
-(24)t9_stack.soc.adr[31:0]
-(25)t9_stack.soc.adr[31:0]
-(26)t9_stack.soc.adr[31:0]
-(27)t9_stack.soc.adr[31:0]
-(28)t9_stack.soc.adr[31:0]
-(29)t9_stack.soc.adr[31:0]
-(30)t9_stack.soc.adr[31:0]
-(31)t9_stack.soc.adr[31:0]
-@1401200
--group_end
+-READ
 @22
-t9_stack.soc.mem_do[31:0]
-t9_stack.soc.ram_do[31:0]
-t9_stack.soc.mmio_do[31:0]
-t9_stack.soc.rom_do[31:0]
-@28
-t9_stack.soc.mem_op
-@22
-t9_stack.soc.mem_wren[3:0]
+t9_stack.soc.cpu_di[31:0]
 @200
 -
-@23
-t9_stack.stackptr[31:0]
+-WRITE
 @22
+t9_stack.soc.cpu_do[31:0]
+t9_stack.soc.cpu_wren[3:0]
+@200
+-
+-REGS
+@22
+t9_stack.stackptr[31:0]
 t9_stack.reg_x10[31:0]
+@23
 t9_stack.reg_x11[31:0]
 [pattern_trace] 1
 [pattern_trace] 0

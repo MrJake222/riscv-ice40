@@ -193,6 +193,7 @@ assign cpu_adr = bus_hwrite_d_reg ? bus_haddr_d_reg	// writing or about to write
 
 assign cpu_mem_op = bus_hwrite_d_reg | bus_aph_req_d;
 
+// write mask/enable
 wire [3:0] b_wmask;
 wire b_half = bus_hsize_d_reg == 3'd1;
 wire b_byte = bus_hsize_d_reg == 3'd0;
@@ -203,7 +204,8 @@ assign b_wmask = b_byte ? ( cpu_adr[1:0]==3 ? 4'b1000 : // 8-bit
 			     b_half ? (   cpu_adr[1]==1 ? 4'b1100 : // 16-bit
 										      4'b0011 ) :
 										      4'b1111;  // 32-bit
-assign cpu_wren = b_wmask & {4{bus_hwrite_d_reg}};
+assign cpu_wren = bus_hwrite_d_reg ? b_wmask : 4'h0;
+
 
 // bus
 wire [31:0] adr      =  dbg_mem_op ? dbg_adr    :  cpu_adr;

@@ -10,7 +10,7 @@ begin
 	force soc.dbg_mem_op = 1'b1;
 	force soc.dbg_wren = 4'hF;
 	    
-    // read 0x00020 RAM memory cell repeatedly into x10
+    // read 0x00020 RAM memory cell repeatedly into x11
     force soc.dbg_adr = 32'h20000; force soc.dbg_do = 32'h00000537; #1000; // lui  a0,0x00
     force soc.dbg_adr = 32'h20004; force soc.dbg_do = 32'h02052583; #1000; // lw   a1,h20(a0)
     force soc.dbg_adr = 32'h20008; force soc.dbg_do = 32'hffdff06f; #1000; // j    -4 (lw)
