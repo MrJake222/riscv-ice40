@@ -1,0 +1,1 @@
+../hazard3/hdl/hazard3_config_inst.vh

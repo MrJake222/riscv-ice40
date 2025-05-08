@@ -1,0 +1,111 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Mon May  5 17:31:55 2025
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/hazard3-soc/tb/t6_bus_data_write_burstrw.vcd"
+[dumpfile_mtime] "Mon May  5 17:31:38 2025"
+[dumpfile_size] 123275
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/hazard3-soc/tb/gtkw/t6_bus_data_write_burstrw.gtkw"
+[timestart] 14130000
+[size] 1750 1112
+[pos] -1 -1
+*-21.855705 24130000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] t6_bus_data_write_burstrw.
+[treeopen] t6_bus_data_write_burstrw.soc.
+[treeopen] t6_bus_data_write_burstrw.soc.cpu.
+[sst_width] 209
+[signals_width] 198
+[sst_expanded] 1
+[sst_vpaned_height] 373
+@28
+t6_bus_data_write_burstrw.soc.cpu_reset
+t6_bus_data_write_burstrw.soc.cpu_clk
+@200
+-
+-INSTR
+@22
+t6_bus_data_write_burstrw.soc.i_adr[31:0]
+t6_bus_data_write_burstrw.soc.i_data[31:0]
+@28
+t6_bus_data_write_burstrw.soc.bus_aph_req_i
+t6_bus_data_write_burstrw.soc.bus_aph_ready_i
+t6_bus_data_write_burstrw.soc.bus_dph_ready_i
+@200
+-
+-DATA
+@28
+t6_bus_data_write_burstrw.soc.bus_aph_req_d
+t6_bus_data_write_burstrw.soc.bus_aph_ready_d
+@29
+t6_bus_data_write_burstrw.soc.bus_hread_d
+@28
+t6_bus_data_write_burstrw.soc.bus_hwrite_d
+t6_bus_data_write_burstrw.soc.bus_dph_ready_d
+@22
+t6_bus_data_write_burstrw.soc.cpu.bus_haddr_d[31:0]
+@200
+-
+@22
+t6_bus_data_write_burstrw.soc.cpu_di[31:0]
+t6_bus_data_write_burstrw.soc.cpu_do[31:0]
+@200
+-
+-CLOCKED
+@28
+t6_bus_data_write_burstrw.soc.bus_hread_d_reg
+t6_bus_data_write_burstrw.soc.bus_hwrite_d_reg
+@c00022
+t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+@28
+(0)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(1)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(2)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(3)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(4)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(5)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(6)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(7)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(8)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(9)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(10)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(11)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(12)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(13)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(14)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(15)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(16)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(17)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(18)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(19)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(20)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(21)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(22)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(23)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(24)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(25)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(26)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(27)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(28)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(29)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(30)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+(31)t6_bus_data_write_burstrw.soc.bus_haddr_d_reg[31:0]
+@1401200
+-group_end
+@22
+t6_bus_data_write_burstrw.soc.cpu_adr[31:0]
+@200
+-
+-REGS
+@22
+t6_bus_data_write_burstrw.reg_x10[31:0]
+t6_bus_data_write_burstrw.reg_x11[31:0]
+t6_bus_data_write_burstrw.reg_x12[31:0]
+t6_bus_data_write_burstrw.reg_x13[31:0]
+t6_bus_data_write_burstrw.soc.pwm0.cmp[7:0]
+t6_bus_data_write_burstrw.soc.pwm1.cmp[7:0]
+t6_bus_data_write_burstrw.soc.pwm2.cmp[7:0]
+t6_bus_data_write_burstrw.reg_x14[31:0]
+t6_bus_data_write_burstrw.reg_x15[31:0]
+t6_bus_data_write_burstrw.reg_x16[31:0]
+[pattern_trace] 1
+[pattern_trace] 0

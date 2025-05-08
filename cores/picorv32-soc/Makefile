@@ -3,7 +3,7 @@ TLD = crv32
 VERILOG = $(TLD).v
 VERILOG += picorv32.v
 # frequency
-FREQ  = 16
+FREQ  = 8
 
 SELFDIR := $(dir $(lastword $(MAKEFILE_LIST)))
 include ${SELFDIR}/../Makefile

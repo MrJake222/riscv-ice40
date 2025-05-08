@@ -1,0 +1,57 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Mon May  5 14:33:59 2025
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/hazard3-soc/tb/t3_bus_pgm_read.vcd"
+[dumpfile_mtime] "Mon May  5 14:32:56 2025"
+[dumpfile_size] 87455
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/hazard3-soc/tb/gtkw/t3_bus_pgm_read.gtkw"
+[timestart] 7440000
+[size] 1577 1236
+[pos] -102 3
+*-21.555706 12500000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] t3_bus_pgm_read.
+[treeopen] t3_bus_pgm_read.soc.
+[treeopen] t3_bus_pgm_read.soc.cpu.
+[sst_width] 283
+[signals_width] 210
+[sst_expanded] 1
+[sst_vpaned_height] 423
+@28
+t3_bus_pgm_read.soc.cpu_reset
+t3_bus_pgm_read.soc.cpu_clk
+@200
+-
+-INSTR
+@22
+t3_bus_pgm_read.soc.i_adr[31:0]
+t3_bus_pgm_read.soc.i_data[31:0]
+@28
+t3_bus_pgm_read.soc.bus_aph_req_i
+t3_bus_pgm_read.soc.bus_aph_ready_i
+t3_bus_pgm_read.soc.bus_dph_ready_i
+@200
+-
+-READ
+@22
+t3_bus_pgm_read.soc.cpu_adr[31:0]
+t3_bus_pgm_read.soc.cpu_di[31:0]
+@28
+t3_bus_pgm_read.soc.bus_aph_req_d
+t3_bus_pgm_read.soc.bus_aph_ready_d
+t3_bus_pgm_read.soc.bus_dph_ready_d
+@200
+-
+-WRITE
+@22
+t3_bus_pgm_read.soc.cpu_adr[31:0]
+t3_bus_pgm_read.soc.cpu_do[31:0]
+t3_bus_pgm_read.soc.cpu_wren[3:0]
+@200
+-
+-REGS
+@22
+t3_bus_pgm_read.reg_x10[31:0]
+t3_bus_pgm_read.reg_x11[31:0]
+[pattern_trace] 1
+[pattern_trace] 0

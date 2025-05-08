@@ -1,0 +1,79 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Wed May  7 09:01:57 2025
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/hazard3-soc/tb/t11_uart0_rx.vcd"
+[dumpfile_mtime] "Wed May  7 09:01:21 2025"
+[dumpfile_size] 421921
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/hazard3-soc/tb/gtkw/t11_uart0_rx.gtkw"
+[timestart] 0
+[size] 1698 1335
+[pos] -1 -1
+*-25.755705 100500000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] t11_uart0_rx.
+[treeopen] t11_uart0_rx.soc.
+[sst_width] 283
+[signals_width] 237
+[sst_expanded] 1
+[sst_vpaned_height] 463
+@28
+t11_uart0_rx.soc.cpu_reset
+t11_uart0_rx.soc.cpu_clk
+@200
+-
+-INSTR
+@22
+t11_uart0_rx.soc.i_adr[31:0]
+t11_uart0_rx.soc.i_data[31:0]
+@28
+t11_uart0_rx.soc.bus_aph_req_i
+t11_uart0_rx.soc.bus_aph_ready_i
+t11_uart0_rx.soc.bus_dph_ready_i
+@200
+-
+-READ
+@22
+t11_uart0_rx.soc.cpu_adr[31:0]
+t11_uart0_rx.soc.cpu_di[31:0]
+@28
+t11_uart0_rx.soc.bus_aph_req_d
+t11_uart0_rx.soc.bus_aph_ready_d
+t11_uart0_rx.soc.bus_hwrite_d
+t11_uart0_rx.soc.bus_dph_ready_d
+@23
+t11_uart0_rx.soc.bus_haddr_d[31:0]
+@200
+-
+-WRITE
+@22
+t11_uart0_rx.soc.bus_haddr_d_reg[31:0]
+t11_uart0_rx.soc.cpu_adr[31:0]
+t11_uart0_rx.soc.cpu_do[31:0]
+@28
+t11_uart0_rx.soc.bus_hwrite_d_reg
+@22
+t11_uart0_rx.soc.b_wmask[3:0]
+t11_uart0_rx.soc.cpu_wren[3:0]
+@200
+-
+-REGS
+@22
+t11_uart0_rx.reg_x10[31:0]
+t11_uart0_rx.reg_x11[31:0]
+t11_uart0_rx.reg_x15[31:0]
+@200
+-
+-UARTHW
+@28
+t11_uart0_rx.soc.uart0.rx
+t11_uart0_rx.soc.uart0.tx
+t11_uart0_rx.soc.uart0.cts
+@200
+-
+-UARTBLK
+@28
+t11_uart0_rx.soc.uart0.clk
+t11_uart0_rx.soc.uart0.cs
+t11_uart0_rx.soc.uart0.wren
+[pattern_trace] 1
+[pattern_trace] 0

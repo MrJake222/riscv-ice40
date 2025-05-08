@@ -1,0 +1,61 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Mon Apr 28 17:52:29 2025
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/hazard3-soc/tb/t7_bus_data_per_byte.vcd"
+[dumpfile_mtime] "Mon Apr 28 17:51:28 2025"
+[dumpfile_size] 95746
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/hazard3-soc/tb/gtkw/t7_bus_data_per_byte.gtkw"
+[timestart] 7940000
+[size] 1769 1333
+[pos] -1 -1
+*-21.555706 10500000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] t7_bus_data_per_byte.
+[treeopen] t7_bus_data_per_byte.soc.
+[sst_width] 283
+[signals_width] 222
+[sst_expanded] 1
+[sst_vpaned_height] 463
+@28
+t7_bus_data_per_byte.soc.cpu_reset
+t7_bus_data_per_byte.soc.cpu_clk
+@200
+-
+-INSTR
+@22
+t7_bus_data_per_byte.soc.i_adr[31:0]
+t7_bus_data_per_byte.soc.i_data[31:0]
+@28
+t7_bus_data_per_byte.soc.bus_aph_req_i
+t7_bus_data_per_byte.soc.bus_aph_ready_i
+t7_bus_data_per_byte.soc.bus_dph_ready_i
+@200
+-
+-READ
+@22
+t7_bus_data_per_byte.soc.cpu_adr[31:0]
+t7_bus_data_per_byte.soc.cpu_di[31:0]
+@28
+t7_bus_data_per_byte.soc.bus_aph_req_d
+t7_bus_data_per_byte.soc.bus_aph_ready_d
+t7_bus_data_per_byte.soc.bus_dph_ready_d
+@200
+-
+-WRITE
+@22
+t7_bus_data_per_byte.soc.cpu_adr[31:0]
+t7_bus_data_per_byte.soc.cpu_do[31:0]
+@28
+t7_bus_data_per_byte.soc.bus_hwrite_d_reg
+@22
+t7_bus_data_per_byte.soc.b_wmask[3:0]
+@23
+t7_bus_data_per_byte.soc.cpu_wren[3:0]
+@200
+-
+-REGS
+@22
+t7_bus_data_per_byte.reg_x10[31:0]
+t7_bus_data_per_byte.reg_x11[31:0]
+[pattern_trace] 1
+[pattern_trace] 0

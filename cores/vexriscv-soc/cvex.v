@@ -19,14 +19,14 @@ module cvex (
 localparam HB_PATTERN = 3'b010;
 
 // can be set by simulation
-parameter F_CLK = 16_000_000;
-parameter  BAUD =  1_000_000;
+parameter F_CLK = 8_000_000;
+parameter  BAUD = 1_000_000;
 
 wire clk;
 wire boot_n_reset;
 clk12toX clkm (
     .clk_in_12M(CLK_12M),
-    .clk_16M(clk),
+    .clk_8M(clk),
     .n_reset(boot_n_reset)
 );
 
@@ -36,8 +36,8 @@ always @ (posedge clk)
 
 wire cpu_run;
 wire cpu_n_reset;
-wire dbg_rx_enable;
-wire dbg_tx_enable;
+wire dbg_rx_inprogress;
+wire dbg_tx_inprogress;
 wire [2:0] dbg_rx_byte;
 wire dbg_rx_instr_finish;
 
@@ -74,8 +74,8 @@ dbgu32 #(
 	.mem_op(dbg_mem_op),
 	.mem_rdy(dbg_mem_rdy),
 	
-	.dbg_rx_enable(dbg_rx_enable),
-	.dbg_tx_enable(dbg_tx_enable),
+	.dbg_rx_inprogress(dbg_rx_inprogress),
+	.dbg_tx_inprogress(dbg_tx_inprogress),
 	.dbg_rx_byte(dbg_rx_byte),
 	.dbg_rx_instr_finish(dbg_rx_instr_finish)
 );
@@ -233,8 +233,8 @@ pwm pwm2 (
     .out(pwm_wave[2])
 );
 
-wire uart0_rx_enable;
-wire uart0_tx_enable;
+wire uart0_rx_inprogress;
+wire uart0_tx_inprogress;
 // 100 data reg, 101 status reg
 wire uart0_sel = mmio_sel & (adr[4:2] == 3'b100 || adr[4:2] == 3'b101);
 uartblk #(
@@ -253,8 +253,8 @@ uartblk #(
 	.di(mem_di[7:0]),
 	.do(uart_do[0]),
 	
-	.dbg_rx_enable(uart0_rx_enable),
-	.dbg_tx_enable(uart0_tx_enable)
+	.dbg_rx_inprogress(uart0_rx_inprogress),
+	.dbg_tx_inprogress(uart0_tx_inprogress)
 );
 
 wire timer_sel = mmio_sel & (adr[4:2] == 3'b110);
@@ -305,7 +305,7 @@ assign A[2] = irsp_valid;
 assign A[3] = dcmd_valid;
 assign A[4] = drsp_valid;
 assign A[5] = mmio_sel & adr[4:3] == 2'b10; // uart cs
-assign A[6] = uart0_tx_enable;
+assign A[6] = uart0_tx_inprogress;
 assign A[7] = PICO_UART1_RX;*/
 
 assign A[0] = PICO_UART0_TX;

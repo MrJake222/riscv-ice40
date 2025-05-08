@@ -1,0 +1,168 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Mon Apr 28 14:36:50 2025
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/hazard3-soc/tb/t1_bus_instr.vcd"
+[dumpfile_mtime] "Mon Apr 28 14:36:06 2025"
+[dumpfile_size] 66416
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/hazard3-soc/tb/gtkw/t1_bus_instr.gtkw"
+[timestart] 0
+[size] 1984 1266
+[pos] -1 -1
+*-21.255707 4500000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] t1_bus_instr.
+[treeopen] t1_bus_instr.soc.
+[treeopen] t1_bus_instr.soc.cpu.
+[treeopen] t1_bus_instr.soc.cpu.decode_u.
+[treeopen] t1_bus_instr.soc.uart0.
+[sst_width] 283
+[signals_width] 353
+[sst_expanded] 1
+[sst_vpaned_height] 438
+@28
+t1_bus_instr.soc.cpu_reset
+t1_bus_instr.soc.cpu_clk
+@200
+-
+-INSTR
+@22
+t1_bus_instr.soc.i_adr[31:0]
+t1_bus_instr.soc.i_data[31:0]
+@200
+-
+-READ
+@22
+t1_bus_instr.soc.cpu_adr[31:0]
+t1_bus_instr.soc.cpu_di[31:0]
+@200
+-
+-WRITE
+@22
+t1_bus_instr.soc.cpu_adr[31:0]
+t1_bus_instr.soc.cpu_do[31:0]
+t1_bus_instr.soc.cpu_wren[3:0]
+@200
+-
+-REGS
+@28
+t1_bus_instr.soc.cpu.bus_aph_req_i
+t1_bus_instr.soc.cpu.bus_aph_ready_i
+t1_bus_instr.soc.cpu.bus_dph_ready_i
+@200
+-
+@29
+t1_bus_instr.soc.cpu.decode_u.d_starved
+@28
+t1_bus_instr.soc.cpu.decode_u.d_invalid
+@22
+t1_bus_instr.soc.cpu.decode_u.d_except[3:0]
+t1_bus_instr.soc.cpu.csr_u.except[3:0]
+t1_bus_instr.soc.cpu.decode_u.d_instr[31:0]
+@c00022
+t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+@28
+(0)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(1)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(2)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(3)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(4)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(5)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(6)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(7)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(8)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(9)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(10)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(11)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(12)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(13)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(14)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(15)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(16)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(17)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(18)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(19)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(20)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(21)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(22)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(23)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(24)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(25)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(26)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(27)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(28)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(29)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(30)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+(31)t1_bus_instr.soc.cpu.decode_u.fd_cir[31:0]
+@1401200
+-group_end
+@c00022
+t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+@28
+(0)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(1)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(2)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(3)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(4)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(5)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(6)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(7)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(8)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(9)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(10)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(11)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(12)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(13)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(14)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(15)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(16)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(17)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(18)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(19)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(20)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(21)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(22)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(23)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(24)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(25)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(26)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(27)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(28)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(29)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(30)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(31)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(32)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(33)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(34)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(35)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(36)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(37)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(38)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(39)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(40)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(41)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(42)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(43)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(44)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(45)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(46)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+(47)t1_bus_instr.soc.cpu.frontend.instr_data_plus_fetch[47:0]
+@1401200
+-group_end
+@28
+t1_bus_instr.soc.cpu.frontend.cir_room_for_fetch
+t1_bus_instr.soc.cpu.frontend.level_next_no_fetch[1:0]
+t1_bus_instr.soc.cpu.frontend.buf_level[1:0]
+t1_bus_instr.soc.cpu.frontend.cir_use[1:0]
+t1_bus_instr.soc.cpu.decode_u.df_cir_use[1:0]
+t1_bus_instr.soc.cpu.decode_u.d_starved
+t1_bus_instr.soc.cpu.decode_u.d_stall
+t1_bus_instr.soc.cpu.decode_u.x_stall
+t1_bus_instr.soc.cpu.decode_u.uop_nonfinal
+t1_bus_instr.soc.cpu.decode_u.uop_seq
+@22
+t1_bus_instr.soc.cpu.decode_u.decomp.instr_in[31:0]
+@28
+t1_bus_instr.soc.cpu.decode_u.uop_seq_raw
+t1_bus_instr.soc.cpu.decode_u.decomp.in_uop_seq
+[pattern_trace] 1
+[pattern_trace] 0

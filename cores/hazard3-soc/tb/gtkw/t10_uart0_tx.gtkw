@@ -1,0 +1,102 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Wed May  7 08:07:15 2025
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/hazard3-soc/tb/t10_uart0_tx.vcd"
+[dumpfile_mtime] "Tue May  6 18:33:47 2025"
+[dumpfile_size] 242731
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/hazard3-soc/tb/gtkw/t10_uart0_tx.gtkw"
+[timestart] 0
+[size] 1769 1333
+[pos] -1 -1
+*-24.555706 3970000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] t10_uart0_tx.
+[treeopen] t10_uart0_tx.soc.
+[sst_width] 283
+[signals_width] 222
+[sst_expanded] 1
+[sst_vpaned_height] 463
+@28
+t10_uart0_tx.soc.cpu_reset
+t10_uart0_tx.soc.cpu_clk
+@200
+-
+-INSTR
+@22
+t10_uart0_tx.soc.i_adr[31:0]
+t10_uart0_tx.soc.i_data[31:0]
+@28
+t10_uart0_tx.soc.bus_aph_req_i
+t10_uart0_tx.soc.bus_aph_ready_i
+t10_uart0_tx.soc.bus_dph_ready_i
+@200
+-
+-READ
+@22
+t10_uart0_tx.soc.cpu_adr[31:0]
+t10_uart0_tx.soc.cpu_di[31:0]
+@28
+t10_uart0_tx.soc.bus_aph_req_d
+t10_uart0_tx.soc.bus_aph_ready_d
+t10_uart0_tx.soc.bus_dph_ready_d
+@200
+-
+-WRITE
+@22
+t10_uart0_tx.soc.cpu_adr[31:0]
+t10_uart0_tx.soc.cpu_do[31:0]
+@28
+t10_uart0_tx.soc.bus_hwrite_d_reg
+@22
+t10_uart0_tx.soc.b_wmask[3:0]
+t10_uart0_tx.soc.cpu_wren[3:0]
+@200
+-
+-REGS
+@22
+t10_uart0_tx.reg_x10[31:0]
+@c00022
+t10_uart0_tx.reg_x11[31:0]
+@28
+(0)t10_uart0_tx.reg_x11[31:0]
+(1)t10_uart0_tx.reg_x11[31:0]
+(2)t10_uart0_tx.reg_x11[31:0]
+(3)t10_uart0_tx.reg_x11[31:0]
+(4)t10_uart0_tx.reg_x11[31:0]
+(5)t10_uart0_tx.reg_x11[31:0]
+(6)t10_uart0_tx.reg_x11[31:0]
+(7)t10_uart0_tx.reg_x11[31:0]
+(8)t10_uart0_tx.reg_x11[31:0]
+(9)t10_uart0_tx.reg_x11[31:0]
+(10)t10_uart0_tx.reg_x11[31:0]
+(11)t10_uart0_tx.reg_x11[31:0]
+(12)t10_uart0_tx.reg_x11[31:0]
+(13)t10_uart0_tx.reg_x11[31:0]
+(14)t10_uart0_tx.reg_x11[31:0]
+(15)t10_uart0_tx.reg_x11[31:0]
+(16)t10_uart0_tx.reg_x11[31:0]
+(17)t10_uart0_tx.reg_x11[31:0]
+(18)t10_uart0_tx.reg_x11[31:0]
+(19)t10_uart0_tx.reg_x11[31:0]
+(20)t10_uart0_tx.reg_x11[31:0]
+(21)t10_uart0_tx.reg_x11[31:0]
+(22)t10_uart0_tx.reg_x11[31:0]
+(23)t10_uart0_tx.reg_x11[31:0]
+(24)t10_uart0_tx.reg_x11[31:0]
+(25)t10_uart0_tx.reg_x11[31:0]
+(26)t10_uart0_tx.reg_x11[31:0]
+(27)t10_uart0_tx.reg_x11[31:0]
+(28)t10_uart0_tx.reg_x11[31:0]
+(29)t10_uart0_tx.reg_x11[31:0]
+(30)t10_uart0_tx.reg_x11[31:0]
+(31)t10_uart0_tx.reg_x11[31:0]
+@1401200
+-group_end
+@200
+-
+@201
+-UARTBLK
+@28
+t10_uart0_tx.soc.uart0.tx
+[pattern_trace] 1
+[pattern_trace] 0

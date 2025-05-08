@@ -16,8 +16,8 @@
 	branch = develop-my
 [submodule "cores/hazard3"]
 	path = cores/hazard3
-	url = git@github.com:Wren6991/Hazard3.git
-	branch = stable
+	url = git@github.com:MrJake222/Hazard3.git
+	branch = my-develop
 [submodule "cores/ibex"]
 	path = cores/ibex
 	url = git@github.com:lowRISC/ibex.git

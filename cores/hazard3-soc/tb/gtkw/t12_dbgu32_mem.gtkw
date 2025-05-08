@@ -1,0 +1,68 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Wed May  7 07:52:11 2025
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/hazard3-soc/tb/t12_dbgu32_mem.vcd"
+[dumpfile_mtime] "Wed May  7 07:47:09 2025"
+[dumpfile_size] 1128879
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/hazard3-soc/tb/gtkw/t12_dbgu32_mem.gtkw"
+[timestart] 0
+[size] 2164 1333
+[pos] -1 -1
+*-26.357389 167600000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] t12_dbgu32_mem.
+[treeopen] t12_dbgu32_mem.soc.
+[treeopen] t12_dbgu32_mem.soc.dbgu0.
+[sst_width] 283
+[signals_width] 222
+[sst_expanded] 1
+[sst_vpaned_height] 463
+@28
+t12_dbgu32_mem.soc.cpu_reset
+t12_dbgu32_mem.soc.cpu_clk
+@200
+-
+-INSTR
+@22
+t12_dbgu32_mem.soc.i_adr[31:0]
+t12_dbgu32_mem.soc.i_data[31:0]
+@28
+t12_dbgu32_mem.soc.bus_aph_req_i
+t12_dbgu32_mem.soc.bus_aph_ready_i
+t12_dbgu32_mem.soc.bus_dph_ready_i
+@200
+-
+-READ
+@22
+t12_dbgu32_mem.soc.cpu_adr[31:0]
+t12_dbgu32_mem.soc.cpu_di[31:0]
+@28
+t12_dbgu32_mem.soc.bus_aph_req_d
+t12_dbgu32_mem.soc.bus_aph_ready_d
+t12_dbgu32_mem.soc.bus_dph_ready_d
+@200
+-
+-WRITE
+@22
+t12_dbgu32_mem.soc.cpu_adr[31:0]
+t12_dbgu32_mem.soc.cpu_do[31:0]
+@28
+t12_dbgu32_mem.soc.bus_hwrite_d_reg
+@22
+t12_dbgu32_mem.soc.b_wmask[3:0]
+t12_dbgu32_mem.soc.cpu_wren[3:0]
+@200
+-
+-REGS
+@22
+t12_dbgu32_mem.reg_x10[31:0]
+t12_dbgu32_mem.reg_x11[31:0]
+@200
+-
+-DBGU UART
+@28
+t12_dbgu32_mem.soc.dbgu0.rx
+t12_dbgu32_mem.soc.dbgu0.tx
+t12_dbgu32_mem.soc.dbgu0.cts
+[pattern_trace] 1
+[pattern_trace] 0

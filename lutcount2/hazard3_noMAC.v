@@ -53,7 +53,10 @@ module hazard3_noMAC (
 hazard3_core #(
 	.EXTENSION_M(0),
 	.EXTENSION_A(0),
-	.EXTENSION_C(0)
+	.EXTENSION_C(0),
+	.CSR_M_MANDATORY(0),
+	.CSR_M_TRAP(0),
+	.CSR_COUNTER(1)
 ) uut (
 	.clk(clk),
 	.clk_always_on(clk_always_on),

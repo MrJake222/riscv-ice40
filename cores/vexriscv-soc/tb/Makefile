@@ -12,6 +12,7 @@ TB += cvex_stack.v
 TB += cvex_bus_data_byte_access.v
 TB += cvex_counters.v
 TB += dbgu32_mem.v
+TB += t12_custom.v
 # testbenches dependencies
 DEP = dep.v
 

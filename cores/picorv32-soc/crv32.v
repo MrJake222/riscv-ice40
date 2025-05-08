@@ -18,14 +18,14 @@ module crv32 (
 localparam HB_PATTERN = 3'b100;
 
 // can be set by simulation
-parameter F_CLK = 16_000_000;
-parameter BAUD  =  1_000_000;
+parameter F_CLK = 8_000_000;
+parameter BAUD  = 1_000_000;
 
 wire clk;
 wire boot_n_reset;
 clk12toX clkm (
     .clk_in_12M(CLK_12M),
-    .clk_16M(clk),
+    .clk_8M(clk),
     .n_reset(boot_n_reset)
 );
 
@@ -35,8 +35,8 @@ always @ (posedge clk)
 
 wire cpu_run;
 wire cpu_n_reset;
-wire dbg_rx_enable;
-wire dbg_tx_enable;
+wire dbg_rx_inprogress;
+wire dbg_tx_inprogress;
 wire [2:0] dbg_rx_byte;
 wire dbg_rx_instr_finish;
 
@@ -69,8 +69,8 @@ dbgu32 #(
 	.mem_op(dbg_mem_op),
 	.mem_rdy(dbg_mem_rdy),
 	
-	.dbg_rx_enable(dbg_rx_enable),
-	.dbg_tx_enable(dbg_tx_enable),
+	.dbg_rx_inprogress(dbg_rx_inprogress),
+	.dbg_tx_inprogress(dbg_tx_inprogress),
 	.dbg_rx_byte(dbg_rx_byte),
 	.dbg_rx_instr_finish(dbg_rx_instr_finish)
 );
@@ -166,8 +166,8 @@ pwm pwm2 (
     .do(pwm_do[2]),
     .out(pwm_wave[2])
 );
-wire uart0_rx_enable;
-wire uart0_tx_enable;
+wire uart0_rx_inprogress;
+wire uart0_tx_inprogress;
 uartblk #(
     .CLK_FREQ(F_CLK),
     .UART_FREQ(BAUD)
@@ -184,8 +184,8 @@ uartblk #(
 	.di(mem_di[7:0]),
 	.do(uart_do[0]),
 	
-	.dbg_rx_enable(uart0_rx_enable),
-	.dbg_tx_enable(uart0_tx_enable)
+	.dbg_rx_inprogress(uart0_rx_inprogress),
+	.dbg_tx_inprogress(uart0_tx_inprogress)
 );
 timer #(
 	.CLK_DIV(F_CLK / 1_000_000)
@@ -231,17 +231,23 @@ heartbeat hb (
 // r/w delay by one clock cycle
 // simplified, writing could be done in 1 cycle but it limits Fmax
 
-reg mem_rdy = 0;
+reg dbg_mem_rdy = 0;
 always @(posedge clk)
-	if (mem_rdy)
+	if (dbg_mem_rdy)
 		// one pulse
-		mem_rdy <= 0;
+		dbg_mem_rdy <= 0;
 	else
 		// only read
-		mem_rdy <= mem_op;
+		dbg_mem_rdy <= mem_op;
 
-assign dbg_mem_rdy = mem_rdy;
-assign cpu_mem_rdy = mem_rdy;
+reg cpu_mem_rdy = 0;
+always @(posedge cpu_clk)
+	if (cpu_mem_rdy)
+		// one pulse
+		cpu_mem_rdy <= 0;
+	else
+		// only read
+		cpu_mem_rdy <= mem_op;
 
 
 // debug
@@ -249,7 +255,7 @@ assign A[0] = PICO_UART0_RX;
 assign A[1] = PICO_UART0_TX;
 assign A[2] = PICO_UART1_RX;
 assign A[3] = PICO_UART1_TX;
-assign A[4] = uart0_tx_enable;
+assign A[4] = uart0_tx_inprogress;
 assign A[5] = n_reset;
 
 endmodule

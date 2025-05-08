@@ -1,0 +1,99 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Mon May  5 11:11:57 2025
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/hazard3-soc/tb/t9_stack.vcd"
+[dumpfile_mtime] "Mon May  5 10:56:20 2025"
+[dumpfile_size] 99512
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/hazard3-soc/tb/gtkw/t9_stack.gtkw"
+[timestart] 6770000
+[size] 1471 1189
+[pos] -426 -65
+*-21.855705 13500000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] t9_stack.
+[treeopen] t9_stack.soc.
+[sst_width] 209
+[signals_width] 198
+[sst_expanded] 1
+[sst_vpaned_height] 403
+@28
+t9_stack.soc.cpu_reset
+t9_stack.soc.cpu_clk
+@200
+-
+-INSTR
+@22
+t9_stack.soc.i_adr[31:0]
+t9_stack.soc.i_data[31:0]
+@28
+t9_stack.soc.bus_aph_req_i
+t9_stack.soc.bus_aph_ready_i
+t9_stack.soc.bus_dph_ready_i
+@200
+-
+-DATA
+@28
+t9_stack.soc.bus_aph_req_d
+t9_stack.soc.bus_aph_ready_d
+t9_stack.soc.bus_hwrite_d
+t9_stack.soc.bus_dph_ready_d
+@22
+t9_stack.soc.cpu.bus_haddr_d[31:0]
+@200
+-
+@22
+t9_stack.soc.cpu_di[31:0]
+t9_stack.soc.cpu_do[31:0]
+@200
+-
+-CLOCKED
+@22
+t9_stack.soc.cpu_adr[31:0]
+@28
+t9_stack.soc.bus_hwrite_d_reg
+@c00022
+t9_stack.soc.bus_haddr_d_reg[31:0]
+@28
+(0)t9_stack.soc.bus_haddr_d_reg[31:0]
+(1)t9_stack.soc.bus_haddr_d_reg[31:0]
+(2)t9_stack.soc.bus_haddr_d_reg[31:0]
+(3)t9_stack.soc.bus_haddr_d_reg[31:0]
+(4)t9_stack.soc.bus_haddr_d_reg[31:0]
+(5)t9_stack.soc.bus_haddr_d_reg[31:0]
+(6)t9_stack.soc.bus_haddr_d_reg[31:0]
+(7)t9_stack.soc.bus_haddr_d_reg[31:0]
+(8)t9_stack.soc.bus_haddr_d_reg[31:0]
+(9)t9_stack.soc.bus_haddr_d_reg[31:0]
+(10)t9_stack.soc.bus_haddr_d_reg[31:0]
+(11)t9_stack.soc.bus_haddr_d_reg[31:0]
+(12)t9_stack.soc.bus_haddr_d_reg[31:0]
+(13)t9_stack.soc.bus_haddr_d_reg[31:0]
+(14)t9_stack.soc.bus_haddr_d_reg[31:0]
+(15)t9_stack.soc.bus_haddr_d_reg[31:0]
+(16)t9_stack.soc.bus_haddr_d_reg[31:0]
+(17)t9_stack.soc.bus_haddr_d_reg[31:0]
+(18)t9_stack.soc.bus_haddr_d_reg[31:0]
+(19)t9_stack.soc.bus_haddr_d_reg[31:0]
+(20)t9_stack.soc.bus_haddr_d_reg[31:0]
+(21)t9_stack.soc.bus_haddr_d_reg[31:0]
+(22)t9_stack.soc.bus_haddr_d_reg[31:0]
+(23)t9_stack.soc.bus_haddr_d_reg[31:0]
+(24)t9_stack.soc.bus_haddr_d_reg[31:0]
+(25)t9_stack.soc.bus_haddr_d_reg[31:0]
+(26)t9_stack.soc.bus_haddr_d_reg[31:0]
+(27)t9_stack.soc.bus_haddr_d_reg[31:0]
+(28)t9_stack.soc.bus_haddr_d_reg[31:0]
+(29)t9_stack.soc.bus_haddr_d_reg[31:0]
+(30)t9_stack.soc.bus_haddr_d_reg[31:0]
+(31)t9_stack.soc.bus_haddr_d_reg[31:0]
+@1401200
+-group_end
+@200
+-
+-REGS
+@22
+t9_stack.stackptr[31:0]
+t9_stack.reg_x10[31:0]
+t9_stack.reg_x11[31:0]
+[pattern_trace] 1
+[pattern_trace] 0

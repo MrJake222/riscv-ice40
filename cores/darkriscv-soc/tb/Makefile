@@ -14,6 +14,7 @@ TB += t6_stack.v
 TB += t7_uart0.v
 TB += t8_dbgu32_mem.v
 TB += t9_uart_loop.v
+TB += t12_custom.v
 # testbenches dependencies
 DEP = dep.v
 

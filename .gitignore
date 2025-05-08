@@ -3,6 +3,7 @@
 *.d
 *.elf
 *.hex
+*.tb
 
 # Verilog
 *.vcd
@@ -17,3 +18,9 @@
 
 # lutcount1
 *.cells
+
+# python
+venv
+*.tmp*
+.ipynb_checkpoints
+__pycache__

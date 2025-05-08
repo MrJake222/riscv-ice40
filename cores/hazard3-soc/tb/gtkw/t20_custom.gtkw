@@ -1,0 +1,151 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Tue May  6 18:18:50 2025
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/hazard3-soc/tb/t20_custom.vcd"
+[dumpfile_mtime] "Tue May  6 15:34:57 2025"
+[dumpfile_size] 41218500
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/hazard3-soc/tb/gtkw/t20_custom.gtkw"
+[timestart] 35030640000
+[size] 1830 773
+[pos] 729 -11
+*-21.796806 35037000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] t20_custom.
+[treeopen] t20_custom.soc.
+[treeopen] t20_custom.soc.cpu.
+[sst_width] 209
+[signals_width] 198
+[sst_expanded] 1
+[sst_vpaned_height] 238
+@28
+t20_custom.soc.cpu_reset
+t20_custom.soc.cpu_clk
+@200
+-
+-INSTR
+@22
+t20_custom.soc.i_adr[31:0]
+t20_custom.soc.i_data[31:0]
+@28
+t20_custom.soc.bus_aph_req_i
+t20_custom.soc.bus_aph_ready_i
+@29
+t20_custom.soc.bus_dph_ready_i
+@200
+-
+-DATA
+@28
+t20_custom.soc.bus_aph_req_d
+t20_custom.soc.bus_aph_ready_d
+t20_custom.soc.bus_hread_d
+t20_custom.soc.bus_hwrite_d
+t20_custom.soc.bus_dph_ready_d
+@22
+t20_custom.soc.cpu.bus_haddr_d[31:0]
+@200
+-
+@28
+t20_custom.soc.uart0.tx_buf_empty
+@22
+t20_custom.soc.cpu_di[31:0]
+t20_custom.soc.cpu_do[31:0]
+@200
+-
+-CLOCKED
+@28
+t20_custom.soc.bus_hread_d_reg
+t20_custom.soc.bus_hwrite_d_reg
+@c00022
+t20_custom.soc.bus_haddr_d_reg[31:0]
+@28
+(0)t20_custom.soc.bus_haddr_d_reg[31:0]
+(1)t20_custom.soc.bus_haddr_d_reg[31:0]
+(2)t20_custom.soc.bus_haddr_d_reg[31:0]
+(3)t20_custom.soc.bus_haddr_d_reg[31:0]
+(4)t20_custom.soc.bus_haddr_d_reg[31:0]
+(5)t20_custom.soc.bus_haddr_d_reg[31:0]
+(6)t20_custom.soc.bus_haddr_d_reg[31:0]
+(7)t20_custom.soc.bus_haddr_d_reg[31:0]
+(8)t20_custom.soc.bus_haddr_d_reg[31:0]
+(9)t20_custom.soc.bus_haddr_d_reg[31:0]
+(10)t20_custom.soc.bus_haddr_d_reg[31:0]
+(11)t20_custom.soc.bus_haddr_d_reg[31:0]
+(12)t20_custom.soc.bus_haddr_d_reg[31:0]
+(13)t20_custom.soc.bus_haddr_d_reg[31:0]
+(14)t20_custom.soc.bus_haddr_d_reg[31:0]
+(15)t20_custom.soc.bus_haddr_d_reg[31:0]
+(16)t20_custom.soc.bus_haddr_d_reg[31:0]
+(17)t20_custom.soc.bus_haddr_d_reg[31:0]
+(18)t20_custom.soc.bus_haddr_d_reg[31:0]
+(19)t20_custom.soc.bus_haddr_d_reg[31:0]
+(20)t20_custom.soc.bus_haddr_d_reg[31:0]
+(21)t20_custom.soc.bus_haddr_d_reg[31:0]
+(22)t20_custom.soc.bus_haddr_d_reg[31:0]
+(23)t20_custom.soc.bus_haddr_d_reg[31:0]
+(24)t20_custom.soc.bus_haddr_d_reg[31:0]
+(25)t20_custom.soc.bus_haddr_d_reg[31:0]
+(26)t20_custom.soc.bus_haddr_d_reg[31:0]
+(27)t20_custom.soc.bus_haddr_d_reg[31:0]
+(28)t20_custom.soc.bus_haddr_d_reg[31:0]
+(29)t20_custom.soc.bus_haddr_d_reg[31:0]
+(30)t20_custom.soc.bus_haddr_d_reg[31:0]
+(31)t20_custom.soc.bus_haddr_d_reg[31:0]
+@1401200
+-group_end
+@22
+t20_custom.soc.cpu_adr[31:0]
+@c00022
+t20_custom.soc.cpu_wren[3:0]
+@28
+(0)t20_custom.soc.cpu_wren[3:0]
+(1)t20_custom.soc.cpu_wren[3:0]
+(2)t20_custom.soc.cpu_wren[3:0]
+(3)t20_custom.soc.cpu_wren[3:0]
+@1401200
+-group_end
+@200
+-
+-REGS
+@22
+t20_custom.stackptr[31:0]
+t20_custom.reg_x13[31:0]
+t20_custom.reg_x14[31:0]
+@c00022
+t20_custom.reg_x15[31:0]
+@28
+(0)t20_custom.reg_x15[31:0]
+(1)t20_custom.reg_x15[31:0]
+(2)t20_custom.reg_x15[31:0]
+(3)t20_custom.reg_x15[31:0]
+(4)t20_custom.reg_x15[31:0]
+(5)t20_custom.reg_x15[31:0]
+(6)t20_custom.reg_x15[31:0]
+(7)t20_custom.reg_x15[31:0]
+(8)t20_custom.reg_x15[31:0]
+(9)t20_custom.reg_x15[31:0]
+(10)t20_custom.reg_x15[31:0]
+(11)t20_custom.reg_x15[31:0]
+(12)t20_custom.reg_x15[31:0]
+(13)t20_custom.reg_x15[31:0]
+(14)t20_custom.reg_x15[31:0]
+(15)t20_custom.reg_x15[31:0]
+(16)t20_custom.reg_x15[31:0]
+(17)t20_custom.reg_x15[31:0]
+(18)t20_custom.reg_x15[31:0]
+(19)t20_custom.reg_x15[31:0]
+(20)t20_custom.reg_x15[31:0]
+(21)t20_custom.reg_x15[31:0]
+(22)t20_custom.reg_x15[31:0]
+(23)t20_custom.reg_x15[31:0]
+(24)t20_custom.reg_x15[31:0]
+(25)t20_custom.reg_x15[31:0]
+(26)t20_custom.reg_x15[31:0]
+(27)t20_custom.reg_x15[31:0]
+(28)t20_custom.reg_x15[31:0]
+(29)t20_custom.reg_x15[31:0]
+(30)t20_custom.reg_x15[31:0]
+(31)t20_custom.reg_x15[31:0]
+@1401200
+-group_end
+[pattern_trace] 1
+[pattern_trace] 0

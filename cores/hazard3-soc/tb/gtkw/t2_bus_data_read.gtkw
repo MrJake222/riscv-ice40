@@ -1,0 +1,100 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Mon May  5 14:33:07 2025
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/hazard3-soc/tb/t2_bus_data_read.vcd"
+[dumpfile_mtime] "Mon May  5 14:32:56 2025"
+[dumpfile_size] 92991
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/hazard3-soc/tb/gtkw/t2_bus_data_read.gtkw"
+[timestart] 3830000
+[size] 1747 1165
+[pos] -1 -1
+*-21.855705 17940000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] t2_bus_data_read.
+[treeopen] t2_bus_data_read.soc.
+[treeopen] t2_bus_data_read.soc.cpu.
+[sst_width] 209
+[signals_width] 198
+[sst_expanded] 1
+[sst_vpaned_height] 394
+@28
+t2_bus_data_read.soc.cpu_reset
+t2_bus_data_read.soc.cpu_clk
+@200
+-
+-INSTR
+@22
+t2_bus_data_read.soc.i_adr[31:0]
+t2_bus_data_read.soc.i_data[31:0]
+@28
+t2_bus_data_read.soc.bus_aph_req_i
+t2_bus_data_read.soc.bus_aph_ready_i
+t2_bus_data_read.soc.bus_dph_ready_i
+@200
+-
+-DATA
+@28
+t2_bus_data_read.soc.bus_aph_req_d
+t2_bus_data_read.soc.bus_aph_ready_d
+t2_bus_data_read.soc.bus_hwrite_d
+t2_bus_data_read.soc.bus_dph_ready_d
+@22
+t2_bus_data_read.soc.cpu.bus_haddr_d[31:0]
+@200
+-
+@22
+t2_bus_data_read.soc.cpu_di[31:0]
+@200
+-
+-CLOCKED
+@28
+t2_bus_data_read.soc.bus_aph_req_d_reg
+t2_bus_data_read.soc.bus_hread_d_reg
+t2_bus_data_read.soc.bus_hwrite_d_reg
+@c00022
+t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+@28
+(0)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(1)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(2)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(3)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(4)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(5)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(6)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(7)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(8)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(9)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(10)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(11)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(12)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(13)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(14)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(15)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(16)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(17)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(18)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(19)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(20)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(21)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(22)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(23)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(24)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(25)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(26)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(27)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(28)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(29)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(30)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+(31)t2_bus_data_read.soc.bus_haddr_d_reg[31:0]
+@1401200
+-group_end
+@22
+t2_bus_data_read.soc.cpu_adr[31:0]
+@200
+-
+-REGS
+@22
+t2_bus_data_read.reg_x10[31:0]
+t2_bus_data_read.reg_x11[31:0]
+[pattern_trace] 1
+[pattern_trace] 0

@@ -5,7 +5,7 @@ VERILOG += VexRiscv_smprod_my.v
 # VERILOG += VexRiscv_sm_my.v
 # VERILOG += VexRiscv_smprod_my_muldiv.v
 # frequency
-FREQ  = 16
+FREQ  = 8
 
 
 SELFDIR := $(dir $(lastword $(MAKEFILE_LIST)))

@@ -8,6 +8,8 @@ module UART #(
     input wire rx,
     output reg rx_ready, // module sets it to 1 when transfer finishes
                          // for one clock period
+    output reg rx_stopbit, // module sets it to 1 when receiving stop bit
+                           // (useful for early cts assertion)
     output reg [7:0] rx_data,
     
     output wire tx,
@@ -18,9 +20,9 @@ module UART #(
     input wire [7:0] tx_data,
     
     
-	output reg dbg_rx_sample,
-	output wire dbg_rx_enable,
-    output wire dbg_tx_enable
+    output reg dbg_rx_sample,
+    output wire dbg_rx_inprogress,
+    output wire dbg_tx_inprogress
 );
 
 // gate tx behind reset not to transmit accidental start bit
@@ -41,27 +43,28 @@ end*/
 // RX
 
 reg [CNT_WIDTH-1:0] rx_cnt;
-reg rx_enable;
+reg rx_inprogress;
 reg [3:0] rx_bit;
 
 always @ (posedge clk)
 begin
     if (~n_reset) begin
-        rx_enable <= 0;
+        rx_inprogress <= 0;
         rx_ready <= 0;
+        rx_stopbit <= 0;
         rx_bit <= 0;
         rx_cnt <= ONE_AND_HALF_BIT_CLK;
     end else 
     begin
         // no reset
         
-        if (~rx_enable)
+        if (~rx_inprogress)
         begin
             // rx not in progress (~enable)
             if (~rx)
                 // falling edge (start bit)
                 // start the transfer
-                rx_enable <= 1;
+                rx_inprogress <= 1;
         end
         else begin
             // enabled
@@ -72,8 +75,9 @@ begin
                 begin
                     // receive stop bit
                     // end of transmission
+                    rx_inprogress <= 0;
                     rx_ready <= 1;
-                    rx_enable <= 0;
+                    rx_stopbit <= 0;
                     
                     // prepare for next byte
                     rx_bit <= 0;
@@ -84,6 +88,12 @@ begin
                     rx_data[rx_bit] <= rx;
                     rx_bit <= rx_bit + 1;
                     rx_cnt <= BIT_CLK;
+                    
+                    if (rx_bit == 7)
+                    begin
+                        // this was the last data bit
+                        rx_stopbit <= 1;
+                    end
                 end
                 
                 dbg_rx_sample <= 1;
@@ -108,7 +118,7 @@ end
 // TX
 
 reg [CNT_WIDTH-1:0] tx_cnt;
-reg tx_enable;
+reg tx_inprogress;
 reg [3:0] tx_bit;
 
 always @ (posedge clk)
@@ -116,7 +126,7 @@ begin
     if (~n_reset)
     begin
         tx_ <= 1; // idle
-        tx_enable <= 0;
+        tx_inprogress <= 0;
         tx_finished <= 0;
         
         tx_bit <= 0;
@@ -125,13 +135,13 @@ begin
     begin
         // no reset
         
-        if (~tx_enable)
+        if (~tx_inprogress)
         begin
             // not in progress
             if (tx_write)
             begin
                 // tx start write
-                tx_enable <= 1;
+                tx_inprogress <= 1;
                 tx_ <= 0; // start bit
             end
         end else
@@ -144,7 +154,7 @@ begin
                 begin
                     // end of transmission
                     tx_finished <= 1;
-                    tx_enable <= 0;
+                    tx_inprogress <= 0;
                     
                     // prepare for next byte
                     tx_bit <= 0;
@@ -172,7 +182,7 @@ begin
     end
 end
 
-assign dbg_rx_enable = rx_enable;
-assign dbg_tx_enable = tx_enable;
+assign dbg_rx_inprogress = rx_inprogress;
+assign dbg_tx_inprogress = tx_inprogress;
 
 endmodule

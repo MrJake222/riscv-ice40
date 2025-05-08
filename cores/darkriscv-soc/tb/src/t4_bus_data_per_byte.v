@@ -18,8 +18,8 @@ begin
     force soc.dbg_adr = 32'h20004; force soc.dbg_do = 32'h00b00623; #1000; // sb    a1,12(zero)
     force soc.dbg_adr = 32'h20008; force soc.dbg_do = 32'h03100593; #1000; // li    a1,0x31
     force soc.dbg_adr = 32'h2000C; force soc.dbg_do = 32'h00b006a3; #1000; // sb    a1,13(zero)
-    force soc.dbg_adr = 32'h20010; force soc.dbg_do = 32'h00c14503; #1000; // lbu   a0,12(sp)  (read 32)
-    force soc.dbg_adr = 32'h20014; force soc.dbg_do = 32'h00d14503; #1000; // lbu   a0,13(sp)  (read 31)
+    force soc.dbg_adr = 32'h20010; force soc.dbg_do = 32'h00c04503; #1000; // lbu   a1,12(zero)  (read 32)
+    force soc.dbg_adr = 32'h20014; force soc.dbg_do = 32'h00d04503; #1000; // lbu   a1,12(zero)  (read 31)
     force soc.dbg_adr = 32'h20018; force soc.dbg_do = 32'h0000006f; #1000; // j     +0
 
 	release soc.cpu_n_reset;

@@ -5,7 +5,7 @@ module dbgu32 #(
    // system
     input wire clk,
     input wire n_reset,
-	 
+
    // uart
     input wire rx,
     output wire tx,
@@ -14,7 +14,7 @@ module dbgu32 #(
    // cpu
     output reg cpu_run,
     output reg cpu_n_reset,
-	 
+
    // memory
     output reg [31:0] adr_ptr,
     output reg [31:0] data_bus_out,
@@ -24,8 +24,8 @@ module dbgu32 #(
     input wire mem_rdy,
     
     
-    output wire dbg_rx_enable,
-    output wire dbg_tx_enable,
+    output wire dbg_rx_inprogress,
+    output wire dbg_tx_inprogress,
     output wire [2:0] dbg_rx_byte,
     output wire dbg_rx_instr_finish
 );
@@ -41,6 +41,7 @@ localparam ACK = 8'h01;
 localparam NAK = 8'h02;
 
 wire uart_rx_ready;
+wire uart_rx_stopbit;
 wire [7:0] uart_rx_data;
 
 reg uart_tx_write;
@@ -54,14 +55,15 @@ UART #(CLK_FREQ, UART_FREQ) uarthw (
     .tx(tx),
     
     .rx_ready(uart_rx_ready),
+    .rx_stopbit(uart_rx_stopbit),
     .rx_data(uart_rx_data),
     
     .tx_write(uart_tx_write),
     .tx_finished(uart_tx_finished),
     .tx_data(uart_tx_data),
     
-    .dbg_rx_enable(dbg_rx_enable),
-    .dbg_tx_enable(dbg_tx_enable)
+    .dbg_rx_inprogress(dbg_rx_inprogress),
+    .dbg_tx_inprogress(dbg_tx_inprogress)
 );
 
 reg [2:0] rx_byte;       // 0-4; no of byte received
@@ -121,7 +123,7 @@ end
 // cleared by tx_ack() or transmit finished
 reg busy;
 
-task tx_ack();
+task tx_ack;
 begin
     tx_data[0] <= ACK;
     tx_req <= 1;
@@ -129,7 +131,7 @@ begin
 end
 endtask
 
-task tx_nak();
+task tx_nak;
 begin
     tx_data[0] <= NAK;
     tx_req <= 1;
@@ -139,11 +141,11 @@ endtask
 
 // to be called after uart_tx_finished or
 // by tx_req (latch data properly to tx_data[])
-task tx_next_byte();
+task tx_next_byte;
 begin
     uart_tx_data <= tx_data[tx_byte];
-	uart_tx_write <= 1;
-	tx_byte <= tx_byte + 1;
+    uart_tx_write <= 1;
+    tx_byte <= tx_byte + 1;
 end
 endtask
 
@@ -174,6 +176,12 @@ begin
     else begin
 
 /* instruction reception */
+    if (uart_rx_stopbit)
+    begin
+        // assert busy/cts early to avoid collisions
+        busy <= 1;
+    end
+
     if (uart_rx_ready)
     begin
         rx_data[rx_byte] <= uart_rx_data;            
@@ -188,10 +196,13 @@ begin
     begin
         instr_rx_decode <= 0;
         if (rx_byte == RX_DATA_LEN)
-        begin
+			// reception finished, start parsing & response generation
+			// (this will deassert busy later)
             instr_rx_finish <= 1;
-            busy <= 1;
-        end
+        else
+			// partial instruction received, deassert busy now to allow
+			// further bytes to come
+			busy <= 0;
     end
     
 /* instruction decoding */
@@ -269,22 +280,22 @@ begin
     begin
         adr_ptr <= adr_ptr + 4;
 
-		if (mem_write)
-		begin
-			mem_write <= 0;
-			tx_ack();
-		end
-		
-		if (mem_read)
-		begin
-			mem_read <= 0;
-			tx_data[0] <= data_bus_in[ 7: 0];
-			tx_data[1] <= data_bus_in[15: 8];
-			tx_data[2] <= data_bus_in[23:16];
-			tx_data[3] <= data_bus_in[31:24];
-			tx_req <= 1;
-		end
-	end
+        if (mem_write)
+        begin
+            mem_write <= 0;
+            tx_ack();
+        end
+        
+        if (mem_read)
+        begin
+            mem_read <= 0;
+            tx_data[0] <= data_bus_in[ 7: 0];
+            tx_data[1] <= data_bus_in[15: 8];
+            tx_data[2] <= data_bus_in[23:16];
+            tx_data[3] <= data_bus_in[31:24];
+            tx_req <= 1;
+        end
+    end
     
 /* cpu run/reset control */
     // disable reset if active
@@ -305,11 +316,11 @@ begin
 /* response transmission */
     if (tx_req && ~instr_tx_finish)
     begin
-		// "~instr_tx_finish" makes sure that
-		// we wait until last byte finishes transmitting
-		// (the busy got deasserted when it started)
-		tx_req <= 0;
-		tx_next_byte();
+        // "~instr_tx_finish" makes sure that
+        // we wait until last byte finishes transmitting
+        // (the busy got deasserted when it started)
+        tx_req <= 0;
+        tx_next_byte();
     end
     
     if (uart_tx_finished)

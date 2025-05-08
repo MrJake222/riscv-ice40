@@ -1,0 +1,34 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Mon Apr 28 18:14:52 2025
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/hazard3-soc/tb/t8_counters.vcd"
+[dumpfile_mtime] "Mon Apr 28 18:14:47 2025"
+[dumpfile_size] 93413
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/hazard3-soc/tb/gtkw/t8_counters.gtkw"
+[timestart] 6450000
+[size] 1769 1333
+[pos] -1 -1
+*-21.255707 10500000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] t8_counters.
+[treeopen] t8_counters.soc.
+[sst_width] 283
+[signals_width] 222
+[sst_expanded] 1
+[sst_vpaned_height] 463
+@28
+t8_counters.soc.cpu_reset
+t8_counters.soc.cpu_clk
+@200
+-
+-INSTR
+@22
+t8_counters.soc.i_adr[31:0]
+t8_counters.soc.i_data[31:0]
+@200
+-
+-REGS
+@22
+t8_counters.reg_x10[31:0]
+[pattern_trace] 1
+[pattern_trace] 0

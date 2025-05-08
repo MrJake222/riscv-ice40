@@ -22,13 +22,26 @@ begin
 	force soc.n_reset = n_reset;
 end
 
+wire [31:0] ra       = soc.cpu.REGS[ 1];
 wire [31:0] stackptr = soc.cpu.REGS[ 2];
+wire [31:0] reg_x8_s0  = soc.cpu.REGS[8];
+wire [31:0] reg_x9_s1  = soc.cpu.REGS[9];
 wire [31:0] reg_x10  = soc.cpu.REGS[10];
 wire [31:0] reg_x11  = soc.cpu.REGS[11];
 wire [31:0] reg_x12  = soc.cpu.REGS[12];
 wire [31:0] reg_x13  = soc.cpu.REGS[13];
 wire [31:0] reg_x14  = soc.cpu.REGS[14];
 wire [31:0] reg_x15  = soc.cpu.REGS[15];
+wire [31:0] reg_x16  = soc.cpu.REGS[16];
+wire [31:0] reg_x17  = soc.cpu.REGS[17];
+wire [31:0] reg_x18_s2  = soc.cpu.REGS[18];
+wire [31:0] reg_x19_s3  = soc.cpu.REGS[19];
+wire [31:0] reg_x20_s4  = soc.cpu.REGS[20];
+wire [31:0] reg_x21_s5  = soc.cpu.REGS[21];
+wire [31:0] reg_x22_s6  = soc.cpu.REGS[22];
+wire [31:0] reg_x23_s7  = soc.cpu.REGS[23];
+wire [31:0] reg_x24_s8  = soc.cpu.REGS[24];
+wire [31:0] reg_x25_s9  = soc.cpu.REGS[25];
 
 
 // ------------------------------------ UART ------------------------------------  //

@@ -5,7 +5,7 @@ VERILOG += darkriscv.v
 VERILOG += darkdemux.v
 #VERILOG += config.vh
 # frequency
-FREQ  = 16
+FREQ  = 8
 
 SELFDIR := $(dir $(lastword $(MAKEFILE_LIST)))
 include ${SELFDIR}/../Makefile
