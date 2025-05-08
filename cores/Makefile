@@ -1,7 +1,7 @@
 # include this file in *-soc implementations
 
 # pin definitions
-PCF   = $(TLD).pcf
+PCF   = $(FNAME).pcf
 # extra files
 EXTRA  = clk.v ram32.v dbgu32.v uart.v
 EXTRA += pwm.v uartblk.v timer.v heartbeat.v
@@ -9,15 +9,16 @@ EXTRA += pwm.v uartblk.v timer.v heartbeat.v
 RISCV = ../..
 VERILOG += $(patsubst %,$(RISCV)/extra/%,$(EXTRA))
 # intermediate files
-JSON = $(TLD).hw.json
-ASC  = $(TLD).asc
-UTIL = $(TLD)_util.hw.json
+JSON = $(FNAME).hw.json
+ASC  = $(FNAME).asc
+UTIL = $(FNAME)_util.hw.json
 # result file
-BIN  = $(TLD).bin
-UF2  = $(TLD).uf2
+BIN  = $(FNAME).bin
+UF2  = $(FNAME).uf2
 
 
 # config
+TLD         = soc
 # -q is quiet
 SYNTH_EXEC	= yosys
 SYNTH_SCR	= synth_ice40

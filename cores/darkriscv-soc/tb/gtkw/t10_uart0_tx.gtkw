@@ -1,0 +1,63 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Fri Apr 25 14:59:04 2025
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/darkriscv-soc/tb/t10_uart0_tx.vcd"
+[dumpfile_mtime] "Fri Apr 25 14:57:57 2025"
+[dumpfile_size] 90918
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/darkriscv-soc/tb/gtkw/t10_uart0_tx.gtkw"
+[timestart] 0
+[size] 1603 976
+[pos] -351 -51
+*-23.655706 22480000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] t10_uart0_tx.
+[treeopen] t10_uart0_tx.soc.
+[treeopen] t10_uart0_tx.soc.cpu.
+[treeopen] t10_uart0_tx.soc.ram.
+[treeopen] t10_uart0_tx.soc.uart0.
+[sst_width] 283
+[signals_width] 210
+[sst_expanded] 1
+[sst_vpaned_height] 319
+@28
+t10_uart0_tx.soc.cpu_reset
+t10_uart0_tx.soc.cpu_clk
+@200
+-
+-INSTR
+@22
+t10_uart0_tx.soc.i_adr[31:0]
+t10_uart0_tx.soc.i_data[31:0]
+t10_uart0_tx.soc.cpu.IDATAX[31:0]
+@200
+-
+-READ
+@28
+t10_uart0_tx.soc.d_rd
+t10_uart0_tx.soc.d_valid
+t10_uart0_tx.soc.hlt
+@22
+t10_uart0_tx.soc.cpu_adr[31:0]
+t10_uart0_tx.soc.cpu_di[31:0]
+@200
+-
+-WRITE
+@28
+t10_uart0_tx.soc.d_wr
+@22
+t10_uart0_tx.soc.cpu_adr[31:0]
+t10_uart0_tx.soc.cpu_do[31:0]
+t10_uart0_tx.soc.cpu_wren[3:0]
+@200
+-
+-REGS
+@22
+t10_uart0_tx.reg_x10[31:0]
+t10_uart0_tx.reg_x11[31:0]
+@200
+-
+-UART
+@29
+t10_uart0_tx.soc.uart0.tx
+[pattern_trace] 1
+[pattern_trace] 0

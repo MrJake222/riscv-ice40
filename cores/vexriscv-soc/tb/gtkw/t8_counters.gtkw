@@ -1,0 +1,79 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Thu May  8 09:53:10 2025
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/vexriscv-soc/tb/t8_counters.vcd"
+[dumpfile_mtime] "Thu May  8 09:51:23 2025"
+[dumpfile_size] 178940
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/vexriscv-soc/tb/gtkw/t8_counters.gtkw"
+[timestart] 0
+[size] 1635 1203
+[pos] 651 47
+*-23.100000 16990000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] t8_counters.
+[treeopen] t8_counters.soc.
+[treeopen] t8_counters.soc.cpu.
+[treeopen] t8_counters.soc.ram.
+[treeopen] t8_counters.soc.uart0.
+[sst_width] 283
+[signals_width] 205
+[sst_expanded] 1
+[sst_vpaned_height] 409
+@28
+t8_counters.soc.cpu_reset
+t8_counters.soc.cpu_clk
+[color] 2
+t8_counters.soc.icmd_valid
+[color] 2
+t8_counters.soc.irsp_valid
+@22
+[color] 2
+t8_counters.soc.icmd_adr[31:0]
+t8_counters.soc.adr[31:0]
+@200
+-
+@22
++{instr_decode} t8_counters.soc.cpu.decode_INSTRUCTION[31:0]
+@c00022
++{instr_exec} t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+@28
+(0)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(1)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(2)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(3)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(4)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(5)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(6)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(7)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(8)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(9)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(10)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(11)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(12)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(13)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(14)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(15)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(16)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(17)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(18)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(19)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(20)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(21)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(22)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(23)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(24)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(25)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(26)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(27)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(28)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(29)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(30)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+(31)t8_counters.soc.cpu.execute_INSTRUCTION[31:0]
+@1401200
+-group_end
+@200
+-
+@22
+t8_counters.reg_x10[31:0]
+[pattern_trace] 1
+[pattern_trace] 0

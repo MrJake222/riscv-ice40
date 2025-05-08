@@ -1,6 +1,6 @@
-TLD = chaz
+FNAME = h3soc
 # input files
-VERILOG = $(TLD).v
+VERILOG = $(FNAME).v
 # source files
 SRC += hazard3_decode.v hazard3_triggers.v hazard3_instr_decompress.v hazard3_csr.v hazard3_power_ctrl.v
 SRC += arith/hazard3_onehot_priority.v arith/hazard3_shift_barrel.v arith/hazard3_priority_encode.v arith/hazard3_onehot_encode.v

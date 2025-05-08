@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
-[*] Fri Apr 25 14:32:12 2025
+[*] Thu May  8 09:35:26 2025
 [*]
 [dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/darkriscv-soc/tb/t1_bus_instr.vcd"
-[dumpfile_mtime] "Fri Apr 25 14:29:59 2025"
-[dumpfile_size] 18215
+[dumpfile_mtime] "Thu May  8 09:24:18 2025"
+[dumpfile_size] 24202
 [savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/darkriscv-soc/tb/gtkw/t1_bus_instr.gtkw"
 [timestart] 0
 [size] 1603 976
 [pos] -1 -1
-*-21.555706 12060000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-22.455706 12060000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] t1_bus_instr.
 [treeopen] t1_bus_instr.soc.
 [treeopen] t1_bus_instr.soc.cpu.
@@ -34,7 +34,6 @@ t1_bus_instr.soc.cpu.IDATAX[31:0]
 -READ
 @28
 t1_bus_instr.soc.d_rd
-t1_bus_instr.soc.d_valid
 t1_bus_instr.soc.hlt
 @22
 t1_bus_instr.soc.cpu_adr[31:0]

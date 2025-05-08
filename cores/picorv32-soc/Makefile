@@ -1,6 +1,6 @@
-TLD = crv32
+FNAME = picosoc
 # input files
-VERILOG = $(TLD).v
+VERILOG = $(FNAME).v
 VERILOG += picorv32.v
 # frequency
 FREQ  = 8

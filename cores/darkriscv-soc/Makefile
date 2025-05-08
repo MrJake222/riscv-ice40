@@ -1,6 +1,6 @@
-TLD = cdark
+FNAME = darksoc
 # input files
-VERILOG = $(TLD).v
+VERILOG = $(FNAME).v
 VERILOG += darkriscv.v
 VERILOG += darkdemux.v
 #VERILOG += config.vh

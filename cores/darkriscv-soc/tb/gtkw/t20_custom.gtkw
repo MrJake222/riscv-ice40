@@ -1,0 +1,66 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Tue May  6 18:18:51 2025
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/darkriscv-soc/tb/t20_custom.vcd"
+[dumpfile_mtime] "Mon May  5 18:40:58 2025"
+[dumpfile_size] 34912688
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/darkriscv-soc/tb/gtkw/t20_custom.gtkw"
+[timestart] 39859230000
+[size] 1830 707
+[pos] 536 -1
+*-21.656233 39865000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] t20_custom.
+[treeopen] t20_custom.soc.
+[treeopen] t20_custom.soc.cpu.
+[treeopen] t20_custom.soc.ram.
+[treeopen] t20_custom.soc.uart0.
+[sst_width] 209
+[signals_width] 198
+[sst_expanded] 1
+[sst_vpaned_height] 214
+@28
+t20_custom.soc.cpu_reset
+t20_custom.soc.cpu_clk
+@200
+-
+-INSTR
+@22
+t20_custom.soc.i_adr[31:0]
+t20_custom.soc.i_data[31:0]
+t20_custom.soc.cpu.IDATAX[31:0]
+@200
+-
+-READ
+@28
+t20_custom.soc.d_rd
+t20_custom.soc.hlt
+@22
+t20_custom.soc.cpu_adr[31:0]
+t20_custom.soc.cpu_di[31:0]
+@800023
+#{t20_custom.soc.rom.p0_do[31:0]} (0)t20_custom.soc.rom.p0_do[31:0] (1)t20_custom.soc.rom.p0_do[31:0] (2)t20_custom.soc.rom.p0_do[31:0] (3)t20_custom.soc.rom.p0_do[31:0] (4)t20_custom.soc.rom.p0_do[31:0] (5)t20_custom.soc.rom.p0_do[31:0] (6)t20_custom.soc.rom.p0_do[31:0] (7)t20_custom.soc.rom.p0_do[31:0] (8)t20_custom.soc.rom.p0_do[31:0] (9)t20_custom.soc.rom.p0_do[31:0] (10)t20_custom.soc.rom.p0_do[31:0] (11)t20_custom.soc.rom.p0_do[31:0] (12)t20_custom.soc.rom.p0_do[31:0] (13)t20_custom.soc.rom.p0_do[31:0] (14)t20_custom.soc.rom.p0_do[31:0] (15)t20_custom.soc.rom.p0_do[31:0] (16)t20_custom.soc.rom.p0_do[31:0] (17)t20_custom.soc.rom.p0_do[31:0] (18)t20_custom.soc.rom.p0_do[31:0] (19)t20_custom.soc.rom.p0_do[31:0] (20)t20_custom.soc.rom.p0_do[31:0] (21)t20_custom.soc.rom.p0_do[31:0] (22)t20_custom.soc.rom.p0_do[31:0] (23)t20_custom.soc.rom.p0_do[31:0] (24)t20_custom.soc.rom.p0_do[31:0] (25)t20_custom.soc.rom.p0_do[31:0] (26)t20_custom.soc.rom.p0_do[31:0] (27)t20_custom.soc.rom.p0_do[31:0] (28)t20_custom.soc.rom.p0_do[31:0] (29)t20_custom.soc.rom.p0_do[31:0] (30)t20_custom.soc.rom.p0_do[31:0] (31)t20_custom.soc.rom.p0_do[31:0]
+@23
+t20_custom.soc.rom.p0_do[31:0]
+@1001201
+-group_end
+@28
+t20_custom.soc.uart0.tx_buf_empty
+@200
+-
+-WRITE
+@28
+t20_custom.soc.d_wr
+@22
+t20_custom.soc.cpu_adr[31:0]
+t20_custom.soc.cpu_do[31:0]
+t20_custom.soc.cpu_wren[3:0]
+@200
+-
+-REGS
+@22
+t20_custom.reg_x10[31:0]
+t20_custom.reg_x11[31:0]
+t20_custom.reg_x15[31:0]
+[pattern_trace] 1
+[pattern_trace] 0

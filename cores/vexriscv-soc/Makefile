@@ -1,6 +1,6 @@
-TLD = cvex
+FNAME = vexsoc
 # input files
-VERILOG = $(TLD).v
+VERILOG = $(FNAME).v
 VERILOG += VexRiscv_smprod_my.v
 # VERILOG += VexRiscv_sm_my.v
 # VERILOG += VexRiscv_smprod_my_muldiv.v

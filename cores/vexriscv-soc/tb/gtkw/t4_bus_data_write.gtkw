@@ -1,0 +1,155 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Thu Jun  6 20:08:30 2024
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/vexriscv-soc/tb/t4_bus_data_write.vcd"
+[dumpfile_mtime] "Thu Jun  6 19:49:01 2024"
+[dumpfile_size] 140743
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/vexriscv-soc/tb/gtkw/t4_bus_data_write.gtkw"
+[timestart] 0
+[size] 1635 1203
+[pos] -1 -1
+*-23.100000 5430000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] t4_bus_data_write.
+[treeopen] t4_bus_data_write.soc.
+[treeopen] t4_bus_data_write.soc.cpu.
+[treeopen] t4_bus_data_write.soc.ram.
+[treeopen] t4_bus_data_write.soc.uart0.
+[sst_width] 283
+[signals_width] 205
+[sst_expanded] 1
+[sst_vpaned_height] 409
+@28
+t4_bus_data_write.soc.cpu_reset
+t4_bus_data_write.soc.cpu_clk
+[color] 2
+t4_bus_data_write.soc.icmd_valid
+[color] 2
+t4_bus_data_write.soc.irsp_valid
+@22
+[color] 2
+t4_bus_data_write.soc.icmd_adr[31:0]
+t4_bus_data_write.soc.adr[31:0]
+@200
+-
+@22
++{instr_decode} t4_bus_data_write.soc.cpu.decode_INSTRUCTION[31:0]
+@c00022
++{instr_exec} t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+@28
+(0)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(1)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(2)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(3)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(4)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(5)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(6)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(7)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(8)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(9)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(10)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(11)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(12)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(13)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(14)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(15)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(16)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(17)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(18)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(19)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(20)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(21)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(22)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(23)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(24)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(25)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(26)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(27)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(28)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(29)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(30)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+(31)t4_bus_data_write.soc.cpu.execute_INSTRUCTION[31:0]
+@1401200
+-group_end
+@200
+-
+@28
+t4_bus_data_write.soc.dcmd_valid
+t4_bus_data_write.soc.drsp_valid
+@22
+t4_bus_data_write.soc.dcmd_adr[31:0]
+@200
+-
+-
+@c00022
+t4_bus_data_write.soc.adr[31:0]
+@28
+(0)t4_bus_data_write.soc.adr[31:0]
+(1)t4_bus_data_write.soc.adr[31:0]
+(2)t4_bus_data_write.soc.adr[31:0]
+(3)t4_bus_data_write.soc.adr[31:0]
+(4)t4_bus_data_write.soc.adr[31:0]
+(5)t4_bus_data_write.soc.adr[31:0]
+(6)t4_bus_data_write.soc.adr[31:0]
+(7)t4_bus_data_write.soc.adr[31:0]
+(8)t4_bus_data_write.soc.adr[31:0]
+(9)t4_bus_data_write.soc.adr[31:0]
+(10)t4_bus_data_write.soc.adr[31:0]
+(11)t4_bus_data_write.soc.adr[31:0]
+(12)t4_bus_data_write.soc.adr[31:0]
+(13)t4_bus_data_write.soc.adr[31:0]
+(14)t4_bus_data_write.soc.adr[31:0]
+(15)t4_bus_data_write.soc.adr[31:0]
+(16)t4_bus_data_write.soc.adr[31:0]
+(17)t4_bus_data_write.soc.adr[31:0]
+(18)t4_bus_data_write.soc.adr[31:0]
+(19)t4_bus_data_write.soc.adr[31:0]
+(20)t4_bus_data_write.soc.adr[31:0]
+(21)t4_bus_data_write.soc.adr[31:0]
+(22)t4_bus_data_write.soc.adr[31:0]
+(23)t4_bus_data_write.soc.adr[31:0]
+(24)t4_bus_data_write.soc.adr[31:0]
+(25)t4_bus_data_write.soc.adr[31:0]
+(26)t4_bus_data_write.soc.adr[31:0]
+(27)t4_bus_data_write.soc.adr[31:0]
+(28)t4_bus_data_write.soc.adr[31:0]
+(29)t4_bus_data_write.soc.adr[31:0]
+(30)t4_bus_data_write.soc.adr[31:0]
+(31)t4_bus_data_write.soc.adr[31:0]
+@1401200
+-group_end
+@22
+t4_bus_data_write.soc.mem_do[31:0]
+t4_bus_data_write.soc.ram_do[31:0]
+t4_bus_data_write.soc.mmio_do[31:0]
+t4_bus_data_write.soc.rom_do[31:0]
+@28
+t4_bus_data_write.soc.mem_op
+@22
+t4_bus_data_write.soc.mem_wren[3:0]
+@200
+-
+@28
++{pwm0_cs} t4_bus_data_write.soc.pwm0.cs
++{pwm1_cs} t4_bus_data_write.soc.pwm1.cs
++{pwm2_cs} t4_bus_data_write.soc.pwm2.cs
+@201
+-
+@c00022
++{pwm0} t4_bus_data_write.soc.pwm0.cmp[7:0]
+@28
+(0)t4_bus_data_write.soc.pwm0.cmp[7:0]
+(1)t4_bus_data_write.soc.pwm0.cmp[7:0]
+(2)t4_bus_data_write.soc.pwm0.cmp[7:0]
+(3)t4_bus_data_write.soc.pwm0.cmp[7:0]
+(4)t4_bus_data_write.soc.pwm0.cmp[7:0]
+(5)t4_bus_data_write.soc.pwm0.cmp[7:0]
+(6)t4_bus_data_write.soc.pwm0.cmp[7:0]
+(7)t4_bus_data_write.soc.pwm0.cmp[7:0]
+@1401200
+-group_end
+@22
++{pwm1} t4_bus_data_write.soc.pwm1.cmp[7:0]
++{pwm2} t4_bus_data_write.soc.pwm2.cmp[7:0]
+[pattern_trace] 1
+[pattern_trace] 0

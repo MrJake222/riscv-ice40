@@ -1,0 +1,81 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Fri Jun  7 09:23:22 2024
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/picorv32-soc/tb/t3_bus_pgm_read.vcd"
+[dumpfile_mtime] "Fri Jun  7 09:22:46 2024"
+[dumpfile_size] 46094
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/picorv32-soc/tb/gtkw/t3_bus_pgm_read.gtkw"
+[timestart] 0
+[size] 1875 963
+[pos] -1 -1
+*-23.655704 26500000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] t3_bus_pgm_read.
+[treeopen] t3_bus_pgm_read.soc.
+[treeopen] t3_bus_pgm_read.soc.cpu.
+[treeopen] t3_bus_pgm_read.soc.ram.
+[treeopen] t3_bus_pgm_read.soc.uart0.
+[sst_width] 283
+[signals_width] 249
+[sst_expanded] 1
+[sst_vpaned_height] 314
+@28
+t3_bus_pgm_read.soc.cpu_clk
+@22
+[color] 2
+t3_bus_pgm_read.soc.adr[31:0]
+@200
+-
+@c00022
+t3_bus_pgm_read.soc.adr[31:0]
+@28
+(0)t3_bus_pgm_read.soc.adr[31:0]
+(1)t3_bus_pgm_read.soc.adr[31:0]
+(2)t3_bus_pgm_read.soc.adr[31:0]
+(3)t3_bus_pgm_read.soc.adr[31:0]
+(4)t3_bus_pgm_read.soc.adr[31:0]
+(5)t3_bus_pgm_read.soc.adr[31:0]
+(6)t3_bus_pgm_read.soc.adr[31:0]
+(7)t3_bus_pgm_read.soc.adr[31:0]
+(8)t3_bus_pgm_read.soc.adr[31:0]
+(9)t3_bus_pgm_read.soc.adr[31:0]
+(10)t3_bus_pgm_read.soc.adr[31:0]
+(11)t3_bus_pgm_read.soc.adr[31:0]
+(12)t3_bus_pgm_read.soc.adr[31:0]
+(13)t3_bus_pgm_read.soc.adr[31:0]
+(14)t3_bus_pgm_read.soc.adr[31:0]
+(15)t3_bus_pgm_read.soc.adr[31:0]
+(16)t3_bus_pgm_read.soc.adr[31:0]
+(17)t3_bus_pgm_read.soc.adr[31:0]
+(18)t3_bus_pgm_read.soc.adr[31:0]
+(19)t3_bus_pgm_read.soc.adr[31:0]
+(20)t3_bus_pgm_read.soc.adr[31:0]
+(21)t3_bus_pgm_read.soc.adr[31:0]
+(22)t3_bus_pgm_read.soc.adr[31:0]
+(23)t3_bus_pgm_read.soc.adr[31:0]
+(24)t3_bus_pgm_read.soc.adr[31:0]
+(25)t3_bus_pgm_read.soc.adr[31:0]
+(26)t3_bus_pgm_read.soc.adr[31:0]
+(27)t3_bus_pgm_read.soc.adr[31:0]
+(28)t3_bus_pgm_read.soc.adr[31:0]
+(29)t3_bus_pgm_read.soc.adr[31:0]
+(30)t3_bus_pgm_read.soc.adr[31:0]
+(31)t3_bus_pgm_read.soc.adr[31:0]
+@1401200
+-group_end
+@22
+t3_bus_pgm_read.soc.mem_do[31:0]
+t3_bus_pgm_read.soc.ram_do[31:0]
+t3_bus_pgm_read.soc.mmio_do[31:0]
+t3_bus_pgm_read.soc.rom_do[31:0]
+@28
+t3_bus_pgm_read.soc.mem_op
+@22
+t3_bus_pgm_read.soc.mem_wren[3:0]
+@200
+-
+@22
+t3_bus_pgm_read.reg_x10[31:0]
+t3_bus_pgm_read.reg_x11[31:0]
+[pattern_trace] 1
+[pattern_trace] 0

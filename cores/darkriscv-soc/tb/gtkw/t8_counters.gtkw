@@ -1,0 +1,57 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Thu May  8 09:36:00 2025
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/darkriscv-soc/tb/t8_counters.vcd"
+[dumpfile_mtime] "Thu May  8 09:24:19 2025"
+[dumpfile_size] 37470
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/darkriscv-soc/tb/gtkw/t8_counters.gtkw"
+[timestart] 980000
+[size] 1603 976
+[pos] -1 -1
+*-22.755707 14220000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] t8_counters.
+[treeopen] t8_counters.soc.
+[treeopen] t8_counters.soc.cpu.
+[treeopen] t8_counters.soc.ram.
+[treeopen] t8_counters.soc.uart0.
+[sst_width] 283
+[signals_width] 210
+[sst_expanded] 1
+[sst_vpaned_height] 319
+@28
+t8_counters.soc.cpu_reset
+t8_counters.soc.cpu_clk
+@200
+-
+-INSTR
+@22
+t8_counters.soc.i_adr[31:0]
+t8_counters.soc.i_data[31:0]
+t8_counters.soc.cpu.IDATAX[31:0]
+@200
+-
+-READ
+@28
+t8_counters.soc.d_rd
+t8_counters.soc.hlt
+@22
+t8_counters.soc.cpu_adr[31:0]
+t8_counters.soc.cpu_di[31:0]
+@200
+-
+-WRITE
+@28
+t8_counters.soc.d_wr
+@22
+t8_counters.soc.cpu_adr[31:0]
+t8_counters.soc.cpu_do[31:0]
+t8_counters.soc.cpu_wren[3:0]
+@200
+-
+-REGS
+@22
+t8_counters.reg_x10[31:0]
+t8_counters.reg_x11[31:0]
+[pattern_trace] 1
+[pattern_trace] 0

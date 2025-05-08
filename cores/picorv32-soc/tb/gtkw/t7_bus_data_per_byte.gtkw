@@ -1,0 +1,80 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Fri Jun  7 09:23:20 2024
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/picorv32-soc/tb/t7_bus_data_per_byte.vcd"
+[dumpfile_mtime] "Fri Jun  7 09:22:46 2024"
+[dumpfile_size] 47897
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/picorv32-soc/tb/gtkw/t7_bus_data_per_byte.gtkw"
+[timestart] 0
+[size] 1635 1203
+[pos] -1 -1
+*-24.000000 24990000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] t7_bus_data_per_byte.
+[treeopen] t7_bus_data_per_byte.soc.
+[treeopen] t7_bus_data_per_byte.soc.cpu.
+[treeopen] t7_bus_data_per_byte.soc.ram.
+[treeopen] t7_bus_data_per_byte.soc.uart0.
+[sst_width] 283
+[signals_width] 205
+[sst_expanded] 1
+[sst_vpaned_height] 409
+@28
+t7_bus_data_per_byte.soc.cpu_clk
+@22
+[color] 2
+t7_bus_data_per_byte.soc.adr[31:0]
+@200
+-
+@c00022
+t7_bus_data_per_byte.soc.adr[31:0]
+@28
+(0)t7_bus_data_per_byte.soc.adr[31:0]
+(1)t7_bus_data_per_byte.soc.adr[31:0]
+(2)t7_bus_data_per_byte.soc.adr[31:0]
+(3)t7_bus_data_per_byte.soc.adr[31:0]
+(4)t7_bus_data_per_byte.soc.adr[31:0]
+(5)t7_bus_data_per_byte.soc.adr[31:0]
+(6)t7_bus_data_per_byte.soc.adr[31:0]
+(7)t7_bus_data_per_byte.soc.adr[31:0]
+(8)t7_bus_data_per_byte.soc.adr[31:0]
+(9)t7_bus_data_per_byte.soc.adr[31:0]
+(10)t7_bus_data_per_byte.soc.adr[31:0]
+(11)t7_bus_data_per_byte.soc.adr[31:0]
+(12)t7_bus_data_per_byte.soc.adr[31:0]
+(13)t7_bus_data_per_byte.soc.adr[31:0]
+(14)t7_bus_data_per_byte.soc.adr[31:0]
+(15)t7_bus_data_per_byte.soc.adr[31:0]
+(16)t7_bus_data_per_byte.soc.adr[31:0]
+(17)t7_bus_data_per_byte.soc.adr[31:0]
+(18)t7_bus_data_per_byte.soc.adr[31:0]
+(19)t7_bus_data_per_byte.soc.adr[31:0]
+(20)t7_bus_data_per_byte.soc.adr[31:0]
+(21)t7_bus_data_per_byte.soc.adr[31:0]
+(22)t7_bus_data_per_byte.soc.adr[31:0]
+(23)t7_bus_data_per_byte.soc.adr[31:0]
+(24)t7_bus_data_per_byte.soc.adr[31:0]
+(25)t7_bus_data_per_byte.soc.adr[31:0]
+(26)t7_bus_data_per_byte.soc.adr[31:0]
+(27)t7_bus_data_per_byte.soc.adr[31:0]
+(28)t7_bus_data_per_byte.soc.adr[31:0]
+(29)t7_bus_data_per_byte.soc.adr[31:0]
+(30)t7_bus_data_per_byte.soc.adr[31:0]
+(31)t7_bus_data_per_byte.soc.adr[31:0]
+@1401200
+-group_end
+@22
+t7_bus_data_per_byte.soc.mem_do[31:0]
+t7_bus_data_per_byte.soc.ram_do[31:0]
+t7_bus_data_per_byte.soc.mmio_do[31:0]
+t7_bus_data_per_byte.soc.rom_do[31:0]
+@28
+t7_bus_data_per_byte.soc.mem_op
+@22
+t7_bus_data_per_byte.soc.mem_wren[3:0]
+@200
+-
+@22
+t7_bus_data_per_byte.reg_x10[31:0]
+[pattern_trace] 1
+[pattern_trace] 0

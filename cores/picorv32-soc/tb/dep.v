@@ -29,6 +29,7 @@ wire [31:0] reg_x12  = soc.cpu.cpuregs[12];
 wire [31:0] reg_x13  = soc.cpu.cpuregs[13];
 wire [31:0] reg_x14  = soc.cpu.cpuregs[14];
 wire [31:0] reg_x15  = soc.cpu.cpuregs[15];
+wire [31:0] reg_x16  = soc.cpu.cpuregs[16];
 
 
 // ------------------------------------ UART ------------------------------------  //

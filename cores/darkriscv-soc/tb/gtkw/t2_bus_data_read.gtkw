@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
-[*] Fri Apr 25 14:31:38 2025
+[*] Thu May  8 09:35:32 2025
 [*]
 [dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/darkriscv-soc/tb/t2_bus_data_read.vcd"
-[dumpfile_mtime] "Fri Apr 25 14:29:59 2025"
-[dumpfile_size] 37649
+[dumpfile_mtime] "Thu May  8 09:24:18 2025"
+[dumpfile_size] 39206
 [savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/darkriscv-soc/tb/gtkw/t2_bus_data_read.gtkw"
-[timestart] 3830000
+[timestart] 0
 [size] 1603 976
 [pos] -1 -1
-*-21.555706 12060000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-23.055706 12060000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] t2_bus_data_read.
 [treeopen] t2_bus_data_read.soc.
 [treeopen] t2_bus_data_read.soc.cpu.
@@ -24,7 +24,6 @@ t2_bus_data_read.soc.cpu_reset
 t2_bus_data_read.soc.cpu_clk
 @200
 -
-@201
 -INSTR
 @22
 t2_bus_data_read.soc.i_adr[31:0]
@@ -35,7 +34,6 @@ t2_bus_data_read.soc.cpu.IDATAX[31:0]
 -READ
 @28
 t2_bus_data_read.soc.d_rd
-t2_bus_data_read.soc.d_valid
 t2_bus_data_read.soc.hlt
 @22
 t2_bus_data_read.soc.cpu_adr[31:0]

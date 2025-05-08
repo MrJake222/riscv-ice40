@@ -1,0 +1,97 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Thu May  8 10:05:39 2025
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/picorv32-soc/tb/t11_uart0_rx.vcd"
+[dumpfile_mtime] "Thu May  8 10:00:30 2025"
+[dumpfile_size] 130513
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/picorv32-soc/tb/gtkw/t11_uart0_rx.gtkw"
+[timestart] 0
+[size] 1627 951
+[pos] -1 -1
+*-25.755705 101900000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] t11_uart0_rx.
+[treeopen] t11_uart0_rx.soc.
+[treeopen] t11_uart0_rx.soc.cpu.
+[treeopen] t11_uart0_rx.soc.ram.
+[treeopen] t11_uart0_rx.soc.uart0.
+[sst_width] 283
+[signals_width] 249
+[sst_expanded] 1
+[sst_vpaned_height] 310
+@28
+t11_uart0_rx.soc.cpu_clk
+@22
+[color] 2
+t11_uart0_rx.soc.adr[31:0]
+@200
+-
+-
+-
+@c00022
+t11_uart0_rx.soc.adr[31:0]
+@28
+(0)t11_uart0_rx.soc.adr[31:0]
+(1)t11_uart0_rx.soc.adr[31:0]
+(2)t11_uart0_rx.soc.adr[31:0]
+(3)t11_uart0_rx.soc.adr[31:0]
+(4)t11_uart0_rx.soc.adr[31:0]
+(5)t11_uart0_rx.soc.adr[31:0]
+(6)t11_uart0_rx.soc.adr[31:0]
+(7)t11_uart0_rx.soc.adr[31:0]
+(8)t11_uart0_rx.soc.adr[31:0]
+(9)t11_uart0_rx.soc.adr[31:0]
+(10)t11_uart0_rx.soc.adr[31:0]
+(11)t11_uart0_rx.soc.adr[31:0]
+(12)t11_uart0_rx.soc.adr[31:0]
+(13)t11_uart0_rx.soc.adr[31:0]
+(14)t11_uart0_rx.soc.adr[31:0]
+(15)t11_uart0_rx.soc.adr[31:0]
+(16)t11_uart0_rx.soc.adr[31:0]
+(17)t11_uart0_rx.soc.adr[31:0]
+(18)t11_uart0_rx.soc.adr[31:0]
+(19)t11_uart0_rx.soc.adr[31:0]
+(20)t11_uart0_rx.soc.adr[31:0]
+(21)t11_uart0_rx.soc.adr[31:0]
+(22)t11_uart0_rx.soc.adr[31:0]
+(23)t11_uart0_rx.soc.adr[31:0]
+(24)t11_uart0_rx.soc.adr[31:0]
+(25)t11_uart0_rx.soc.adr[31:0]
+(26)t11_uart0_rx.soc.adr[31:0]
+(27)t11_uart0_rx.soc.adr[31:0]
+(28)t11_uart0_rx.soc.adr[31:0]
+(29)t11_uart0_rx.soc.adr[31:0]
+(30)t11_uart0_rx.soc.adr[31:0]
+(31)t11_uart0_rx.soc.adr[31:0]
+@1401200
+-group_end
+@22
+t11_uart0_rx.soc.mem_do[31:0]
+t11_uart0_rx.soc.ram_do[31:0]
+t11_uart0_rx.soc.mmio_do[31:0]
+t11_uart0_rx.soc.rom_do[31:0]
+@28
+t11_uart0_rx.soc.mem_op
+@c00022
+t11_uart0_rx.soc.mem_wren[3:0]
+@28
+(0)t11_uart0_rx.soc.mem_wren[3:0]
+(1)t11_uart0_rx.soc.mem_wren[3:0]
+(2)t11_uart0_rx.soc.mem_wren[3:0]
+(3)t11_uart0_rx.soc.mem_wren[3:0]
+@1401200
+-group_end
+@200
+-
+@22
+t11_uart0_rx.reg_x10[31:0]
+@200
+-
+-uart0
+@28
+t11_uart0_rx.soc.uart0.rx
+t11_uart0_rx.soc.uart0.cts
+@29
+t11_uart0_rx.soc.uart0.uarthw.tx
+[pattern_trace] 1
+[pattern_trace] 0
