@@ -80,7 +80,7 @@ vex_src="VexRiscv_smprod_my.v"
 #			name			tld				work dir						src...
 lutcount	"Rocket_tiny"	"Rocket"		"$C/rocket-build/tiny" 		${rocket_src}
 lutcount	"cv32e40p"		"cv32e40p_top"	"$C/cv32e40p-build/cv32"	${cv_src}
-lutcount	"picorv32_csr"	"picorv32_tb"	"$C/picorv32"				${rv32_src}		"$L/picorv32_counters.v"
+lutcount	"picorv32"		"picorv32"		"$C/picorv32"				${rv32_src}
 lutcount	"ibex_noM"		"ibex_noM"		"$C/ibex-build/ibex"		${ibex_src}		"$L/ibex_noM.v"
 lutcount	"darkriscv"		"darkriscv"		"$C/darkriscv-build/rv32i"	${dark_src}
 lutcount	"kronos"		"kronos_core"	"$C/kronos-build/kronos"	${kronos_src}	# strangely big, issue posted on gh

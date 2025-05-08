@@ -1,6 +1,6 @@
                         Rocket_tiny:   total  7334 (139%)
                            cv32e40p:   total 13320 (252%)
-                       picorv32_csr:   total  1988  (38%)
+                           picorv32:   total  1951  (37%)
                            ibex_noM:   total  6357 (120%)
                           darkriscv:   total  1958  (37%)
                              kronos:   total  4696  (89%)

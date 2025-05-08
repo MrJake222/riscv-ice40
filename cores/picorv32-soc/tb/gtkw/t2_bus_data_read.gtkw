@@ -1,10 +1,10 @@
 [*]
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
-[*] Fri Jun  7 09:23:22 2024
+[*] Thu May  8 16:43:26 2025
 [*]
 [dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/picorv32-soc/tb/t2_bus_data_read.vcd"
-[dumpfile_mtime] "Fri Jun  7 09:22:46 2024"
-[dumpfile_size] 46094
+[dumpfile_mtime] "Thu May  8 16:40:15 2025"
+[dumpfile_size] 54832
 [savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/picorv32-soc/tb/gtkw/t2_bus_data_read.gtkw"
 [timestart] 0
 [size] 1875 963
@@ -26,7 +26,7 @@ t2_bus_data_read.soc.cpu_clk
 t2_bus_data_read.soc.adr[31:0]
 @200
 -
-@c00022
+@c00023
 t2_bus_data_read.soc.adr[31:0]
 @28
 (0)t2_bus_data_read.soc.adr[31:0]
@@ -61,13 +61,8 @@ t2_bus_data_read.soc.adr[31:0]
 (29)t2_bus_data_read.soc.adr[31:0]
 (30)t2_bus_data_read.soc.adr[31:0]
 (31)t2_bus_data_read.soc.adr[31:0]
-@1401200
+@1401201
 -group_end
-@22
-t2_bus_data_read.soc.mem_do[31:0]
-t2_bus_data_read.soc.ram_do[31:0]
-t2_bus_data_read.soc.mmio_do[31:0]
-t2_bus_data_read.soc.rom_do[31:0]
 @28
 t2_bus_data_read.soc.mem_op
 @22

@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
-[*] Fri Jun  7 09:25:02 2024
+[*] Thu May  8 16:46:32 2025
 [*]
 [dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/picorv32-soc/tb/t9_stack.vcd"
-[dumpfile_mtime] "Fri Jun  7 09:24:57 2024"
-[dumpfile_size] 47436
+[dumpfile_mtime] "Thu May  8 16:46:29 2025"
+[dumpfile_size] 57780
 [savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/picorv32-soc/tb/gtkw/t9_stack.gtkw"
 [timestart] 0
 [size] 1635 1203
 [pos] -1 -1
-*-23.100000 19910000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-23.100000 25080000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] t9_stack.
 [treeopen] t9_stack.soc.
 [treeopen] t9_stack.soc.cpu.
@@ -65,20 +65,14 @@ t9_stack.soc.adr[31:0]
 (31)t9_stack.soc.adr[31:0]
 @1401200
 -group_end
-@22
-t9_stack.soc.mem_do[31:0]
-t9_stack.soc.ram_do[31:0]
-t9_stack.soc.mmio_do[31:0]
-t9_stack.soc.rom_do[31:0]
 @28
 t9_stack.soc.mem_op
 @22
 t9_stack.soc.mem_wren[3:0]
 @200
 -
-@23
-t9_stack.stackptr[31:0]
 @22
+t9_stack.stackptr[31:0]
 t9_stack.reg_x10[31:0]
 t9_stack.reg_x11[31:0]
 [pattern_trace] 1

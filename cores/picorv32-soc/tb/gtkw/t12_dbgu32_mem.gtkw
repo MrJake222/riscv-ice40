@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
-[*] Fri Jun  7 10:47:25 2024
+[*] Thu May  8 16:29:06 2025
 [*]
 [dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/picorv32-soc/tb/t12_dbgu32_mem.vcd"
-[dumpfile_mtime] "Fri Jun  7 10:47:21 2024"
-[dumpfile_size] 248686
+[dumpfile_mtime] "Thu May  8 16:25:21 2025"
+[dumpfile_size] 499039
 [savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/picorv32-soc/tb/gtkw/t12_dbgu32_mem.gtkw"
 [timestart] 0
 [size] 1762 1193
-[pos] -1 -1
-*-27.855703 500000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] -67 -5
+*-27.555704 378000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] t12_dbgu32_mem.
 [treeopen] t12_dbgu32_mem.soc.
 [treeopen] t12_dbgu32_mem.soc.cpu.
@@ -84,10 +84,11 @@ t12_dbgu32_mem.reg_x11[31:0]
 -dbgu
 @28
 t12_dbgu32_mem.soc.dbg_mem_op
-@22
+@23
 t12_dbgu32_mem.soc.dbgu0.adr_ptr[31:0]
 @28
 t12_dbgu32_mem.soc.dbgu0.rx
+t12_dbgu32_mem.soc.dbgu0.tx
 @22
 +{tx_data} t12_dbgu32_mem.dbgu0_tx_data[31:0]
 [pattern_trace] 1

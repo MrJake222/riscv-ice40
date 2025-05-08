@@ -1,10 +1,10 @@
 [*]
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
-[*] Fri Jun  7 09:23:22 2024
+[*] Thu May  8 16:43:34 2025
 [*]
 [dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/picorv32-soc/tb/t3_bus_pgm_read.vcd"
-[dumpfile_mtime] "Fri Jun  7 09:22:46 2024"
-[dumpfile_size] 46094
+[dumpfile_mtime] "Thu May  8 16:40:15 2025"
+[dumpfile_size] 56561
 [savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/picorv32-soc/tb/gtkw/t3_bus_pgm_read.gtkw"
 [timestart] 0
 [size] 1875 963
@@ -63,11 +63,6 @@ t3_bus_pgm_read.soc.adr[31:0]
 (31)t3_bus_pgm_read.soc.adr[31:0]
 @1401200
 -group_end
-@22
-t3_bus_pgm_read.soc.mem_do[31:0]
-t3_bus_pgm_read.soc.ram_do[31:0]
-t3_bus_pgm_read.soc.mmio_do[31:0]
-t3_bus_pgm_read.soc.rom_do[31:0]
 @28
 t3_bus_pgm_read.soc.mem_op
 @22

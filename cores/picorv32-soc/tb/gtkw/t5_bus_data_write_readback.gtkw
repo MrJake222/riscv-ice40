@@ -1,10 +1,10 @@
 [*]
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
-[*] Thu May  8 10:18:24 2025
+[*] Thu May  8 16:43:44 2025
 [*]
 [dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/picorv32-soc/tb/t5_bus_data_write_readback.vcd"
-[dumpfile_mtime] "Thu May  8 10:17:56 2025"
-[dumpfile_size] 37327
+[dumpfile_mtime] "Thu May  8 16:40:16 2025"
+[dumpfile_size] 41661
 [savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/picorv32-soc/tb/gtkw/t5_bus_data_write_readback.gtkw"
 [timestart] 0
 [size] 1635 1203
@@ -63,11 +63,6 @@ t5_bus_data_write_readback.soc.adr[31:0]
 (31)t5_bus_data_write_readback.soc.adr[31:0]
 @1401200
 -group_end
-@22
-t5_bus_data_write_readback.soc.mem_do[31:0]
-t5_bus_data_write_readback.soc.ram_do[31:0]
-t5_bus_data_write_readback.soc.mmio_do[31:0]
-t5_bus_data_write_readback.soc.rom_do[31:0]
 @28
 t5_bus_data_write_readback.soc.mem_op
 @22

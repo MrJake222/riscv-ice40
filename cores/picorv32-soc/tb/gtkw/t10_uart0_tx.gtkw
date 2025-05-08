@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
-[*] Thu May  8 10:05:19 2025
+[*] Thu May  8 16:28:16 2025
 [*]
 [dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/picorv32-soc/tb/t10_uart0_tx.vcd"
-[dumpfile_mtime] "Thu May  8 10:00:30 2025"
-[dumpfile_size] 68521
+[dumpfile_mtime] "Thu May  8 16:25:21 2025"
+[dumpfile_size] 116137
 [savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/picorv32-soc/tb/gtkw/t10_uart0_tx.gtkw"
 [timestart] 0
 [size] 1627 951
 [pos] -1 -1
-*-24.555704 53800000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-25.455704 53800000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] t10_uart0_tx.
 [treeopen] t10_uart0_tx.soc.
 [treeopen] t10_uart0_tx.soc.cpu.
@@ -89,11 +89,6 @@ t10_uart0_tx.reg_x10[31:0]
 -
 -uart0
 @28
-t10_uart0_tx.soc.uart0.cs
-t10_uart0_tx.soc.uart0.tx_buf_empty
-@22
-t10_uart0_tx.soc.uart0.uarthw.tx_bit[3:0]
-@29
 t10_uart0_tx.soc.uart0.uarthw.tx
 [pattern_trace] 1
 [pattern_trace] 0

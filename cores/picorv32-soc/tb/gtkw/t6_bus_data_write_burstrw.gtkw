@@ -1,10 +1,10 @@
 [*]
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
-[*] Thu May  8 10:19:20 2025
+[*] Thu May  8 16:43:55 2025
 [*]
 [dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/picorv32-soc/tb/t6_bus_data_write_burstrw.vcd"
-[dumpfile_mtime] "Thu May  8 10:19:12 2025"
-[dumpfile_size] 63574
+[dumpfile_mtime] "Thu May  8 16:40:16 2025"
+[dumpfile_size] 72930
 [savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/picorv32-soc/tb/gtkw/t6_bus_data_write_burstrw.gtkw"
 [timestart] 0
 [size] 1635 1203
@@ -63,11 +63,6 @@ t6_bus_data_write_burstrw.soc.adr[31:0]
 (31)t6_bus_data_write_burstrw.soc.adr[31:0]
 @1401200
 -group_end
-@22
-t6_bus_data_write_burstrw.soc.mem_do[31:0]
-t6_bus_data_write_burstrw.soc.ram_do[31:0]
-t6_bus_data_write_burstrw.soc.mmio_do[31:0]
-t6_bus_data_write_burstrw.soc.rom_do[31:0]
 @28
 t6_bus_data_write_burstrw.soc.mem_op
 @22
@@ -102,7 +97,6 @@ t6_bus_data_write_burstrw.reg_x13[31:0]
 +{pwm2} t6_bus_data_write_burstrw.soc.pwm2.cmp[7:0]
 t6_bus_data_write_burstrw.reg_x14[31:0]
 t6_bus_data_write_burstrw.reg_x15[31:0]
-@23
 t6_bus_data_write_burstrw.reg_x16[31:0]
 [pattern_trace] 1
 [pattern_trace] 0
