@@ -50,3 +50,6 @@
 	path = cores/vexriscv
 	url = git@github.com:MrJake222/VexRiscv.git
 	branch = develop
+[submodule "cores/femtorv"]
+	path = cores/femtorv
+	url = git@github.com:MrJake222/learn-fpga.git
