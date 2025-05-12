@@ -1,0 +1,9 @@
+16MHz_dark.log        7.96 mA    9.55 mW    3.00 s   28.62 mJ
+16MHz_femto.log       5.05 mA    6.06 mW    8.11 s   49.14 mJ
+16MHz_pico.log        6.40 mA    7.68 mW    8.59 s   66.00 mJ
+16MHz_vex.log         7.08 mA    8.50 mW    3.76 s   31.97 mJ
+8MHz_dark.log         4.51 mA    5.42 mW    5.69 s   30.85 mJ
+8MHz_femto.log        3.04 mA    3.64 mW   16.20 s   59.04 mJ
+8MHz_haz.log          5.59 mA    6.71 mW    5.01 s   33.64 mJ
+8MHz_pico.log         3.77 mA    4.52 mW   17.00 s   76.86 mJ
+8MHz_vex.log          4.17 mA    5.00 mW    7.71 s   38.58 mJ
