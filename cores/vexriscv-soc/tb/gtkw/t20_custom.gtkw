@@ -1,22 +1,22 @@
 [*]
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
-[*] Thu May  8 18:14:19 2025
+[*] Thu May  8 19:43:12 2025
 [*]
 [dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/vexriscv-soc/tb/t20_custom.vcd"
-[dumpfile_mtime] "Thu May  8 18:12:37 2025"
-[dumpfile_size] 155437
+[dumpfile_mtime] "Thu May  8 19:26:49 2025"
+[dumpfile_size] 10505050
 [savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/vexriscv-soc/tb/gtkw/t20_custom.gtkw"
-[timestart] 3480000
-[size] 1554 1015
+[timestart] 3552660000
+[size] 2560 1356
 [pos] -1 -1
-*-22.155706 14210000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-22.155706 3560500000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] t20_custom.
 [treeopen] t20_custom.soc.
 [treeopen] t20_custom.soc.uart0.
 [sst_width] 423
 [signals_width] 243
 [sst_expanded] 1
-[sst_vpaned_height] 335
+[sst_vpaned_height] 468
 @28
 t20_custom.soc.cpu_reset
 t20_custom.soc.cpu_clk
@@ -38,8 +38,6 @@ t20_custom.soc.i_data[31:0]
 t20_custom.soc.dcmd_valid
 t20_custom.soc.cpu_mem_op
 t20_custom.soc.drsp_valid
-@22
-t20_custom.soc.dcmd_adr[31:0]
 @200
 -
 -READ
@@ -56,9 +54,5 @@ t20_custom.soc.cpu_wren[3:0]
 -REGS
 @22
 t20_custom.reg_x10[31:0]
-t20_custom.soc.pwm0.cmp[7:0]
-t20_custom.soc.pwm1.cmp[7:0]
-@23
-t20_custom.soc.pwm2.cmp[7:0]
 [pattern_trace] 1
 [pattern_trace] 0
