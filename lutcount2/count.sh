@@ -74,8 +74,8 @@ hazard_src="hazard3_decode.v hazard3_triggers.v hazard3_instr_decompress.v hazar
 nox_src="cb_to_axi.v csr.v decode.v execute.v fetch.v fifo_nox.v lsu.v nox.v register_file.v reset_sync.v wb.v"
 pequeno_src="alu.v decode_unit.v execution_unit.v exu_branch_unit.v fetch_unit.v loadstore_unit.v memory_access_unit.v opfwd_control.v pqr5_core_top.v regfile.v writeback_unit.v"
 rvx_src="rvx_core.v"
-femtorv_src="femtorv32_tachyon.v"
 vex_src="VexRiscv_smprod_my.v"
+femtorv_src="femtorv32_quark.v"
 
 #			name			tld				work dir						src...
 lutcount	"Rocket_tiny"	"Rocket"		"$C/rocket-build/tiny" 		${rocket_src}
@@ -89,4 +89,4 @@ lutcount	"nox"			"nox"			"$C/nox-build/nox"			${nox_src}
 lutcount	"pequeno"		"pqr5_core_top"	"$C/pequeno-build/pqr5"		${pequeno_src}
 lutcount	"rvx_noint"		"rvx_tb"		"$C/rvx/hardware"			${rvx_src}		"$L/rvx_noint.v"
 lutcount	"vex_smprod_my"	"VexRiscv"		"$C/vexriscv-build"			${vex_src}
-lutcount	"femtorv_tach"	"FemtoRV32"		"$C/femtorv"				${femtorv_src}
+lutcount	"femtorv_quark"	"FemtoRV32"		"$C/femtorv/FemtoRV/RTL/PROCESSOR" ${femtorv_src}

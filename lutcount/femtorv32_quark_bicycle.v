@@ -1,1 +1,1 @@
-../cores/femtorv/femtorv32_quark_bicycle.v
+../cores/femtorv/FemtoRV/RTL/PROCESSOR/femtorv32_quark_bicycle.v

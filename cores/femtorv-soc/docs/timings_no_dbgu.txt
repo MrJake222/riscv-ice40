@@ -1,0 +1,47 @@
+Info: Critical path report for clock 'clk_$glb_clk' (posedge -> posedge):
+Info: curr total
+Info:  1.4  1.4  Source cpu.reg_op1_SB_DFFE_Q_D_SB_LUT4_O_LC.O
+Info:  3.6  5.0    Net cpu.instr_bge_SB_LUT4_I0_I3_SB_LUT4_O_I2[1] (4,18) -> (7,13)
+Info:                Sink cpu.alu_out_q_SB_DFF_Q_D_SB_LUT4_O_I1_SB_LUT4_O_LC.I2
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  1.2  6.2  Source cpu.alu_out_q_SB_DFF_Q_D_SB_LUT4_O_I1_SB_LUT4_O_LC.O
+Info:  3.1  9.3    Net cpu.alu_out_q_SB_DFF_Q_D_SB_LUT4_O_I1[0] (7,13) -> (7,8)
+Info:                Sink cpu.alu_out_q_SB_DFF_Q_9_D_SB_LUT4_O_I1_SB_LUT4_I2_O_SB_LUT4_O_2_LC.I0
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  1.3 10.5  Source cpu.alu_out_q_SB_DFF_Q_9_D_SB_LUT4_O_I1_SB_LUT4_I2_O_SB_LUT4_O_2_LC.O
+Info:  3.0 13.5    Net cpu.alu_out_q_SB_DFF_Q_9_D_SB_LUT4_O_I1_SB_LUT4_I2_O[3] (7,8) -> (5,9)
+Info:                Sink cpu.alu_out_q_SB_DFF_Q_29_D_SB_LUT4_O_I1_SB_LUT4_O_2_I1_SB_LUT4_O_1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_LUT4_I2_O_SB_LUT4_O_2_LC.I3
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  0.9 14.4  Source cpu.alu_out_q_SB_DFF_Q_29_D_SB_LUT4_O_I1_SB_LUT4_O_2_I1_SB_LUT4_O_1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_LUT4_I2_O_SB_LUT4_O_2_LC.O
+Info:  1.8 16.1    Net cpu.alu_out_q_SB_DFF_Q_29_D_SB_LUT4_O_I1_SB_LUT4_O_2_I1_SB_LUT4_O_1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_LUT4_I2_O[3] (5,9) -> (5,9)
+Info:                Sink cpu.instr_bne_SB_LUT4_I1_I3_SB_LUT4_O_LC.I3
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  0.9 17.0  Source cpu.instr_bne_SB_LUT4_I1_I3_SB_LUT4_O_LC.O
+Info:  1.8 18.8    Net cpu.instr_bne_SB_LUT4_I1_I3[3] (5,9) -> (4,9)
+Info:                Sink cpu.instr_bne_SB_LUT4_I1_LC.I3
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  0.9 19.6  Source cpu.instr_bne_SB_LUT4_I1_LC.O
+Info:  1.8 21.4    Net cpu.instr_bne_SB_LUT4_I1_O[2] (4,9) -> (5,8)
+Info:                Sink cpu.instr_bgeu_SB_LUT4_I1_LC.I2
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  1.2 22.6  Source cpu.instr_bgeu_SB_LUT4_I1_LC.O
+Info:  3.1 25.7    Net cpu.instr_bge_SB_LUT4_I0_O[0] (5,8) -> (4,13)
+Info:                Sink cpu.instr_bge_SB_LUT4_I0_O_SB_LUT4_I1_LC.I1
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  1.2 26.9  Source cpu.instr_bge_SB_LUT4_I0_O_SB_LUT4_I1_LC.O
+Info:  1.8 28.6    Net cpu.decoder_trigger_SB_DFF_Q_D_SB_LUT4_O_I2[3] (4,13) -> (3,13)
+Info:                Sink cpu.mem_do_rinst_SB_DFFESS_Q_S_SB_LUT4_O_LC.I1
+Info:                Defined in:
+Info:                  /usr/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  1.2 29.9  Source cpu.mem_do_rinst_SB_DFFESS_Q_S_SB_LUT4_O_LC.O
+Info:  3.4 33.2    Net cpu.mem_do_rinst_SB_DFFESS_Q_S (3,13) -> (2,13)
+Info:                Sink cpu.mem_do_rinst_SB_DFFESS_Q_D_SB_LUT4_O_LC.SR
+Info:  0.1 33.3  Setup cpu.mem_do_rinst_SB_DFFESS_Q_D_SB_LUT4_O_LC.SR
+Info: 10.3 ns logic, 23.1 ns routing, 29.9 MHz max

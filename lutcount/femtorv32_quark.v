@@ -1,0 +1,1 @@
+../cores/femtorv/FemtoRV/RTL/PROCESSOR/femtorv32_quark.v

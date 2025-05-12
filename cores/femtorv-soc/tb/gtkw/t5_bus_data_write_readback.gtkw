@@ -1,0 +1,95 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Mon May 12 10:12:41 2025
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/femtorv-soc/tb/t5_bus_data_write_readback.vcd"
+[dumpfile_mtime] "Mon May 12 10:10:58 2025"
+[dumpfile_size] 29952
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/femtorv-soc/tb/gtkw/t5_bus_data_write_readback.gtkw"
+[timestart] 0
+[size] 1635 1203
+[pos] -376 -21
+*-23.400000 5430000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] t5_bus_data_write_readback.
+[treeopen] t5_bus_data_write_readback.soc.
+[treeopen] t5_bus_data_write_readback.soc.cpu.
+[treeopen] t5_bus_data_write_readback.soc.ram.
+[treeopen] t5_bus_data_write_readback.soc.uart0.
+[sst_width] 283
+[signals_width] 205
+[sst_expanded] 1
+[sst_vpaned_height] 409
+@28
+t5_bus_data_write_readback.soc.cpu_clk
+@22
+[color] 2
+t5_bus_data_write_readback.soc.adr[31:0]
+@200
+-
+@c00022
+t5_bus_data_write_readback.soc.adr[31:0]
+@28
+(0)t5_bus_data_write_readback.soc.adr[31:0]
+(1)t5_bus_data_write_readback.soc.adr[31:0]
+(2)t5_bus_data_write_readback.soc.adr[31:0]
+(3)t5_bus_data_write_readback.soc.adr[31:0]
+(4)t5_bus_data_write_readback.soc.adr[31:0]
+(5)t5_bus_data_write_readback.soc.adr[31:0]
+(6)t5_bus_data_write_readback.soc.adr[31:0]
+(7)t5_bus_data_write_readback.soc.adr[31:0]
+(8)t5_bus_data_write_readback.soc.adr[31:0]
+(9)t5_bus_data_write_readback.soc.adr[31:0]
+(10)t5_bus_data_write_readback.soc.adr[31:0]
+(11)t5_bus_data_write_readback.soc.adr[31:0]
+(12)t5_bus_data_write_readback.soc.adr[31:0]
+(13)t5_bus_data_write_readback.soc.adr[31:0]
+(14)t5_bus_data_write_readback.soc.adr[31:0]
+(15)t5_bus_data_write_readback.soc.adr[31:0]
+(16)t5_bus_data_write_readback.soc.adr[31:0]
+(17)t5_bus_data_write_readback.soc.adr[31:0]
+(18)t5_bus_data_write_readback.soc.adr[31:0]
+(19)t5_bus_data_write_readback.soc.adr[31:0]
+(20)t5_bus_data_write_readback.soc.adr[31:0]
+(21)t5_bus_data_write_readback.soc.adr[31:0]
+(22)t5_bus_data_write_readback.soc.adr[31:0]
+(23)t5_bus_data_write_readback.soc.adr[31:0]
+(24)t5_bus_data_write_readback.soc.adr[31:0]
+(25)t5_bus_data_write_readback.soc.adr[31:0]
+(26)t5_bus_data_write_readback.soc.adr[31:0]
+(27)t5_bus_data_write_readback.soc.adr[31:0]
+(28)t5_bus_data_write_readback.soc.adr[31:0]
+(29)t5_bus_data_write_readback.soc.adr[31:0]
+(30)t5_bus_data_write_readback.soc.adr[31:0]
+(31)t5_bus_data_write_readback.soc.adr[31:0]
+@1401200
+-group_end
+@28
+t5_bus_data_write_readback.soc.mem_op
+@22
+t5_bus_data_write_readback.soc.mem_wren[3:0]
+@200
+-
+@28
++{pwm0_cs} t5_bus_data_write_readback.soc.pwm0.cs
++{pwm1_cs} t5_bus_data_write_readback.soc.pwm1.cs
++{pwm2_cs} t5_bus_data_write_readback.soc.pwm2.cs
+@200
+-
+@c00022
++{pwm0} t5_bus_data_write_readback.soc.pwm0.cmp[7:0]
+@28
+(0)t5_bus_data_write_readback.soc.pwm0.cmp[7:0]
+(1)t5_bus_data_write_readback.soc.pwm0.cmp[7:0]
+(2)t5_bus_data_write_readback.soc.pwm0.cmp[7:0]
+(3)t5_bus_data_write_readback.soc.pwm0.cmp[7:0]
+(4)t5_bus_data_write_readback.soc.pwm0.cmp[7:0]
+(5)t5_bus_data_write_readback.soc.pwm0.cmp[7:0]
+(6)t5_bus_data_write_readback.soc.pwm0.cmp[7:0]
+(7)t5_bus_data_write_readback.soc.pwm0.cmp[7:0]
+@1401200
+-group_end
+@22
++{pwm1} t5_bus_data_write_readback.soc.pwm1.cmp[7:0]
+t5_bus_data_write_readback.reg_x12[31:0]
+[pattern_trace] 1
+[pattern_trace] 0

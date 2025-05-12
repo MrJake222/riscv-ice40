@@ -1,1 +1,1 @@
-../cores/femtorv/femtorv32_electron.v
+../cores/femtorv/FemtoRV/RTL/PROCESSOR/femtorv32_electron.v

@@ -53,3 +53,4 @@
 [submodule "cores/femtorv"]
 	path = cores/femtorv
 	url = git@github.com:MrJake222/learn-fpga.git
+	branch = my-develop
