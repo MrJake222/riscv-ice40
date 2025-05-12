@@ -7,6 +7,6 @@
                       hazard3_noMAC:   total  2776  (53%)
                                 nox:   total  6489 (123%)
                             pequeno:   total  4662  (88%)
-                          rvx_noint:   total  5095  (96%)
+                                rvx:   total  5245  (99%)
                       vex_smprod_my:   total  1928  (37%)
                       femtorv_quark:   total  1125  (21%)

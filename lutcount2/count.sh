@@ -87,6 +87,6 @@ lutcount	"kronos"		"kronos_core"	"$C/kronos-build/kronos"	${kronos_src}	# strang
 lutcount	"hazard3_noMAC"	"hazard3_noMAC"	"$C/hazard3/hdl"			${hazard_src}	"$L/hazard3_noMAC.v"
 lutcount	"nox"			"nox"			"$C/nox-build/nox"			${nox_src}
 lutcount	"pequeno"		"pqr5_core_top"	"$C/pequeno-build/pqr5"		${pequeno_src}
-lutcount	"rvx_noint"		"rvx_tb"		"$C/rvx/hardware"			${rvx_src}		"$L/rvx_noint.v"
+lutcount	"rvx"			"rvx_core"		"$C/rvx/hardware"			${rvx_src}
 lutcount	"vex_smprod_my"	"VexRiscv"		"$C/vexriscv-build"			${vex_src}
 lutcount	"femtorv_quark"	"FemtoRV32"		"$C/femtorv/FemtoRV/RTL/PROCESSOR" ${femtorv_src}

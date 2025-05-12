@@ -53,7 +53,7 @@ int main() {
 	for (unsigned int* bss=&_bss_start; bss<&_bss_end; bss+=0x100)
 		printf("bss %p: %d\n", bss, *bss);
 	
-	const int runs = 14500 * 5;
+	const int runs = 22100 * 5;
 	
 	dhrystone(runs);
 	
