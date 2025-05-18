@@ -40,6 +40,7 @@ lutcount "VexRiscv"		"VexRiscv_sm.v"
 lutcount "VexRiscv"		"VexRiscv_sm_my.v"
 lutcount "VexRiscv"		"VexRiscv_smprod.v"
 lutcount "VexRiscv"		"VexRiscv_smprod_my.v"
+lutcount "VexRiscv"		"VexRiscv_smprod_my_nopers.v"
 lutcount "VexRiscv"		"VexRiscv_smprod_my_muldiv.v"
 # lutcount "VexRiscv"		"VexRiscv_smprod_my_fpu.v"
 # ERROR: no valid mapping found for memory VexRiscv.FpuPlugin_fpu.rf_scoreboards_0_hit

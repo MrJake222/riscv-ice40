@@ -24,6 +24,7 @@ build GenSmallest                   VexRiscv_sm.v
 build GenSmallestMy                 VexRiscv_sm_my.v
 build GenSmallAndProductive         VexRiscv_smprod.v
 build GenSmallAndProductiveMy       VexRiscv_smprod_my.v
+build GenSmallAndProductiveMyNopers VexRiscv_smprod_my_nopers.v
 build GenSmallAndProductiveMyMulDiv VexRiscv_smprod_my_muldiv.v
 build GenSmallAndProductiveMyFpu    VexRiscv_smprod_my_fpu.v
 build GenSmallAndProductiveICache   VexRiscv_smprod_icache.v

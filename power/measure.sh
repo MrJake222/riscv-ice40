@@ -51,7 +51,6 @@ function do_measure {
 	echo "saved as $name"
 }
 
-do_measure ""
-#do_measure 1
-#do_measure 2
+#do_measure ""
+do_measure 1 && do_measure 2
 
