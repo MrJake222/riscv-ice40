@@ -54,3 +54,6 @@
 	path = cores/femtorv
 	url = git@github.com:MrJake222/learn-fpga.git
 	branch = my-develop
+[submodule "riscv-opcodes"]
+	path = riscv-opcodes
+	url = git@github.com:MrJake222/riscv-opcodes.git
