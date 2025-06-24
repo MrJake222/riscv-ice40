@@ -1,0 +1,40 @@
+diff --git a/include/opcode/riscv-opc.h b/include/opcode/riscv-opc.h
+index 71ad7fff84d..5cf8c60e658 100644
+--- a/include/opcode/riscv-opc.h
++++ b/include/opcode/riscv-opc.h
+@@ -21,6 +21,11 @@
+ #ifndef RISCV_ENCODING_H
+ #define RISCV_ENCODING_H
+ /* Instruction opcode macros.  */
++#define MATCH_DSQA 0x200b
++#define MASK_DSQA 0xfe00707f
++#define MATCH_XFSQ 0x100b
++#define MASK_XFSQ 0xfff0707f
++
+ #define MATCH_SLLI_RV32 0x1013
+ #define MASK_SLLI_RV32  0xfe00707f
+ #define MATCH_SRLI_RV32 0x5013
+@@ -4256,6 +4261,9 @@
+ #define CSR_VLENB 0xc22
+ #endif /* RISCV_ENCODING_H */
+ #ifdef DECLARE_INSN
++DECLARE_INSN(dsqa, MATCH_DSQA, MASK_DSQA)
++DECLARE_INSN(fsq, MATCH_FSQ, MASK_FSQ)
++
+ DECLARE_INSN(slli_rv32, MATCH_SLLI_RV32, MASK_SLLI_RV32)
+ DECLARE_INSN(srli_rv32, MATCH_SRLI_RV32, MASK_SRLI_RV32)
+ DECLARE_INSN(srai_rv32, MATCH_SRAI_RV32, MASK_SRAI_RV32)
+diff --git a/opcodes/riscv-opc.c b/opcodes/riscv-opc.c
+index ceb94a563e2..04e444dd273 100644
+--- a/opcodes/riscv-opc.c
++++ b/opcodes/riscv-opc.c
+@@ -419,6 +419,9 @@ const struct riscv_opcode riscv_opcodes[] =
+ {
+ /* name, xlen, isa, operands, match, mask, match_func, pinfo.  */
+ 
++{"dsqa",       0, INSN_CLASS_I, "d,s,t", MATCH_DSQA, MASK_DSQA, match_opcode, 0 },
++{"xfsq",       0, INSN_CLASS_I, "d,s",   MATCH_XFSQ, MASK_XFSQ, match_opcode, 0 },
++
+ /* Standard hints.  */
+ {"prefetch.i",  0, INSN_CLASS_ZICBOP, "Wif(s)", MATCH_PREFETCH_I, MASK_PREFETCH_I, match_opcode, 0 },
+ {"prefetch.r",  0, INSN_CLASS_ZICBOP, "Wif(s)", MATCH_PREFETCH_R, MASK_PREFETCH_R, match_opcode, 0 },

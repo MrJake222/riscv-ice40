@@ -1,12 +1,13 @@
-all: led.hex led_breathe.hex uart.hex uart_comm.hex time.hex delay.hex sections.hex ram_test.hex counters.hex print_test.hex alloc.hex
+all: led.hex led_breathe.hex uart.hex uart_comm.hex time.hex delay.hex sections.hex ram_test.hex counters.hex print_test.hex alloc.hex fpu.hex
 
 #CFLAGS = -O1
-CFLAGS = -O1 -march=rv32i_zicsr
+CFLAGS = -O1 -march=rv32i_zicsr -Wall
 
 # override which binaries need printf
 # time.elf: time.o printf.o
 print_test.elf: print_test.o printf.o
 alloc.elf:		alloc.o printf.o lwmem.o
+fpu.elf:		fpu.o printf.o
 
 # don't remove elf
 .PRECIOUS: %.elf
@@ -25,7 +26,6 @@ alloc.elf:		alloc.o printf.o lwmem.o
 
 printf.o: printf/printf.c
 	riscv32-unknown-elf-gcc -c $(CFLAGS) $< -o $@	\
-		-D PRINTF_DISABLE_SUPPORT_FLOAT				\
 		-D PRINTF_DISABLE_SUPPORT_LONG_LONG
 		
 lwmem.o: lwmem/lwmem/src/lwmem/lwmem.c

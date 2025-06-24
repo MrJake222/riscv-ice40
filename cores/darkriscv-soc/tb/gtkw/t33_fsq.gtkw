@@ -1,0 +1,98 @@
+[*]
+[*] GTKWave Analyzer v3.3.124 (w)1999-2025 BSI
+[*] Tue Jun 24 22:20:20 2025
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/darkriscv-soc/tb/t33_fsq.vcd"
+[dumpfile_mtime] "Tue Jun 24 22:19:41 2025"
+[dumpfile_size] 100359
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/darkriscv-soc/tb/gtkw/t33_fsq.gtkw"
+[timestart] 0
+[size] 1920 998
+[pos] -1 -1
+*-25.755707 107480000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] t33_fsq.
+[treeopen] t33_fsq.soc.
+[treeopen] t33_fsq.soc.cpu.
+[treeopen] t33_fsq.soc.ram.
+[treeopen] t33_fsq.soc.uart0.
+[sst_width] 283
+[signals_width] 296
+[sst_expanded] 1
+[sst_vpaned_height] 331
+@28
+t33_fsq.soc.cpu_reset
+t33_fsq.soc.cpu_clk
+@200
+-
+-INSTR
+@22
+t33_fsq.soc.i_adr[31:0]
+t33_fsq.soc.i_data[31:0]
+t33_fsq.soc.cpu.IDATAX[31:0]
+t33_fsq.soc.DATAI[31:0]
+t33_fsq.soc.cpu_adr[31:0]
+@200
+-
+-REGS
+@22
+t33_fsq.reg_x9_s1[31:0]
+t33_fsq.reg_x11[31:0]
+@200
+-
+@22
+t33_fsq.reg_x13[31:0]
+t33_fsq.reg_x10[31:0]
+@200
+-
+@22
+t33_fsq.soc.fpu.state[3:0]
+t33_fsq.soc.fpu.exp_a[7:0]
+t33_fsq.soc.fpu.exp_b[7:0]
+t33_fsq.soc.fpu.exp_c[7:0]
+@28
+t33_fsq.soc.fpu.sgn_c
+@200
+-
+@22
+t33_fsq.soc.fpu.exp_d[7:0]
+@200
+-
+@c00022
++{ERROR} t33_fsq.reg_x8_s0[31:0]
+@28
+(0)t33_fsq.reg_x8_s0[31:0]
+(1)t33_fsq.reg_x8_s0[31:0]
+(2)t33_fsq.reg_x8_s0[31:0]
+(3)t33_fsq.reg_x8_s0[31:0]
+(4)t33_fsq.reg_x8_s0[31:0]
+(5)t33_fsq.reg_x8_s0[31:0]
+(6)t33_fsq.reg_x8_s0[31:0]
+(7)t33_fsq.reg_x8_s0[31:0]
+(8)t33_fsq.reg_x8_s0[31:0]
+(9)t33_fsq.reg_x8_s0[31:0]
+(10)t33_fsq.reg_x8_s0[31:0]
+(11)t33_fsq.reg_x8_s0[31:0]
+(12)t33_fsq.reg_x8_s0[31:0]
+(13)t33_fsq.reg_x8_s0[31:0]
+(14)t33_fsq.reg_x8_s0[31:0]
+(15)t33_fsq.reg_x8_s0[31:0]
+(16)t33_fsq.reg_x8_s0[31:0]
+(17)t33_fsq.reg_x8_s0[31:0]
+(18)t33_fsq.reg_x8_s0[31:0]
+(19)t33_fsq.reg_x8_s0[31:0]
+(20)t33_fsq.reg_x8_s0[31:0]
+(21)t33_fsq.reg_x8_s0[31:0]
+(22)t33_fsq.reg_x8_s0[31:0]
+(23)t33_fsq.reg_x8_s0[31:0]
+(24)t33_fsq.reg_x8_s0[31:0]
+(25)t33_fsq.reg_x8_s0[31:0]
+(26)t33_fsq.reg_x8_s0[31:0]
+(27)t33_fsq.reg_x8_s0[31:0]
+(28)t33_fsq.reg_x8_s0[31:0]
+(29)t33_fsq.reg_x8_s0[31:0]
+(30)t33_fsq.reg_x8_s0[31:0]
+(31)t33_fsq.reg_x8_s0[31:0]
+@1401200
+-group_end
+[pattern_trace] 1
+[pattern_trace] 0

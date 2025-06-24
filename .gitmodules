@@ -57,3 +57,4 @@
 [submodule "riscv-opcodes"]
 	path = riscv-opcodes
 	url = git@github.com:MrJake222/riscv-opcodes.git
+    branch = my-develop

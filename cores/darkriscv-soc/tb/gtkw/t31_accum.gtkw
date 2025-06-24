@@ -1,0 +1,102 @@
+[*]
+[*] GTKWave Analyzer v3.3.124 (w)1999-2025 BSI
+[*] Tue Jun 24 22:20:22 2025
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/darkriscv-soc/tb/t31_accum.vcd"
+[dumpfile_mtime] "Tue Jun 24 22:19:41 2025"
+[dumpfile_size] 137895
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/darkriscv-soc/tb/gtkw/t31_accum.gtkw"
+[timestart] 0
+[size] 1920 998
+[pos] -1 -1
+*-26.355709 66750000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] t31_accum.
+[treeopen] t31_accum.soc.
+[treeopen] t31_accum.soc.cpu.
+[treeopen] t31_accum.soc.ram.
+[treeopen] t31_accum.soc.uart0.
+[sst_width] 283
+[signals_width] 296
+[sst_expanded] 1
+[sst_vpaned_height] 330
+@28
+t31_accum.soc.cpu_reset
+t31_accum.soc.cpu_clk
+@200
+-
+-INSTR
+@22
+t31_accum.soc.i_adr[31:0]
+t31_accum.soc.i_data[31:0]
+t31_accum.soc.cpu.IDATAX[31:0]
+t31_accum.soc.DATAI[31:0]
+t31_accum.soc.cpu_adr[31:0]
+@200
+-
+-REGS
+@22
+t31_accum.reg_x9_s1[31:0]
+t31_accum.reg_x11[31:0]
+t31_accum.reg_x12[31:0]
+@200
+-
+@22
+t31_accum.reg_x13[31:0]
+t31_accum.reg_x10[31:0]
+@200
+-
+@23
+t31_accum.soc.fpu.state[3:0]
+@22
+t31_accum.soc.fpu.a[47:0]
+t31_accum.soc.fpu.b[23:0]
+t31_accum.soc.fpu.c[47:0]
+t31_accum.soc.fpu.exp_a[7:0]
+t31_accum.soc.fpu.exp_b[7:0]
+t31_accum.soc.fpu.exp_c[7:0]
+@200
+-
+@22
+t31_accum.soc.fpu.d[23:0]
+t31_accum.soc.fpu.exp_d[7:0]
+@200
+-
+@c00022
++{ERROR} t31_accum.reg_x8_s0[31:0]
+@28
+(0)t31_accum.reg_x8_s0[31:0]
+(1)t31_accum.reg_x8_s0[31:0]
+(2)t31_accum.reg_x8_s0[31:0]
+(3)t31_accum.reg_x8_s0[31:0]
+(4)t31_accum.reg_x8_s0[31:0]
+(5)t31_accum.reg_x8_s0[31:0]
+(6)t31_accum.reg_x8_s0[31:0]
+(7)t31_accum.reg_x8_s0[31:0]
+(8)t31_accum.reg_x8_s0[31:0]
+(9)t31_accum.reg_x8_s0[31:0]
+(10)t31_accum.reg_x8_s0[31:0]
+(11)t31_accum.reg_x8_s0[31:0]
+(12)t31_accum.reg_x8_s0[31:0]
+(13)t31_accum.reg_x8_s0[31:0]
+(14)t31_accum.reg_x8_s0[31:0]
+(15)t31_accum.reg_x8_s0[31:0]
+(16)t31_accum.reg_x8_s0[31:0]
+(17)t31_accum.reg_x8_s0[31:0]
+(18)t31_accum.reg_x8_s0[31:0]
+(19)t31_accum.reg_x8_s0[31:0]
+(20)t31_accum.reg_x8_s0[31:0]
+(21)t31_accum.reg_x8_s0[31:0]
+(22)t31_accum.reg_x8_s0[31:0]
+(23)t31_accum.reg_x8_s0[31:0]
+(24)t31_accum.reg_x8_s0[31:0]
+(25)t31_accum.reg_x8_s0[31:0]
+(26)t31_accum.reg_x8_s0[31:0]
+(27)t31_accum.reg_x8_s0[31:0]
+(28)t31_accum.reg_x8_s0[31:0]
+(29)t31_accum.reg_x8_s0[31:0]
+(30)t31_accum.reg_x8_s0[31:0]
+(31)t31_accum.reg_x8_s0[31:0]
+@1401200
+-group_end
+[pattern_trace] 1
+[pattern_trace] 0

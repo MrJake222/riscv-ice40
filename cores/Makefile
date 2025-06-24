@@ -66,7 +66,7 @@ $(BIN): $(ASC)
 
 # bin to uf2
 $(UF2): $(BIN)
-	$(BIN2UF2) -o $@ $<
+	#$(BIN2UF2) -o $@ $<
 
 verify: $(VERILOG)
 	iverilog -o /dev/null $(IV_OPTS) $(IV_VERILOG) $(VERILOG)

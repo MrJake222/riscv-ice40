@@ -100,6 +100,16 @@ wire hlt;
 wire  [2:0] DLEN;
 wire [31:0] DATAI;
 wire [31:0] DATAO;
+
+wire        CPR_REQ;
+wire [ 2:0] CPR_FCT3;
+wire [ 6:0] CPR_FCT7;
+wire [31:0] CPR_RS1;
+wire [31:0] CPR_RS2;
+wire [31:0] CPR_RDR;
+wire [31:0] CPR_RDW;
+wire        cpr_hlt;
+
 darkriscv cpu (
     .CLK(cpu_clk),
 	.RES(cpu_reset),
@@ -116,7 +126,15 @@ darkriscv cpu (
 	.DRD(d_rd),
 	.DWR(d_wr),
 	
-	.BERR(1'b0)
+	.BERR(1'b0),
+	
+	.CPR_REQ(CPR_REQ),
+	.CPR_FCT3(CPR_FCT3),
+	.CPR_FCT7(CPR_FCT7),
+	.CPR_RS1(CPR_RS1),
+	.CPR_RS2(CPR_RS2),
+	.CPR_RDR(CPR_RDR),
+	.CPR_RDW(CPR_RDW)
 );
 darkdemux demux (
 	.DWR(d_wr),
@@ -140,11 +158,27 @@ begin
 	else if (d_rd)
 		d_rd_valid <= 1;
 end
-// when reading, wait for data valid
-assign hlt = d_rd & ~d_rd_valid;
+// when reading, wait for data valid,
+// and wait for coprocessor
+assign hlt = (d_rd & ~d_rd_valid) | cpr_hlt;
 // shorten read cycle for proper ROM switch back to ibus
 assign cpu_mem_op = (d_rd & ~d_rd_valid) | d_wr;
 
+// cpu coprocessor
+wire fpu_sel = CPR_REQ & (CPR_FCT7 == 0);
+wire fpu_ready;
+fpu fpu (
+	.clk(cpu_clk),
+	.cs(fpu_sel),
+	.func(CPR_FCT3),
+	.ready(fpu_ready),
+	.CPR_RS1(CPR_RS1),
+	.CPR_RS2(CPR_RS2),
+	.CPR_RDR(CPR_RDR),
+	.CPR_RDW(CPR_RDW)
+);
+
+assign cpr_hlt = fpu_sel & ~fpu_ready;
 
 // bus
 wire [31:0] adr      =  dbg_mem_op ? dbg_adr    :  cpu_adr;

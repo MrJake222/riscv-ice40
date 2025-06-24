@@ -1,0 +1,146 @@
+[*]
+[*] GTKWave Analyzer v3.3.124 (w)1999-2025 BSI
+[*] Tue Jun 24 22:20:22 2025
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/darkriscv-soc/tb/t30_cmul.vcd"
+[dumpfile_mtime] "Tue Jun 24 22:20:07 2025"
+[dumpfile_size] 430501
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/darkriscv-soc/tb/gtkw/t30_cmul.gtkw"
+[timestart] 0
+[size] 1920 998
+[pos] -1 -1
+*-27.535664 650160000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] t30_cmul.
+[treeopen] t30_cmul.soc.
+[treeopen] t30_cmul.soc.cpu.
+[treeopen] t30_cmul.soc.fpu.
+[treeopen] t30_cmul.soc.ram.
+[treeopen] t30_cmul.soc.uart0.
+[sst_width] 283
+[signals_width] 296
+[sst_expanded] 1
+[sst_vpaned_height] 331
+@28
+t30_cmul.soc.cpu_reset
+t30_cmul.soc.cpu_clk
+@200
+-
+-INSTR
+@22
+t30_cmul.soc.i_adr[31:0]
+t30_cmul.soc.i_data[31:0]
+t30_cmul.soc.cpu.IDATAX[31:0]
+t30_cmul.soc.DATAI[31:0]
+t30_cmul.soc.cpu_adr[31:0]
+@200
+-
+-REGS
+@22
+t30_cmul.reg_x9_s1[31:0]
+t30_cmul.reg_x11[31:0]
+t30_cmul.reg_x12[31:0]
+@200
+-
+@c00022
+t30_cmul.reg_x10[31:0]
+@28
+(0)t30_cmul.reg_x10[31:0]
+(1)t30_cmul.reg_x10[31:0]
+(2)t30_cmul.reg_x10[31:0]
+(3)t30_cmul.reg_x10[31:0]
+(4)t30_cmul.reg_x10[31:0]
+(5)t30_cmul.reg_x10[31:0]
+(6)t30_cmul.reg_x10[31:0]
+(7)t30_cmul.reg_x10[31:0]
+(8)t30_cmul.reg_x10[31:0]
+(9)t30_cmul.reg_x10[31:0]
+(10)t30_cmul.reg_x10[31:0]
+(11)t30_cmul.reg_x10[31:0]
+(12)t30_cmul.reg_x10[31:0]
+(13)t30_cmul.reg_x10[31:0]
+(14)t30_cmul.reg_x10[31:0]
+(15)t30_cmul.reg_x10[31:0]
+(16)t30_cmul.reg_x10[31:0]
+(17)t30_cmul.reg_x10[31:0]
+(18)t30_cmul.reg_x10[31:0]
+(19)t30_cmul.reg_x10[31:0]
+(20)t30_cmul.reg_x10[31:0]
+(21)t30_cmul.reg_x10[31:0]
+(22)t30_cmul.reg_x10[31:0]
+(23)t30_cmul.reg_x10[31:0]
+(24)t30_cmul.reg_x10[31:0]
+(25)t30_cmul.reg_x10[31:0]
+(26)t30_cmul.reg_x10[31:0]
+(27)t30_cmul.reg_x10[31:0]
+(28)t30_cmul.reg_x10[31:0]
+(29)t30_cmul.reg_x10[31:0]
+(30)t30_cmul.reg_x10[31:0]
+(31)t30_cmul.reg_x10[31:0]
+@1401200
+-group_end
+@22
+t30_cmul.reg_x13[31:0]
+@200
+-
+@22
+t30_cmul.soc.fpu.state[3:0]
+t30_cmul.soc.fpu.a[47:0]
+@23
+t30_cmul.soc.fpu.b[23:0]
+@22
+t30_cmul.soc.fpu.c[47:0]
+t30_cmul.soc.fpu.exp_a[7:0]
+t30_cmul.soc.fpu.exp_b[7:0]
+t30_cmul.soc.fpu.exp_c[7:0]
+@200
+-
+@22
+t30_cmul.soc.fpu.d[23:0]
+t30_cmul.soc.fpu.exp_d[7:0]
+@200
+-
+-SUM/DIFF
+@22
+t30_cmul.soc.fpu.sumdiff.state[2:0]
+t30_cmul.soc.fpu.sumdiff.r[47:0]
+@200
+-
+@c00022
++{ERROR} t30_cmul.reg_x8_s0[31:0]
+@28
+(0)t30_cmul.reg_x8_s0[31:0]
+(1)t30_cmul.reg_x8_s0[31:0]
+(2)t30_cmul.reg_x8_s0[31:0]
+(3)t30_cmul.reg_x8_s0[31:0]
+(4)t30_cmul.reg_x8_s0[31:0]
+(5)t30_cmul.reg_x8_s0[31:0]
+(6)t30_cmul.reg_x8_s0[31:0]
+(7)t30_cmul.reg_x8_s0[31:0]
+(8)t30_cmul.reg_x8_s0[31:0]
+(9)t30_cmul.reg_x8_s0[31:0]
+(10)t30_cmul.reg_x8_s0[31:0]
+(11)t30_cmul.reg_x8_s0[31:0]
+(12)t30_cmul.reg_x8_s0[31:0]
+(13)t30_cmul.reg_x8_s0[31:0]
+(14)t30_cmul.reg_x8_s0[31:0]
+(15)t30_cmul.reg_x8_s0[31:0]
+(16)t30_cmul.reg_x8_s0[31:0]
+(17)t30_cmul.reg_x8_s0[31:0]
+(18)t30_cmul.reg_x8_s0[31:0]
+(19)t30_cmul.reg_x8_s0[31:0]
+(20)t30_cmul.reg_x8_s0[31:0]
+(21)t30_cmul.reg_x8_s0[31:0]
+(22)t30_cmul.reg_x8_s0[31:0]
+(23)t30_cmul.reg_x8_s0[31:0]
+(24)t30_cmul.reg_x8_s0[31:0]
+(25)t30_cmul.reg_x8_s0[31:0]
+(26)t30_cmul.reg_x8_s0[31:0]
+(27)t30_cmul.reg_x8_s0[31:0]
+(28)t30_cmul.reg_x8_s0[31:0]
+(29)t30_cmul.reg_x8_s0[31:0]
+(30)t30_cmul.reg_x8_s0[31:0]
+(31)t30_cmul.reg_x8_s0[31:0]
+@1401200
+-group_end
+[pattern_trace] 1
+[pattern_trace] 0
