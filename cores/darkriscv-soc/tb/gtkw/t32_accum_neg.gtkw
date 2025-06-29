@@ -1,56 +1,137 @@
 [*]
-[*] GTKWave Analyzer v3.3.124 (w)1999-2025 BSI
-[*] Tue Jun 24 22:20:21 2025
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Sun Jun 29 09:06:22 2025
 [*]
 [dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/darkriscv-soc/tb/t32_accum_neg.vcd"
-[dumpfile_mtime] "Tue Jun 24 22:19:41 2025"
-[dumpfile_size] 101252
+[dumpfile_mtime] "Sun Jun 29 09:02:39 2025"
+[dumpfile_size] 93813
 [savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/darkriscv-soc/tb/gtkw/t32_accum_neg.gtkw"
 [timestart] 0
 [size] 1920 998
 [pos] -1 -1
-*-25.755705 47150000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-25.135666 114620000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] t32_accum_neg.
 [treeopen] t32_accum_neg.soc.
 [treeopen] t32_accum_neg.soc.cpu.
+[treeopen] t32_accum_neg.soc.fpu.
 [treeopen] t32_accum_neg.soc.ram.
 [treeopen] t32_accum_neg.soc.uart0.
 [sst_width] 283
 [signals_width] 296
 [sst_expanded] 1
-[sst_vpaned_height] 327
+[sst_vpaned_height] 331
 @28
 t32_accum_neg.soc.cpu_reset
 t32_accum_neg.soc.cpu_clk
 @200
 -
--INSTR
-@22
-t32_accum_neg.soc.i_adr[31:0]
-t32_accum_neg.soc.i_data[31:0]
-t32_accum_neg.soc.cpu.IDATAX[31:0]
-t32_accum_neg.soc.DATAI[31:0]
-t32_accum_neg.soc.cpu_adr[31:0]
-@200
--
 -REGS
 @22
-t32_accum_neg.reg_x9_s1[31:0]
-t32_accum_neg.reg_x11[31:0]
-t32_accum_neg.reg_x12[31:0]
++{index} t32_accum_neg.reg_x9_s1[31:0]
++{a} t32_accum_neg.reg_x11[31:0]
++{b} t32_accum_neg.reg_x12[31:0]
 @200
 -
 @22
-t32_accum_neg.reg_x13[31:0]
-t32_accum_neg.reg_x10[31:0]
++{should_be} t32_accum_neg.reg_x13[31:0]
+@c00022
++{result} t32_accum_neg.reg_x10[31:0]
+@28
+(0)t32_accum_neg.reg_x10[31:0]
+(1)t32_accum_neg.reg_x10[31:0]
+(2)t32_accum_neg.reg_x10[31:0]
+(3)t32_accum_neg.reg_x10[31:0]
+(4)t32_accum_neg.reg_x10[31:0]
+(5)t32_accum_neg.reg_x10[31:0]
+(6)t32_accum_neg.reg_x10[31:0]
+(7)t32_accum_neg.reg_x10[31:0]
+(8)t32_accum_neg.reg_x10[31:0]
+(9)t32_accum_neg.reg_x10[31:0]
+(10)t32_accum_neg.reg_x10[31:0]
+(11)t32_accum_neg.reg_x10[31:0]
+(12)t32_accum_neg.reg_x10[31:0]
+(13)t32_accum_neg.reg_x10[31:0]
+(14)t32_accum_neg.reg_x10[31:0]
+(15)t32_accum_neg.reg_x10[31:0]
+(16)t32_accum_neg.reg_x10[31:0]
+(17)t32_accum_neg.reg_x10[31:0]
+(18)t32_accum_neg.reg_x10[31:0]
+(19)t32_accum_neg.reg_x10[31:0]
+(20)t32_accum_neg.reg_x10[31:0]
+(21)t32_accum_neg.reg_x10[31:0]
+(22)t32_accum_neg.reg_x10[31:0]
+(23)t32_accum_neg.reg_x10[31:0]
+(24)t32_accum_neg.reg_x10[31:0]
+(25)t32_accum_neg.reg_x10[31:0]
+(26)t32_accum_neg.reg_x10[31:0]
+(27)t32_accum_neg.reg_x10[31:0]
+(28)t32_accum_neg.reg_x10[31:0]
+(29)t32_accum_neg.reg_x10[31:0]
+(30)t32_accum_neg.reg_x10[31:0]
+(31)t32_accum_neg.reg_x10[31:0]
+@1401200
+-group_end
 @200
 -
 @23
-t32_accum_neg.soc.fpu.state[3:0]
+t32_accum_neg.soc.fpu.state[2:0]
 @22
 t32_accum_neg.soc.fpu.a[47:0]
 t32_accum_neg.soc.fpu.b[23:0]
+@c00022
 t32_accum_neg.soc.fpu.c[47:0]
+@28
+(0)t32_accum_neg.soc.fpu.c[47:0]
+(1)t32_accum_neg.soc.fpu.c[47:0]
+(2)t32_accum_neg.soc.fpu.c[47:0]
+(3)t32_accum_neg.soc.fpu.c[47:0]
+(4)t32_accum_neg.soc.fpu.c[47:0]
+(5)t32_accum_neg.soc.fpu.c[47:0]
+(6)t32_accum_neg.soc.fpu.c[47:0]
+(7)t32_accum_neg.soc.fpu.c[47:0]
+(8)t32_accum_neg.soc.fpu.c[47:0]
+(9)t32_accum_neg.soc.fpu.c[47:0]
+(10)t32_accum_neg.soc.fpu.c[47:0]
+(11)t32_accum_neg.soc.fpu.c[47:0]
+(12)t32_accum_neg.soc.fpu.c[47:0]
+(13)t32_accum_neg.soc.fpu.c[47:0]
+(14)t32_accum_neg.soc.fpu.c[47:0]
+(15)t32_accum_neg.soc.fpu.c[47:0]
+(16)t32_accum_neg.soc.fpu.c[47:0]
+(17)t32_accum_neg.soc.fpu.c[47:0]
+(18)t32_accum_neg.soc.fpu.c[47:0]
+(19)t32_accum_neg.soc.fpu.c[47:0]
+(20)t32_accum_neg.soc.fpu.c[47:0]
+(21)t32_accum_neg.soc.fpu.c[47:0]
+(22)t32_accum_neg.soc.fpu.c[47:0]
+(23)t32_accum_neg.soc.fpu.c[47:0]
+(24)t32_accum_neg.soc.fpu.c[47:0]
+(25)t32_accum_neg.soc.fpu.c[47:0]
+(26)t32_accum_neg.soc.fpu.c[47:0]
+(27)t32_accum_neg.soc.fpu.c[47:0]
+(28)t32_accum_neg.soc.fpu.c[47:0]
+(29)t32_accum_neg.soc.fpu.c[47:0]
+(30)t32_accum_neg.soc.fpu.c[47:0]
+(31)t32_accum_neg.soc.fpu.c[47:0]
+(32)t32_accum_neg.soc.fpu.c[47:0]
+(33)t32_accum_neg.soc.fpu.c[47:0]
+(34)t32_accum_neg.soc.fpu.c[47:0]
+(35)t32_accum_neg.soc.fpu.c[47:0]
+(36)t32_accum_neg.soc.fpu.c[47:0]
+(37)t32_accum_neg.soc.fpu.c[47:0]
+(38)t32_accum_neg.soc.fpu.c[47:0]
+(39)t32_accum_neg.soc.fpu.c[47:0]
+(40)t32_accum_neg.soc.fpu.c[47:0]
+(41)t32_accum_neg.soc.fpu.c[47:0]
+(42)t32_accum_neg.soc.fpu.c[47:0]
+(43)t32_accum_neg.soc.fpu.c[47:0]
+(44)t32_accum_neg.soc.fpu.c[47:0]
+(45)t32_accum_neg.soc.fpu.c[47:0]
+(46)t32_accum_neg.soc.fpu.c[47:0]
+(47)t32_accum_neg.soc.fpu.c[47:0]
+@1401200
+-group_end
+@22
 t32_accum_neg.soc.fpu.exp_a[7:0]
 t32_accum_neg.soc.fpu.exp_b[7:0]
 t32_accum_neg.soc.fpu.exp_c[7:0]
@@ -59,11 +140,6 @@ t32_accum_neg.soc.fpu.exp_c[7:0]
 @22
 t32_accum_neg.soc.fpu.d[23:0]
 t32_accum_neg.soc.fpu.exp_d[7:0]
-@200
--
-@28
-t32_accum_neg.soc.fpu.sgn_c
-t32_accum_neg.soc.fpu.sgn_d
 @200
 -
 @c00022
@@ -103,5 +179,22 @@ t32_accum_neg.soc.fpu.sgn_d
 (31)t32_accum_neg.reg_x8_s0[31:0]
 @1401200
 -group_end
+@200
+-
+-SUM/DIFF
+@22
+t32_accum_neg.soc.fpu.sumdiff.state[2:0]
+t32_accum_neg.soc.fpu.sumdiff.x[47:0]
+t32_accum_neg.soc.fpu.sumdiff.y[23:0]
+t32_accum_neg.soc.fpu.sumdiff.exp_x[7:0]
+t32_accum_neg.soc.fpu.sumdiff.exp_y[7:0]
+@200
+-
+-
+@22
+t32_accum_neg.soc.fpu.sumdiff.r[47:0]
+t32_accum_neg.soc.fpu.sumdiff.exp_r[7:0]
+@200
+-
 [pattern_trace] 1
 [pattern_trace] 0

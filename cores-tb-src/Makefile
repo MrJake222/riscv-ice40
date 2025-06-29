@@ -19,6 +19,8 @@ TB += t30_cmul.v
 TB += t31_accum.v
 TB += t32_accum_neg.v
 TB += t33_fsq.v
+TB += t34_accum_small.v
+TB += t35_accum_large.v
 # testbenches dependencies
 DEP = dep.v
 # time multiplier

@@ -1,18 +1,19 @@
 [*]
-[*] GTKWave Analyzer v3.3.124 (w)1999-2025 BSI
-[*] Tue Jun 24 22:20:20 2025
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Sun Jun 29 09:06:25 2025
 [*]
 [dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/darkriscv-soc/tb/t33_fsq.vcd"
-[dumpfile_mtime] "Tue Jun 24 22:19:41 2025"
-[dumpfile_size] 100359
+[dumpfile_mtime] "Sun Jun 29 09:02:39 2025"
+[dumpfile_size] 93318
 [savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/darkriscv-soc/tb/gtkw/t33_fsq.gtkw"
 [timestart] 0
 [size] 1920 998
 [pos] -1 -1
-*-25.755707 107480000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-25.135666 114620000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] t33_fsq.
 [treeopen] t33_fsq.soc.
 [treeopen] t33_fsq.soc.cpu.
+[treeopen] t33_fsq.soc.fpu.
 [treeopen] t33_fsq.soc.ram.
 [treeopen] t33_fsq.soc.uart0.
 [sst_width] 283
@@ -24,36 +25,120 @@ t33_fsq.soc.cpu_reset
 t33_fsq.soc.cpu_clk
 @200
 -
--INSTR
-@22
-t33_fsq.soc.i_adr[31:0]
-t33_fsq.soc.i_data[31:0]
-t33_fsq.soc.cpu.IDATAX[31:0]
-t33_fsq.soc.DATAI[31:0]
-t33_fsq.soc.cpu_adr[31:0]
-@200
--
 -REGS
 @22
-t33_fsq.reg_x9_s1[31:0]
-t33_fsq.reg_x11[31:0]
++{index} t33_fsq.reg_x9_s1[31:0]
++{a} t33_fsq.reg_x11[31:0]
++{b} t33_fsq.reg_x12[31:0]
 @200
 -
 @22
-t33_fsq.reg_x13[31:0]
-t33_fsq.reg_x10[31:0]
++{should_be} t33_fsq.reg_x13[31:0]
+@c00022
++{result} t33_fsq.reg_x10[31:0]
+@28
+(0)t33_fsq.reg_x10[31:0]
+(1)t33_fsq.reg_x10[31:0]
+(2)t33_fsq.reg_x10[31:0]
+(3)t33_fsq.reg_x10[31:0]
+(4)t33_fsq.reg_x10[31:0]
+(5)t33_fsq.reg_x10[31:0]
+(6)t33_fsq.reg_x10[31:0]
+(7)t33_fsq.reg_x10[31:0]
+(8)t33_fsq.reg_x10[31:0]
+(9)t33_fsq.reg_x10[31:0]
+(10)t33_fsq.reg_x10[31:0]
+(11)t33_fsq.reg_x10[31:0]
+(12)t33_fsq.reg_x10[31:0]
+(13)t33_fsq.reg_x10[31:0]
+(14)t33_fsq.reg_x10[31:0]
+(15)t33_fsq.reg_x10[31:0]
+(16)t33_fsq.reg_x10[31:0]
+(17)t33_fsq.reg_x10[31:0]
+(18)t33_fsq.reg_x10[31:0]
+(19)t33_fsq.reg_x10[31:0]
+(20)t33_fsq.reg_x10[31:0]
+(21)t33_fsq.reg_x10[31:0]
+(22)t33_fsq.reg_x10[31:0]
+(23)t33_fsq.reg_x10[31:0]
+(24)t33_fsq.reg_x10[31:0]
+(25)t33_fsq.reg_x10[31:0]
+(26)t33_fsq.reg_x10[31:0]
+(27)t33_fsq.reg_x10[31:0]
+(28)t33_fsq.reg_x10[31:0]
+(29)t33_fsq.reg_x10[31:0]
+(30)t33_fsq.reg_x10[31:0]
+(31)t33_fsq.reg_x10[31:0]
+@1401200
+-group_end
 @200
 -
+@23
+t33_fsq.soc.fpu.state[2:0]
 @22
-t33_fsq.soc.fpu.state[3:0]
+t33_fsq.soc.fpu.a[47:0]
+t33_fsq.soc.fpu.b[23:0]
+@c00022
+t33_fsq.soc.fpu.c[47:0]
+@28
+(0)t33_fsq.soc.fpu.c[47:0]
+(1)t33_fsq.soc.fpu.c[47:0]
+(2)t33_fsq.soc.fpu.c[47:0]
+(3)t33_fsq.soc.fpu.c[47:0]
+(4)t33_fsq.soc.fpu.c[47:0]
+(5)t33_fsq.soc.fpu.c[47:0]
+(6)t33_fsq.soc.fpu.c[47:0]
+(7)t33_fsq.soc.fpu.c[47:0]
+(8)t33_fsq.soc.fpu.c[47:0]
+(9)t33_fsq.soc.fpu.c[47:0]
+(10)t33_fsq.soc.fpu.c[47:0]
+(11)t33_fsq.soc.fpu.c[47:0]
+(12)t33_fsq.soc.fpu.c[47:0]
+(13)t33_fsq.soc.fpu.c[47:0]
+(14)t33_fsq.soc.fpu.c[47:0]
+(15)t33_fsq.soc.fpu.c[47:0]
+(16)t33_fsq.soc.fpu.c[47:0]
+(17)t33_fsq.soc.fpu.c[47:0]
+(18)t33_fsq.soc.fpu.c[47:0]
+(19)t33_fsq.soc.fpu.c[47:0]
+(20)t33_fsq.soc.fpu.c[47:0]
+(21)t33_fsq.soc.fpu.c[47:0]
+(22)t33_fsq.soc.fpu.c[47:0]
+(23)t33_fsq.soc.fpu.c[47:0]
+(24)t33_fsq.soc.fpu.c[47:0]
+(25)t33_fsq.soc.fpu.c[47:0]
+(26)t33_fsq.soc.fpu.c[47:0]
+(27)t33_fsq.soc.fpu.c[47:0]
+(28)t33_fsq.soc.fpu.c[47:0]
+(29)t33_fsq.soc.fpu.c[47:0]
+(30)t33_fsq.soc.fpu.c[47:0]
+(31)t33_fsq.soc.fpu.c[47:0]
+(32)t33_fsq.soc.fpu.c[47:0]
+(33)t33_fsq.soc.fpu.c[47:0]
+(34)t33_fsq.soc.fpu.c[47:0]
+(35)t33_fsq.soc.fpu.c[47:0]
+(36)t33_fsq.soc.fpu.c[47:0]
+(37)t33_fsq.soc.fpu.c[47:0]
+(38)t33_fsq.soc.fpu.c[47:0]
+(39)t33_fsq.soc.fpu.c[47:0]
+(40)t33_fsq.soc.fpu.c[47:0]
+(41)t33_fsq.soc.fpu.c[47:0]
+(42)t33_fsq.soc.fpu.c[47:0]
+(43)t33_fsq.soc.fpu.c[47:0]
+(44)t33_fsq.soc.fpu.c[47:0]
+(45)t33_fsq.soc.fpu.c[47:0]
+(46)t33_fsq.soc.fpu.c[47:0]
+(47)t33_fsq.soc.fpu.c[47:0]
+@1401200
+-group_end
+@22
 t33_fsq.soc.fpu.exp_a[7:0]
 t33_fsq.soc.fpu.exp_b[7:0]
 t33_fsq.soc.fpu.exp_c[7:0]
-@28
-t33_fsq.soc.fpu.sgn_c
 @200
 -
 @22
+t33_fsq.soc.fpu.d[23:0]
 t33_fsq.soc.fpu.exp_d[7:0]
 @200
 -
@@ -94,5 +179,22 @@ t33_fsq.soc.fpu.exp_d[7:0]
 (31)t33_fsq.reg_x8_s0[31:0]
 @1401200
 -group_end
+@200
+-
+-SUM/DIFF
+@22
+t33_fsq.soc.fpu.sumdiff.state[2:0]
+t33_fsq.soc.fpu.sumdiff.x[47:0]
+t33_fsq.soc.fpu.sumdiff.y[23:0]
+t33_fsq.soc.fpu.sumdiff.exp_x[7:0]
+t33_fsq.soc.fpu.sumdiff.exp_y[7:0]
+@200
+-
+-
+@22
+t33_fsq.soc.fpu.sumdiff.r[47:0]
+t33_fsq.soc.fpu.sumdiff.exp_r[7:0]
+@200
+-
 [pattern_trace] 1
 [pattern_trace] 0

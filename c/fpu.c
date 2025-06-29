@@ -23,7 +23,7 @@ void test(float f1, float f2) {
 	uint32_t f3stdu = *(uint32_t*)&f3std;
 	float d = fabsf(f3-f3std);
 	printf("%8.2f h%08x %8.2f h%08x %14.4f h%08x is %14.4f h%08x expt   %s %4.2f %%^3\r\n",
-	       f1, f1u, f2, f2u, f3, f3u, f3std, f3stdu, d<1e-3 ? "  " : "NO", d*1000000 / f3std);
+	       f1, f1u, f2, f2u, f3, f3u, f3std, f3stdu, d<=0 ? "  " : "NO", d*1000000 / f3std);
 }
 
 static uint32_t my_rand_seed;
@@ -39,15 +39,15 @@ float rndf(float magnitude) {
 int main(void) {
     printf("fpu test start\r\n");
     
-    /*my_rand_seed = 0;
+    my_rand_seed = 0;
     for (int j=1; j<=1000; j*=10) {
 		for (int i=0; i<10; i++) {
 			float x = rndf(j), y = rndf(j);
 			test(x, y);
 		}
-	}*/
+	}
 	
-	test(31.23f, 30.92f);
+	//test(31.23f, 30.92f);
     
     while(1);
 }

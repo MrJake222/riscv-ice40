@@ -1,0 +1,198 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Sun Jun 29 09:06:31 2025
+[*]
+[dumpfile] "/home/norbert/Projects/pico-ice/risc-v/cores/darkriscv-soc/tb/t35_accum_large.vcd"
+[dumpfile_mtime] "Sun Jun 29 09:04:40 2025"
+[dumpfile_size] 87813
+[savefile] "/home/norbert/Projects/pico-ice/risc-v/cores/darkriscv-soc/tb/gtkw/t35_accum_large.gtkw"
+[timestart] 0
+[size] 1920 998
+[pos] -1 -1
+*-25.735666 92500000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] t35_accum_large.
+[treeopen] t35_accum_large.soc.
+[treeopen] t35_accum_large.soc.cpu.
+[treeopen] t35_accum_large.soc.fpu.
+[treeopen] t35_accum_large.soc.ram.
+[treeopen] t35_accum_large.soc.uart0.
+[sst_width] 283
+[signals_width] 296
+[sst_expanded] 1
+[sst_vpaned_height] 331
+@28
+t35_accum_large.soc.cpu_reset
+t35_accum_large.soc.cpu_clk
+@200
+-
+-REGS
+@22
++{index} t35_accum_large.reg_x9_s1[31:0]
++{a} t35_accum_large.reg_x11[31:0]
++{b} t35_accum_large.reg_x12[31:0]
+@200
+-
+@22
++{should_be} t35_accum_large.reg_x13[31:0]
+@c00022
++{result} t35_accum_large.reg_x10[31:0]
+@28
+(0)t35_accum_large.reg_x10[31:0]
+(1)t35_accum_large.reg_x10[31:0]
+(2)t35_accum_large.reg_x10[31:0]
+(3)t35_accum_large.reg_x10[31:0]
+(4)t35_accum_large.reg_x10[31:0]
+(5)t35_accum_large.reg_x10[31:0]
+(6)t35_accum_large.reg_x10[31:0]
+(7)t35_accum_large.reg_x10[31:0]
+(8)t35_accum_large.reg_x10[31:0]
+(9)t35_accum_large.reg_x10[31:0]
+(10)t35_accum_large.reg_x10[31:0]
+(11)t35_accum_large.reg_x10[31:0]
+(12)t35_accum_large.reg_x10[31:0]
+(13)t35_accum_large.reg_x10[31:0]
+(14)t35_accum_large.reg_x10[31:0]
+(15)t35_accum_large.reg_x10[31:0]
+(16)t35_accum_large.reg_x10[31:0]
+(17)t35_accum_large.reg_x10[31:0]
+(18)t35_accum_large.reg_x10[31:0]
+(19)t35_accum_large.reg_x10[31:0]
+(20)t35_accum_large.reg_x10[31:0]
+(21)t35_accum_large.reg_x10[31:0]
+(22)t35_accum_large.reg_x10[31:0]
+(23)t35_accum_large.reg_x10[31:0]
+(24)t35_accum_large.reg_x10[31:0]
+(25)t35_accum_large.reg_x10[31:0]
+(26)t35_accum_large.reg_x10[31:0]
+(27)t35_accum_large.reg_x10[31:0]
+(28)t35_accum_large.reg_x10[31:0]
+(29)t35_accum_large.reg_x10[31:0]
+(30)t35_accum_large.reg_x10[31:0]
+(31)t35_accum_large.reg_x10[31:0]
+@1401200
+-group_end
+@200
+-
+@22
+t35_accum_large.soc.fpu.a[47:0]
+t35_accum_large.soc.fpu.b[23:0]
+@c00022
+t35_accum_large.soc.fpu.c[47:0]
+@28
+(0)t35_accum_large.soc.fpu.c[47:0]
+(1)t35_accum_large.soc.fpu.c[47:0]
+(2)t35_accum_large.soc.fpu.c[47:0]
+(3)t35_accum_large.soc.fpu.c[47:0]
+(4)t35_accum_large.soc.fpu.c[47:0]
+(5)t35_accum_large.soc.fpu.c[47:0]
+(6)t35_accum_large.soc.fpu.c[47:0]
+(7)t35_accum_large.soc.fpu.c[47:0]
+(8)t35_accum_large.soc.fpu.c[47:0]
+(9)t35_accum_large.soc.fpu.c[47:0]
+(10)t35_accum_large.soc.fpu.c[47:0]
+(11)t35_accum_large.soc.fpu.c[47:0]
+(12)t35_accum_large.soc.fpu.c[47:0]
+(13)t35_accum_large.soc.fpu.c[47:0]
+(14)t35_accum_large.soc.fpu.c[47:0]
+(15)t35_accum_large.soc.fpu.c[47:0]
+(16)t35_accum_large.soc.fpu.c[47:0]
+(17)t35_accum_large.soc.fpu.c[47:0]
+(18)t35_accum_large.soc.fpu.c[47:0]
+(19)t35_accum_large.soc.fpu.c[47:0]
+(20)t35_accum_large.soc.fpu.c[47:0]
+(21)t35_accum_large.soc.fpu.c[47:0]
+(22)t35_accum_large.soc.fpu.c[47:0]
+(23)t35_accum_large.soc.fpu.c[47:0]
+(24)t35_accum_large.soc.fpu.c[47:0]
+(25)t35_accum_large.soc.fpu.c[47:0]
+(26)t35_accum_large.soc.fpu.c[47:0]
+(27)t35_accum_large.soc.fpu.c[47:0]
+(28)t35_accum_large.soc.fpu.c[47:0]
+(29)t35_accum_large.soc.fpu.c[47:0]
+(30)t35_accum_large.soc.fpu.c[47:0]
+(31)t35_accum_large.soc.fpu.c[47:0]
+(32)t35_accum_large.soc.fpu.c[47:0]
+(33)t35_accum_large.soc.fpu.c[47:0]
+(34)t35_accum_large.soc.fpu.c[47:0]
+(35)t35_accum_large.soc.fpu.c[47:0]
+(36)t35_accum_large.soc.fpu.c[47:0]
+(37)t35_accum_large.soc.fpu.c[47:0]
+(38)t35_accum_large.soc.fpu.c[47:0]
+(39)t35_accum_large.soc.fpu.c[47:0]
+(40)t35_accum_large.soc.fpu.c[47:0]
+(41)t35_accum_large.soc.fpu.c[47:0]
+(42)t35_accum_large.soc.fpu.c[47:0]
+(43)t35_accum_large.soc.fpu.c[47:0]
+(44)t35_accum_large.soc.fpu.c[47:0]
+(45)t35_accum_large.soc.fpu.c[47:0]
+(46)t35_accum_large.soc.fpu.c[47:0]
+(47)t35_accum_large.soc.fpu.c[47:0]
+@1401200
+-group_end
+@22
+t35_accum_large.soc.fpu.exp_a[7:0]
+t35_accum_large.soc.fpu.exp_b[7:0]
+t35_accum_large.soc.fpu.exp_c[7:0]
+@200
+-
+@22
+t35_accum_large.soc.fpu.d[23:0]
+t35_accum_large.soc.fpu.exp_d[7:0]
+@200
+-
+@c00022
++{ERROR} t35_accum_large.reg_x8_s0[31:0]
+@28
+(0)t35_accum_large.reg_x8_s0[31:0]
+(1)t35_accum_large.reg_x8_s0[31:0]
+(2)t35_accum_large.reg_x8_s0[31:0]
+(3)t35_accum_large.reg_x8_s0[31:0]
+(4)t35_accum_large.reg_x8_s0[31:0]
+(5)t35_accum_large.reg_x8_s0[31:0]
+(6)t35_accum_large.reg_x8_s0[31:0]
+(7)t35_accum_large.reg_x8_s0[31:0]
+(8)t35_accum_large.reg_x8_s0[31:0]
+(9)t35_accum_large.reg_x8_s0[31:0]
+(10)t35_accum_large.reg_x8_s0[31:0]
+(11)t35_accum_large.reg_x8_s0[31:0]
+(12)t35_accum_large.reg_x8_s0[31:0]
+(13)t35_accum_large.reg_x8_s0[31:0]
+(14)t35_accum_large.reg_x8_s0[31:0]
+(15)t35_accum_large.reg_x8_s0[31:0]
+(16)t35_accum_large.reg_x8_s0[31:0]
+(17)t35_accum_large.reg_x8_s0[31:0]
+(18)t35_accum_large.reg_x8_s0[31:0]
+(19)t35_accum_large.reg_x8_s0[31:0]
+(20)t35_accum_large.reg_x8_s0[31:0]
+(21)t35_accum_large.reg_x8_s0[31:0]
+(22)t35_accum_large.reg_x8_s0[31:0]
+(23)t35_accum_large.reg_x8_s0[31:0]
+(24)t35_accum_large.reg_x8_s0[31:0]
+(25)t35_accum_large.reg_x8_s0[31:0]
+(26)t35_accum_large.reg_x8_s0[31:0]
+(27)t35_accum_large.reg_x8_s0[31:0]
+(28)t35_accum_large.reg_x8_s0[31:0]
+(29)t35_accum_large.reg_x8_s0[31:0]
+(30)t35_accum_large.reg_x8_s0[31:0]
+(31)t35_accum_large.reg_x8_s0[31:0]
+@1401200
+-group_end
+@200
+-
+-SUM/DIFF
+@22
+t35_accum_large.soc.fpu.sumdiff.state[2:0]
+t35_accum_large.soc.fpu.sumdiff.x[47:0]
+t35_accum_large.soc.fpu.sumdiff.y[23:0]
+t35_accum_large.soc.fpu.sumdiff.exp_x[7:0]
+t35_accum_large.soc.fpu.sumdiff.exp_y[7:0]
+@200
+-
+-
+@22
+t35_accum_large.soc.fpu.sumdiff.r[47:0]
+t35_accum_large.soc.fpu.sumdiff.exp_r[7:0]
+@200
+-
+[pattern_trace] 1
+[pattern_trace] 0

@@ -19,16 +19,24 @@ begin
     force soc.dbg_adr = 32'h00008; force soc.dbg_do = 32'h44954c99; #1000; // 34.56^2 = 1194.3937
     
     force soc.dbg_adr = 32'h0000C; force soc.dbg_do = 32'h41F48F5C; #1000; // 30.57
-    force soc.dbg_adr = 32'h00010; force soc.dbg_do = 32'h41F88F5C; #1000; // 31.07
-    force soc.dbg_adr = 32'h00014; force soc.dbg_do = 32'h44955499; #1000; //  0.50^2 += 1194.6437
+    force soc.dbg_adr = 32'h00010; force soc.dbg_do = 32'h41F88F91; #1000; // 31.0701
+    force soc.dbg_adr = 32'h00014; force soc.dbg_do = 32'h4495549A; #1000; //  0.5001^2 += 1194.6438
     
     force soc.dbg_adr = 32'h00018; force soc.dbg_do = 32'hC0228F5C; #1000; // -2.54
     force soc.dbg_adr = 32'h0001C; force soc.dbg_do = 32'h3EEB851F; #1000; //  0.46
-    force soc.dbg_adr = 32'h00020; force soc.dbg_do = 32'h44967499; #1000; // -3.00^2 += 1203.6437
+    force soc.dbg_adr = 32'h00020; force soc.dbg_do = 32'h4496749A; #1000; // -3.00^2 += 1203.6438
     
 	force soc.dbg_adr = 32'h00024; force soc.dbg_do = 32'h40a00000; #1000; // same
     force soc.dbg_adr = 32'h00028; force soc.dbg_do = 32'h40a00000; #1000; // same
-    force soc.dbg_adr = 32'h0002C; force soc.dbg_do = 32'h44967499; #1000; //    0^2 += 0
+    force soc.dbg_adr = 32'h0002C; force soc.dbg_do = 32'h4496749A; #1000; // (accumulator not changed)
+    
+	force soc.dbg_adr = 32'h00030; force soc.dbg_do = 32'h41FFFFFF; #1000; //  31.999998
+    force soc.dbg_adr = 32'h00034; force soc.dbg_do = 32'hC1FFFFFF; #1000; // -31.999998
+    force soc.dbg_adr = 32'h00038; force soc.dbg_do = 32'h45A59D25; #1000; // 63.999996^2 += 5299.6436 ("b" overflow) (round err h45A59D26)
+    
+	//force soc.dbg_adr = 32'h00024; force soc.dbg_do = 32'h41FFFFFF; #1000; // same
+    //force soc.dbg_adr = 32'h00028; force soc.dbg_do = 32'h00000000; #1000; // same
+    //force soc.dbg_adr = 32'h0002C; force soc.dbg_do = 32'h4496749A; #1000; // ("b" overflow)
     
     // program text
     // x8 -- error
@@ -47,13 +55,6 @@ begin
     force soc.dbg_adr = 32'h20020; force soc.dbg_do = 32'hfed506e3; #1000; // beq	a0, a3, -5*4
     force soc.dbg_adr = 32'h20024; force soc.dbg_do = 32'h00140413; #1000; // addi	x8, 1
     force soc.dbg_adr = 32'h20028; force soc.dbg_do = 32'hfe5ff06f; #1000; // j		-7*4
-    
-    // check mac16 instruction
-    /*force soc.dbg_adr = 32'h20000; force soc.dbg_do = 32'h00300513; #1000; // lw    a0, 3
-    force soc.dbg_adr = 32'h20004; force soc.dbg_do = 32'h00002583; #1000; // lw	a1, 0(zero)
-    force soc.dbg_adr = 32'h20008; force soc.dbg_do = 32'h00402603; #1000; // lw	a2, 4(zero)
-    force soc.dbg_adr = 32'h2000C; force soc.dbg_do = 32'h00c5850b; #1000; // mac a0,a1,a2
-    force soc.dbg_adr = 32'h20010; force soc.dbg_do = 32'h0000006f; #1000; // j		+0*/
     
 
 	release soc.cpu_n_reset;
@@ -76,7 +77,7 @@ initial
 begin
 	$dumpfile(`VCD_OUTPUT);
 	$dumpvars(4, t31_accum);
-	#(4*60000*`TMUL)
+	#(6*60000*`TMUL)
 	$finish;
 end
 

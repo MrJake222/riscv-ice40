@@ -4,7 +4,6 @@ module fpu_sumdiff #(
 ) (
 	input  wire clk,
 	input  wire cs,
-	input  wire op_sum,
 	output wire ready,
 
 	input wire [W2:0] x_in,
@@ -66,22 +65,22 @@ begin
 		end
 		
 		`STATE_SUMDIFF: begin
-			if (op_sum^sgn_x^sgn_y)
+			if (sgn_x == sgn_y)
 			begin
-				// sum: ++/--, diff: +-
+				// same signs: ++ or --
 				r <= x + y;
-				sgn_r <= sgn_x;
+				sgn_r <= sgn_x; // == sgn_y
 			end
 			else if (x < y)
 			begin
-				// sum: +-, diff: ++/--
+				// different signs, x<y
 				r <= y - x;
-				sgn_r <= 1;
+				sgn_r <= sgn_y; // sgn of the larger one
 			end
 			else begin
-				// sum: +-, diff: ++/--
+				// different signs, x>y
 				r <= x - y;
-				sgn_r <= 0;
+				sgn_r <= sgn_x;
 			end
 			state <= `STATE_NORM;
 		end
@@ -90,6 +89,7 @@ begin
 			if (r[24])
 			begin
 				r <= r >> 1;
+				//r <= r[0] ? ((r >> 1) + 1) : (r >> 1);
 				exp_r <= exp_r + 1;
 			end
 			state <= `STATE_DONE;

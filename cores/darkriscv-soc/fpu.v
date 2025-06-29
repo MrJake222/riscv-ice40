@@ -34,10 +34,6 @@ reg sgn_a;
 reg sgn_b;
 reg sgn_c;
 reg sgn_d;
-reg guard_a;
-reg guard_b;
-reg guard_c;
-reg guard_d;
 
 // sum/difference module interface and instantiation
 `define SD_AB 0
@@ -45,20 +41,18 @@ reg guard_d;
 reg  sd;
 reg  sd_cs = 0;
 wire sd_ready;
-wire sd_sum =		(sd == `SD_AB) ? 0 : 1;
 wire [W2:0] sd_x =	(sd == `SD_AB) ? a : c;
 wire [W1:0] sd_y =	(sd == `SD_AB) ? b : d;
 wire  [7:0] sd_exp_x = (sd == `SD_AB) ? exp_a : exp_c;
 wire  [7:0] sd_exp_y = (sd == `SD_AB) ? exp_b : exp_d;
 wire        sd_sgn_x = (sd == `SD_AB) ? sgn_a : sgn_c;
-wire        sd_sgn_y = (sd == `SD_AB) ? sgn_b : sgn_d;
+wire        sd_sgn_y = (sd == `SD_AB) ? (~sgn_b) : sgn_d; // the "b" is subtracted
 wire [W2:0] sd_r;
 wire  [7:0] sd_exp_r;
 wire        sd_sgn_r;
 fpu_sumdiff #(.W1(W1), .W2(W2)) sumdiff (
 	.clk(clk),
 	.cs(sd_cs),
-	.op_sum(sd_sum),
 	.ready(sd_ready),
 	.x_in(sd_x),
 	.y_in(sd_y),
@@ -79,8 +73,7 @@ fpu_sumdiff #(.W1(W1), .W2(W2)) sumdiff (
 `define STATE_MUL   5
 `define STATE_SD_CD 6
 `define STATE_NORM  7
-`define STATE_MULNORM  8
-reg [3:0] state = `STATE_IDLE;
+reg [2:0] state = `STATE_IDLE;
 
 always @(posedge clk)
 begin
@@ -105,12 +98,6 @@ begin
 				sgn_b <= CPR_RS2[31];
 				sgn_c <= 0;
 				sgn_d <= CPR_RDR[31];
-				
-				// rounding guards
-				guard_a <= 0;
-				guard_b <= 0;
-				guard_c <= 0;
-				guard_d <= 0;
 				
 				state <= `STATE_IMPCT;
 				// func ignored here -- shift/diff work for b=0
@@ -139,18 +126,8 @@ begin
 		end
 		
 		`STATE_EXP: begin
-			if (a != 0) begin // a == b
-				exp_c <= (exp_c << 1) - (8'd127 + 8'd23);
-				state <= `STATE_MUL;
-			end
-			else begin
-				// return the accumulator (50 LUT, try more generic)
-				// acc == 0 or acc != 0
-				c <= d;
-				exp_c <= exp_d;
-				sgn_c <= sgn_d;
-				state <= `STATE_DONE;
-			end
+			exp_c <= (exp_c << 1) - (8'd127 + 8'd23);
+			state <= `STATE_MUL;
 		end
 		
 		`STATE_MUL: begin
@@ -159,26 +136,14 @@ begin
 			b <= b >> 1;
 			if ((b >> 1) == 0)
 			begin
-				state <= `STATE_MULNORM;
+				if (func == `FUNC_DSQA)
+				begin
+					sd_cs <= 1;
+					sd <= `SD_CD;
+					state <= `STATE_SD_CD;
+				end
+				else state <= `STATE_NORM;
 			end
-		end
-		
-		`STATE_MULNORM: begin
-			// not used
-			// 8'd1 (instead of 8'd23) -- immediate normalization step (but 1 bit kept for rounding)
-			// immediate normalization
-			//if (c[47:23]) c <= c >> 22;
-			//else exp_c <= exp_c - 22;
-			
-			// if accumulate enable sum/diff and wait
-			// if square go straight into normalization
-			if (func == `FUNC_DSQA)
-			begin
-				sd_cs <= 1;
-				sd <= `SD_CD;
-				state <= `STATE_SD_CD;
-			end
-			else state <= `STATE_NORM;
 		end
 		
 		`STATE_SD_CD: begin
@@ -193,58 +158,20 @@ begin
 		end
 		
 		`STATE_NORM: begin
-			if (c & ~{BITS1{1'b1}})
+			if (c == 0) begin
+				exp_c <= 0;
+				state <= `STATE_DONE;
+			end
+			else if (c[W2:24])
 			begin
-				if (c[47:36] != 12'b0) begin
-					exp_c <= exp_c + 12;
-					c <= c >> 12;
-				end
-				else if (c[35:30] != 6'b0) begin
-					exp_c <= exp_c + 6;
-					c <= c >> 6;
-				end
-				else if (c[29:27] != 3'b0) begin
-					exp_c <= exp_c + 3;
-					c <= c >> 3;
-				end
-				else if (c[26:25] != 2'b0) begin
-					exp_c <= exp_c + 2;
-					c <= c >> 2;
-				end
-				else if (c[24] != 1'b0) begin
-					exp_c <= exp_c + 1;
-					c <= c >> 1;
-				end
-				
-				//c <= c >> 1;
-				//exp_c <= exp_c + 1;
+				c <= c >> 1;
+				//c <= c[0] ? ((c >> 1) + 1) : (c >> 1);
+				exp_c <= exp_c + 1;
 			end
 			else if (c[23] == 1'b0)
 			begin
-				// no implicit one
-				if (c[23:12] == 12'b0) begin
-					exp_c <= exp_c - 12;
-					c <= c << 12;
-				end
-				else if (c[23:18] == 6'b0) begin
-					exp_c <= exp_c - 6;
-					c <= c << 6;
-				end
-				else if (c[23:21] == 3'b0) begin
-					exp_c <= exp_c - 3;
-					c <= c << 3;
-				end
-				else if (c[23:22] == 2'b0) begin
-					exp_c <= exp_c - 2;
-					c <= c << 2;
-				end
-				else if (c[23] == 1'b0) begin
-					exp_c <= exp_c - 1;
-					c <= c << 1;
-				end
-				
-				//c <= c << 1;
-				//exp_c <= exp_c - 1;
+				c <= c << 1;
+				exp_c <= exp_c - 1;
 			end
 			else state <= `STATE_DONE;
 		end

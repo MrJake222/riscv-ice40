@@ -64,7 +64,7 @@ begin
     
     force soc.dbg_adr = 32'h00084; force soc.dbg_do = 32'hc3d8549a; #1000; //  -432.66
     force soc.dbg_adr = 32'h00088; force soc.dbg_do = 32'hc45dcd07; #1000; //  -887.20
-    force soc.dbg_adr = 32'h0008C; force soc.dbg_do = 32'h4849c43f; #1000; //  ^2 = 206608.9844
+    force soc.dbg_adr = 32'h0008C; force soc.dbg_do = 32'h4849c43e; #1000; //  ^2 = 206608.9844 (round err h4849c43f)
     
     force soc.dbg_adr = 32'h00090; force soc.dbg_do = 32'h3fffd792; #1000; //  
     force soc.dbg_adr = 32'h00094; force soc.dbg_do = 32'h3fffd792; #1000; //  

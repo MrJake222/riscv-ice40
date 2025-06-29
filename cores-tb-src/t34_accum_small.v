@@ -1,6 +1,6 @@
 `timescale 1 ns / 1 ns
 
-module t32_accum_neg ();
+module t34_accum_small ();
 
 `include "dep.v"
 
@@ -10,23 +10,17 @@ begin
 	force soc.dbg_mem_op = 1'b1;
 	force soc.dbg_wren = 4'hF;
 	
-    // Try to use new custom multiplication instruction (with negative accumulation)
+    // Try to use new custom multiplication instruction
+    // accumulate small numbers to large accumulator
     // EXPECTED: error counter x8 stays 0
 
     // program data     
-    force soc.dbg_adr = 32'h00000; force soc.dbg_do = 32'h420a3d71; #1000; // 34.56
-    force soc.dbg_adr = 32'h00004; force soc.dbg_do = 32'h00000000; #1000; //     0
-    force soc.dbg_adr = 32'h00008; force soc.dbg_do = 32'hC0B36700; #1000; // 34.56^2 = 1194.3937 += -5.6063232
+    force soc.dbg_adr = 32'h00000; force soc.dbg_do = 32'h3456BF95; #1000; // 2e-7
+    force soc.dbg_adr = 32'h00004; force soc.dbg_do = 32'h33D6BF95; #1000; // 1e-7
+    force soc.dbg_adr = 32'h00008; force soc.dbg_do = 32'h392AEAFB; #1000; // 1e-7^2 = 1e-14 += accum (cancels out)
     
-    force soc.dbg_adr = 32'h0000C; force soc.dbg_do = 32'h40178981; #1000; // 2.3677676
-    force soc.dbg_adr = 32'h00010; force soc.dbg_do = 32'h00000000; #1000; //     0
-    force soc.dbg_adr = 32'h00014; force soc.dbg_do = 32'h00000000; #1000; // 2.3677676^2 = 5.6063232 += 0
-    
-    //force soc.dbg_adr = 32'h0000C; force soc.dbg_do = 32'hC0228F5C; #1000; // -2.54
-    //force soc.dbg_adr = 32'h00010; force soc.dbg_do = 32'h3EEB851F; #1000; //  0.46
-    //force soc.dbg_adr = 32'h00014; force soc.dbg_do = 32'h40593200; #1000; // -3.00^2 = 9.00      +=  3.3936768
-    
-    force soc.dbg_adr = 32'h00100; force soc.dbg_do = 32'hC4960000; #1000; // base value for accum -1200.00
+    // base value for accum
+    force soc.dbg_adr = 32'h00100; force soc.dbg_do = 32'h392aeafb; #1000; // 1.63E-4
     
     // program text
     // x8 -- error
@@ -65,8 +59,8 @@ soc #(
 initial
 begin
 	$dumpfile(`VCD_OUTPUT);
-	$dumpvars(4, t32_accum_neg);
-	#(4*46000*`TMUL)
+	$dumpvars(4, t34_accum_small);
+	#(200000*`TMUL)
 	$finish;
 end
 
