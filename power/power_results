@@ -7,3 +7,16 @@
 8MHz_haz.log          5.59 mA    6.71 mW    5.01 s   33.64 mJ
 8MHz_pico.log         3.77 mA    4.52 mW   17.00 s   76.86 mJ
 8MHz_vex.log          4.53 mA    5.44 mW    7.79 s   42.40 mJ
+
+
+5s - 28s
+fogml_16MHz_dark1.log      8.25 mA    9.90 mW   22.88 s   226.39 mJ
+fogml_16MHz_dark2.log      8.28 mA    9.94 mW   22.73 s   225.88 mJ
+fogml_16MHz_dark3.log      8.27 mA    9.92 mW   23.01 s   228.24 mJ
+fogml_16MHz_dark4.log      8.30 mA    9.97 mW   23.06 s   229.81 mJ
+
+5s - 11s
+fogml_16MHz_dark_fpu1.log  7.79 mA    9.34 mW    6.01 s   56.17 mJ
+fogml_16MHz_dark_fpu2.log  7.82 mA    9.38 mW    6.09 s   57.18 mJ
+fogml_16MHz_dark_fpu3.log  8.21 mA    9.85 mW    5.99 s   59.06 mJ
+fogml_16MHz_dark_fpu4.log  7.97 mA    9.57 mW    6.18 s   59.09 mJ
