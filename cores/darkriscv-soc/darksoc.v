@@ -1,3 +1,5 @@
+`include "configsoc.vh"
+
 module soc (
 	input  wire CLK_12M,
 	input  wire RESET,
@@ -164,21 +166,26 @@ assign hlt = (d_rd & ~d_rd_valid) | cpr_hlt;
 // shorten read cycle for proper ROM switch back to ibus
 assign cpu_mem_op = (d_rd & ~d_rd_valid) | d_wr;
 
-// cpu coprocessor
-wire fpu_sel = CPR_REQ & (CPR_FCT7 == 0);
-wire fpu_ready;
-fpu fpu (
-	.clk(cpu_clk),
-	.cs(fpu_sel),
-	.func(CPR_FCT3),
-	.ready(fpu_ready),
-	.CPR_RS1(CPR_RS1),
-	.CPR_RS2(CPR_RS2),
-	.CPR_RDR(CPR_RDR),
-	.CPR_RDW(CPR_RDW)
-);
+`ifdef __ENABLE_FPU__
+	// dsqa/xfsq floating-point coprocessor
+	wire fpu_ready;
+	wire fpu_sel = CPR_REQ & (CPR_FCT7 == 0);
+	fpu fpu (
+		.clk(cpu_clk),
+		.cs(fpu_sel),
+		.func(CPR_FCT3),
+		.ready(fpu_ready),
+		.CPR_RS1(CPR_RS1),
+		.CPR_RS2(CPR_RS2),
+		.CPR_RDR(CPR_RDR),
+		.CPR_RDW(CPR_RDW)
+	);
+	assign cpr_hlt = fpu_sel & ~fpu_ready;
+`else
+	assign cpr_hlt = 0;
+	assign CPR_RDW = 0;
+`endif
 
-assign cpr_hlt = fpu_sel & ~fpu_ready;
 
 // bus
 wire [31:0] adr      =  dbg_mem_op ? dbg_adr    :  cpu_adr;
